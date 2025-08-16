@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?73c8a39e"></script>
+<script type="text/javascript" src="../js/settings.js?3fddf010"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -68,13 +68,18 @@ body {
                 <h3 class="hd1"><span class="ts3">Hard date can be specified for the conversion, or the conversion can be linked to an event.</span></h3>
                 <p><img width="1594" height="127" alt="" src="images/image(41).png" /></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">In the example above, D-WAG1 is a WAG well. The well is converted to Gas Injector on 01/07/2023 and then every 12 months.</span></h3>
-                <h3 class="hd1"><span class="ts3">The well is converted to Water Injector on 01/01/2024 and then every 12 months.</span></h3>
+                <h3 class="hd1"><span class="ts8">Modelling WAG Well</span></h3>
+                <h3 class="hd1"><span class="ts3">In the example above, D-WAG1 is a WAG well (alternate Water-Gas Injection).</span></h3>
+                <p class="ps3"><span class="ts3">At the start of the forecast, the well type was set as Water Injector in the Asset Model (see </span><a href="addwell.htm" class="hs1">Add wells to Asset Model</a><span class="ts3">)</span></p>
+                <h3 class="hd1"><span class="ts3">The well is converted (first conversion) from Water Injector to Gas Injector on 01/07/2023 and then every 12 months. To apply recurrent conversion, make sure the column &quot;conversion every x months&quot; is filled.</span></h3>
+                <h3 class="hd1"><span class="ts3">Then well is converted from Gas Injector to Water Injector on 01/01/2024 and then every 12 months.</span></h3>
                 <h3 class="hd1"><span class="ts3">D-WAG1 is therefore a gas injector for 6 months, then an water Injector for 6 months, then Gas injector for 6 months, etc..</span></h3>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts3">Different WAG schedule (for example 18 months Water Injection, 6 months Gas Injection) can be applied using the same strategy.</span></h3>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">In the example above, the well K-W2, will be converted to Water Injector 30 days after (note the minus sign) the Opportunity 'K-W3' is executed. In that case, the conversion date is not &quot;hard', but linked to the sequence of events, allowing fast generation of what-if scenario when sequence of events is modified.</span></h3>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts8">Conversion from Oil Producer to Water Injector</span></h3>
+                <h3 class="hd1"><span class="ts3">In the example above, the well K-W2, will be converted to Water Injector 30 days after the Opportunity 'K-W3' is executed (note the minus sign in the column &quot;Number of days before&quot;). In that case, the conversion date is not &quot;hard', but linked to the sequence of events, allowing fast generation of what-if scenario when the sequences of events is modified.</span></h3>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">

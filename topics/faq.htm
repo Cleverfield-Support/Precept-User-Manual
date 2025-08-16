@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?cc51dc95"></script>
+<script type="text/javascript" src="../js/settings.js?3fddf010"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -98,6 +98,59 @@ body {
                 <p class="ps3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">2. I</span><span class="ts25">n &quot;Results&quot; section, Forecast can be seen and grouped by &quot;Project&quot;. So you can. for example,&nbsp; visualize the producrion coming from the existing well stocks without further action, and get the incremental coming from Phase 1 drilling, Phase 2 drilling, </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts25">stimulation campaign, etc...).</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts8">Question:I want to model a tie-back project, which will be connected to existing facilities? What are the steps to follow to generate a forecast for the tie-back project in Precept ?</span></h3>
+                <p class="ps3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">1. Go to &quot;Scenario Manger&quot;, click on then &quot;New Asset&quot; to </span><span class="ts3">create a new Asset, </span><span class="ts3">and give a name to that new Asset.</span></p>
+                <h3 class="hd1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">2. In &quot;Scenario Manager&quot;, Click on &quot;New Project&quot; to create a new project for the Asset, and give it a name.</span></h3>
+                <h3 class="hd1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">3. Still in &quot;Scenario Manager&quot;, click on &quot;Create scenario from scratch&quot;, give a name to the new scenario, a &quot;Start date&quot; and an &quot;End date&quot; for the forecast.</span></h3>
+                <h3 class="hd1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">4. From Precept main User-interface, go to &quot;Network&quot; and model the existing facilities along with the tie-back project. Add Wells, Nodes, pipelines as required and the existing constraints.</span></h3>
+                <h3 class="hd1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">5. In the DCA module, click on &quot;Import Allocated Production&quot; and load the historical production of the existing Assets (either per well or an aggregate of the production)</span></h3>
+                <h3 class="hd1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">6. Still in the DCA module, generate an unconstrained profile for the existing Asset</span></h3>
+                <h3 class="hd1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">7. Define the unconstrained profiles for the new wells to be drilled for the tie-back project.</span></h3>
+                <h3 class="hd1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">8. Define the sequences of events to put on production the tie-back asset (Drilling schedule, construction activities)</span></h3>
+                <h3 class="hd1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">9. Run the forecast and visualize results</span></h3>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts8">Question: I just created a new opportunity, but I cannot see it in the sequence of events. Where is it?</span></h3>
+                <p class="ps9"><span class="ts3">When you create a new opportunity, it is first added to the Opportunity Pool. It will not appear in the sequence until you explicitly add it to the sequence of events. use your mouse (right click to cut, double-click to paste) to add it to any sequence.</span></p>
+                <p class="ps10"><span class="ts26">&nbsp;</span></p>
+                <h3 class="hd3"><span class="ts8">Question: How can I Model&nbsp; a WAG well (Alternate Water - Gas Injector) ?</span></h3>
+                <p class="ps11"><span class="ts3">Follow the steps below to model a WAG well.</span></p>
+                <h3 class="hd4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">1. From Precept Main User Interface, click on &quot;New profiles and Conversions&quot;</span></h3>
+                <h3 class="hd4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">2. Use the drop-down menu and select &quot;Conversions&quot;</span></h3>
+                <h3 class="hd4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">3. Assuming the well is a Water Injector at the start of forecast, you need to set the date for first conversion date from Water Injector to Gas Injector. Click on &quot;Add&quot; and fill the required informations as shown in the picture below. You will need to </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">specify the Well name, the new Well Type of after the conversion (in our case, &quot;Gas Injector&quot;), the conversion date. Use the column &quot;conversion every x months&quot; to apply a recurrent converion (for example, every 12 months).</span></h3>
+                <h3 class="hd4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">4. Click add and now add the conversion from &quot;Gas Injector&quot; to &quot;Water Injector&quot;.</span></h3>
+                <p class="ps10"><img width="1593" height="101" alt="" src="images/image(185).png" /></p>
+                <p class="ps9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">5. Go to &quot;Decline curves&quot; module and give a potential for both Water Injection and Gas Injection periods.</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts8">Question: How can I model the incremental production from an activities like stimulation, or re-perforations?</span></h3>
+                <p class="ps3"><span class="ts8">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts3">Follow the steps below to model an incremental production from activities like stimulation, re-perforations.</span></h3>
+                <h3 class="hd1"><span class="ts3">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">1. From Precept Main User-Interface, cLick on &quot;Opportunities&quot;, then &quot;New&quot; to create a new Opportunities.</span></h3>
+                <h3 class="hd1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">2. Fill the required information. </span></h3>
+                <h3 class="hd1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">Opportunity name: (ex: OP01 stimulation)</span></h3>
+                <h3 class="hd1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts3">Duration: Actual duration of the opportunity </span></h3>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts3">They are 4 different kind of impacts on forecast that can be introduced with an Opportunity:</span></h3>
+                <h3 class="hd1"><span class="ts3">&nbsp;- New profiles</span></h3>
+                <h3 class="hd1"><span class="ts3">&nbsp;- Shutdowns</span></h3>
+                <h3 class="hd1"><span class="ts3">&nbsp;- Change in constraints.</span></h3>
+                <h3 class="hd1"><span class="ts3">&nbsp;- Conversions</span></h3>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts3">3. In our case, we will need to add a new profile which correspond to the incremental profile due to the drilling of the Water Injector. For that, still in the &quot;Add Opportunity&quot;</span><span class="ts3">&nbsp;interface, use the drop-dowm menu and set </span><span class="ts3">&quot;Impact on Forecast&quot; to &quot;New profile&quot;</span></h3>
+                <h3 class="hd1"><span class="ts3">You will need to add two &quot;new profile&quot;. The first one is the Water Injection profile of the new well being drilled.</span></h3>
+                <h3 class="hd1"><span class="ts3">The second &quot;new profile&quot; is the incremental to the nearby Oil producer. The following columns of the table needs to be filled:</span></h3>
+                <h3 class="hd1"><span class="ts3">&nbsp;- &quot;Project&quot;: You can out any name. This is used to aggregate and visualize forecast per &quot;Project&quot; </span></h3>
+                <p class="ps3"><span class="ts3">&nbsp;- &quot;Type Profile&quot; To be set to &quot;is positive incremental to&quot;</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;- &quot;New profile name&quot;: Name of the incremental profile (for example &quot;OP01 incremental after WI-01 drilling&quot;)</span></p>
+                <h3 class="hd1"><span class="ts3">&nbsp;- &quot;Incremental to or replace&quot;: Name of the existing well impacted by the drilling of the Water Injector </span></h3>
+                <p>&nbsp;</p>
+                <h3 class="hd1"><span class="ts3">4. Go to the &quot;Decline Curves&quot; module and generate the potential for the incremental profile. It will appear as the same name given in &quot;New profile name&quot;.</span></h3>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p class="ps3"><span class="ts3">Some informations can also be found in </span><a href="opportunities.htm" class="hs1">Opportunities</a><span class="ts3">.</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <h2 class="hd2"><span class="ts22">Decline Curves Module:</span></h2>
@@ -142,8 +195,22 @@ body {
                 <p class="ps3"><span class="ts8">&nbsp;</span></p>
                 <p class="ps3"><span class="ts8">&nbsp;</span></p>
                 <p class="ps3"><span class="ts8">&nbsp;</span></p>
+                <h2 class="hd2"><span class="ts22">Forecast Results</span></h2>
                 <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts8">Question: How does Precept close or choke-back wells when a constraint is hit?</span></h3>
+                <p class="ps3"><span class="ts3">When a constraint is hit, Precept closes or choke-back wells using the logic given by the objective function. The objective function is defined in the &quot;Settings&quot; Interface.</span></p>
+                <p class="ps3"><span class="ts3">Usually, the objective function is to maximize production while maximizing injection.</span></p>
+                <p class="ps3"><span class="ts3">Therefore, if a oil, water or liquid constraint is hit, Precept will close wells with the highest water-cut to maximize production while honoring the constraint.</span></p>
+                <p class="ps3"><span class="ts3">If a gas or Total Gas (Gas + Gas-lift) constraint is hit, Precept will close wells with the highest GOR to maximize production while honoring the constraint.</span></p>
+                <p><span class="ts27">&nbsp;</span></p>
+                <p><span class="ts26">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts8">Question: in the forecast results section, how is the &quot;Well Count&quot; calculated?</span></h3>
+                <p class="ps3"><span class="ts3">Well Count is the number of active wells at a certain timestep. A well which was abandoned for example because it was uneconomical to produce is excluded from the Well Count. A well which is Shut-in at that timestep because, for example, of a planned shutdown is still counted as active well.</span></p>
+                <p class="ps3"><span class="ts3">The well count is given at a field level. In the current version of Precept, it is not possible to get the Well Count per reservoir or per platform.</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts8">Question: Can I visualize the forecast at a field level, aggregated by Project (Existing wells, phase 1 drilling, phase 2 drilling, stimulation, etc..) ?</span></h3>
+                <p class="ps3"><span class="ts3">Yes, to visualize the forecast at a field level and aggregated by Project, click on &quot;Project&quot; on the left panel, and select the Project(s) you want to get the production from. If you select several projects, you may want to stack the results. You can also add historical production.data.</span></p>
                 <p class="ps3"><span class="ts8">&nbsp;</span></p>
                 <p class="ps3"><span class="ts8">&nbsp;</span></p>
                 <p class="ps3"><span class="ts8">&nbsp;</span></p>

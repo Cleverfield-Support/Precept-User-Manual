@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?3fddf010"></script>
+<script type="text/javascript" src="../js/settings.js?8c5bcecf"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -76,14 +76,17 @@ body {
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <h3 class="hd1"><span class="ts8">Maintain Voidage</span></h3>
-                <p class="ps3"><span class="ts3">When the checkbox &quot;Play with injection to keep VRR=1&quot; is checked, Precept will bean-back Water Injectors and Gas Injectors with injection potentials in an attempt to maintain a Voidage Replacement Ratio (VRR =Injection rb / Productiobn rb) of 1 per reservoir. If that option is not activated, injector wells will not be bean-back by Precept (as long as enough fluid is available for injection), which may lead to VRR greater than 1.</span></p>
+                <p class="ps3"><span class="ts3">When the checkbox &quot;Play with injection to keep VRR=1 per reervoir&quot; is checked, Precept will bean-back Water Injectors and Gas Injectors with injection potentials in an attempt to maintain a Voidage Replacement Ratio ( VRR =Injection rb / Productiobn rb) of 1 per reservoir. If that option is not activated, injector wells will not be bean-back by Precept (as long as enough fluid is available for injection), which may lead to VRR greater than 1.</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts8">Equal choke opening when constraint is hit</span></h3>
+                <h3 class="hd1"><span class="ts3">When the checkbox &quot;equal choke opening when constraint is hit&quot; is checked, all wells from the same reservoir are open at the same choke opening (from 0 to 100%). This option needs to be used only on green fields and when all wells from the same reservoir have the same DCA profiles. </span></h3>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Forecast in Cum domain vs Forecast in Time domain</span></h3>
-                <p><img width="1202" height="296" alt="" src="images/image(13).png" /></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts8">Potentials:</span></h3>
+                <h3 class="hd1"><span class="ts3">Cut-off can be applied to close wells in future when they become uneconomical.</span></h3>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts3">When the option &quot; Apply same potentials to all wells from the same reservoir (explo), all wells from the reservoirs have the same DAC profiles. That means that when users modify one well profile in Decline Curves (DCA) modules, that new profile is automatically copied to other wells from the same reservoir. This option needs to be used for Green Field / Explo only.</span></h3>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <h3 class="hd1"><span class="ts8">Time step:</span></h3>
@@ -91,16 +94,17 @@ body {
                 <p class="ps3"><span class="ts3">- a new well come online,</span></p>
                 <p class="ps3"><span class="ts3">- a well is converted from producers to injectors, or injectors to producers</span></p>
                 <p class="ps3"><span class="ts3">- a shutdown starts /ends</span></p>
-                <p class="ps3"><span class="ts3">- a new constraints is introduced in the forecast.</span></p>
+                <p class="ps3"><span class="ts3">- a new constraints is introduced during the forecast.</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">If none of the events above happen, a timestep is created every month as a minimum, unless the input &quot;yearly time step after&quot; is not blank. In that case, a timestep will be created every year as a minimum.</span></p>
+                <p class="ps3"><span class="ts3">If none of the events above happen, a timestep is created every month or quarter as a minimum (depending on the option chosen in the drop-down menu), unless the input &quot;yearly time step after&quot; is not blank. In that case, a timestep will be created every year as a minimum. Using yearly timestep as opposed to monthly or quarterly timestep improve forecasting speed.</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">At every time step, potentials of wells are calculated from the DCA inputs (see </span><a href="dca.htm" class="hs1">Decline curves: Production and Injection potentials</a><span class="ts3">&nbsp;)</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Future Losses</span></h3>
-                <p class="ps3"><span class="ts3">if that option is activated, Precept will not only calculate future production, but also future shortfalls. Shortfalls are grouped by Project.</span></p>
+                <h3 class="hd1"><span class="ts8">Future Losses / Shortfalls </span></h3>
+                <p class="ps3"><span class="ts3">if the &quot;Calculate future losses / Shortfalls&quot; option is activated, Precept will not only calculate future production, but also future shortfalls. Shortfalls are grouped by &quot;Project&quot;.</span></p>
+                <p class="ps3"><span class="ts3">Forecast of Shortfalls aggregated by &quot;Projects&quot; can be visualize in the Results section (see </span><a href="results-charts.htm" class="hs1">Forecast results: Charts</a><span class="ts3">)</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
@@ -114,7 +118,7 @@ body {
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <h3 class="hd1"><span class="ts8">GHG emission:</span></h3>
-                <p class="ps3"><span class="ts3">if that option is activated, Precept will calculate GHG emission, provided that GHG inputs havebeen entered (</span><a href="ghg.htm" class="hs1">GHG emission</a><span class="ts3">)</span></p>
+                <p class="ps3"><span class="ts3">if that option is activated, Precept will calculate GHG emission, provided that GHG inputs have been entered (</span><a href="ghg.htm" class="hs1">GHG emission</a><span class="ts3">)</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <h3 class="hd1"><span class="ts8">Economics:</span></h3>
@@ -142,6 +146,10 @@ body {
                 <p class="ps3"><span class="ts3">&nbsp;</span></p>
                 <h3 class="hd1"><span class="ts3">Once Precept solver has solved the network, &quot;choke opening&quot; can be less than &quot;Total uptime&quot; in case a well is process constraints.</span></h3>
                 <h3 class="hd1"><span class="ts3">Choke opening can be 0 if nodes located downstream are closed.</span></h3>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h3 class="hd1"><span class="ts8">Save results option</span></h3>
+                <p class="ps3"><span class="ts3">In order to save time and space on Precept database, t</span><span class="ts3">he &quot; Save results&quot; option allows to save in the database only selected data.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">

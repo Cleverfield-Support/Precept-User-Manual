@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?3fddf010"></script>
+<script type="text/javascript" src="../js/settings.js?7ddc95d7"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -63,6 +63,19 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <h2 class="hd2"><span class="ts9">Precept is DCA software, not a reservoir simulator !</span></h2>
+                <p class="ps3"><span class="ts10">Precept, being a DCA software, uses a linear solver:</span></p>
+                <p class="ps5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts10">- All rates at every nodes of the network are reported at standards conditions.</span></p>
+                <p class="ps5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts10">- Constraints can be introduced at every nodes of the network but must be rates constraints only (max liquid, max gas, max oil, etc...)</span></p>
+                <p class="ps5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts10">- Precept does not know pressure. Pressure constraints cannot be applied&nbsp; (pressure changes such as changes in Tubing Head Pressure (THP), must be embedded in DCA profiles.</span></p>
+                <p class="ps5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts10">- Precept cannot by itself evaluate the impact of a new water injector being drilled. Water injection response from an Injector to a producer has to be embedded in the producers DCA profiles.</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p class="ps3"><span class="ts3">Precept can be used a Pre and Post processor for GAP or Reservoir simulators, meaning scheduling can be done in Precept and exported to third-party software. Once the forecast has been run on GAP or reservoir simulators, Precept can be imported back in Precept, allowing to save the results in Precept database for efficient scenario management.</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <h2 class="hd2"><span class="ts9">Modeling future events in Precept</span></h2>
                 <p class="ps3"><span class="ts3">When generating forecast, events can affects production / injection at every time step, such as:</span></p>
                 <p class="ps3"><span class="ts3">- introduction of a new profiles due to drilling new wells</span></p>
                 <p class="ps3"><span class="ts3">- conversions of existing wells</span></p>

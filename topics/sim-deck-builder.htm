@@ -1,0 +1,457 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>Simulation deck builder</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 440;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="simulation.htm" class="hs1">Reservoir simulation</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">Simulation deck builder</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="simulation.htm" title="Reservoir simulation"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="experimental-design.htm" title="Experimental design"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">S</span><span class="ts3">imulation deck builder (3D model builder)</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps12"><span class="ts10">The deck builder builds a 3D reservoir model for the selected scenario and writes it as an ECLIPSE-format simulation deck (</span><span class="ts11">.DATA</span><span class="ts10">). It runs the deck with OPM Flow, reads the results back into Precept as forecast profiles, and shows the model in 3D. The same deck is used by the coupled forecast (see </span><a href="sim-coupling.htm" class="hs2">Network - reservoir simulator coupling</a><span class="ts10">) and by the uncertainty studies (see </span><a href="experimental-design.htm" class="hs2">Experimental design</a><span class="ts10">).</span></p>
+                <p class="ps4"><span class="ts6">It works in two ways, chosen in the &quot;Model&quot; list at the top left:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Conceptual model&quot; &mdash; Precept builds the whole deck: grid, rock and fluid properties, initial conditions, wells and SCHEDULE (sections 4 to 8).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Existing model&quot; &mdash; you already have a model (for example from Petrel): Precept writes only its forecast part &mdash; well openings and closures, drilling dates, well controls, and the completions of new wells on your grid (section 9).</span></p>
+                <p class="ps3"><span class="ts5">2. Opening the deck builder</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In </span><a href="settings.htm" class="hs0">Settings</a><span class="ts6">, &quot;Pre / Post Processing&quot; box, tick &quot;3D Simulation model&quot;. This shows the &quot;3D Modelling&quot; group on the main ribbon. The list under the tick box (&quot;ECLIPSE 100&quot;, &quot;ECLIPSE 300&quot;, &quot;Intersect IX&quot;) sets the format of the forecast written for an existing model.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the scenario in the main window.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;3D model builder&quot; in the &quot;3D Modelling&quot; group. The window &quot;Reservoir Simulation - Deck Builder&quot; opens full screen.</span></p>
+                <p class="ps4"><span class="ts6">The same group has &quot;Eclipse Well Control&quot; (each well's control mode and targets written in the SCHEDULE &mdash; the same editor as &quot;Well control&quot; in the SCHEDULE section) and &quot;3D model visualization&quot; (the 3D viewer on the scenario's latest simulation results, see </span><a href="visualiser-3d.htm" class="hs0">3D visualiser</a><span class="ts6">).</span></p>
+                <p class="ps3"><span class="ts5">3. The window</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Left: &quot;Model&quot; (&quot;Conceptual model&quot; / &quot;Existing model&quot;), &quot;Study&quot; (&quot;Deterministic&quot; / &quot;Probabilistic&quot; / &quot;Experimental design&quot;), then the &quot;Deck sections&quot; list. Click a section to edit it.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Middle: the editor of the selected section.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Right: &quot;Produced ECLIPSE deck (.DATA)&quot; &mdash; the deck, updated live as you edit, with line numbers; the keyword of the selected section is highlighted. It is read-only (use &quot;Edit .DATA&quot; to hand-edit). The &#x2715; button hides the pane; it comes back when you open another section. When the ECLIPSE reference manual is available on the PC, a help strip under the deck explains the value under the mouse (&quot;Item n: ...&quot;, options, units, default).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Bottom bar: the actions below.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Button</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">What it does</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Run settings</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">How the simulator is launched, the scenario's Simulation folder, the simulator manual, and the coupled-forecast settings (section 3.1).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Generate .DATA</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Builds the deck from the inputs and writes it to the Simulation folder (section 6). On an existing model: &quot;Generate SCHEDULE and save DATA file&quot;.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Edit .DATA</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Opens the deck in a separate editor (&quot;Edit - &lt;file&gt;&quot;). &quot;Save&quot; or Ctrl+S writes it. Conceptual model only.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Run Deterministic</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Runs the deck with OPM Flow (section 7). Conceptual model only.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Run probabilistic / Experimental design</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The study's button, shown for the Probabilistic and Experimental design studies. On an existing model: &quot;Generate probabilistic DATA files&quot; / &quot;Generate experimental design DATA files&quot;. See </span><a href="experimental-design.htm" class="hs0">Experimental design</a><span class="ts6">.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Load results</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reads the run's results into the scenario's forecast (section 8).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">3D model</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Opens the 3D viewer on the scenario's latest simulation grid and results.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Charts</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Opens the scenario's forecast results charts.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Prob dashboard</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reopens the dashboard of the last probabilistic run. Shown only once a probabilistic run has produced results.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Below the deck sections, &quot;PRT&quot; shows the run report of the last run (Ctrl+F to search, with &quot;Next&quot; / &quot;Prev&quot;), and &quot;MANUAL&quot; shows the simulator reference manual: the ECLIPSE HTML manual when it is installed (with MANUAL open, click a keyword in the deck to open its page), otherwise a PDF manual such as the OPM Flow one.</span></p>
+                <p class="ps4"><span class="ts6">Your inputs are saved per scenario when you generate the deck and when you close the window.</span></p>
+                <p class="ps11"><span class="ts9">3.1 Run settings &mdash; do this first</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Run settings&quot; (bottom left). The window &quot;Run settings - simulator command&quot; has:</span></p>
+                <p class="ps14"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts10">&quot;Local WSL (wsl.exe -&gt; flow)&quot; &mdash; the default: OPM Flow runs in WSL on this PC. Or &quot;Custom command (remote host / x86 box / cloud)&quot; &mdash; a command run through </span><span class="ts11">cmd /c</span><span class="ts10">, with the placeholders {wsldir} {dir} {wsldeck} {deck} {deckname}. It must leave &lt;deck name&gt;.RSM in the deck folder so that &quot;Load results&quot; can read it. This choice is saved for the PC, not per scenario.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Simulation folder (blank = app folder):&quot; &mdash; where the deck and all the simulation results of this scenario go (&quot;...&quot; to browse). A folder is required: without one, &quot;Generate .DATA&quot; and &quot;Run Deterministic&quot; stop with &quot;No Simulation folder is set for this scenario.&quot;.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Simulator manual (ECLIPSE install folder, e.g. C:\ecl, or a manual PDF):&quot; &mdash; optional; &quot;Folder...&quot; or &quot;PDF...&quot;. Used by the MANUAL section and the help strip.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Coupled forecast (Settings &gt; Decline = Simulation):&quot; &mdash; &quot;Max passes per timestep:&quot; and &quot;Rate tolerance (%):&quot;, see </span><a href="sim-coupling.htm" class="hs0">coupling</a><span class="ts6">.</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Save&quot;. The folder and the coupling settings are stored per scenario.</span></p>
+                <p class="ps3"><span class="ts5">4. Conceptual model &mdash; the deck sections</span></p>
+                <p class="ps4"><span class="ts6">The sections follow the order of an ECLIPSE deck: RUNSPEC, GRID, PROPS - PVT, PROPS - SCAL, SOLUTION, SUMMARY, SCHEDULE. The deck builder opens on GRID.</span></p>
+                <p class="ps11"><span class="ts9">4.1 RUNSPEC</span></p>
+                <p class="ps4"><span class="ts6">Written automatically: the dimensions come from GRID; the phases are oil, gas, water and dissolved gas; the deck units are FIELD for an oilfield asset and METRIC for a metric one; the START date is the scenario's forecast start.</span></p>
+                <p class="ps11"><span class="ts9">4.2 GRID</span></p>
+                <p class="ps4"><span class="ts6">Choose the &quot;Method&quot;:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Box model&quot; &mdash; a regular box of NX × NY × NZ cells with a flat top.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Isoclines map&quot; &mdash; a structured (corner-point) grid whose top surface is interpolated from depth contours you digitise on a structure-map image (section 4.3).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Import grid file&quot; &mdash; pick a grid file (.GRDECL, .inc, .grid): it is copied to the Simulation folder and included in the deck as it is. If you cancel the file choice, the method goes back to &quot;Box model&quot;.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Input</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Meaning</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Cells in X (NX), Cells in Y (NY), Layers (NZ)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Number of cells in each direction.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Cell size DX, Cell size DY</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Cell size in the asset's length unit. Derived from the model area (and hidden) with &quot;Isoclines map&quot;.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">DZ per layer (;)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Thickness of each layer, separated by semicolons (e.g. 20;30;50). The last value is used for any further layer.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Top depth</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Depth (TVDSS) of the top of the box. Derived from the contours with &quot;Isoclines map&quot;.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Porosity, Permeability kh (mD), kv/kh ratio</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Uniform rock properties of every cell. Vertical permeability = kh × kv/kh. Right-click one of them to make it uncertain (&quot;Make uncertain / edit…&quot;, Probabilistic and Experimental design studies).</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">The &quot;3D preview&quot; on the right redraws the grid as you type.</span></p>
+                <p class="ps11"><span class="ts9">4.3 Building a grid from a structure map (&quot;Isoclines map&quot;)</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Load map&quot; &mdash; load the structure-map image (png, jpg, bmp).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Set corners&quot; &mdash; click the map's top-left corner, then its bottom-right corner, and type their coordinates in &quot;TL X&quot;, &quot;TL Y&quot;, &quot;BR X&quot;, &quot;BR Y&quot;. UTM easting / northing (metres) or latitude / longitude in degrees both work; degrees are converted when the grid is built.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Draw isocline&quot; &mdash; enter the contour's depth (TVDSS), click its points on the map, then &quot;Close isocline and save&quot;. Repeat for each contour (at least 3 points each). The contours are listed under &quot;Isoclines (TVDSS)&quot;; &quot;Delete isocline&quot; (or the Del key) removes the selected one.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Draw model area&quot; &mdash; press at one corner of the model, drag and release at the opposite corner. The grid fills this rectangle: DX = width / NX, DY = height / NY. Without a model area the grid covers the contours plus a margin.</span></p>
+                <p class="ps13"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts10">&quot;Build grid&quot; &mdash; interpolates the top surface from the contours and writes the corner-point geometry file </span><span class="ts11">MODEL_GRID.GRDECL</span><span class="ts10">&nbsp;to the Simulation folder; the deck includes it. The layers follow the top surface with the DZ thicknesses.</span></p>
+                <p class="ps4"><span class="ts6">&quot;+&quot;, &quot;-&quot; and &quot;Fit&quot; zoom the map; &quot;Show map&quot; shows or hides the image. A status line under the map says what to do next. On an isoclines grid, the map position of each placed well is written back to the well's X / Y in the network (one way: moving a well on the map in the deck builder updates the network, not the other way round).</span></p>
+                <p class="ps11"><span class="ts9">4.4 PROPS - PVT</span></p>
+                <p class="ps4"><span class="ts6">A black-oil PVT generated from correlations, for this scenario's model (independent of the Material Balance PVT):</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Pb, Rs, Bo correlation&quot;: Glaso (default) or Standing.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Oil gravity (&deg;API)&quot;, &quot;Gas gravity (air = 1)&quot;, &quot;Solution GOR Rs&quot;, &quot;Reservoir temp&quot;, &quot;Water salinity (ppm)&quot;, &quot;Pressure min&quot;, &quot;Pressure max&quot; &mdash; in the asset's units.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Generate PVT&quot; regenerates the table (it is also regenerated when you leave a field). The table shows pressure, bubble point, GOR, oil / gas / water density, viscosity, formation volume factor and compressibility, and Z. It is written to the deck as PVTO, PVDG, PVTW and DENSITY.</span></p>
+                <p class="ps11"><span class="ts9">4.5 PROPS - SCAL</span></p>
+                <p class="ps4"><span class="ts6">Two relative-permeability tables, each with its chart: &quot;Water / oil rel-perm (SWOF)&quot; (Sw, Krw, Kro) and &quot;Gas / oil rel-perm (SGOF)&quot; (Sg, Krg, Kro). Use &quot;+&quot; / &quot;&minus;&quot; to add or remove a point, edit the values in the table, or drag the points on the chart. The first (connate) point can only move vertically.</span></p>
+                <p class="ps11"><span class="ts9">4.6 SOLUTION</span></p>
+                <p class="ps4"><span class="ts6">The initial equilibrium (EQUIL): &quot;Datum depth (TVDSS)&quot;, &quot;Initial pressure at datum&quot;, &quot;Gas-oil contact GOC (TVDSS)&quot; and &quot;Oil-water contact OWC (TVDSS)&quot;, in the asset's units (pressure in gauge). The &quot;3D preview - OWC (blue) / GOC (red)&quot; shows the contacts on the grid. The initial pressure and the contacts can be made uncertain by right-click. The deck also asks the simulator to report the initial oil and gas in place and to save the 3D results monthly, for the 3D viewer.</span></p>
+                <p class="ps11"><span class="ts9">4.7 SUMMARY</span></p>
+                <p class="ps4"><span class="ts6">A default set of field and well results (rates, cumulatives, water cut, GOR, gas-lift, THP, BHP, pressure around each well, injection, oil and gas in place) &mdash; what Precept reads back with &quot;Load results&quot;. Nothing to enter.</span></p>
+                <p class="ps11"><span class="ts9">4.8 SCHEDULE</span></p>
+                <p class="ps4"><span class="ts6">The SCHEDULE is written from the scenario's own forecast inputs when you click &quot;Generate .DATA&quot;. The section gives access to the editors it uses:</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Button</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Opens</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">COMPDAT</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The WELLS view: place the wells on the grid and draw their trajectories (section 5).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">VLP - well completion</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Set Well Geometry: well completions and VLP generation (see </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">, sections 4 and 5).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well control</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Each well's control mode and targets (oil, water, gas, liquid, reservoir-fluid, BHP, THP), VFP table and artificial-lift quantity; injectors' type, control mode and targets.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Shutdowns</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Planned shutdowns (see </span><a href="shutdown.htm" class="hs0">Shutdowns</a><span class="ts6">). In the deck, a maintenance shut-in closes the well (SHUT).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Constraints vs time</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Time-varying constraints (see </span><a href="constraintsvstime.htm" class="hs0">Constraints changes vs time</a><span class="ts6">).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Conversions / new profiles</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well conversions and new profiles (see </span><a href="conversions.htm" class="hs0">Well conversion</a><span class="ts6">).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Link VLP files</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Pick one or more VLP / VFP files (.vfp, .ecl, .inc, .txt); each is included at the top of the SCHEDULE so the wells can use their tables. The label lists the linked files; right-click it to clear the list.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">The wells of the deck are the wells of the scenario's network, with the same names. In the deck the injected gas does not re-dissolve into the oil.</span></p>
+                <p class="ps3"><span class="ts5">5. WELLS &mdash; placing wells and drawing trajectories</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;COMPDAT&quot; in the SCHEDULE section. The view shows the &quot;Wells&quot; list on the left and three views: the top view of the grid (top left), the structure map (top right, isoclines grid only) and a cross-section (bottom). In every view the mouse wheel zooms, dragging empty space pans and a double-click fits the view.</span></p>
+                <p class="ps11"><span class="ts9">5.1 Placing a well</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Wells not yet placed are grey, parked along the first rows of the grid. Drag a well onto the top view (or the structure map) to place it; its cell I, J follows from its X, Y. Placed wells are coloured by type: green oil, red gas, blue water.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Click a well (or select it in the list) to see its details in the top-right corner of the cross-section.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Right-click a well to choose &quot;Vertical well&quot;, &quot;Deviated well&quot; or &quot;Horizontal well&quot;.</span></p>
+                <p class="ps11"><span class="ts9">5.2 Vertical wells</span></p>
+                <p class="ps4"><span class="ts6">A vertical well is perforated from a top layer K1 to a bottom layer K2 under its wellhead. Set them with right-click &gt; &quot;Top / bottom layer (K1, K2) ...&quot; (dialog &quot;Perforated layers - &lt;well&gt;&quot;), or drag the two square handles on the cross-section; they snap to the layer boundaries.</span></p>
+                <p class="ps11"><span class="ts9">5.3 Deviated and horizontal wells</span></p>
+                <p class="ps4"><span class="ts6">A deviated or horizontal well is a true 3D path: vertical from the wellhead to the kick-off point (KOP), a smooth build to the landing point, then a smooth curve through its control points to TD. A new horizontal well lands at mid-reservoir with a level drain; a new deviated well crosses the reservoir from near its top to near its base. Both start towards the east.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Number of points: right-click the well &gt; &quot;Trajectory points&quot; &gt; 2 to 12. The points are spread along the current path, keeping its shape.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Top view: drag a control point to move it in X / Y (TD is the diamond); drag the wellhead to move the whole well. The build section is dashed and the drain thick.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Cross-section: for a deviated well it is a curtain along the well's path. Drag &quot;KOP&quot; up or down; drag a point up / down to change its depth, or sideways to slide it along the well; drag the well line to move the whole drain up or down.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Right-click a point &gt; &quot;Remove this point&quot; (not below 2 points); right-click the path &gt; &quot;Add a point here&quot; (after the landing point, up to 12 points).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The title line gives TD (MD), the length in the grid and in the oil zone, the number of cells crossed, the landing inclination and the build rate (&deg;/100 ft or &deg;/30 m). Hovering over the path shows the MD, TVDSS and the cell I, J, K.</span></p>
+                <p class="ps7"><img width="760" height="420" alt="" src="images/fig_sim_trajectory.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; A deviated well in the cross-section: KOP, build, landing point, control points and TD, an isolated interval (black) and the connected cells (blue).</span></p>
+                <p class="ps11"><span class="ts9">5.4 Isolated intervals</span></p>
+                <p class="ps4"><span class="ts6">An isolated interval is a stretch of the wellbore that does not produce or inject (packer, blank pipe). It is drawn black, with a handle at each end.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Create: right-click the well on the cross-section &gt; &quot;Isolate an interval ...&quot;. The dialog &quot;Isolated interval - &lt;well&gt;&quot; is pre-filled around the click: adjust &quot;From MD&quot; and &quot;To MD&quot; and click &quot;OK&quot;.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Edit: drag an end handle, drag the interval to slide it, or right-click &gt; &quot;Edit this interval ...&quot;.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Remove: right-click &gt; &quot;Remove isolated interval (...)&quot;.</span></p>
+                <p class="ps11"><span class="ts9">5.5 Connections written to the deck (COMPDAT)</span></p>
+                <p class="ps4"><span class="ts6">The well records (WELSPECS, COMPDAT) are regenerated each time you click &quot;Generate .DATA&quot;, so they always match the current grid:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A vertical well: its layers K1 to K2 (one record per layer when it has isolated intervals).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A deviated or horizontal well: one connection per grid cell crossed, with the direction (X, Y or Z) along which it crosses the largest share of the cell. A cell crossed over less than a quarter of its size is not connected. The connected stretches are drawn in Precept blue on the cross-section.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A cell (or layer) that is less than half open because of an isolated interval is written shut, so it can be re-opened later.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The connection factors are left to the simulator, which computes them from the cell's permeability and size &mdash; so they follow any change of permeability, for example in a probabilistic run. The wellbore diameter is 8.5 in (0.216 m), skin 0.</span></p>
+                <p class="ps4"><span class="ts6">The cross-section can show the fluid zones, the grid and the contacts (&quot;Show fluids&quot;, &quot;Show grid&quot;, &quot;Show GOC&quot;, &quot;Show OWC&quot;); &quot;Vertical exaggeration&quot; sets its vertical scale (Auto fills the panel).</span></p>
+                <p class="ps3"><span class="ts5">6. Generate .DATA</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Generate .DATA&quot;. If no VLP file is linked, Precept warns that wells on THP control need VFP tables (&quot;Generate the deck anyway?&quot;). The progress window &quot;Generating .DATA&quot; shows the stages:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Saving inputs ...&quot;</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Placing wells on the grid (COMPDAT) ...&quot;</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Building the SCHEDULE ...&quot;</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Writing &lt;scenario&gt;.DATA ...&quot;</span></p>
+                <p class="ps12"><span class="ts10">The deck is written to the Simulation folder as </span><span class="ts11">&lt;scenario&gt;.DATA</span><span class="ts10">&nbsp;(characters other than letters, digits, - and _ become _), and always overwrites the previous one &mdash; including hand edits made with &quot;Edit .DATA&quot;. To keep a hand-edited deck, run it without generating again.</span></p>
+                <p class="ps3"><span class="ts5">7. Running OPM Flow &mdash; &quot;Run Deterministic&quot;</span></p>
+                <p class="ps4"><span class="ts6">&quot;Run Deterministic&quot; runs the deck that is on disk, as it is &mdash; it never regenerates it. If there is no deck yet, Precept asks you to click &quot;Generate .DATA&quot; first. If OPM Flow cannot be found in WSL, the window &quot;Precept - OPM Flow setup&quot; gives the one-time installation steps (see </span><a href="simulation.htm" class="hs0">Reservoir simulation</a><span class="ts6">, requirements).</span></p>
+                <p class="ps4"><span class="ts6">The window &quot;Run simulation - &lt;scenario&gt;&quot; streams the simulator's output live. At the end its status reads &quot;Simulation finished. Click 'Load results' to import the profiles.&quot; or &quot;Simulation exited with code N - check the log.&quot;. When the error names a line of the deck, &quot;Show error line&quot; highlights it in red in the deck pane. Closing the window stops the run. The full run report is in the &quot;PRT&quot; section.</span></p>
+                <p class="ps3"><span class="ts5">8. Load results, charts and 3D</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Load results&quot; (in the run window or the bottom bar).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In &quot;Load simulation results&quot;, choose the forecast case to write into: &quot;Low&quot;, &quot;Mid&quot; (default) or &quot;High&quot;, then &quot;Load&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">The progress window &quot;Saving simulation results&quot; names each well. A summary lists every well loaded and its number of time steps.</span></p>
+                <p class="ps4"><span class="ts6">Each well's simulated rates are saved as the scenario's forecast and as its decline curves (potentials) for the chosen case, with its THP, BHP and reservoir pressure; the field total is saved with the field pressure. The initial oil and gas in place are saved as the case's hydrocarbon in place (Low = 1P, Mid = 2P, High = 3P). Then click &quot;Charts&quot; for the profiles, or &quot;3D model&quot; for the 3D viewer (pressure and saturations over time).</span></p>
+                <p class="ps3"><span class="ts5">9. Existing model</span></p>
+                <p class="ps4"><span class="ts6">Choose &quot;Existing model&quot; in &quot;Model&quot;. Your model (grid, properties, fluids, history) stays as it is; Precept writes only the forecast part, in the format chosen in Settings (ECLIPSE 100, ECLIPSE 300 or Intersect IX). The sections become &quot;EXISTING MODEL&quot; and, in the Deterministic study, &quot;SCHEDULE&quot;.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">EXISTING MODEL: &quot;Simulation deck&quot; &mdash; &quot;Browse...&quot; to your .DATA (or Intersect .afi). Its grid is read from the deck (from its last run's grid file next to it, or from its GRID section); a line shows the grid size, active cells and extent, or why it could not be read. &quot;Compare with another deck...&quot; shows two decks side by side with the differences highlighted. The SCHEDULE is generated from the scenario's forecast start.</span></p>
+                <p class="ps14"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts10">The right pane becomes &quot;Your deck (.DATA)&quot;: you can edit it in place (Ctrl+S saves; the original is kept once as </span><span class="ts11">&lt;deck&gt;.DATA.bak</span><span class="ts10">). Right-click a line &gt; &quot;Include a file here...&quot; inserts INCLUDE statements; double-click an INCLUDE line to open that file.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">SCHEDULE: the same editors as in section 4.8; new wells are placed and drawn on your own grid (section 5), and their connections are computed on your cells.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Generate SCHEDULE and save DATA file&quot; writes the forecast into your deck, between the markers &quot;-- ==== Precept forecast - BEGIN ...&quot; and &quot;-- ==== Precept forecast - END ====&quot;. Edit your deck above or below this block, not inside it: it is rewritten each time. You run the deck on your own cluster; &quot;Run Deterministic&quot; is not offered for an existing model.</span></p>
+                <p class="ps3"><span class="ts5">10. Files in the Simulation folder</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">File</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Content</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps15"><span class="ts11">&lt;scenario&gt;.DATA</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The deck (conceptual model).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps15"><span class="ts11">MODEL_GRID.GRDECL</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The corner-point geometry of an isoclines grid, included by the deck.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps15"><span class="ts11">&lt;scenario&gt;.RSM, .PRT, .EGRID, .INIT, .UNRST</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The run's outputs: summary read by &quot;Load results&quot;, run report, grid, initial properties and 3D results.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps15"><span class="ts11">mc\real_nnn, ed\run_nnn</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Probabilistic realizations and experimental-design runs (see </span><a href="experimental-design.htm" class="hs0">Experimental design</a><span class="ts6">).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps15"><span class="ts11">&lt;scenario&gt;_COUPLED.DATA, COUPLING_LOG.txt</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Written by a coupled forecast (see </span><a href="sim-coupling.htm" class="hs0">coupling</a><span class="ts6">).</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,11 +43,11 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Material Balance</span></h1>
                       </td>
                       <td class="cell1">
-                        <p class="ps1"><a href="probabilistic.htm" title="probabilistic"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="forecast-calculations.htm" title="Forecast calculations"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                        <p class="ps1"><a href="probabilistic.htm" title="Probabilistic forecast"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="simulation.htm" title="Reservoir simulation"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
                       </td>
                     </tr>
                   </table>
@@ -63,280 +63,280 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p><span class="ts20">F</span><span class="ts20">orecasting with Material Balance (MBAL)</span></p>
-                <p><span class="ts21">&nbsp;</span></p>
-                <p class="ps8"><span class="ts22">1. Overview &mdash; what Material Balance is, and how it differs from DCA</span></p>
-                <p class="ps9"><span class="ts23">Precept can generate each well's potential (its unconstrained deliverability at every forecast time step) in one of two ways:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Decline Curves (DCA) &mdash; the potential is read from a fitted decline curve. It extrapolates observed history and does not &quot;know&quot; about reservoir pressure, aquifer support, or injection.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Material Balance (MBAL) &mdash; the potential is computed from physics. Each reservoir is modelled as a tank whose pressure falls as fluids are produced and rises as fluids (or aquifer water) come in. That reservoir pressure is turned into a well flow rate through an inflow model (IPR) and a lift curve (VLP).</span></p>
-                <p class="ps9"><span class="ts23">Because MBAL is pressure-driven, the forecast responds to depletion, aquifer influx, and injection / voidage replacement &mdash; things DCA cannot represent. Typical reasons to use MBAL instead of DCA:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">You want the forecast to react to a pressure-maintenance / water- or gas-injection strategy (voidage replacement).</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">You are forecasting a green field or a new well with little or no production history to fit a decline curve.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">You want producer GOR / water-cut to evolve from reservoir physics (relative permeability, gas coming out of solution) rather than from a hand-drawn trend.</span></p>
-                <p class="ps9"><span class="ts23">Both methods feed the same network solver: once potentials exist (from DCA or MBAL), Precept runs its linear solver at each time step to apply process/facility constraints and decide which wells are choked back or shut in. MBAL is therefore a </span><span class="ts24">potential generator</span><span class="ts23">&nbsp;in front of the same optimisation &mdash; not a separate forecasting engine.</span></p>
-                <p class="ps8"><span class="ts22">2. Choosing the method &mdash; the &quot;Decline&quot; setting</span></p>
-                <p class="ps9"><span class="ts23">The forecast method is controlled by the &quot;Decline&quot; setting in the Settings section:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">&quot;Decline curves&quot; &rarr; the scenario forecasts with DCA.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">&quot;Material Balance&quot; &rarr; the scenario forecasts with MBAL.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">&quot;Simulation&quot; &rarr; the network forecast runs with a reservoir simulator (OPM Flow) in the loop instead of the material-balance tanks. At each time step Precept solves the network, sends each well its control (BHP, rate or shut-in), runs the simulator for that step only, and uses the simulator's PI, water-cut and GOR as each well's inflow, iterating until the rates agree. It needs a deterministic run with the Precept optimiser, oilfield (psig) units, and a .DATA deck generated with the 3D model builder.</span></p>
-                <p class="ps9"><span class="ts23">(The setting can also be changed conversationally in Precept AI, e.g. </span><span class="ts24">&quot;use material balance for this scenario&quot;</span><span class="ts23">.)</span></p>
-                <p class="ps9"><span class="ts23">The method is chosen per scenario, so you can keep a DCA base case and an MBAL variant side by side and compare them.</span></p>
-                <p class="ps8"><span class="ts22">3. The Material Balance section &mdash; reservoir inputs</span></p>
-                <p class="ps9"><span class="ts23">Open the Material Balance section from the Main User Interface (in Precept AI: </span><span class="ts24">&quot;open material balance data&quot;</span><span class="ts23">). Data is entered per reservoir &mdash; select the reservoir in the &quot;Reservoir&quot; list (the reservoirs of the scenario's wells), fill in its properties, and click &quot;Save Reservoir properties&quot; (or Ctrl+S). The window has two tabs: &quot;Reservoir properties&quot; (sections 3.1 to 3.5) and &quot;PVT&quot; (section 6).</span></p>
-                <p class="ps9"><span class="ts23">The ribbon of the Material Balance window gives access to the related tools:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Well Inflow control &mdash; the per-well inflow data (inflow model, c and n, perforated interval, wellbore radius, skin).</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Well completion and VLP &mdash; opens Set Well Geometry (section 4) to build the lift curves.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">VLP/IPR check at start forecast &mdash; a nodal check of each producer on the first forecast day (section 5.3).</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Import PVT table &mdash; paste a PVT table (e.g. from Prosper) instead of generating it.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Nodal Analysis, and Help (this page).</span></p>
-                <p class="ps12"><span class="ts25">3.1 Tank (reservoir) properties</span></p>
+                <p><span class="ts3">F</span><span class="ts3">orecasting with Material Balance (MBAL)</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; what Material Balance is, and how it differs from DCA</span></p>
+                <p class="ps4"><span class="ts6">Precept can generate each well's potential (its unconstrained deliverability at every forecast time step) in one of two ways:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Decline Curves (DCA) &mdash; the potential is read from a fitted decline curve. It extrapolates observed history and does not &quot;know&quot; about reservoir pressure, aquifer support, or injection.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Material Balance (MBAL) &mdash; the potential is computed from physics. Each reservoir is modelled as a tank whose pressure falls as fluids are produced and rises as fluids (or aquifer water) come in. That reservoir pressure is turned into a well flow rate through an inflow model (IPR) and a lift curve (VLP).</span></p>
+                <p class="ps4"><span class="ts6">Because MBAL is pressure-driven, the forecast responds to depletion, aquifer influx, and injection / voidage replacement &mdash; things DCA cannot represent. Typical reasons to use MBAL instead of DCA:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">You want the forecast to react to a pressure-maintenance / water- or gas-injection strategy (voidage replacement).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">You are forecasting a green field or a new well with little or no production history to fit a decline curve.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">You want producer GOR / water-cut to evolve from reservoir physics (relative permeability, gas coming out of solution) rather than from a hand-drawn trend.</span></p>
+                <p class="ps4"><span class="ts6">Both methods feed the same network solver: once potentials exist (from DCA or MBAL), Precept runs its linear solver at each time step to apply process/facility constraints and decide which wells are choked back or shut in. MBAL is therefore a </span><span class="ts7">potential generator</span><span class="ts6">&nbsp;in front of the same optimisation &mdash; not a separate forecasting engine.</span></p>
+                <p class="ps3"><span class="ts5">2. Choosing the method &mdash; the &quot;Decline&quot; setting</span></p>
+                <p class="ps4"><span class="ts6">The forecast method is controlled by the &quot;Decline&quot; setting in the Settings section:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Decline curves&quot; &rarr; the scenario forecasts with DCA.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Material Balance&quot; &rarr; the scenario forecasts with MBAL.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Simulation&quot; &rarr; the network forecast runs with a reservoir simulator (OPM Flow) in the loop instead of the material-balance tanks. At each time step Precept solves the network, sends each well its control (BHP, rate or shut-in), runs the simulator for that step only, and uses the simulator's PI, water-cut and GOR as each well's inflow, iterating until the rates agree. It needs a deterministic run with the Precept optimiser, oilfield (psig) units, and a .DATA deck generated with the 3D model builder.</span></p>
+                <p class="ps4"><span class="ts6">(The setting can also be changed conversationally in Precept AI, e.g. </span><span class="ts7">&quot;use material balance for this scenario&quot;</span><span class="ts6">.)</span></p>
+                <p class="ps4"><span class="ts6">The method is chosen per scenario, so you can keep a DCA base case and an MBAL variant side by side and compare them.</span></p>
+                <p class="ps3"><span class="ts5">3. The Material Balance section &mdash; reservoir inputs</span></p>
+                <p class="ps4"><span class="ts6">Open the Material Balance section from the Main User Interface (in Precept AI: </span><span class="ts7">&quot;open material balance data&quot;</span><span class="ts6">). Data is entered per reservoir &mdash; select the reservoir in the &quot;Reservoir&quot; list (the reservoirs of the scenario's wells), fill in its properties, and click &quot;Save Reservoir properties&quot; (or Ctrl+S). The window has two tabs: &quot;Reservoir properties&quot; (sections 3.1 to 3.5) and &quot;PVT&quot; (section 6).</span></p>
+                <p class="ps4"><span class="ts6">The ribbon of the Material Balance window gives access to the related tools:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Well Inflow control &mdash; the per-well inflow data (inflow model, c and n, perforated interval, wellbore radius, skin).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Well completion and VLP &mdash; opens Set Well Geometry (section 4) to build the lift curves.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">VLP/IPR check at start forecast &mdash; a nodal check of each producer on the first forecast day (section 5.3).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Import PVT table &mdash; paste a PVT table (e.g. from Prosper) instead of generating it.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Nodal Analysis (see </span><a href="mon-nodal.htm" class="hs0">Nodal analysis and well models</a><span class="ts6">), and Help (this page).</span></p>
+                <p class="ps11"><span class="ts9">3.1 Tank (reservoir) properties</span></p>
                 <div class="block0">
-                  <table class="tbl5">
+                  <table class="tbl3">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps13"><span class="ts23">Input</span></p>
+                        <p class="ps8"><span class="ts6">Input</span></p>
                       </td>
                       <td class="cell0">
-                        <p class="ps13"><span class="ts23">Meaning</span></p>
+                        <p class="ps8"><span class="ts6">Meaning</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Reservoir fluid</span></p>
+                        <p class="ps9"><span class="ts6">Reservoir fluid</span></p>
                       </td>
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Oil or gas &mdash; sets which volumetric balance is used (STOOIP vs OGIP).</span></p>
-                      </td>
-                    </tr>
-                    <tr class="row0">
-                      <td class="cell0">
-                        <p class="ps14"><span class="ts23">Initial pressure</span></p>
-                      </td>
-                      <td class="cell0">
-                        <p class="ps14"><span class="ts23">Datum reservoir pressure at the start of the forecast (in the display pressure unit, gauge).</span></p>
+                        <p class="ps9"><span class="ts6">Oil or gas &mdash; sets which volumetric balance is used (STOOIP vs OGIP).</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Reservoir temperature</span></p>
+                        <p class="ps9"><span class="ts6">Initial pressure</span></p>
                       </td>
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Used by the PVT/correlations.</span></p>
-                      </td>
-                    </tr>
-                    <tr class="row0">
-                      <td class="cell0">
-                        <p class="ps14"><span class="ts23">Rs</span></p>
-                      </td>
-                      <td class="cell0">
-                        <p class="ps14"><span class="ts23">Initial solution gas&ndash;oil ratio (scf/bbl).</span></p>
+                        <p class="ps9"><span class="ts6">Datum reservoir pressure at the start of the forecast (in the display pressure unit, gauge).</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">STOOIP</span></p>
+                        <p class="ps9"><span class="ts6">Reservoir temperature</span></p>
                       </td>
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Stock-tank oil originally in place (MMstb) &mdash; the oil tank size.</span></p>
-                      </td>
-                    </tr>
-                    <tr class="row0">
-                      <td class="cell0">
-                        <p class="ps14"><span class="ts23">OGIP</span></p>
-                      </td>
-                      <td class="cell0">
-                        <p class="ps14"><span class="ts23">Original gas in place (MMscf) &mdash; the gas tank size.</span></p>
+                        <p class="ps9"><span class="ts6">Used by the PVT/correlations.</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Reservoir thickness</span></p>
+                        <p class="ps9"><span class="ts6">Rs</span></p>
                       </td>
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Net pay thickness (ft), used by the inflow model.</span></p>
-                      </td>
-                    </tr>
-                    <tr class="row0">
-                      <td class="cell0">
-                        <p class="ps14"><span class="ts23">Porosity</span></p>
-                      </td>
-                      <td class="cell0">
-                        <p class="ps14"><span class="ts23">Fraction.</span></p>
+                        <p class="ps9"><span class="ts6">Initial solution gas&ndash;oil ratio (scf/bbl).</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Connate Sw</span></p>
+                        <p class="ps9"><span class="ts6">STOOIP</span></p>
                       </td>
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Connate/irreducible water saturation (fraction). Also constrains the relative-permeability curves (see below).</span></p>
+                        <p class="ps9"><span class="ts6">Stock-tank oil originally in place (MMstb) &mdash; the oil tank size.</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Rock compressibility</span></p>
+                        <p class="ps9"><span class="ts6">OGIP</span></p>
                       </td>
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">1/psi.</span></p>
+                        <p class="ps9"><span class="ts6">Original gas in place (MMscf) &mdash; the gas tank size.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reservoir thickness</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Net pay thickness (ft), used by the inflow model.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Porosity</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Fraction.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Connate Sw</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Connate/irreducible water saturation (fraction). Also constrains the relative-permeability curves (see below).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Rock compressibility</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">1/psi.</span></p>
                       </td>
                     </tr>
                   </table>
                 </div>
-                <p class="ps9"><span class="ts23">The tank pressure at the next step is computed from the volumetric balance of everything produced and injected (and any aquifer influx) over the step &mdash; so over-injection is legitimate: injecting more than you produce lets a declining reservoir </span><span class="ts24">recover</span><span class="ts23">&nbsp;pressure (voidage replacement ratio, VRR, greater than 1 is physically meaningful in MBAL).</span></p>
-                <p class="ps12"><span class="ts25">3.2 Aquifer support &mdash; Fetkovich aquifer</span></p>
-                <p class="ps9"><span class="ts23">An optional Fetkovich aquifer provides pressure support from water influx:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Productivity Index (RB/day/psi) &mdash; how readily the aquifer feeds the reservoir.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Max influx capacity (MMstb) &mdash; the total water the aquifer can supply.</span></p>
-                <p class="ps9"><span class="ts23">Leave the aquifer inactive for a purely depletion / injection-supported reservoir.</span></p>
-                <p class="ps12"><span class="ts25">3.3 Relative permeabilities</span></p>
-                <p class="ps9"><span class="ts23">Enter the relative-permeability curves that govern how water-cut and GOR (or WGR) evolve as saturations change during depletion:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Oil reservoir &mdash; two tables and charts: water/oil (Sw, Krw, Kro) and gas/oil (Sg, Krg, Kro).</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Gas reservoir &mdash; one table and chart: water/gas (Sw, Krw, Krg).</span></p>
-                <p class="ps9"><span class="ts23">Points can be dragged directly on the charts. Rule enforced by Precept: the Krw endpoint must equal the connate water saturation &mdash; the form warns if it does not.</span></p>
-                <p class="ps12"><span class="ts25">3.4 Well inflow &mdash; Jones model and c and n</span></p>
-                <p class="ps9"><span class="ts23">The inflow model turns the drawdown (reservoir pressure minus flowing bottom-hole pressure) into a rate. Reservoir-level inputs on this tab, for the Jones Well Inflow model:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Permeability (md)</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">kv/kh (vertical-to-horizontal permeability ratio)</span></p>
-                <p class="ps9"><span class="ts23">The per-well data (perforated interval, wellbore radius, skin) come from Well Inflow control. The drainage area is derived from the tank size and shared between the active wells.</span></p>
-                <p class="ps9"><span class="ts23">Gas producers and gas injectors can use either model, chosen per well in Well Inflow control:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">c and n (back-pressure equation): q = C × (Pr² &minus; Pwf²)^n. This is the default for a gas well with no inflow model set (C = 0.0001, n = 1).</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Jones (gas form): A·q² + B·q = Pr² &minus; Pwf², with A and B computed from the PVT, the reservoir properties, the per-well data and the gas/water relative permeabilities.</span></p>
-                <p class="ps9"><span class="ts23">This is Precept's native, Prosper-independent IPR &mdash; no external nodal package is required.</span></p>
-                <p class="ps12"><span class="ts25">3.5 Lift curves &mdash; the VLP folder</span></p>
-                <p class="ps15"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts26">VLP folder &mdash; a folder of lift-curve files (ECLIPSE VFPPROD </span><span class="ts27">.ecl</span><span class="ts26">&nbsp;format), one per well. The VLP converts a wellhead/manifold pressure and a rate into a flowing bottom-hole pressure, closing the loop between the reservoir (IPR) and the surface network. Pick the folder with the &quot;...&quot; button; it is saved immediately and is also where Set Well Geometry writes the generated VLPs.</span></p>
-                <p class="ps9"><span class="ts23">You can generate these VLPs natively inside Precept &mdash; see Section 5.</span></p>
-                <p class="ps8"><span class="ts22">4. The Well section (Set Well Geometry)</span></p>
-                <p class="ps9"><span class="ts23">Each well's geometry and equipment are defined in Set Well Geometry, which has several tabs:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Completion / Geometry &mdash; the well trajectory (measured depth vs TVD), tubing, and the X-mas tree / equipment depths. The datum for bottom-hole pressures is the deepest node TVD.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">PVT &mdash; the black-oil PVT used for this well/reservoir (see Section 6).</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">ESP </span><span class="ts24">(only for ESP-lifted wells)</span><span class="ts23">&nbsp;&mdash; the electrical submersible pump: pump model (from the ESP catalogue), number of stages, and wear factor, with a live head-vs-rate preview. Precept models the pump stage-by-stage using affinity laws; running frequency comes from the well test, not this tab.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">VLP &mdash; generates the lift curves used by MBAL (Section 5).</span></p>
-                <p class="ps8"><span class="ts22">5. VLP generation (native ECLIPSE VFPPROD export)</span></p>
-                <p class="ps9"><span class="ts23">MBAL needs a lift curve (VLP) for every well. Precept generates these natively &mdash; no Prosper export is required. It writes standard ECLIPSE VFPPROD tables using its own pressure traverse; the &quot;Correlation&quot; list offers Beggs &amp; Brill (default), Hagedorn-Brown and Gray, with F1/F2 tuning factors.</span></p>
-                <p class="ps12"><span class="ts25">5.1 Oil producers</span></p>
-                <p class="ps9"><span class="ts23">How it works (VLP tab in Set Well Geometry):</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">A VFPPROD table is BHP tabulated against liquid rate. Liquid rate is the spine (the primary axis) &mdash; it is not optional.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Pick the sensitivity axis you want (THP, water-cut/BSW, GOR, or gas-lift rate) and enter its values in the grid; the generator produces a BHP surface over rate × that sensitivity.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Click Generate; a progress bar tracks the run. Non-converged points are written at the THP value and reported as a count.</span></p>
-                <p class="ps9"><span class="ts23">Points worth knowing:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Because the axis is liquid rate, a BSW of 100 % is a valid point (oil = liquid × (1 &minus; wc), water = liquid × wc, so the two always sum to the liquid rate).</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Rate = 0 is a real, safe point (a static-gradient shut-in row).</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">The datum is the deepest node TVD (matching the ECLIPSE/Prosper convention).</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Numbers are written culture-invariantly (decimal point, never a comma) so the files parse on any machine.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Each well's table index must be unique within the folder.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">ESP wells have no VLP tab &mdash; their lift is the pump, so there is no meaningful gas-lift axis.</span></p>
-                <p class="ps12"><span class="ts25">5.2 Gas producers</span></p>
-                <p class="ps9"><span class="ts23">For a gas producer the VLP tab shows gas inputs instead of liquid, BSW and GOR:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Gas rate is the spine of the table (VFPPROD with FLO = GAS).</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">THP, WGR (water-gas ratio) and CGR (condensate-gas ratio) are the sensitivity axes; WGR and CGR are in stb/Mscf, or sm3/sm3 for metric assets.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">A gas-lift axis is added only when the well is gas-lifted.</span></p>
-                <p class="ps12"><span class="ts25">Where the files go</span></p>
-                <p class="ps16"><span class="ts26">When Set Well Geometry is opened from the Material Balance window, the generated file is saved automatically as </span><span class="ts27">&lt;well&gt;.vlp</span><span class="ts26">&nbsp;in the scenario's VLP folder (section 3.5) &mdash; no folder is asked. A save dialog appears only if no VLP folder is set yet, or if it no longer exists. Generation is refused if another well in that folder already uses the same table index.</span></p>
-                <p class="ps12"><span class="ts25">5.3 VLP/IPR check at start of forecast</span></p>
-                <p class="ps9"><span class="ts23">Before running a long forecast, check each producer's operating point. In the Material Balance window click &quot;VLP/IPR check at start forecast&quot;, pick an oil or gas producer, choose THP or Drawdown control, enter a gas-lift rate if any, and click &quot;Get rate at start of forecast&quot;.</span></p>
-                <p class="ps9"><span class="ts23">The chart shows the IPR and VLP curves on the first forecast day and their intersection (the operating point); in Drawdown mode the VLP is not used. The panel lists the operating point (liquid, oil, water, gas, gas-lift, BHP, THP) and the inflow inputs used. A well that cannot flow here will not flow in the forecast either &mdash; fix its VLP, inflow data or constraints first.</span></p>
-                <p class="ps8"><span class="ts22">6. PVT section</span></p>
-                <p class="ps9"><span class="ts23">The PVT for Material Balance is entered/generated per reservoir and describes the pressure dependence of the fluid: Bo, Bg, Rs, and oil/gas/water viscosities as functions of pressure (standard black-oil PVT), plus the bubble point.</span></p>
-                <p class="ps9"><span class="ts23">The PVT tab of the Material Balance window generates the table from black-oil correlations:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Pb, Rs, Bo correlation: Glaso (default) or Standing.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Inputs: oil gravity (&deg;API), gas gravity (air = 1), solution GOR Rs, reservoir temperature, water salinity (ppm), and the table's minimum and maximum pressure. Temperature, Rs and maximum pressure are copied from the Reservoir properties tab.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">PVT match tuning (1 = untuned): multipliers on GOR/Pb, Bo and oil viscosity, to match lab data.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Click &quot;Generate&quot;, review the table (it includes Bw and water compressibility, computed from the salinity), then &quot;Save PVT tables&quot;.</span></p>
-                <p class="ps9"><span class="ts23">Alternatively, use &quot;Import PVT table&quot; on the ribbon to paste a table from Prosper or a lab report.</span></p>
-                <p class="ps9"><span class="ts23">Notes:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Precept stores pressures and temperatures in the display unit (e.g. barg / &deg;C), but the correlations work internally in psia / &deg;F &mdash; the conversion is handled for you.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Gas volumes are mscf-consistent: Bg is in rb/mscf; gas injection and free-gas volumes are in mscf; Rs and producing GOR stay in scf/stb. The MBAL balance and the VLP/PVT chain assume these units throughout.</span></p>
-                <p class="ps9"><span class="ts23">The same PVT feeds the tank balance, the inflow model, and the VLP generation, so it must be consistent across the three.</span></p>
-                <p class="ps8"><span class="ts22">7. How the forecast uses MBAL at each time step</span></p>
-                <p class="ps9"><span class="ts23">At every forecast step, for a reservoir in Material Balance mode, Precept:</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Takes the current reservoir (tank) pressure for each MBAL reservoir.</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Performs a manifold-coupled network solve: it gathers all the wells on a manifold, computes each well's inflow (IPR) against the current pressure and PVT, and balances the manifold so that the facilities lift curve converts the </span><span class="ts24">combined</span><span class="ts23">&nbsp;flow of all the wells into the shared manifold pressure &mdash; i.e. the back-pressure is computed from the summed flow, not assumed. This yields each well's potential.</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Feeds those potentials into the linear solver, which allocates choke (0&ndash;100 % open per well) to maximise the objective under the surface/facility constraints &mdash; exactly as in a DCA forecast.</span></p>
-                <p class="ps11"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Applies the produced/injected volumes back to the tank balance to get the next step's reservoir pressure, honouring voidage &mdash; injection is distributed to maintain the target VRR per reservoir, and aquifer influx (if any) is added.</span></p>
-                <p class="ps9"><span class="ts23">Guard rails built in: a reservoir whose pressure has effectively died has its producers shut (their potential zeroed) while injectors keep going, so a dead reservoir gets little injection and cannot be over-flooded. This keeps the pressure-maintenance logic stable across multi-reservoir assets.</span></p>
-                <p class="ps9"><span class="ts23">Gas reservoirs: each gas well's rate is limited by the most restrictive of its THP, manifold pressure, minimum BHP, maximum drawdown and gas-rate constraints. Its water-gas ratio comes from fractional flow, WGR = (Bg/Bw)·(krw/&mu;w)/(krg/&mu;g), so water production rises as the water saturation increases. Condensate is not modelled in material-balance mode (CGR = 0).</span></p>
-                <p class="ps9"><span class="ts23">At the end of every run, the tank results of each step (pressure, saturations, Rs, GOR / WGR / CGR, oil, free-gas and water withdrawals, water and gas injection, net voidage, aquifer influx, effective compressibility) are saved to the database, so the Material Balance dashboard (section 10) can show them later.</span></p>
-                <p class="ps8"><span class="ts22">8. Quick start &mdash; switching a scenario to Material Balance</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">In Settings, set &quot;Decline&quot; to &quot;Material Balance&quot;.</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">In the Material Balance section, for each reservoir: enter the tank properties (initial pressure, STOOIP/OGIP, porosity, connate Sw, rock compressibility, thickness, Rs, temperature), the relative permeabilities, the Jones inflow parameters, an optional Fetkovich aquifer, and choose the VLP folder. Generate and save the PVT on the PVT tab. Click Save Reservoir properties.</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">In Well Inflow control, check each well's inflow model and data (c and n, or Jones with perforated interval, wellbore radius and skin).</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">In Set Well Geometry (Well completion and VLP), for each well: confirm the geometry/completion and, on the VLP tab, Generate the lift curve &mdash; it is saved straight into the VLP folder.</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Run the VLP/IPR check at start forecast on a few producers to confirm they flow at sensible rates.</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">6.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Set your injection / voidage strategy (initial constraints and constraints-vs-time as usual).</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">7.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Run Forecast and review the results &mdash; reservoir pressure, rates, and voidage will now evolve from the physics.</span></p>
-                <p class="ps8"><span class="ts22">9. History matching with probabilistic runs</span></p>
-                <p class="ps9"><span class="ts23">A material-balance model is only as good as its history match. Precept history-matches by running the model over the production history many times with uncertain parameters, then comparing every run with the measured data in the Material Balance dashboard (section 10).</span></p>
-                <p class="ps12"><span class="ts25">9.1 What you need</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">The measured history: allocated production and injection (rates, BHP, THP) from Production monitoring, and the reservoir-pressure surveys of the wells (Reservoir pressures).</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">A scenario in Material Balance mode whose forecast starts at the start of the field's production, so the run covers the whole history.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">The wells controlled as they were operated &mdash; on rate or on BHP, through the initial constraints and constraints vs time. History can be matched on rates or on BHP: the quantity you impose is the one you do not match.</span></p>
-                <p class="ps12"><span class="ts25">9.2 Uncertain parameters</span></p>
-                <p class="ps9"><span class="ts23">Open &quot;Probabilistic distributions&quot;. When the scenario is in Material Balance mode two extra categories are offered:</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Material Balance &mdash; any reservoir input, named &quot;&lt;Reservoir&gt; , &lt;parameter&gt;&quot; (e.g. &quot;Main , OGIP&quot;, &quot;Main , Porosity&quot;, the aquifer size and productivity index, rock compressibility, PVT inputs).</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Well Inflow &mdash; each well's PI, or its c and n factors.</span></p>
-                <p class="ps9"><span class="ts23">For each parameter enter a Min and a Max; the most likely value is the current deterministic input. Each run samples a value from a normal distribution centred on that value and truncated to [Min, Max]. Set the &quot;Number of runs&quot; in Settings, then click &quot;Probabilistic&quot;.</span></p>
-                <p class="ps9"><span class="ts23">Every run's sampled values and its step-by-step tank results are saved with the run, so they can be reviewed at any time. They are deleted with the run or the scenario. Ranges left over from a reservoir or a well that no longer exists in the scenario are removed automatically when Probabilistic distributions opens.</span></p>
-                <p class="ps8"><span class="ts22">10. Material Balance dashboard</span></p>
-                <p class="ps9"><span class="ts23">Click &quot;Material Balance dashboard&quot; on the Results ribbon (visible when the scenario's Decline setting is Material Balance). The dashboard compares the runs of the scenario with the measured history, on one screen, for one reservoir at a time.</span></p>
-                <p class="ps12"><span class="ts25">10.1 Top bar</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Reservoir &mdash; the tank to show, when the model has several.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Runs &mdash; Deterministic (the forecast run) or Probabilistic (all the realizations of the probabilistic run).</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Run &mdash; the run drawn in bold. By default the best-matched run is selected. You can also click any curve on any chart to select its run; hover over a curve to see which run it is.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Well plots &mdash; the quantities drawn for every well (tick several): Gas rate, Water rate, Oil rate, Water injection, BSW, GOR, WGR, CGR, BHP, THP, Reservoir pressure.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Runs table &mdash; a pop-up listing the runs ranked by match quality, with each run's sampled parameters. Click a row to select the run.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Use this run &mdash; copies the selected run's sampled reservoir parameters into the scenario's Material Balance inputs (the deterministic case), after showing the old and new values for confirmation. Well inflow parameters are not copied.</span></p>
-                <p class="ps12"><span class="ts25">10.2 Match quality</span></p>
-                <p class="ps9"><span class="ts23">Each run is scored by a normalised RMS error (in %): the root-mean-square difference between the run and the measured points, divided by the mean measured value. It is computed separately for the reservoir pressure, the wells' BHP, gas rates and water rates, and the total is their average. The lower the better.</span></p>
-                <p class="ps12"><span class="ts25">10.3 The charts</span></p>
-                <p class="ps9"><span class="ts23">On every chart, the measured data are dots (pressure data: grey dots with a black border), every run is a faint line, and the selected run is a bold line.</span></p>
+                <p class="ps4"><span class="ts6">The tank pressure at the next step is computed from the volumetric balance of everything produced and injected (and any aquifer influx) over the step &mdash; so over-injection is legitimate: injecting more than you produce lets a declining reservoir </span><span class="ts7">recover</span><span class="ts6">&nbsp;pressure (voidage replacement ratio, VRR, greater than 1 is physically meaningful in MBAL).</span></p>
+                <p class="ps11"><span class="ts9">3.2 Aquifer support &mdash; Fetkovich aquifer</span></p>
+                <p class="ps4"><span class="ts6">An optional Fetkovich aquifer provides pressure support from water influx:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Productivity Index (RB/day/psi) &mdash; how readily the aquifer feeds the reservoir.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Max influx capacity (MMstb) &mdash; the total water the aquifer can supply.</span></p>
+                <p class="ps4"><span class="ts6">Leave the aquifer inactive for a purely depletion / injection-supported reservoir.</span></p>
+                <p class="ps11"><span class="ts9">3.3 Relative permeabilities</span></p>
+                <p class="ps4"><span class="ts6">Enter the relative-permeability curves that govern how water-cut and GOR (or WGR) evolve as saturations change during depletion:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Oil reservoir &mdash; two tables and charts: water/oil (Sw, Krw, Kro) and gas/oil (Sg, Krg, Kro).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Gas reservoir &mdash; one table and chart: water/gas (Sw, Krw, Krg).</span></p>
+                <p class="ps4"><span class="ts6">Points can be dragged directly on the charts. Rule enforced by Precept: the Krw endpoint must equal the connate water saturation &mdash; the form warns if it does not.</span></p>
+                <p class="ps11"><span class="ts9">3.4 Well inflow &mdash; Jones model and c and n</span></p>
+                <p class="ps4"><span class="ts6">The inflow model turns the drawdown (reservoir pressure minus flowing bottom-hole pressure) into a rate. Reservoir-level inputs on this tab, for the Jones Well Inflow model:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Permeability (md)</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">kv/kh (vertical-to-horizontal permeability ratio)</span></p>
+                <p class="ps4"><span class="ts6">The per-well data (perforated interval, wellbore radius, skin) come from Well Inflow control. The drainage area is derived from the tank size and shared between the active wells.</span></p>
+                <p class="ps4"><span class="ts6">Gas producers and gas injectors can use either model, chosen per well in Well Inflow control:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">c and n (back-pressure equation): q = C × (Pr² &minus; Pwf²)^n. This is the default for a gas well with no inflow model set (C = 0.0001, n = 1).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Jones (gas form): A·q² + B·q = Pr² &minus; Pwf², with A and B computed from the PVT, the reservoir properties, the per-well data and the gas/water relative permeabilities.</span></p>
+                <p class="ps4"><span class="ts6">This is Precept's native, Prosper-independent IPR &mdash; no external nodal package is required.</span></p>
+                <p class="ps11"><span class="ts9">3.5 Lift curves &mdash; the VLP folder</span></p>
+                <p class="ps13"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts10">VLP folder &mdash; a folder of lift-curve files (ECLIPSE VFPPROD </span><span class="ts11">.ecl</span><span class="ts10">&nbsp;format), one per well. The VLP converts a wellhead/manifold pressure and a rate into a flowing bottom-hole pressure, closing the loop between the reservoir (IPR) and the surface network. Pick the folder with the &quot;...&quot; button; it is saved immediately and is also where Set Well Geometry writes the generated VLPs.</span></p>
+                <p class="ps4"><span class="ts6">You can generate these VLPs natively inside Precept &mdash; see Section 5.</span></p>
+                <p class="ps3"><span class="ts5">4. The Well section (Set Well Geometry)</span></p>
+                <p class="ps4"><span class="ts6">Each well's geometry and equipment are defined in Set Well Geometry, which has several tabs:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Completion / Geometry &mdash; the well trajectory (measured depth vs TVD), tubing, and the X-mas tree / equipment depths. The datum for bottom-hole pressures is the deepest node TVD.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">PVT &mdash; the black-oil PVT used for this well/reservoir (see Section 6).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">ESP </span><span class="ts7">(only for ESP-lifted wells)</span><span class="ts6">&nbsp;&mdash; the electrical submersible pump: pump model (from the ESP catalogue), number of stages, and wear factor, with a live head-vs-rate preview. Precept models the pump stage-by-stage using affinity laws; running frequency comes from the well test, not this tab.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">VLP &mdash; generates the lift curves used by MBAL (Section 5).</span></p>
+                <p class="ps3"><span class="ts5">5. VLP generation (native ECLIPSE VFPPROD export)</span></p>
+                <p class="ps4"><span class="ts6">MBAL needs a lift curve (VLP) for every well. Precept generates these natively &mdash; no Prosper export is required. It writes standard ECLIPSE VFPPROD tables using its own pressure traverse; the &quot;Correlation&quot; list offers Beggs &amp; Brill (default), Hagedorn-Brown and Gray, with F1/F2 tuning factors.</span></p>
+                <p class="ps11"><span class="ts9">5.1 Oil producers</span></p>
+                <p class="ps4"><span class="ts6">How it works (VLP tab in Set Well Geometry):</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A VFPPROD table is BHP tabulated against liquid rate. Liquid rate is the spine (the primary axis) &mdash; it is not optional.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Pick the sensitivity axis you want (THP, water-cut/BSW, GOR, or gas-lift rate) and enter its values in the grid; the generator produces a BHP surface over rate × that sensitivity.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Click Generate; a progress bar tracks the run. Non-converged points are written at the THP value and reported as a count.</span></p>
+                <p class="ps4"><span class="ts6">Points worth knowing:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Because the axis is liquid rate, a BSW of 100 % is a valid point (oil = liquid × (1 &minus; wc), water = liquid × wc, so the two always sum to the liquid rate).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Rate = 0 is a real, safe point (a static-gradient shut-in row).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The datum is the deepest node TVD (matching the ECLIPSE/Prosper convention).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Numbers are written culture-invariantly (decimal point, never a comma) so the files parse on any machine.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Each well's table index must be unique within the folder.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">ESP wells have no VLP tab &mdash; their lift is the pump, so there is no meaningful gas-lift axis.</span></p>
+                <p class="ps11"><span class="ts9">5.2 Gas producers</span></p>
+                <p class="ps4"><span class="ts6">For a gas producer the VLP tab shows gas inputs instead of liquid, BSW and GOR:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Gas rate is the spine of the table (VFPPROD with FLO = GAS).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">THP, WGR (water-gas ratio) and CGR (condensate-gas ratio) are the sensitivity axes; WGR and CGR are in stb/Mscf, or sm3/sm3 for metric assets.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A gas-lift axis is added only when the well is gas-lifted.</span></p>
+                <p class="ps11"><span class="ts9">Where the files go</span></p>
+                <p class="ps12"><span class="ts10">When Set Well Geometry is opened from the Material Balance window, the generated file is saved automatically as </span><span class="ts11">&lt;well&gt;.vlp</span><span class="ts10">&nbsp;in the scenario's VLP folder (section 3.5) &mdash; no folder is asked. A save dialog appears only if no VLP folder is set yet, or if it no longer exists. Generation is refused if another well in that folder already uses the same table index.</span></p>
+                <p class="ps11"><span class="ts9">5.3 VLP/IPR check at start of forecast</span></p>
+                <p class="ps4"><span class="ts6">Before running a long forecast, check each producer's operating point. In the Material Balance window click &quot;VLP/IPR check at start forecast&quot;, pick an oil or gas producer, choose THP or Drawdown control, enter a gas-lift rate if any, and click &quot;Get rate at start of forecast&quot;.</span></p>
+                <p class="ps4"><span class="ts6">The chart shows the IPR and VLP curves on the first forecast day and their intersection (the operating point); in Drawdown mode the VLP is not used. The panel lists the operating point (liquid, oil, water, gas, gas-lift, BHP, THP) and the inflow inputs used. A well that cannot flow here will not flow in the forecast either &mdash; fix its VLP, inflow data or constraints first.</span></p>
+                <p class="ps3"><span class="ts5">6. PVT section</span></p>
+                <p class="ps4"><span class="ts6">The PVT for Material Balance is entered/generated per reservoir and describes the pressure dependence of the fluid: Bo, Bg, Rs, and oil/gas/water viscosities as functions of pressure (standard black-oil PVT), plus the bubble point.</span></p>
+                <p class="ps4"><span class="ts6">The PVT tab of the Material Balance window generates the table from black-oil correlations:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Pb, Rs, Bo correlation: Glaso (default) or Standing.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Inputs: oil gravity (&deg;API), gas gravity (air = 1), solution GOR Rs, reservoir temperature, water salinity (ppm), and the table's minimum and maximum pressure. Temperature, Rs and maximum pressure are copied from the Reservoir properties tab.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">PVT match tuning (1 = untuned): multipliers on GOR/Pb, Bo and oil viscosity, to match lab data.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Click &quot;Generate&quot;, review the table (it includes Bw and water compressibility, computed from the salinity), then &quot;Save PVT tables&quot;.</span></p>
+                <p class="ps4"><span class="ts6">Alternatively, use &quot;Import PVT table&quot; on the ribbon to paste a table from Prosper or a lab report.</span></p>
+                <p class="ps4"><span class="ts6">Notes:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Precept stores pressures and temperatures in the display unit (e.g. barg / &deg;C), but the correlations work internally in psia / &deg;F &mdash; the conversion is handled for you.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Gas volumes are mscf-consistent: Bg is in rb/mscf; gas injection and free-gas volumes are in mscf; Rs and producing GOR stay in scf/stb. The MBAL balance and the VLP/PVT chain assume these units throughout.</span></p>
+                <p class="ps4"><span class="ts6">The same PVT feeds the tank balance, the inflow model, and the VLP generation, so it must be consistent across the three.</span></p>
+                <p class="ps3"><span class="ts5">7. How the forecast uses MBAL at each time step</span></p>
+                <p class="ps4"><span class="ts6">At every forecast step, for a reservoir in Material Balance mode, Precept:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Takes the current reservoir (tank) pressure for each MBAL reservoir.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Performs a manifold-coupled network solve: it gathers all the wells on a manifold, computes each well's inflow (IPR) against the current pressure and PVT, and balances the manifold so that the facilities lift curve converts the </span><span class="ts7">combined</span><span class="ts6">&nbsp;flow of all the wells into the shared manifold pressure &mdash; i.e. the back-pressure is computed from the summed flow, not assumed. This yields each well's potential.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Feeds those potentials into the linear solver, which allocates choke (0&ndash;100 % open per well) to maximise the objective under the surface/facility constraints &mdash; exactly as in a DCA forecast.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Applies the produced/injected volumes back to the tank balance to get the next step's reservoir pressure, and adds aquifer influx (if any). Injection into a Material Balance reservoir is not capped at the voidage (unlike a decline-curve reservoir): it is limited by each injector's injectivity and maximum injection BHP and by the network injection capacities, so injecting more than you produce raises the reservoir pressure.</span></p>
+                <p class="ps4"><span class="ts6">Guard rails built in: a reservoir whose pressure has effectively died has its producers shut (their potential zeroed) while injectors keep going, so a dead reservoir gets little injection and cannot be over-flooded. This keeps the pressure-maintenance logic stable across multi-reservoir assets.</span></p>
+                <p class="ps4"><span class="ts6">Gas reservoirs: each gas well's rate is limited by the most restrictive of its THP, manifold pressure, minimum BHP, maximum drawdown and gas-rate constraints. Its water-gas ratio comes from fractional flow, WGR = (Bg/Bw)·(krw/&mu;w)/(krg/&mu;g), so water production rises as the water saturation increases. Condensate is not modelled in material-balance mode (CGR = 0).</span></p>
+                <p class="ps4"><span class="ts6">At the end of every run, the tank results of each step (pressure, saturations, Rs, GOR / WGR / CGR, oil, free-gas and water withdrawals, water and gas injection, net voidage, aquifer influx, effective compressibility) are saved to the database, so the Material Balance dashboard (section 10) can show them later.</span></p>
+                <p class="ps3"><span class="ts5">8. Quick start &mdash; switching a scenario to Material Balance</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In Settings, set &quot;Decline&quot; to &quot;Material Balance&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the Material Balance section, for each reservoir: enter the tank properties (initial pressure, STOOIP/OGIP, porosity, connate Sw, rock compressibility, thickness, Rs, temperature), the relative permeabilities, the Jones inflow parameters, an optional Fetkovich aquifer, and choose the VLP folder. Generate and save the PVT on the PVT tab. Click Save Reservoir properties.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In Well Inflow control, check each well's inflow model and data (c and n, or Jones with perforated interval, wellbore radius and skin).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In Set Well Geometry (Well completion and VLP), for each well: confirm the geometry/completion and, on the VLP tab, Generate the lift curve &mdash; it is saved straight into the VLP folder.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Run the VLP/IPR check at start forecast on a few producers to confirm they flow at sensible rates.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">6.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Set your injection / voidage strategy (initial constraints and constraints-vs-time as usual).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">7.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Run Forecast and review the results &mdash; reservoir pressure, rates, and voidage will now evolve from the physics.</span></p>
+                <p class="ps3"><span class="ts5">9. History matching with probabilistic runs</span></p>
+                <p class="ps4"><span class="ts6">A material-balance model is only as good as its history match. Precept history-matches by running the model over the production history many times with uncertain parameters, then comparing every run with the measured data in the Material Balance dashboard (section 10).</span></p>
+                <p class="ps11"><span class="ts9">9.1 What you need</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The measured history: allocated production and injection (rates, BHP, THP) from Production monitoring, and the reservoir-pressure surveys of the wells (Reservoir pressures).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A scenario in Material Balance mode whose forecast starts at the start of the field's production, so the run covers the whole history.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The wells controlled as they were operated &mdash; on rate or on BHP, through the initial constraints and constraints vs time. History can be matched on rates or on BHP: the quantity you impose is the one you do not match.</span></p>
+                <p class="ps11"><span class="ts9">9.2 Uncertain parameters</span></p>
+                <p class="ps4"><span class="ts6">Open &quot;Probabilistic distributions&quot;. When the scenario is in Material Balance mode two extra categories are offered:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Material Balance &mdash; any reservoir input, named &quot;&lt;Reservoir&gt; , &lt;parameter&gt;&quot; (e.g. &quot;Main , OGIP&quot;, &quot;Main , Porosity&quot;, the aquifer size and productivity index, rock compressibility, PVT inputs).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Well Inflow &mdash; each well's PI, or its c and n factors.</span></p>
+                <p class="ps4"><span class="ts6">For each parameter enter a Min and a Max; the most likely value is the current deterministic input. Each run samples a value from a normal distribution centred on that value and truncated to [Min, Max]. Set the &quot;Number of runs&quot; in Settings, then click &quot;Probabilistic&quot;.</span></p>
+                <p class="ps4"><span class="ts6">Every run's sampled values and its step-by-step tank results are saved with the run, so they can be reviewed at any time. They are deleted with the run or the scenario. Ranges left over from a reservoir or a well that no longer exists in the scenario are removed automatically when Probabilistic distributions opens.</span></p>
+                <p class="ps3"><span class="ts5">10. Material Balance dashboard</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Material Balance dashboard&quot; on the Results ribbon (visible when the scenario's Decline setting is Material Balance). The dashboard compares the runs of the scenario with the measured history, on one screen, for one reservoir at a time.</span></p>
+                <p class="ps11"><span class="ts9">10.1 Top bar</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Reservoir &mdash; the tank to show, when the model has several.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Runs &mdash; Deterministic (the forecast run) or Probabilistic (all the realizations of the probabilistic run).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Run &mdash; the run drawn in bold. By default the best-matched run is selected. You can also click any curve on any chart to select its run; hover over a curve to see which run it is.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Well plots &mdash; the quantities drawn for every well (tick several): Gas rate, Water rate, Oil rate, Water injection, BSW, GOR, WGR, CGR, BHP, THP, Reservoir pressure.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Runs table &mdash; a pop-up listing the runs ranked by match quality, with each run's sampled parameters. Click a row to select the run.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Use this run &mdash; copies the selected run's sampled reservoir parameters into the scenario's Material Balance inputs (the deterministic case), after showing the old and new values for confirmation. Well inflow parameters are not copied.</span></p>
+                <p class="ps11"><span class="ts9">10.2 Match quality</span></p>
+                <p class="ps4"><span class="ts6">Each run is scored by a normalised RMS error (in %): the root-mean-square difference between the run and the measured points, divided by the mean measured value. It is computed separately for the reservoir pressure, the wells' BHP, gas rates and water rates, and the total is their average. The lower the better.</span></p>
+                <p class="ps11"><span class="ts9">10.3 The charts</span></p>
+                <p class="ps4"><span class="ts6">On every chart, the measured data are dots (pressure data: grey dots with a black border), every run is a faint line, and the selected run is a bold line.</span></p>
                 <div class="block0">
-                  <table class="tbl5">
+                  <table class="tbl3">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps13"><span class="ts23">Section</span></p>
+                        <p class="ps8"><span class="ts6">Section</span></p>
                       </td>
                       <td class="cell0">
-                        <p class="ps13"><span class="ts23">Charts</span></p>
+                        <p class="ps8"><span class="ts6">Charts</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Reservoir &mdash; pressure and production</span></p>
+                        <p class="ps9"><span class="ts6">Reservoir &mdash; pressure and production</span></p>
                       </td>
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Reservoir pressure vs time (the surveys of all the reservoir's wells); rates; cumulative gas (or oil); cumulative water.</span></p>
-                      </td>
-                    </tr>
-                    <tr class="row0">
-                      <td class="cell0">
-                        <p class="ps14"><span class="ts23">Material balance</span></p>
-                      </td>
-                      <td class="cell0">
-                        <p class="ps14"><span class="ts23">P/Z vs cumulative gas (pressure vs cumulative oil for an oil tank); Havlena-Odeh F vs Et; Cole plot F/Et vs Gp; aquifer plot F/Et vs We/Et; drive mechanisms of the selected run; drive indices from the history; saturations; the PVT used (Z, Bg).</span></p>
+                        <p class="ps9"><span class="ts6">Reservoir pressure vs time (the surveys of all the reservoir's wells); rates; cumulative gas (or oil); cumulative water.</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">Wells</span></p>
+                        <p class="ps9"><span class="ts6">Material balance</span></p>
                       </td>
                       <td class="cell0">
-                        <p class="ps14"><span class="ts23">One chart per well of the reservoir, all wells at once, with the quantities ticked in Well plots (rates on the left axis, pressures and ratios on the right).</span></p>
+                        <p class="ps9"><span class="ts6">P/Z vs cumulative gas (pressure vs cumulative oil for an oil tank); Havlena-Odeh F vs Et; Cole plot F/Et vs Gp; aquifer plot F/Et vs We/Et; drive mechanisms of the selected run; drive indices from the history; saturations; the PVT used (Z, Bg).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Wells</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">One chart per well of the reservoir, all wells at once, with the quantities ticked in Well plots (rates on the left axis, pressures and ratios on the right).</span></p>
                       </td>
                     </tr>
                   </table>
                 </div>
-                <p class="ps12"><span class="ts25">10.4 Reading the material-balance plots</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">P/Z vs cumulative gas &mdash; a volumetric gas tank gives a straight line that reaches zero at the OGIP. Points bending above the line indicate pressure support (aquifer or injection).</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Havlena-Odeh &mdash; F (underground withdrawal, F = Gp·Bg + Wp·Bw &minus; Winj·Bw) against the expansion Et (gas expansion Eg = Bg &minus; Bgi plus rock and connate-water expansion). For a depletion drive the points lie on a straight line through the origin whose slope is the gas in place.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Cole plot &mdash; F/Et against Gp. Flat for a depletion drive; rising points reveal aquifer support that the model may be missing.</span></p>
-                <p class="ps10"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Aquifer plot &mdash; F/Et against We/Et using the selected run's aquifer influx. A good aquifer model gives a straight line with slope 1 and intercept G.</span></p>
-                <p class="ps11"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts23">Drive mechanisms &mdash; the share of the withdrawals supplied by each source over time: gas expansion, rock and water compressibility, aquifer influx, injection. On the history chart, anything the selected run's parameters cannot explain is shown as &quot;Unexplained&quot;; a large unexplained share means the tank size or support is wrong.</span></p>
-                <p class="ps12"><span class="ts25">10.5 Typical workflow</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Run a probabilistic run (e.g. 20 to 50 runs) with ranges on the main unknowns: OGIP / STOOIP, the aquifer, rock compressibility, the well inflow.</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Open the Material Balance dashboard, Runs = Probabilistic. Open the Runs table to see which runs match best and which parameter values they share.</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Check the best run on the charts, not only its score: the P/Z, Havlena-Odeh and Cole plots should agree with the drive the run assumes.</span></p>
-                <p class="ps10"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Narrow the ranges around the good runs and rerun if needed.</span></p>
-                <p class="ps11"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts23">Click &quot;Use this run&quot; to keep its parameters in the scenario, then run the deterministic forecast from the matched model.</span></p>
+                <p class="ps11"><span class="ts9">10.4 Reading the material-balance plots</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">P/Z vs cumulative gas &mdash; a volumetric gas tank gives a straight line that reaches zero at the OGIP. Points bending above the line indicate pressure support (aquifer or injection).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Havlena-Odeh &mdash; F (underground withdrawal, F = Gp·Bg + Wp·Bw &minus; Winj·Bw) against the expansion Et (gas expansion Eg = Bg &minus; Bgi plus rock and connate-water expansion). For a depletion drive the points lie on a straight line through the origin whose slope is the gas in place.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Cole plot &mdash; F/Et against Gp. Flat for a depletion drive; rising points reveal aquifer support that the model may be missing.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Aquifer plot &mdash; F/Et against We/Et using the selected run's aquifer influx. A good aquifer model gives a straight line with slope 1 and intercept G.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Drive mechanisms &mdash; the share of the withdrawals supplied by each source over time: gas expansion, rock and water compressibility, aquifer influx, injection. On the history chart, anything the selected run's parameters cannot explain is shown as &quot;Unexplained&quot;; a large unexplained share means the tank size or support is wrong.</span></p>
+                <p class="ps11"><span class="ts9">10.5 Typical workflow</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Run a probabilistic run (e.g. 20 to 50 runs) with ranges on the main unknowns: OGIP / STOOIP, the aquifer, rock compressibility, the well inflow.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Open the Material Balance dashboard, Runs = Probabilistic. Open the Runs table to see which runs match best and which parameter values they share.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Check the best run on the charts, not only its score: the P/Z, Havlena-Odeh and Cole plots should agree with the drive the run assumes.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Narrow the ranges around the good runs and rerun if needed.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Use this run&quot; to keep its parameters in the scenario, then run the deterministic forecast from the matched model.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -348,7 +348,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

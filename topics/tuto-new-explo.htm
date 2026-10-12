@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="tutorial.htm" class="hs0">Tutorial</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="tutorial.htm" class="hs1">Tutorial</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Create new Exploration Asset and generate forecasts</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,271 +63,136 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">1. Create a New Asset</span></h3>
-                <p class="ps3"><span class="ts3">From Precept Main User Interface, go to 'Scenario Manager&quot;, then click on &quot;Create New Asset&quot;.</span></p>
-                <p class="ps3"><span class="ts3">Give the name to the Asset (Brazil in our example) and click on &quot;Create Asset&quot;.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p><img width="469" height="521" alt="" src="images/image(145).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts8">2. Load the new Asset &quot;Brazil&quot;</span><span class="ts3">&nbsp;from Precept Main User Interface</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p><img width="436" height="171" alt="" src="images/image(154).png" /></p>
-                <p>&nbsp;</p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">At that point, only you and a &quot;Super User&quot; can access that Asset. Should you wish to allow more users, you need to add them via the &quot;Security&quot; user interface. (see </span><a href="security.htm" class="hs1">Security / Access policy</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">3. Create a new Project</span></h3>
-                <p class="ps3"><span class="ts3">The Asset does not have any project yet. A new project needs to be created.</span></p>
-                <p class="ps3"><span class="ts3">Go</span><span class="ts3">&nbsp;to 'Scenario Manager&quot;, then click on &quot;Create New Project&quot;. We will call the new project &quot;Evaluation&quot;</span></p>
-                <h3 class="hd1"><span class="ts3">Once created, select the project &quot;Evaluation&quot; from the Scenario Manager.</span></h3>
-                <p>&nbsp;</p>
-                <p><img width="984" height="238" alt="" src="images/image(155).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">4. Create a new scenario</span></h3>
-                <h3 class="hd1"><span class="ts3">The project &quot;Evaluation&quot; does not have any scenario yet.</span></h3>
-                <h3 class="hd1"><span class="ts3">Click on &quot;Create new scenario&quot;. We will give it the name &quot;Base&quot;. The option &quot;share scenario with others users&quot; is not activated.</span></h3>
-                <h3 class="hd1"><span class="ts3">Enter the forecast Start and End date and click 'Create scenario'.</span></h3>
-                <p><img width="469" height="521" alt="" src="images/image(152).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">5. Load the new scenario</span></h3>
-                <p class="ps3"><span class="ts3">The new scenario 'Brazil - Evaluation - Base&quot; can now be loaded from Precept Main User Interface.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">A new scenario created from scratch comes with a default &quot;Network configuration&quot; as shown below.</span></p>
-                <p>&nbsp;</p>
-                <p><img width="1027" height="405" alt="" src="images/image(150).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The default network configuration can be visualized by clicking on the &quot;Network&quot; icon.</span></p>
-                <p><img width="601" height="442" alt="" src="images/image(128).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">6. Edit Network, Add constraints</span></h3>
-                <p class="ps3"><span class="ts3">For our Brazilian asset, we will keep that default network configuration but network can be modified if needed (see </span><a href="networkmodelling.htm" class="hs1">Network modelling</a><span class="ts3">)</span></p>
-                <h3 class="hd1"><span class="ts3">We will simply add a 120,000 bopd oil constraint to the node &quot;Platform&quot; to model a production plateau.</span></h3>
-                <h3 class="hd1"><span class="ts3">After entering the 120,000 bopd oil constraint, do not forget to click &quot;Save Network'.</span></h3>
-                <p><img width="661" height="212" alt="" src="images/image(151).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">7. Add wells</span></h3>
-                <p class="ps3"><span class="ts3">From the Network interface, click on &quot;Add / Remove wells&quot;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Our development strategy includes drilling of 8 producers, 4 water injectors and 4 gas injectors.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Add Oil producers</span></h3>
-                <h3 class="hd1"><span class="ts3">The inputs below will create a new well &quot;OP1&quot;, flowing to the node called &quot;OP&quot;. OP1 produces from the reservoir called &quot;Carbonate&quot; and is part of Phase 1 project.</span></h3>
-                <h3 class="hd1"><span class="ts3">Instead of creating 8 individuals wells, we can ask Precept to duplicate the well OP1 to create the wells OP2, OP3, etc... (click on the + button and write the well names or copy-paste a list from Excel)</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p><img width="439" height="591" alt="" src="images/image(141).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Once the input is as above, Click on &quot;Add Well&quot;.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The 8 producers are now part of the Asset model.</span></p>
-                <p><img width="845" height="223" alt="" src="images/image(142).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Add Water Injectors</span></h3>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">4 Water Injectors are added using the inputs below.</span></p>
-                <p class="ps3"><span class="ts3">The water injected into the wells comes from the node 'WI'. </span></p>
-                <p><img width="447" height="592" alt="" src="images/image(139).png" /></p>
-                <h3 class="hd1"><span class="ts3">Once the input is as above, Click on &quot;Add Well&quot;.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Add Gas Injectors</span></h3>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">4 Gas Injectors are added using the inputs below.</span></h3>
-                <h3 class="hd1"><span class="ts3">The gas injected into the wells comes from the node GI. </span></h3>
-                <p><img width="450" height="592" alt="" src="images/image(140).png" /></p>
-                <h3 class="hd1"><span class="ts3">Once the input is as above, Click on &quot;Add Well&quot;.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">7. Define Wells potentials</span></h3>
-                <p class="ps3"><span class="ts3">Click on the &quot;Decline curves&quot; icon from Precept main User Interface to access Precept DCA module.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Oil producer OP1</span></h3>
-                <p class="ps3"><span class="ts3">Select the project &quot;Evaluation&quot;.,</span></p>
-                <p class="ps3"><span class="ts3">Select the scenario 'Brazil - Evaluation - Base'</span></p>
-                <p class="ps3"><span class="ts3">Select the well &quot;OP1&quot;.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Select &quot;Exponential&quot; as DCA method (highlighted in red below)</span><span class="ts3">&nbsp;( see </span><a href="dca.htm" class="hs1">Decline curves: Production and Injection potentials</a><span class="ts3">)</span></p>
-                <p>&nbsp;</p>
-                <p class="ps3"><span class="ts3">DCA forecast can be modified by drag-and-drop points on the chart or by directly modifying the value in the table.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">In our case, for the well OP1:</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;Liquid at start: 25,000 stb/d</span></p>
-                <h3 class="hd1"><span class="ts3">&nbsp;Oil at start: 20,000 stb/d</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;Gas at start: 5,000 stb/d</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;Gas-lift: 0 mscf/d</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">Liquid nominal decline: 5%</span></h3>
-                <h3 class="hd1"><span class="ts3">Oil nominal decline: 10%</span></h3>
-                <h3 class="hd1"><span class="ts3">Gas nominal decline: 7%</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">b factor is 0 since exponential decline is selected.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p>&nbsp;</p>
-                <p><img width="1175" height="812" alt="" src="images/image(173).png" /></p>
-                <h3 class="hd1"><span class="ts3">Once the input is as above, Click &quot;Save&quot; to save the DCA for OP1.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Water Injector WI1</span></h3>
-                <p class="ps3"><span class="ts3">Select the well WI1</span></p>
-                <h3 class="hd1"><span class="ts3">Select &quot;Multi-segment vs Cum&quot; as DCA method.</span></h3>
-                <p class="ps3"><span class="ts3">In our example, we will use a constant Water Injection potential of 5000 bwpd (only one segment is needed). </span></p>
-                <p class="ps3"><span class="ts3">Make sure the end date of the DCA (highlighted in red below) is enough to cover the full duration of the forecast (ie: Make sure you enter a high Cum Water Injection number)</span></p>
-                <p>&nbsp;</p>
-                <p><img width="710" height="623" alt="" src="images/image(110).png" /></p>
-                <h3 class="hd1"><span class="ts3">Once the input is as above, click &quot;Save' to save the DCA for WI1.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Gas Injector GI1</span></h3>
-                <p class="ps3"><span class="ts3">Select the well GI1</span></p>
-                <h3 class="hd1"><span class="ts3">Select &quot;Multi-segment vs Cum&quot; as DCA method.</span></h3>
-                <h3 class="hd1"><span class="ts3">In our example, we will use a constant Gas Injection potential of 5000 mscf/d. </span></h3>
-                <h3 class="hd1"><span class="ts3">Make sure the end date of the DCA&nbsp; is enough to cover the full duration of the forecast (ie: Make sure you enter a high Cum Gas Injection number)</span></h3>
-                <p><img width="715" height="627" alt="" src="images/image(111).png" /></p>
-                <h3 class="hd1"><span class="ts3">Once the input is as above, click &quot;Save' to save the DCA for GI1</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Duplicate the decline curves</span></h3>
-                <p class="ps3"><span class="ts3">In our example, we assume all the producers have the same DCA profile as OP1, which we just defined. We can then duplicate the DCA from OP1 to OP2, OP3, etc.. </span></p>
-                <p class="ps3"><span class="ts3">Click on Import / Duplicate profile&quot; from the DCA module.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Use the same inputs as below and click on &quot;Sent to&quot; , to duplicate the oil producers DCA.</span></p>
-                <p><img width="1348" height="271" alt="" src="images/image(163).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p>&nbsp;</p>
-                <h3 class="hd1"><span class="ts3">Use the same inputs as below and click on &quot;Sent to&quot; to duplicate the Water Injectors DCA.</span></h3>
-                <p><img width="1329" height="186" alt="" src="images/image(165).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">Use the same inputs as below and click on &quot;Sent to&quot; to duplicate the Gas Injectors DCA.</span></h3>
-                <p><img width="1331" height="184" alt="" src="images/image(166).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">For that Tutorial, we manually </span><span class="ts3">copied </span><span class="ts3">the DCA profiles from OP1 to OP2, OP3, OP4 etc... A simpler way to make sure all wells have the same potential is to activate the option &quot;Apply same potentials to all wells from same reservoir (explo)&quot; in the Settings section. </span></p>
-                <p><img width="336" height="147" alt="" src="images/image(172).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Go back to Precept Main User Interface and click on &quot;Refresh&quot;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">One can notice that the timeline for the wells are black, and indicates &quot;Profile not online yet&quot;.</span></p>
-                <p class="ps3"><span class="ts3">This is because the wells have been introduced in the Asset model, they have a DCA profile but they don't have start date yet, and are therefore not put in production / injection in the future.</span></p>
-                <p><img width="1306" height="483" alt="" src="images/image(159).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">8. Add a drilling sequence to drill the future wells</span></h3>
-                <p class="ps3"><span class="ts3">From Precept main User Interface, click on &quot;Sequence&quot; then &quot;Add / modify&quot;</span></p>
-                <p class="ps3"><span class="ts3">We assume that a Rig called &quot;Rig1&quot; will start drilling 01/02/2024. Click save.</span></p>
-                <p class="ps3"><span class="ts3">The column &quot;Performed by&quot; is not relevant for that tutorial and is only needed for the &quot;autoschedule&quot; option.</span></p>
-                <p><img width="582" height="188" alt="" src="images/image(160).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">From Precept Main User Interface, click &quot;Refresh&quot;, you can now see the Rig1 sequence, which is currently empty since it does not have any opportunities.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">9. Create Opportunities to drill individual well</span></h3>
-                <h3 class="hd1"><span class="ts3">From Precept Main User Interface, click &quot;Opportunities&quot;, then &quot;New&quot;.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Opportunity to drill Oil producer OP1</span></h3>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The inputs below will create an Opportunity to drill the well OP1</span></p>
-                <p class="ps3"><span class="ts3">Drilling duration is set at 60 days.</span></p>
-                <p class="ps3"><span class="ts3">The start date is set at &quot;From sequence&quot; meaning the opportunity start date is not &quot;hard&quot; but opportunity is going to be executed as part of a sequence.</span></p>
-                <p class="ps3"><span class="ts3">Opportunity will be colored green in the drilling sequence.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Impact on forecast is set to &quot;New profile. The new profile OP1 (which we defined in the DCA module) will come online once the opportunity OP1 is executed.</span></p>
-                <p class="ps3"><span class="ts3">CAPEX is 20,000,000 USD</span></p>
-                <p class="ps3"><span class="ts3">The column 'Project&quot; is autofilled once the &quot;new profile name&quot; is entered ,since the project for that well was already defined when we introduced the well in the Network module at step 7.</span></p>
-                <p><img width="1086" height="812" alt="" src="images/image(169).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Duplicate this opportunity for all the other wells (OP2, OP3, GI1, WI1,..., GI1, etc..)</span></p>
-                <p class="ps3"><span class="ts3">Click &quot;Save&quot; to create the 16 Opportunities.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">After you click &quot;Refresh&quot; , you should see the 16 opportunities.</span></p>
-                <p><img width="1234" height="541" alt="" src="images/image(170).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">For visualization purposes, we can change the color of the opportunities to drill WI and GI wells.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Highlight the well &quot;WI1&quot; and click 'Edit&quot;. Change its color to blue and &quot;Save&quot;</span></p>
-                <h3 class="hd1"><span class="ts3">Click &quot;Refresh&quot;, you can now see that the column 'Color' for the WI1 has changed. Copy-paste (Ctr+C&nbsp;&nbsp; Ctr +V) that color for other WI wells.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">Highlight the well &quot;GI1&quot; and click 'Edit&quot;. Change its color to Red and &quot;Save&quot;</span></h3>
-                <h3 class="hd1"><span class="ts3">Click &quot;Refresh&quot;, you can now see that the column 'Color' for the GI1 has changed. Copy-paste (Ctr+C&nbsp;&nbsp; Ctr +V) that color for other GI wells.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">10. Build drilling sequence</span></h3>
-                <p class="ps3"><span class="ts3">From Precept main User Interface, check the &quot;Show Pool of Opportunities&quot; option and click &quot;Refresh&quot;.</span></p>
-                <p class="ps3"><span class="ts3">The 16 Opportunities we created previously appears in the pool of Opportunity. Using mouse (right click and double-click), you can now move the Opportunities from the &quot;pool&quot; to the &quot;Rig1&quot; sequence. (see </span><a href="build-sequence.htm" class="hs1">Build sequence of events</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">It is proposed to drill the wells using the sequence below.</span></p>
-                <p class="ps3"><span class="ts3">Note that the timeline has now changed. Wells are showing black (&quot;Profile not online yet&quot; until they are drilled. Timeline is then &quot;white&quot;, indicating the well is available for production/injection when forecast will be generated.</span></p>
-                <p>&nbsp;</p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p><img width="1554" height="635" alt="" src="images/image(171).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">11. Define the objective function</span></h3>
-                <p class="ps3"><span class="ts3">The objective function is the value Precept solver tries to maximize at every timestep of the forecast.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">From Precept Main User Interface click on the &quot;Settings&quot; icon.</span></p>
-                <p class="ps3"><span class="ts3">The default Objective function is Maximize&nbsp; &quot;Oil_from_Platform_to_Oil_export&quot; as shown below.</span></p>
-                <p><img width="492" height="164" alt="" src="images/image(130).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">However, in our case, we also want to maximize water injection and gas injection. Therefore we need to modify that objective function</span></p>
-                <p>&nbsp;</p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">step 1: Select &quot;Water Injection&quot; at &quot;WI&quot; and click Add</span></p>
-                <p class="ps3"><span class="ts3">The objective function has now been modified to include that Precept solver needs to maximize water injection at Node &quot;WI&quot;. In &quot;Precept language&quot; it </span><span class="ts3">means to </span><span class="ts3">maximize the value&nbsp; &quot;Water__Injection_from_Platform_to_WI&quot;</span></p>
-                <p><img width="551" height="186" alt="" src="images/image(131).png" /></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p>&nbsp;</p>
-                <h3 class="hd1"><span class="ts3">step 2: Select &quot;Gas Injection&quot; at &quot;GI&quot; and click Add</span></h3>
-                <h3 class="hd1"><span class="ts3">The objective function has now been modified to include that Precept solver needs to maximize gas injection at Node &quot;GI&quot;. In &quot;Precept language&quot; it means to maximize the value&nbsp; &quot;Gas__Injection_from_Platform_to_GI&quot;</span></h3>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p><img width="557" height="186" alt="" src="images/image(132).png" /></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p>&nbsp;</p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">11. Run the forecast</span></h3>
-                <p class="ps3"><span class="ts3">Set the forecast Start and End date and Click on &quot;Run Forecast&quot;.</span></p>
-                <p class="ps3"><span class="ts3">The timeline shows wells are put on production/injection once they are drilled.</span></p>
-                <p class="ps3"><span class="ts3">Timeline indicates when the plateau is reached (green color on the row &quot;Platform&quot;).</span></p>
-                <p class="ps3"><span class="ts3">Timeline also highlights which wells are closed or choked-back when the 120,000 oil plateau is reached.</span></p>
-                <p><img width="1198" height="358" alt="" src="images/image(133).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p>&nbsp;</p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">12. Visualize Results</span></h3>
-                <p class="ps3"><span class="ts3">From Precept main User Interface, click &quot;Forecast charts&quot; to visualize forecast at any nodes of the network</span></p>
-                <p><img width="804" height="478" alt="" src="images/image(134).png" /></p>
+                <p><span class="ts3">T</span><span class="ts3">utorial: create a new exploration asset and generate forecasts</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps4"><span class="ts6">This tutorial builds a green-field development from scratch: a new asset with one platform, 8 oil producers, 4 water injectors and 4 gas injectors drilled by one rig, and a 120,000 stb/d oil plateau. Well potentials come from decline curves. At the end you run the forecast and look at the results.</span></p>
+                <p class="ps4"><span class="ts6">The example uses an asset called &quot;Field A&quot;, a project called &quot;Evaluation&quot; and a scenario called &quot;Base&quot;. The screenshots were taken with another asset name; the steps are the same.</span></p>
+                <p class="ps4"><span class="ts6">The main ribbon is organised in groups: &quot;Manager&quot; (&quot;Scenario Manager&quot;, &quot;Duplicate scenario&quot;), &quot;Expertise&quot; (the inputs: &quot;Network&quot;, &quot;Material balance&quot;, &quot;Decline Curves&quot;, &quot;Opportunities&quot;, &quot;Sequence&quot;…), &quot;Forecast&quot; (&quot;Settings&quot;, &quot;Deterministic&quot;, &quot;Probabilistic&quot;…) and &quot;Forecast Results&quot; (&quot;Charts&quot;, &quot;Maps&quot;, &quot;Export to Excel&quot;, &quot;Dashboard&quot;…).</span></p>
+                <p class="ps3"><span class="ts5">1. Create a new asset</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">On the main ribbon, click &quot;Scenario Manager&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Create new Asset&quot; (in the &quot;Assets / Projects&quot; group).</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Type the asset name in &quot;Asset:&quot; (&quot;Field A&quot;) and click &quot;Create Asset&quot;.</span></p>
+                <p class="ps7"><img width="469" height="521" alt="" src="images/image(145).png" /></p>
+                <p class="ps3"><span class="ts5">2. Load the new asset</span></p>
+                <p class="ps4"><span class="ts6">In the main window, select &quot;Field A&quot; in the asset list (left of &quot;Project:&quot;).</span></p>
+                <p class="ps7"><img width="436" height="171" alt="" src="images/image(154).png" /></p>
+                <p class="ps4"><span class="ts6">At this point only you and a Super User can open the asset. To let other users work on it, add them with &quot;Security&quot; on the main ribbon (see </span><a href="security.htm" class="hs0">Security / Access policy</a><span class="ts6">).</span></p>
+                <p class="ps3"><span class="ts5">3. Create a new project</span></p>
+                <p class="ps4"><span class="ts6">The asset has no project yet.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Scenario Manager&quot;, then &quot;Create new Project&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Type &quot;Evaluation&quot; in &quot;Project :&quot; and click &quot;Create Project&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Check that &quot;Evaluation&quot; is selected in the project list of the Scenario Manager.</span></p>
+                <p class="ps7"><img width="984" height="238" alt="" src="images/image(155).png" /></p>
+                <p class="ps3"><span class="ts5">4. Create a new scenario</span></p>
+                <p class="ps4"><span class="ts6">The project &quot;Evaluation&quot; has no scenario yet.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the Scenario Manager, click &quot;Create new scenario from scratch&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Type &quot;Base&quot; in &quot;New Scenario Name :&quot;. Leave &quot;share scenario with other users&quot; unticked (the scenario stays private; you can share it later with &quot;Share scenario&quot;).</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Enter the &quot;Forecast Start Date:&quot; and &quot;Forecast End Date:&quot;, an optional comment, and click &quot;Create scenario&quot;.</span></p>
+                <p class="ps7"><img width="469" height="521" alt="" src="images/image(152).png" /></p>
+                <p class="ps3"><span class="ts5">5. Load the new scenario</span></p>
+                <p class="ps4"><span class="ts6">In the main window, select the project &quot;Evaluation&quot; and the scenario &quot;Field A - Evaluation - Base&quot; (a scenario's full name is always &quot;Asset - Project - Scenario&quot;).</span></p>
+                <p class="ps4"><span class="ts6">A scenario created from scratch starts from Precept's template, which holds a default network (a platform with oil export, gas export, water disposal, and the &quot;OP&quot;, &quot;WI&quot; and &quot;GI&quot; manifolds). Its nodes are listed in the timeline.</span></p>
+                <p class="ps7"><img width="1027" height="405" alt="" src="images/image(150).png" /></p>
+                <p class="ps4"><span class="ts6">Click &quot;Network&quot; on the main ribbon to see the default network.</span></p>
+                <p class="ps7"><img width="601" height="442" alt="" src="images/image(128).png" /></p>
+                <p class="ps3"><span class="ts5">6. Edit the network and add a constraint</span></p>
+                <p class="ps4"><span class="ts6">For this asset we keep the default network. To change it, click &quot;Draw Network&quot; in the Network window: a palette of icons opens beside the diagram. Drag a node icon (manifold, platform, process, compressor, export, flare, fuel…) onto the diagram and name it, then drag a pipe of the right fluid from the palette between two icons (the pipe colour is the fluid). See </span><a href="network-editor.htm" class="hs0">Network editor</a><span class="ts6">&nbsp;and </span><a href="networkmodelling.htm" class="hs0">Network modelling</a><span class="ts6">.</span></p>
+                <p class="ps4"><span class="ts6">To model the production plateau, add a 120,000 stb/d oil constraint on the node &quot;Platform&quot;:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the Network window, the table on the left shows &quot;View Initial Constraints&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the row &quot;Platform&quot;, type 120,000 in the &quot;Oil&quot; column (in the asset's oil-rate unit, shown in the column header).</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save Network&quot;.</span></p>
+                <p class="ps7"><img width="661" height="212" alt="" src="images/image(151).png" /></p>
+                <p class="ps3"><span class="ts5">7. Add the wells</span></p>
+                <p class="ps4"><span class="ts6">The development plan has 8 oil producers, 4 water injectors and 4 gas injectors. In the Network window, click &quot;Add / Edit / Remove Wells&quot;: the &quot;Wells in Network&quot; window opens.</span></p>
+                <p class="ps11"><span class="ts9">7.1 Oil producers</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the &quot;Add Well&quot; box enter: &quot;Well Name:&quot; OP1, &quot;Type of Well:&quot; Oil Producer, &quot;Flows to:&quot; OP, &quot;Reservoir:&quot; Carbonate, &quot;Project:&quot; Phase1. &quot;Coordinates&quot; (X, Y) are optional.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Tick &quot;Create Opportunity to drill the well&quot; and enter 60 in &quot;Drilling duration (days):&quot;. Precept then also creates the opportunity to drill the well and its new profile (step 9), so you do not have to create them by hand.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">To create OP2 to OP8 in the same go, click &quot;+&quot; in the &quot;Duplicate Well&quot; box and type the names in the &quot;Duplicate as&quot; list (or paste a list copied from Excel). The duplicates get the same inputs (and the same opportunity) as OP1.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Add Well&quot;. Precept confirms &quot;Well added to Network.&quot;</span></p>
+                <p class="ps7"><img width="439" height="591" alt="" src="images/image(141).png" /></p>
+                <p class="ps4"><span class="ts6">The 8 producers are now part of the asset model.</span></p>
+                <p class="ps7"><img width="845" height="223" alt="" src="images/image(142).png" /></p>
+                <p class="ps11"><span class="ts9">7.2 Water injectors</span></p>
+                <p class="ps4"><span class="ts6">Add WI1 the same way with &quot;Type of Well:&quot; Water Injector. For an injector the label reads &quot;Fluid comes from:&quot;: select &quot;WI&quot; (the node the injection water comes from). Duplicate it as WI2 to WI4, then click &quot;Add Well&quot;.</span></p>
+                <p class="ps7"><img width="447" height="592" alt="" src="images/image(139).png" /></p>
+                <p class="ps11"><span class="ts9">7.3 Gas injectors</span></p>
+                <p class="ps4"><span class="ts6">Add GI1 with &quot;Type of Well:&quot; Gas Injector and &quot;Fluid comes from:&quot; GI. Duplicate it as GI2 to GI4, then click &quot;Add Well&quot;.</span></p>
+                <p class="ps7"><img width="450" height="592" alt="" src="images/image(140).png" /></p>
+                <p class="ps3"><span class="ts5">8. Define the well potentials (decline curves)</span></p>
+                <p class="ps4"><span class="ts6">First check how the scenario generates potentials: click &quot;Settings&quot; (in the &quot;Forecast&quot; group of the main ribbon). In the &quot;Potentials&quot; box, the list must show &quot;Decline curves&quot;. (The other choices are &quot;Material Balance&quot;, where potentials come from tank models, see </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">, and &quot;Simulation&quot;, where a reservoir simulator runs in the loop, see </span><a href="sim-coupling.htm" class="hs0">Simulator coupling</a><span class="ts6">.) Click &quot;Save Settings&quot; if you changed it.</span></p>
+                <p class="ps4"><span class="ts6">Then click &quot;Decline Curves&quot; on the main ribbon. The Decline Curves window opens on the current project and scenario (see </span><a href="dca.htm" class="hs0">Decline curves: Production and Injection potentials</a><span class="ts6">).</span></p>
+                <p class="ps11"><span class="ts9">8.1 Oil producer OP1</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the lists on the left, check that the project &quot;Evaluation&quot; and the scenario &quot;Field A - Evaluation - Base&quot; are selected, then select the well &quot;OP1&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select &quot;Exponential&quot; in the decline-type list (highlighted in red below). The list also offers &quot;Hyperbolic&quot;, &quot;Harmonic&quot;, &quot;Hybrid&quot;, &quot;Multi-segment vs Cum&quot; and &quot;Multi-segment vs Time&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Enter the start rates and declines in the table: Liquid 25,000 stb/d, Oil 20,000 stb/d, Gas 5,000 Mscf/d, gas-lift 0; Nominal Decline Liquid 5 %, Oil 10 %, Gas 7 %. The b factor is 0 for an exponential decline. You can also drag the points on the chart.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot;.</span></p>
+                <p class="ps7"><img width="1175" height="812" alt="" src="images/image(173).png" /></p>
+                <p class="ps11"><span class="ts9">8.2 Water injector WI1</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the well &quot;WI1&quot; and the decline type &quot;Multi-segment vs Cum&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Enter a constant water-injection potential of 5,000 bwpd (one segment is enough). Make sure the segment covers the whole forecast: enter a large cumulative water injection, so the end date (highlighted in red below) is after the forecast end date.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot;.</span></p>
+                <p class="ps7"><img width="710" height="623" alt="" src="images/image(110).png" /></p>
+                <p class="ps11"><span class="ts9">8.3 Gas injector GI1</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the well &quot;GI1&quot; and the decline type &quot;Multi-segment vs Cum&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Enter a constant gas-injection potential of 5,000 Mscf/d, with a cumulative gas injection large enough to cover the whole forecast.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot;.</span></p>
+                <p class="ps7"><img width="715" height="627" alt="" src="images/image(111).png" /></p>
+                <p class="ps11"><span class="ts9">8.4 Copy the decline curves to the other wells</span></p>
+                <p class="ps4"><span class="ts6">Here all producers share the profile of OP1, all water injectors that of WI1 and all gas injectors that of GI1.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the Decline Curves window, click &quot;Import / Duplicate profile&quot;. The &quot;Import / duplicate profiles&quot; window opens.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">On the left, select &quot;from Decline Curves&quot;, the well type, the case (&quot;Mid&quot;), the project, the scenario and the source well (OP1).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">On the right, select the target project and scenario, &quot;Duplicate one well profile to other wells&quot;, and the target wells (OP2 to OP8).</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;-&gt; Send to -&gt;&quot;.</span></p>
+                <p class="ps7"><img width="1348" height="271" alt="" src="images/image(163).png" /></p>
+                <p class="ps4"><span class="ts6">Do the same from WI1 to WI2&ndash;WI4:</span></p>
+                <p class="ps7"><img width="1329" height="186" alt="" src="images/image(165).png" /></p>
+                <p class="ps4"><span class="ts6">And from GI1 to GI2&ndash;GI4:</span></p>
+                <p class="ps7"><img width="1331" height="184" alt="" src="images/image(166).png" /></p>
+                <p class="ps4"><span class="ts6">Shortcut: instead of copying the profiles, tick &quot;Apply same potentials to all wells from same reservoir (explo)&quot; in the &quot;Potentials&quot; box of &quot;Settings&quot;, and every well of a reservoir uses the same potential.</span></p>
+                <p class="ps7"><img width="336" height="147" alt="" src="images/image(172).png" /></p>
+                <p class="ps4"><span class="ts6">Go back to the main window and click &quot;Refresh&quot;. The well rows of the timeline are black (&quot;Well not drilled yet&quot;): the wells exist and have a potential, but nothing has drilled them yet, so they never come online. Steps 9 and 10 schedule their drilling.</span></p>
+                <p class="ps7"><img width="1306" height="483" alt="" src="images/image(159).png" /></p>
+                <p class="ps3"><span class="ts5">9. Add a rig (drilling sequence)</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">On the main ribbon, click &quot;Sequence&quot;, then &quot;Add / Remove string. Modify string start date&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Add a string named &quot;Rig1&quot; starting on 01/02/2024. The &quot;Performed By&quot; column is only used by &quot;Auto-Schedule&quot;; leave it empty here.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot;, then &quot;Refresh&quot; in the main window: the Rig1 sequence appears, still empty.</span></p>
+                <p class="ps7"><img width="582" height="188" alt="" src="images/image(160).png" /></p>
+                <p class="ps3"><span class="ts5">10. Opportunities to drill the wells</span></p>
+                <p class="ps4"><span class="ts6">An opportunity is an event (here, drilling a well) that brings a new profile online once it is executed. If you ticked &quot;Create Opportunity to drill the well&quot; in step 7, the 16 opportunities already exist: open &quot;Opportunities&quot;, select each one, click &quot;Edit&quot; and enter its CAPEX (created with 0). Otherwise, create them as follows.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">On the main ribbon, click &quot;Opportunities&quot;, then &quot;New&quot;. The &quot;Add Opportunity&quot; window opens.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Opportunity:&quot; OP1, &quot;Duration (days):&quot; 60, &quot;Start Date:&quot; &quot;From Sequence&quot; (the opportunity has no fixed date: it is executed when its turn comes in a sequence), &quot;Color:&quot; green.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Impact on Forecast:&quot; &quot;New profile&quot;. In the table, set &quot;Type profile&quot; to &quot;is a new online profile&quot;, &quot;New profile name&quot; to OP1 (the decline curve defined in step 8), and CAPEX to 20,000,000 USD. &quot;Project&quot; fills in by itself, because the well's project was set when the well was added.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the &quot;Duplicate Opportunity&quot; box, click &quot;+&quot; and list the other wells (OP2… OP8, WI1… WI4, GI1… GI4).</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot; to create the 16 opportunities, then &quot;Refresh&quot; in the &quot;All Opportunities&quot; window.</span></p>
+                <p class="ps7"><img width="1086" height="812" alt="" src="images/image(169).png" /></p>
+                <p class="ps7"><img width="1234" height="541" alt="" src="images/image(170).png" /></p>
+                <p class="ps4"><span class="ts6">To tell the wells apart in the sequence, give the injector opportunities their own colour: select WI1, click &quot;Edit&quot;, choose blue and &quot;Save&quot;; click &quot;Refresh&quot; and copy the &quot;Color&quot; cell of WI1 to the other water injectors (Ctrl+C, Ctrl+V). Do the same in red for the gas injectors. (Opportunities created from &quot;Add / Edit / Remove Wells&quot; already have these colours: green for producers, blue for water injectors, red for gas injectors.)</span></p>
+                <p class="ps3"><span class="ts5">11. Build the drilling sequence</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the main window, tick &quot;Show Pool of Opportunities&quot; and click &quot;Refresh&quot;. The 16 opportunities appear in the Pool.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Move them from the Pool to the Rig1 sequence in the drilling order you want: drag them with the mouse, or right-click an opportunity to cut it and double-click where it goes to paste it (see </span><a href="build-sequence.htm" class="hs0">Build sequence of events</a><span class="ts6">).</span></p>
+                <p class="ps4"><span class="ts6">The timeline now shows each well black (&quot;Well not drilled yet&quot;) until its drilling ends, then white: the well is available for production or injection when the forecast runs.</span></p>
+                <p class="ps7"><img width="1554" height="635" alt="" src="images/image(171).png" /></p>
+                <p class="ps3"><span class="ts5">12. Define the objective function</span></p>
+                <p class="ps4"><span class="ts6">The objective function is what the Precept solver maximises at every time step; when a constraint is reached it decides which wells are choked back or shut in. Click &quot;Settings&quot; (&quot;Forecast&quot; group). The &quot;Objective Function&quot; box shows the default, maximise oil to &quot;Oil export&quot;:</span></p>
+                <p class="ps7"><img width="492" height="164" alt="" src="images/image(130).png" /></p>
+                <p class="ps4"><span class="ts6">Here we also want to maximise water and gas injection:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Next to &quot;Max:&quot; select &quot;Water Injection&quot;, next to &quot;at&quot; select &quot;WI&quot;, and click &quot;Add&quot;. A term for the water injected into &quot;WI&quot; is added to the &quot;obj function:&quot; box.</span></p>
+                <p class="ps7"><img width="551" height="186" alt="" src="images/image(131).png" /></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select &quot;Gas Injection&quot; at &quot;GI&quot; and click &quot;Add&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save Settings&quot;.</span></p>
+                <p class="ps7"><img width="557" height="186" alt="" src="images/image(132).png" /></p>
+                <p class="ps3"><span class="ts5">13. Run the forecast</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Check the &quot;Forecast Start Date&quot; and &quot;Forecast End Date&quot; in the main window.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Deterministic&quot; in the &quot;Forecast&quot; group of the main ribbon. (&quot;Probabilistic&quot; runs many realisations instead, see </span><a href="probabilistic.htm" class="hs0">probabilistic</a><span class="ts6">.)</span></p>
+                <p class="ps4"><span class="ts6">When the run ends, the timeline shows:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">each well coming online once it is drilled;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">when the plateau is reached (green on the row &quot;Platform&quot;: the node is oil-constrained);</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">which wells are shut in (black) or choked back (light green) to honour the 120,000 stb/d constraint. Hover over a cell to read the reason.</span></p>
+                <p class="ps7"><img width="1198" height="358" alt="" src="images/image(133).png" /></p>
+                <p class="ps4"><span class="ts6">Tick &quot;Show Network&quot; to see the network with the constrained nodes highlighted month by month (see </span><a href="network-view.htm" class="hs0">Network view</a><span class="ts6">).</span></p>
+                <p class="ps3"><span class="ts5">14. Look at the results</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Charts&quot; in the &quot;Forecast Results&quot; group of the main ribbon. The &quot;Forecast Results&quot; window shows the forecast at any node of the network, at field level, per reservoir or per project (see </span><a href="results-charts.htm" class="hs0">Forecast results: Charts</a><span class="ts6">).</span></p>
+                <p class="ps7"><img width="804" height="478" alt="" src="images/image(134).png" /></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -339,7 +204,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

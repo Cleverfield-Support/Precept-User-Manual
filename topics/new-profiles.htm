@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html id="hs-topic-p">
 <head>
-<title>New profile</title>
+<title>New profiles</title>
 <meta charset="windows-1252" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="addwell.htm" class="hs0">Add wells to Asset Model</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="addwell.htm" class="hs1">Add wells to Asset Model</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">New profiles</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,18 +63,127 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">New profiles coming online are usually linked to an Opportunity placed in the sequence of events.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">However, introducing a new profile with a &quot;hard' start date can be done by clicking on the &quot;New profiles&quot; icon from Precept Main User Interface.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p><img width="1658" height="93" alt="" src="images/image(57).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">In the example above, A1-I1 and A1-I2 are two future wells. Their start date is not &quot;hard'. They will come online once the Opportunity A1-I1 and A1-I2 have been executed respectively. They have been introduced by creating Opportunities (see </span><a href="opportunities.htm" class="hs1">Opportunities</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">A1-W1 is s new profile. Its Start Date is &quot;Hard&quot; and set to 01/04/2023.</span></p>
+                <p><span class="ts3">N</span><span class="ts3">ew profiles</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; when does a profile come online?</span></p>
+                <p class="ps4"><span class="ts6">A new profile tells Precept when a production or injection profile starts in the forecast: a new well coming online, an extra profile added to an existing well (for example after a workover), or a profile that replaces another one. The start date can be:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">linked to an opportunity of the sequence of events &mdash; the profile starts when the opportunity starts or ends, so it moves automatically when you change the sequence. This is the usual case for future wells (see </span><a href="opportunities.htm" class="hs0">Opportunities</a><span class="ts6">);</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a &quot;hard&quot; date &mdash; the profile starts on a fixed date, whatever the sequence.</span></p>
+                <p class="ps4"><span class="ts6">The profile itself (the rates) is defined elsewhere: with a decline curve in &quot;Decline Curves&quot; (see </span><a href="dca.htm" class="hs0">Decline curves: Production and Injection potentials</a><span class="ts6">), or from Material Balance. The new profile only sets when it starts.</span></p>
+                <p class="ps3"><span class="ts5">2. Open the New profiles table</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the scenario on the main window.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;New profiles and Conversions&quot; on the main ribbon. The window opens on &quot;New profiles&quot;; the list at the top switches between &quot;New profiles&quot; and &quot;Conversions&quot; (see </span><a href="conversions.htm" class="hs0">Well conversion</a><span class="ts6">).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Add&quot; on the ribbon to add a row, fill it in, then click &quot;Save&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Delete selected rows&quot; and &quot;Delete All rows&quot; remove rows; &quot;Filter by project:&quot; shows the rows of one project only.</span></p>
+                <p class="ps4"><span class="ts6">The table shows every new profile of the scenario, including those created from an opportunity (their &quot;Linked to Opportunity&quot; column holds the opportunity name). Rows with no &quot;Type profile&quot; are dropped when you save.</span></p>
+                <p class="ps7"><img width="1658" height="93" alt="" src="images/image(57).png" /></p>
+                <p class="ps4"><span class="ts7">Example: A1-I1 and A1-I2 are future wells that come online when the opportunities A1-I1 and A1-I2 are executed. A1-W1 comes online on a hard date, 01/04/2023.</span></p>
+                <p class="ps3"><span class="ts5">3. Columns</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Column</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Meaning</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Project</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The project the profile is reported under. For &quot;is a new online profile&quot;, it is filled in from the well's project when you pick the well. If the project is excluded from the forecast in the settings, the row is ignored.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Type profile</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">What the profile does (section 4).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">New profile name</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">For a new online profile: the well, picked from the wells of the Asset Model. For an incremental or replacing profile: the name you give to the new profile (it then appears as a profile to define in Decline Curves).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Incremental to or replace</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The existing well that the profile adds to, takes away from, replaces or restarts. Greyed out for a new online profile.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Online after</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Event-based start: the opportunity the start date is linked to.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reference date</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;start&quot; or &quot;end&quot; of that opportunity. Blank means &quot;end&quot;.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Number of days before</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Optional offset from the reference date. A positive number starts the profile that many days before the reference date; a negative number starts it after (for example -30 = 30 days after).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Online Start_Date</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Hard start date. Used only when &quot;Online after&quot; is blank.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">CAPEX, OPEX, OPEX unit, Group cost to Node</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Optional costs attached to the profile, used by the economics.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Comment, Linked to Opportunity</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Free comment; the opportunity this row was created from, if any.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Use either the event-based columns (&quot;Online after&quot;, &quot;Reference date&quot;, &quot;Number of days before&quot;) or &quot;Online Start_Date&quot;. The cells that are not used are greyed out.</span></p>
+                <p class="ps7"><img width="700" height="300" alt="" src="images/fig_online_date_rule.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; How an event-based start date is computed from the opportunity, the reference date and the number of days before.</span></p>
+                <p class="ps3"><span class="ts5">4. Types of profile</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;is a new online profile&quot; &mdash; a well that is not producing yet (typically a new well). Precept keeps it shut in from the forecast start until the start date (timeline comment &quot;Well not drilled yet&quot;). When the start is the end of an opportunity, the well is also shown shut in during that opportunity (the drilling).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;is positive incremental to&quot; &mdash; from the start date, the potential of the new profile is added to the potential of the well in &quot;Incremental to or replace&quot; (for example the gain of a stimulation).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;is negative incremental to&quot; &mdash; the same, but the potential of the new profile is subtracted. The result never goes below zero.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;replace&quot; &mdash; from the start date, the well's profile is replaced by the new profile.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;restart under different project&quot; &mdash; from the start date, the production of the well in &quot;Incremental to or replace&quot; is reported under the project of this row (for example a shut-in well brought back by a new project).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Data acquisition&quot; &mdash; used for Exploration and Appraisal wells: the drilling appears in the forecast, with no production profile. Precept creates these rows when you add such a well with &quot;Create Opportunity to drill the well&quot; (see </span><a href="addwell.htm" class="hs0">Add wells to Asset Model</a><span class="ts6">).</span></p>
+                <p class="ps4"><span class="ts6">An incremental or replacing profile only takes effect if the well it applies to is online at the start date; it does nothing on a well that is not drilled yet or abandoned.</span></p>
+                <p class="ps3"><span class="ts5">5. New profiles created from opportunities</span></p>
+                <p class="ps4"><span class="ts6">When you create an opportunity with &quot;Impact on Forecast&quot; = &quot;New profile&quot;, you fill in the same columns in the opportunity window, and the rows are saved here with the opportunity name in &quot;Linked to Opportunity&quot;. When you add a well with &quot;Create Opportunity to drill the well&quot;, Precept creates the row for you: &quot;is a new online profile&quot;, online after the drilling opportunity, reference date &quot;end&quot;.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -86,7 +195,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>Pipelines, pumps and network pressure solve</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 420;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="networkmodelling.htm" class="hs1">Network modelling</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">Pipelines, pumps and network pressure solve</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="network-editor.htm" title="Network editor"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="patterns.htm" title="Patterns"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">P</span><span class="ts3">ipelines, pumps and network pressure solve</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; when the network pressures are solved</span></p>
+                <p class="ps4"><span class="ts6">In a Decline-curves (DCA) forecast, the network carries rates and constraints only. When the scenario's &quot;Decline&quot; setting is &quot;Material Balance&quot; or &quot;Simulation&quot;, Precept also computes the pressure at every manifold and junction from the hydraulics of the pipes:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the pressure at the outlet of the network (the separator or platform) is fixed by you;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">each pipe leg has a lift curve (a pipeline VLP) that gives the pressure needed at its inlet to push a given flow to its outlet;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">each well then flows against the solved pressure of its manifold, so more flow in a shared line means a higher back-pressure on every well of that line.</span></p>
+                <p class="ps4"><span class="ts6">Only the wells of reservoirs forecast with Material Balance take part in the pressure solve. On a Material Balance run with several reservoirs, Precept first asks, in the &quot;Forecast method per reservoir&quot; window, which reservoirs use Material Balance; the others use Decline curves. See </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">&nbsp;and </span><a href="sim-coupling.htm" class="hs0">Simulation coupling</a><span class="ts6">.</span></p>
+                <p class="ps3"><span class="ts5">2. How the network is read</span></p>
+                <p class="ps4"><span class="ts6">The legs that take part in the solve are the rows of &quot;Pipelines VLP&quot; in the Network window (drop-down list above the left table): &quot;Upstream Node&quot;, &quot;Downstream Node&quot;, &quot;VLP Index&quot; and &quot;Type&quot; (Pipeline or Pump). Pipes are read in the flow direction:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Production leg &mdash; the wells tie in at the upstream node (the manifold). The fixed pressure is the &quot;Min Pressure / Separator pressure / Min FBHP (OP)&quot; of the node at the end of the chain, entered in &quot;View Initial Constraints&quot;.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Injection leg (water or gas injection) &mdash; the fixed pressure is at the upstream node, the source (its Min Pressure, or its Max Pressure when no minimum is set). The injectors tie in at the downstream node, the injection manifold.</span></p>
+                <p class="ps4"><span class="ts6">Multi-level (tree) networks: when the downstream node of one leg is the upstream node of another leg, that node is a junction. Several manifolds can feed a junction, junctions can feed other junctions, and only the final node has a fixed pressure. All the node pressures are solved together:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Every node starts at the fixed pressure of its chain.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">From the far ends towards the sink, each node's outflow is computed: its own wells, evaluated at the node pressure, plus everything arriving from upstream nodes.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">The node pressure is moved towards the pressure its downstream leg's VLP needs to carry that outflow to the next node.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">The sweep is repeated until no node pressure changes by more than 0.05 (in the asset's pressure unit).</span></p>
+                <p class="ps7"><img width="720" height="420" alt="" src="images/fig_network_tree_pressures.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; A two-level network. Only the platform pressure is fixed; the junction and manifold pressures are solved, each one higher than the node downstream of it by the pressure drop of its leg at the flow it carries.</span></p>
+                <p class="ps4"><span class="ts6">Then, at each time step:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The optimiser applies the rate constraints, which may choke wells back. Precept then solves the network again with the constrained flows, recomputes the well potentials at the new pressures and re-optimises, until the manifold pressures change by less than 0.5 between passes (at most 15 passes).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A chain that never reaches a node with a fixed pressure (for example the platform Min Pressure was left empty) is not solved: its wells fall back to their own limits (THP, drawdown).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">If the solve cannot settle, the forecast stops with &quot;Network pressure solve failed on &lt;date&gt;&quot; and names the worst node. A common cause is a well that flows at one pressure and dies just above it: check its reservoir pressure against its VLP, or shut it for that period.</span></p>
+                <p class="ps3"><span class="ts5">3. Pipeline VLPs (flowlines and risers)</span></p>
+                <p class="ps4"><span class="ts6">A pipe leg is modelled like a well without a reservoir: a geometry, a fluid, and a lift-curve table generated by Precept's own pressure traverse. Before you start, set the scenario's VLP folder in the Material Balance window: pipeline VLP files are saved there.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the Network window, right-click the pipe on the diagram. The pipeline window opens, titled &quot;Pipeline from &lt;upstream&gt; to &lt;downstream&gt;&quot;, with the tabs &quot;Completion&quot;, &quot;PVT&quot; and &quot;VLP&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;Completion&quot; tab, &quot;Pipe segments&quot; grid: one row per node of the pipe, with MD, TVDSS, &quot;Pipe ID&quot;, &quot;Roughness&quot; and &quot;Surrounding temperature&quot;. As for a well, MD 0 is the outlet (the downstream end, e.g. the top of the riser) and the largest MD is the inlet (the upstream manifold). The row at MD 0 needs no Pipe ID or Roughness: each segment's values sit on its lower node. The &quot;Pipeline profile&quot; chart draws the pipe. Click &quot;Save&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;PVT&quot; tab: the fluid carried by the pipe. It is stored in the pipe's VLP file.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">&quot;VLP&quot; tab: set &quot;Table Index&quot; (unique in the VLP folder), the &quot;Correlation&quot; (Beggs &amp; Brill, Hagedorn-Brown or Gray), &quot;F1&nbsp; (tuning)&quot;, &quot;F2&nbsp; (tuning)&quot; and the &quot;U-value&quot; (section 5). Check the values of each axis: liquid rate, THP (the outlet pressure), BSW, GOR and inlet temperature.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Generate VLP file&quot;. The file is saved in the scenario's VLP folder as &lt;name&gt;_&lt;index&gt;.vlp and the leg is registered in &quot;Pipelines VLP&quot; (&quot;Pipeline VLP &lt;index&gt; registered&quot;). Generating again replaces the leg's previous curve.</span></p>
+                <p class="ps11"><span class="ts9">3.1 Matching measured pressure drops</span></p>
+                <p class="ps4"><span class="ts6">Under the buttons of the VLP tab, &quot;Pressure drop matching&quot; tunes F1 and F2 on measured points:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Enter one row per measured point: &quot;Upstream Pressure&quot;, &quot;Downstream Pressure&quot; (the outlet), &quot;Liquid&quot;, &quot;BSW&quot; and &quot;GOR&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Choose what to tune: &quot;Auto&quot; (with one point, F1 for a riser where gravity dominates, F2 for a flat line where friction dominates; with two or more points, both), &quot;F1 (gravity)&quot;, &quot;F2 (friction)&quot; or &quot;F1 and F2&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Match F1 / F2&quot;. The tuned values, the &quot;Calc. upstream&quot; pressure and the &quot;Error&quot; of each point, and the RMS error are shown.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Generate VLP file&quot; to apply the tuning. The points are saved in the VLP file. Right-click the grid to delete points or clear them all.</span></p>
+                <p class="ps3"><span class="ts5">4. Booster pumps</span></p>
+                <p class="ps4"><span class="ts6">A booster pump adds pressure to the flow. Its boost falls as the rate rises, following its pump curve. Precept treats a pump as a node whose &quot;lift curve&quot; is a pressure gain instead of a loss.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Draw the Pump icon between the manifold and the next node: a pipe from the manifold to the pump, and a pipe from the pump to the next node (for example the platform).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Right-click the pump. The &quot;&lt;pump&gt;&nbsp; -&nbsp; Performance curve&quot; window opens. &quot;Inlet (from)&quot; is pre-filled with the node feeding the pump and &quot;Outlet (to)&quot; with the pump node itself; keep them unless your layout differs.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Enter a &quot;VLP index&quot; not used by any other VLP file in the folder, and at least 3 points of the curve in the grid: &quot;Rate&quot; and &quot;Boost dP&quot;, in the asset's liquid-rate and pressure units. A quadratic curve is fitted and drawn on the right.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot;. The pump is saved as a VLP file in the scenario's VLP folder and registered in &quot;Pipelines VLP&quot; with the Type &quot;Pump&quot;. Right-clicking the pump again shows the saved curve.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Give the pipe leaving the pump its own pipeline VLP (section 3). If an older leg still goes straight from the manifold to the platform, remove it from &quot;Pipelines VLP&quot; (right-click, &quot;Remove selected VLP&quot;).</span></p>
+                <p class="ps7"><img width="640" height="380" alt="" src="images/fig_pump_curve.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 2 &mdash; A pump curve: the entered points and the fitted quadratic. The boost is never negative, never above the shut-in boost, and zero beyond the largest rate entered.</span></p>
+                <p class="ps11"><span class="ts9">4.1 How the pump is used: merging the chain</span></p>
+                <p class="ps4"><span class="ts6">When the forecast starts, Precept follows each chain of legs that starts at a manifold. A chain that contains a pump (e.g. Manifold &rarr; Pump &rarr; Platform) is merged into one equivalent lift curve from the manifold to the end of the chain: the pipe VLPs are combined, and at each rate the pump's boost is subtracted. The wells of the manifold then see the network as a single leg, with the pump included. A chain made of pipes only is not merged: the network solve handles it level by level.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Merged curves get table numbers from 9000 upwards and are written to the VLP folder as MERGED_&lt;index&gt;.vlp, rewritten at every run. Do not use 9000 or above for your own VLPs.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">What was merged, or why a chain was skipped, is written to merge_log.txt in the VLP folder.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A pump must have a pipe after it: a pump at the very end of a chain cannot be merged.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Current limitation: a chain is merged only when its pipe VLPs have no inlet-temperature axis. Pipeline VLPs generated in Precept always include heat transfer (section 5), so check merge_log.txt after the run to confirm your pump chain was merged.</span></p>
+                <p class="ps3"><span class="ts5">5. Heat transfer and node temperatures</span></p>
+                <p class="ps4"><span class="ts6">Pipeline VLPs include heat transfer with the surroundings (seabed, sea water, ground):</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Surrounding temperature&quot; (Completion tab) &mdash; the temperature around the pipe at each node, in the asset's temperature unit. Enter it on one node for a uniform temperature, or on several nodes for a profile (linear in between).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;U-value&quot; (VLP tab) &mdash; the overall heat-transfer coefficient, in BTU/hr/ft²/&deg;F, referred to the pipe inside diameter. Default 8 (a bare pipe in sea water).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Inlet temperature&quot; axis (VLP tab) &mdash; the VLP table is generated for several fluid temperatures at the pipe inlet, so the network solve can read the pressure drop at the actual inlet temperature.</span></p>
+                <p class="ps4"><span class="ts6">During the network solve:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Each well's stream enters the network at its reservoir temperature.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">At each node, the arriving streams are mixed in proportion to their heat capacity (oil 0.53, gas 0.51, water 1.0 BTU/lb/&deg;F).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Along a pipe, the fluid cools towards the surrounding temperature: T_out = T_surr + (T_in &minus; T_surr) × exp(&minus;U·&pi;·D·L / W), where D is the pipe inside diameter, L the length and W the heat-capacity rate of the flow. A small flow arrives close to the surrounding temperature, a large flow arrives warm. There is no Joule-Thomson effect.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The arrival temperature becomes the inlet temperature of the next leg. A pipe with no flow passes on no temperature.</span></p>
+                <p class="ps3"><span class="ts5">6. Where to see the results</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Results window: select a node; for a Material Balance or Simulation scenario the parameters &quot;Pressure&quot; (the solved node pressure, gauge) and &quot;Temperature&quot; (the mixed node temperature) can be charted. See </span><a href="results-charts.htm" class="hs0">Forecast results: Charts</a><span class="ts6">.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Network view: click a node and pick &quot;Pressure&quot; in its chart (see </span><a href="network-view.htm" class="hs0">Network view (forecast)</a><span class="ts6">).</span></p>
+                <p class="ps3"><span class="ts5">7. Quick start</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Set the scenario's &quot;Decline&quot; setting to &quot;Material Balance&quot; (or &quot;Simulation&quot;) and its VLP folder in the Material Balance window.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the Network window, enter the outlet pressure (&quot;Min Pressure / Separator pressure / Min FBHP (OP)&quot;) of the platform or separator.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Right-click each pipe leg, enter its geometry and surrounding temperatures, and click &quot;Generate VLP file&quot;. Match F1 / F2 if you have measured pressure drops.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Right-click each booster pump and enter its curve.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Check &quot;Pipelines VLP&quot;: one row per leg, no stale rows. Save the network.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">6.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Run the forecast and chart the node &quot;Pressure&quot; and &quot;Temperature&quot; in the Results window.</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,11 +43,11 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Network modelling</span></h1>
                       </td>
                       <td class="cell1">
-                        <p class="ps1"><a href="security.htm" title="Security / Access policy"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="patterns.htm" title="Patterns"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                        <p class="ps1"><a href="security.htm" title="Security / Access policy"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="network-editor.htm" title="Network editor"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
                       </td>
                     </tr>
                   </table>
@@ -63,34 +63,219 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts8">Network modelling and its associated objective function to solve and optimize production needs to be performed with great care to ensure accurate results and fast computation time. Don't hesitate to ask for Cleverfield help if ensure how to model your asset. </span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The network can be visualized and edited by clicking on the &quot;Network&quot; icon from Precept main User Interface.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The network is displayed on the right on the screen. Constraints can be given at any node of the network using the table on the left. Those are initial constraints at start of forecast. Constraints can be modified with time (see </span><a href="constraintsvstime.htm" class="hs1">Constraints changes vs time</a><span class="ts3">).</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The first column &quot;Rank&quot; has been introduced for visualization purposes. In the Timeline in the main Precept interface, nodes and well are sorted by &quot;Rank&quot; Ascending first, then alphabetically. This feature is useful to have the nodes and wells sorted as per users preference.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">A node or well with a rank greater than 1000 will </span><span class="ts11">not </span><span class="ts3">be shown in the timeline in the main Precept interface.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p>&nbsp;</p>
-                <p><img width="1424" height="911" alt="" src="images/image(5).png" /></p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p class="ps3"><span class="ts3">Network items can be added using existing items using Ctrl+C /Ctrl+V functions.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">New items can also be added by clicking on the &quot;Draw network&quot; icon, and then dragged and dropped into the production network.</span></p>
-                <p><img width="618" height="858" alt="" src="images/image(6).png" /></p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p class="ps3"><span class="ts3">A color code is used for pipeline to indicates the type of&nbsp; fluids flowing through.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Reporting nodes and pipelines</span></h3>
-                <p class="ps3"><span class="ts3">Reporting nodes and pipelines do not physically exist but can be used to sum fluids from various nodes. In such case, the fraction of fluid coming from the 'parent-node&quot; can be specified by clicking on the list box and select &quot;view reporting Node&quot;. This feature can be used to calculate entitled production in case a field is produced under a production sharing agreement between several companies.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Split Nodes</span></h3>
-                <p class="ps3"><span class="ts3">Fluids from a parent-node can be sent to more than one child-node.&nbsp; if no specific split fraction is introduced, Precept solver will split the fluids in order to maximize production. However a split fraction can be introduced by clicking on the list box and select &quot;view Splits&quot;.</span></p>
-                <p>&nbsp;</p>
+                <p><span class="ts3">N</span><span class="ts3">etwork modelling</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; what the network is</span></p>
+                <p class="ps4"><span class="ts6">The network describes how fluids travel from the wells to the facilities and to their final destination (export, flare, fuel, disposal, injection). Each scenario has its own network. It is made of:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Nodes &mdash; manifolds, platforms, process facilities, compressors, pumps, tanks, export points, sources, flares, fuel, storage, reporting nodes. Each node has a unique name and a node type.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Pipes &mdash; arrows from an upstream node to a downstream node. The colour of a pipe is the fluid it carries: black liquid, green oil, light blue water, red gas, purple 3-phase, orange gas-lift, navy water injection, dark red gas injection.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Wells &mdash; each well flows to a node (producers) or is injected from a node (injectors). Wells are added and routed with &quot;Add / Edit / Remove Wells&quot; (see </span><a href="addwell.htm" class="hs0">Add wells to Asset Model</a><span class="ts6">), or by re-drawing their links on the diagram (see </span><a href="network-editor.htm" class="hs0">Network editor</a><span class="ts6">).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Constraints &mdash; maximum rates, uptime and pressures set on nodes and wells. At every forecast time step, Precept's solver keeps every flow within these constraints and decides which wells are choked back or shut in.</span></p>
+                <p class="ps7"><img width="700" height="380" alt="" src="images/fig_network_concepts.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; The building blocks of a network: wells, manifolds, a split node, a platform with its export, and a reporting node fed by a dashed reporting line.</span></p>
+                <p class="ps4"><span class="ts6">Network modelling, and the objective function used to solve and optimise production, must be done with care to get accurate results and fast run times. Do not hesitate to ask Cleverfield for help when you are not sure how to model your asset.</span></p>
+                <p class="ps3"><span class="ts5">2. The Network window</span></p>
+                <p class="ps4"><span class="ts6">Select the scenario, then click &quot;Network&quot; in the &quot;Expertise&quot; group of the main ribbon. The window opens maximised:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">On the left, a table chosen in the drop-down list above it (section 3). It opens on &quot;View Initial Constraints&quot;.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">On the right, the network diagram. &quot;View diagram in full screen&quot; (top right) hides the table and gives the whole width to the diagram; click &quot;Minimize diagram&quot; to bring the table back.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">On the diagram itself (top right corner), the &quot;Wells&quot;, &quot;Reservoirs&quot; and &quot;Constraints&quot; checkboxes draw the wells, the reservoirs and the constraint values on the network (see </span><a href="network-editor.htm" class="hs0">Network editor</a><span class="ts6">).</span></p>
+                <p class="ps7"><img width="1424" height="911" alt="" src="images/image(5).png" /></p>
+                <p class="ps4"><span class="ts7">The Network window: the constraints table on the left, the network diagram on the right.</span></p>
+                <p class="ps4"><span class="ts6">The ribbon of the Network window:</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Button</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">What it does</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Save Network</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Saves the diagram and every table of the window (Ctrl+S does the same). See section 9.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Draw Network</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Shows the diagram full screen with a palette of node icons and pipes to drag onto the network (see Network editor).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Add / Edit / Remove Wells</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Opens the wells editor of the scenario. The Network window closes (save your changes first).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Rerouting</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Opens the &quot;Rerouting&quot; schedule of the scenario.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Import Well Trajectories</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Opens the data import window set to well trajectories.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Import GAP events</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Shown only for a scenario in Material Balance or Simulation mode, or using the GAP processor. Reads events from a GAP model (needs GAP and OpenServer on the computer).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Network icons group</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Convert to new icons&quot; / &quot;Back to classic shapes&quot;. Shown only while the network still uses the classic shapes, or right after a conversion (see Network editor).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Help</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Opens this manual.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">If your account cannot edit this asset's data, the ribbon is disabled: you can look at the network but not change it.</span></p>
+                <p class="ps3"><span class="ts5">3. The tables on the left</span></p>
+                <p class="ps4"><span class="ts6">The drop-down list above the table chooses what is shown:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;View Initial Constraints&quot; &mdash; the constraints of every node and well at the start of the forecast (section 4).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;View Splits&quot; &mdash; the split fractions of the nodes that send a fluid to more than one node (section 5).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;View Reporting Nodes&quot; &mdash; the nodes and fractions summed by each reporting node (section 6).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;View Coordinates&quot; &mdash; the position of each node (section 7).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;special modeling&quot; &mdash; asset-specific modelling rules. Use it only as advised by Cleverfield.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Pipelines VLP&quot; &mdash; the pipeline and pump lift curves used by the network pressure solve (section 8).</span></p>
+                <p class="ps3"><span class="ts5">4. Initial constraints</span></p>
+                <p class="ps4"><span class="ts6">&quot;View Initial Constraints&quot; lists the nodes first (sorted by Rank, then by name), then, after an empty row, the wells. Each column is a constraint; an empty cell means no constraint. Rates are in the asset's units (shown in the column headers). These values apply from the start of the forecast; to change a constraint at a later date, use </span><a href="constraintsvstime.htm" class="hs0">Constraints changes vs time</a><span class="ts6">.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Column</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Meaning</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Rank</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Display order only. In the timeline of the main window, nodes and wells are sorted by Rank (ascending), then alphabetically. A node with a Rank of 1000 or more is not shown in the timeline (useful for flares, fuel and other technical nodes).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Node</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Read-only. To rename a node, change its name on the diagram, then save.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Type Node</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Set from the icon when the node is drawn (e.g. Manifold, Platform, Plant, Process, Compressor, Pump, Choke, Cooler, Heater, Tank, Source, Storage, Flare, Fuel) and editable here. The types Well, Source, Tank, Fuel and Flare are protected and cannot be changed.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Liquid, Oil, Water, Gas, Gas-lift, Water Injection, Gas Injection</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Maximum rate of that fluid through the node (or for the well).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Total Gas</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Maximum produced gas plus gas-lift gas through the node (typically a compressor capacity).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Oil storage</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Storage capacity. Shown only when the export option is switched on in the scenario Settings.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Uptime</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Availability of the node or well, as a fraction (e.g. 0.95).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Min Pressure / Separator pressure / Min FBHP (OP)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">On a node: its minimum (separator) pressure, which fixes the outlet pressure of the network pressure solve. On an oil producer: its minimum flowing bottom-hole pressure. Gauge, in the asset's pressure unit.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Max Pressure / Max Drawdown (OP) / Max IBHP (INJ)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">On a node: its maximum pressure. On an oil producer: its maximum drawdown. On an injector: its maximum injection bottom-hole pressure.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">The two pressure columns are shown only when the scenario's &quot;Decline&quot; setting is Material Balance or Simulation, or when the GAP processor is used.</span></p>
+                <p class="ps4"><span class="ts6">Editing the table:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Type a value in a cell; press Delete to clear the selected cells.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Ctrl+C / Ctrl+V copy and paste values, one column at a time.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Ctrl+S saves the network, as &quot;Save Network&quot; does.</span></p>
+                <p class="ps3"><span class="ts5">5. Split nodes</span></p>
+                <p class="ps4"><span class="ts6">A node can send the same fluid to more than one downstream node: draw one pipe of that fluid to each of them. &quot;View Splits&quot; lists only those nodes, with, for each fluid, the destination (&quot;Oil Goes&quot;, &quot;Water Goes&quot;, &quot;Gas Goes&quot;, &quot;Gas-lift Goes&quot;, &quot;Water Injection Goes&quot;, &quot;Gas Injection Goes&quot;) and its fraction (&quot;Oil fraction&quot;, &quot;Water fraction&quot;, and so on).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Fraction left empty &mdash; the solver is free to share the fluid between the destinations, in the way that best serves the objective.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Fraction entered (e.g. 0.3) &mdash; that share of the fluid arriving at the node is always sent to that destination.</span></p>
+                <p class="ps3"><span class="ts5">6. Reporting nodes</span></p>
+                <p class="ps4"><span class="ts6">Reporting nodes and reporting lines do not exist physically and never carry flow: they only add up fluids from other nodes, for reporting. Draw a reporting node with the Reporting icon and link it to the nodes it sums with dashed reporting lines (the &quot;… reporting&quot; lines of the palette).</span></p>
+                <p class="ps4"><span class="ts6">&quot;View Reporting Nodes&quot; lists, for each reporting node, the node each fluid comes from (&quot;Oil From&quot;, &quot;Water From&quot;, &quot;Gas From&quot;, &quot;Gas-lift From&quot;, &quot;Water Injection From&quot;, &quot;Gas Injection From&quot;) and the fraction of that node's fluid to count (&quot;Oil fraction&quot;, and so on). A typical use is entitled production: a field shared between several companies under a production sharing agreement, with one reporting node per company.</span></p>
+                <p class="ps3"><span class="ts5">7. Coordinates</span></p>
+                <p class="ps4"><span class="ts6">&quot;View Coordinates&quot; gives each node's X and Y (for this scenario) and its Z elevation (TVDSS, in the asset's length unit, shared by all the scenarios of the asset). A Z value is saved as soon as the cell is edited; X and Y are saved when edited and again with the network.</span></p>
+                <p class="ps3"><span class="ts5">8. Pipelines VLP</span></p>
+                <p class="ps4"><span class="ts6">&quot;Pipelines VLP&quot; lists the pipe legs and pumps that have a lift curve: &quot;Upstream Node&quot;, &quot;Downstream Node&quot;, &quot;VLP Index&quot; and a read-only &quot;Type&quot; (Pipeline or Pump). Rows are added when you generate a pipeline VLP or save a pump curve from the diagram. To remove a row, right-click it and choose &quot;Remove selected VLP&quot; (or press Delete) and confirm. These curves are used only by the network pressure solve of Material Balance and Simulation scenarios: see </span><a href="network-hydraulics.htm" class="hs0">Pipelines, pumps and network pressure solve</a><span class="ts6">.</span></p>
+                <p class="ps3"><span class="ts5">9. Saving the network</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Save Network&quot; (or Ctrl+S). Precept saves the diagram, reads the nodes and pipes from it, then saves the constraints, splits, reporting nodes, coordinates, special modelling rules and pipeline VLPs, and any well re-routed on the diagram. A progress bar runs, then a confirmation message appears.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Every node needs a unique name: two nodes with the same name stop the save with a warning.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Every pipe must be attached at both ends: a loose pipe is reported (&quot;A pipeline starting from … is not connected at the end of it.&quot;).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">If the save fails, Precept says: &quot;Network cannot be saved. Make sure all your Nodes have a name and all the pipes are connected.&quot;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Closing the window with unsaved changes asks for confirmation first.</span></p>
+                <p class="ps4"><span class="ts6">How to draw and edit the network is described in </span><a href="network-editor.htm" class="hs0">Network editor</a><span class="ts6">. How to see the network during a forecast is described in </span><a href="network-view.htm" class="hs0">Network view (forecast)</a><span class="ts6">.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -102,7 +287,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

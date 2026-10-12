@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">GHG emission</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,7 +63,143 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p><span class="ts3">G</span><span class="ts3">HG emission</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">Precept can forecast the greenhouse-gas (GHG) emissions of the asset, expressed as CO2, together with the production. Emissions are calculated from emission factors that you enter per facility node: for each node, how many kg of CO2 are emitted per unit of a rate flowing through the node (for example per mscf of gas burnt as fuel or flared), or per day of operation.</span></p>
+                <p class="ps4"><span class="ts6">At each time step Precept multiplies the forecast rate at the node by its factor, and reports:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the emission of each node, split into &quot;GHG from Fuel&quot;, &quot;GHG from Flare&quot; and &quot;GHG from Vent&quot;, in tonne/d;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the total &quot;GHG emission&quot; of each node and of the field;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the &quot;GHG intensity&quot;: kg of CO2 per barrel of oil equivalent (boe) produced;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the cumulative emission, in tonnes.</span></p>
+                <p class="ps7"><img width="700" height="280" alt="" src="images/fig_ghg_calculation.png" /></p>
+                <p class="ps4"><span class="ts7">How Precept turns the forecast rates of a node into CO2 emissions and intensity.</span></p>
+                <p class="ps3"><span class="ts5">2. Switch the calculation on</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Settings&quot; in the &quot;Forecast&quot; group of the main ribbon.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the &quot;Speed&quot; box, tick &quot;GHG emission&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save Settings&quot;.</span></p>
+                <p class="ps4"><span class="ts6">The calculation adds work to every time step, so leave it off when you do not need it.</span></p>
+                <p class="ps3"><span class="ts5">3. Enter the emission factors</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the scenario on the main window.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;GHG emission&quot; in the &quot;Expertise&quot; group of the main ribbon. The &quot;GHG&quot; window opens.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Add&quot; to add a row, fill it, then click &quot;Save&quot;. &quot;Delete selected rows&quot;, &quot;Delete All rows&quot; and &quot;Help&quot; work as in the other input tables.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Column</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Meaning</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Type GHG&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Fuel&quot; (gas burnt for power or heat), &quot;Flare&quot; (gas flared) or &quot;Vent&quot; (gas vented).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Node&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The facility node (any node of the network except wells), for example a power-generation node or a flare node.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Unit&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">What the factor is applied to: a rate at the node (&quot;Oil&quot;, &quot;Water&quot;, &quot;Gas&quot;, &quot;Gas-lift&quot;, &quot;Total Gas&quot;, &quot;Liquid&quot;, &quot;Water Injection&quot;, &quot;Gas Injection&quot;), or &quot;Day&quot;.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;kg C02 emitted per unit&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The emission factor: kg of CO2 per unit of that rate (per bbl or m³ of liquid, per mscf or m³ of gas, in the asset's units), or per day.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Group Emission to Node&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Optional: the emission of this node is also added to this group, to report the emissions per location (for example per platform).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Comment&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Free text.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">With &quot;Unit&quot; = &quot;Day&quot;, the factor is emitted every day the node is active (liquid, gas, water injection or gas injection flowing through it) and is 0 when the node is shut.</span></p>
+                <p class="ps4"><span class="ts6">Example: a flare node &quot;Flare A&quot; receives the gas that is flared. Row: &quot;Type GHG&quot; = Flare, &quot;Node&quot; = Flare A, &quot;Unit&quot; = Gas, &quot;kg C02 emitted per unit&quot; = the flaring emission factor per mscf (or per m³), &quot;Group Emission to Node&quot; = Platform A.</span></p>
+                <p class="ps4"><span class="ts6">Tips:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Enter one row per node. If a node has several emission sources (fuel and flare), model them on separate nodes, so the node results show both.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The rate used is the rate of the node in the forecast, so the network must route the fuel and flare gas to these nodes (see </span><a href="networkmodelling.htm" class="hs0">Network modelling</a><span class="ts6">).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Vent&quot; can be selected but is not calculated in the current version: &quot;GHG from Vent&quot; stays at 0.</span></p>
+                <p class="ps3"><span class="ts5">4. Results</span></p>
+                <p class="ps4"><span class="ts6">GHG results are available for a deterministic forecast. After the forecast, click &quot;Charts&quot; in the &quot;Forecast Results&quot; group of the main ribbon (see </span><a href="results-charts.htm" class="hs0">Forecast results: Charts</a><span class="ts6">), select the field, a node or a group, then a parameter:</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Parameter</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Meaning</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Unit</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;GHG emission&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Total emission (fuel + flare + vent).</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">tonne/d</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;GHG from Fuel&quot;, &quot;GHG from Flare&quot;, &quot;GHG from Vent&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Emission per type.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">tonne/d</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;GHG intensity&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Emission per boe produced. For the field it uses the field boe production; for a node, the oil rate of the node.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">kg CO2/boe</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">The cumulative view shows the cumulative CO2 emission in tonnes.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -75,7 +211,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>Network view (forecast)</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 470;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="forecast-results.htm" class="hs1">Forecast results</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">Network view (forecast)</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="results-charts.htm" title="Forecast results: Charts"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="results-patterns.htm" title="Forecast results: Patterns"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">N</span><span class="ts3">etwork view (forecast)</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">The network view shows the scenario's network next to the forecast results, month by month: which nodes are at a constraint, and the rates of any node or well. It is read only: the network is edited in the Network window (see </span><a href="network-editor.htm" class="hs0">Network editor</a><span class="ts6">).</span></p>
+                <p class="ps3"><span class="ts5">2. Opening the view</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the scenario in the main window and run its forecast (the view reads the saved results).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Tick &quot;Show Network&quot; in the main window. The &quot;Network - &lt;scenario&gt;&quot; window opens on the right half of the screen.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Untick &quot;Show Network&quot;, or close the window, to close it.</span></p>
+                <p class="ps4"><span class="ts6">While it loads, the status line at the bottom reads &quot;Reading the forecast's constraints...&quot; then &quot;Reading the forecast dates...&quot;. If the scenario has no forecast yet, it says &quot;No forecast for this scenario yet: run the forecast first.&quot;; if it has no network diagram, &quot;No network diagram for this scenario.&quot;</span></p>
+                <p class="ps3"><span class="ts5">3. The window</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Top: the month shown (e.g. &quot;Mar 2027&quot;), a date slider over every month of the forecast, and the &quot;Wells&quot; checkbox.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Middle: the network diagram, fitted to the window. The legend in its top-left corner explains the red highlight: &quot;Constrained&quot;.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Bottom: the status line, which lists what is constrained in the month shown.</span></p>
+                <p class="ps4"><span class="ts6">Maximise or resize the window to see more detail: the whole network is fitted again to the new size.</span></p>
+                <p class="ps3"><span class="ts5">4. Constrained nodes, month by month</span></p>
+                <p class="ps4"><span class="ts6">Move the slider to a month. Every node constrained during that month is framed in red, and the status line reads, for example: &quot;Constrained in Mar 2027:&nbsp; Platform A (liquid);&nbsp;&nbsp; Compressor B (total gas).&quot; followed by &quot;Click a node or a well to see its rates.&quot; When nothing is constrained: &quot;No network node constrained in &lt;month&gt;.&quot;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The constraints come from the forecast's timeline: a node counts as constrained in a month when the forecast reported it constrained or at capacity on any day of that month. The fluid in brackets is the constrained phase; &quot;process&quot; means the forecast did not name one.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Injection manifolds: when all the injectors of an injection node are fully open, the node is reported &quot;constrained (all injectors at max choke)&quot; and highlighted, even if no injection limit was entered on it. The injection is then limited by the injectors' potentials, not by a facility.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Constrained wells: with &quot;Wells&quot; unticked they are only counted (&quot;3 well(s) constrained too (tick Wells to see them).&quot;); with &quot;Wells&quot; ticked they are highlighted and listed (&quot;Wells constrained: …&quot;).</span></p>
+                <p class="ps3"><span class="ts5">5. Wells</span></p>
+                <p class="ps4"><span class="ts6">Tick &quot;Wells&quot; to draw each well under the node it flows to (or is injected from), linked by a line in its fluid colour: green oil producer, red gas producer, navy water injector, dark red gas injector. The diagram is fitted again to include them.</span></p>
+                <p class="ps3"><span class="ts5">6. Rates chart of a node or a well</span></p>
+                <p class="ps4"><span class="ts6">Click a node (or a well, when &quot;Wells&quot; is ticked). A small chart window opens, titled &quot;&lt;node&gt; - &lt;phase&gt;&quot;. Clicking another node shows that node in the same window.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The rate of the phase is drawn as a coloured area, with the constraint set on the node as a dotted &quot;Constraint&quot; step line (for &quot;Pressure&quot;: &quot;Min pressure&quot; and &quot;Max pressure&quot;).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The month selected with the slider is marked by a blue dashed vertical line, which follows the slider.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The first list picks the phase: Oil, Water, Gas, Liquid, BSW, GOR, Gas-lift, Total Gas, Water Injection, Gas Injection, Pressure.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The second list picks the frequency: &quot;Monthly&quot; (default), &quot;Quaterly&quot; or &quot;Yearly&quot;.</span></p>
+                <p class="ps4"><span class="ts6">The phase shown first is chosen for you, in this order:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">the phase constraining the node in the month shown;</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">else a constraint set on the node in the initial constraints (preferring one that was reached during the forecast) &mdash; for example a compressor's Total Gas;</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">else the phase the node was most often constrained on during the forecast;</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">else the first phase that flows through it, among oil, water injection, gas injection, gas and liquid.</span></p>
+                <p class="ps4"><span class="ts6">The rates and constraint lines are the same as in the Results charts (see </span><a href="results-charts.htm" class="hs0">Forecast results: Charts</a><span class="ts6">). Constraints that change with time (see </span><a href="constraintsvstime.htm" class="hs0">Constraints changes vs time</a><span class="ts6">) show as steps of the dotted line. For a Material Balance or Simulation scenario, &quot;Pressure&quot; shows the node pressure solved by the network (see </span><a href="network-hydraulics.htm" class="hs0">Pipelines, pumps and network pressure solve</a><span class="ts6">).</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

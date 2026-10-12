@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html id="hs-topic-p">
 <head>
-<title>Precept philosopy</title>
+<title>Precept philosophy</title>
 <meta charset="windows-1252" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,8 +43,8 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
-                        <h1 class="hd0"><span class="ts1">Precept philosopy</span></h1>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">Precept philosophy</span></h1>
                       </td>
                       <td class="cell1">
                         <p class="ps1"><a href="modellingoilandgasassets.htm" title="Modelling Oil and Gas Assets"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="scenariomanagement.htm" title="Scenario Management"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
@@ -63,62 +63,103 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <h2 class="hd2"><span class="ts9">Precept is DCA software, not a reservoir simulator !</span></h2>
-                <p class="ps3"><span class="ts10">Precept, being a DCA software, uses a linear solver:</span></p>
-                <p class="ps5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts10">- All rates at every nodes of the network are reported at standards conditions.</span></p>
-                <p class="ps5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts10">- Constraints can be introduced at every nodes of the network but must be rates constraints only (max liquid, max gas, max oil, etc...)</span></p>
-                <p class="ps5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts10">- Precept does not know pressure. Pressure constraints cannot be applied&nbsp; (pressure changes such as changes in Tubing Head Pressure (THP), must be embedded in DCA profiles.</span></p>
-                <p class="ps5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts10">- Precept cannot by itself evaluate the impact of a new water injector being drilled. Water injection response from an Injector to a producer has to be embedded in the producers DCA profiles.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Precept can be used a Pre and Post processor for GAP or Reservoir simulators, meaning scheduling can be done in Precept and exported to third-party software. Once the forecast has been run on GAP or reservoir simulators, Precept can be imported back in Precept, allowing to save the results in Precept database for efficient scenario management.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h2 class="hd2"><span class="ts9">Modeling future events in Precept</span></h2>
-                <p class="ps3"><span class="ts3">When generating forecast, events can affects production / injection at every time step, such as:</span></p>
-                <p class="ps3"><span class="ts3">- introduction of a new profiles due to drilling new wells</span></p>
-                <p class="ps3"><span class="ts3">- conversions of existing wells</span></p>
-                <p class="ps3"><span class="ts3">- changes in process constraints due to facility upgrades</span></p>
-                <p class="ps3"><span class="ts3">- shutdowns</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The date of such events can be &quot;hard&quot;:</span></p>
-                <p class="ps3"><span class="ts3">- Start date of new profile can be manually entered in the &quot;New profiles&quot; section (see </span><a href="new-profiles.htm" class="hs1">New profile</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">- Conversion date can be manually entered in the &quot;Conversion&quot; section (see </span><a href="conversions.htm" class="hs1">Well conversion</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">- Date of changes in constraints can be entered manually in the &quot;Constraints changes vs time&quot; section (see </span><a href="constraintsvstime.htm" class="hs1">Constraints changes vs time</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">- Shutdowns start and end date can be manually entered in the &quot;Shutdowns&quot; section (see </span><a href="shutdown.htm" class="hs1">Shutdowns</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Entering &quot;hard&quot; date does not allow to generate what-if scenario easily. When using Precept, it is recommended to handle changes in future (i.e drilling of a new well) by creating opportunities, and having the opportunities in the sequence of events (i.e drilling schedule).</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Example</span></h3>
-                <p class="ps3"><span class="ts3">On an offshore field, it is planned to drill 6 wells on 2 different platforms, with Rig move and shutdown associated.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Sub-Optimum modeling: using Hard date only.</span></h3>
-                <p class="ps3"><span class="ts3">The above scenario can be modeled using &quot;Hard&quot; date only</span></p>
-                <p class="ps3"><span class="ts3">Start date of new profiles from the new drilled wells can be entered in the &quot;New profiles&quot; section (see </span><a href="new-profiles.htm" class="hs1">New profiles</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">Start and End date of the shutdowns associated with the Rig move can be entered in the &quot;Shutdowns&quot; section (see&nbsp; </span><a href="shutdown.htm" class="hs1">Shutdowns</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Now let's suppose the drilling schedule has changed, User will then has to change manually all the new profiles a</span><span class="ts3">nd shutdowns </span><span class="ts3">start date and end date, which is time consuming and prone to error.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Optimum modeling: Create Opportunities and place them in the sequence of events</span></h3>
-                <p class="ps3"><span class="ts3">An opportunity should be created for every new wells to be drilled. (see </span><a href="opportunities.htm" class="hs1">Opportunities</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">An opportunity should also be created for every Rig Moves, with Shutdowns associated</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">A sequence of events needs to be created for the &quot;Rig 1&quot; , (see </span><a href="add-sequence.htm" class="hs1">Add / Delete sequence of events</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">The drilling of 6 wells + 4 Rig moves will then be placed in the sequence of events in the right order. (see </span><a href="build-sequence.htm" class="hs1">Build sequence of events</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p><img width="1626" height="190" alt="" src="images/image(30).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Now, if a change in the drilling schedule occurs, such as late arrival for the Rig, only the mobilization date of the Rig has to be changed ,and the sequence of events and associated shutdowns will automatically be adjusted.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">A sequence of events can be:</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- drilling of new wells</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- facilities maintenance performed by a maintenance crew</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- Well head maintenance performed by a Well Services crew</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- Stimulation of several wells performed by Stimulation crew</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- etc...</span></h3>
+                <p><span class="ts3">P</span><span class="ts3">recept philosophy</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Potentials first, then the network</span></p>
+                <p class="ps4"><span class="ts6">Precept separates two questions at every time step of the forecast:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">What could each well produce or inject if nothing held it back? This is the well's </span><span class="ts7">potential</span><span class="ts6">.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">What does the network let it produce? Facilities, pipelines and export routes have limits, and planned events (shutdowns, new wells, conversions) change the picture over time.</span></p>
+                <p class="ps4"><span class="ts6">At each time step Precept computes the potentials, applies the events of that step, and then solves the network so that no constraint is exceeded, choking back or shutting in wells where capacity is short. The rates found update the cumulative volumes, and the next step starts.</span></p>
+                <p class="ps7"><img width="700" height="330" alt="" src="images/fig_forecast_timestep.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 - What Precept does at each time step of a forecast.</span></p>
+                <p class="ps3"><span class="ts5">2. Three ways to compute potentials</span></p>
+                <p class="ps4"><span class="ts6">The method is chosen per scenario in the &quot;Potentials&quot; box of &quot;Settings&quot;, so a base case and a variant can use different methods and be compared.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Setting</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Where the potential comes from</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Typical use</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Decline curves</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">A decline curve fitted on each well's history (rate against cumulative or against time). See </span><a href="dca.htm" class="hs0">Decline curves</a><span class="ts6">.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Mature fields with a reliable history; fast what-if studies on schedules and constraints.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Material Balance</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reservoir tanks whose pressure follows production, injection and aquifer influx, turned into well rates through inflow (IPR) and lift (VLP) curves. See </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Injection or pressure-maintenance strategies, new fields with little history, depletion-driven gas fields.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Simulation</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">A 3D reservoir simulator (OPM Flow) run in the loop, one time step at a time. See </span><a href="sim-coupling.htm" class="hs0">Simulation coupling</a><span class="ts6">.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">When interference between wells, sweep and water or gas breakthrough matter.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps3"><span class="ts5">3. How the network is solved</span></p>
+                <p class="ps11"><span class="ts9">3.1 With decline curves: a rate-based network</span></p>
+                <p class="ps4"><span class="ts6">With decline curves, Precept solves the network with a linear (simplex) optimiser on rates only:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">All rates, at every node of the network, are at standard conditions.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Constraints can be set at any node, but they are rate constraints: maximum liquid, oil, water, gas, gas lift, water or gas injection, and so on.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Pressure is not modelled. A change in operating pressure (for example a lower tubing-head pressure after a compressor is installed) must be built into the decline profiles.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The support of an injector on its neighbouring producers is not calculated: it must be built into the producers' profiles, or modelled with Material Balance.</span></p>
+                <p class="ps4"><span class="ts6">This makes decline-curve forecasts very fast, which suits long-term planning, reserves work and the testing of many schedules.</span></p>
+                <p class="ps11"><span class="ts9">3.2 With Material Balance or Simulation: a pressure-aware network</span></p>
+                <p class="ps4"><span class="ts6">With Material Balance or Simulation, each well's potential depends on the pressure of the node it flows into. Precept therefore also solves the gathering network for pressures, from the fixed pressure at the sink through the pipeline lift curves, and repeats the rate solve and the pressure solve until they agree. Node pressure limits (&quot;Min Pressure&quot;, &quot;Max Pressure&quot;) can then be set in the network constraints. See </span><a href="network-hydraulics.htm" class="hs0">Network hydraulics</a><span class="ts6">.</span></p>
+                <p class="ps11"><span class="ts9">3.3 With Petex GAP</span></p>
+                <p class="ps4"><span class="ts6">Precept can also act as pre- and post-processor for GAP: the schedule of events is built in Precept and exported to GAP, and the GAP forecast is read back and stored with the scenario, so that scenario management, comparison and reporting stay in Precept. See </span><a href="petex-coupling.htm" class="hs0">Petex GAP / Prosper coupling</a><span class="ts6">.</span></p>
+                <p class="ps3"><span class="ts5">4. Modelling future events</span></p>
+                <p class="ps4"><span class="ts6">During a forecast, events change production and injection over time, for example:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">new profiles from newly drilled wells;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">conversions of existing wells (for example producer to injector);</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">changes in process constraints after facility upgrades;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">shutdowns.</span></p>
+                <p class="ps11"><span class="ts9">4.1 Hard dates</span></p>
+                <p class="ps4"><span class="ts6">Each event can be given a fixed (&quot;hard&quot;) date:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the start date of a new profile, in &quot;New profiles and Conversions&quot; (see </span><a href="new-profiles.htm" class="hs0">New profiles</a><span class="ts6">);</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the date of a conversion (see </span><a href="conversions.htm" class="hs0">Well conversion</a><span class="ts6">);</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the date of a change in constraints, in &quot;Constraints vs time&quot; (see </span><a href="constraintsvstime.htm" class="hs0">Constraints changes vs time</a><span class="ts6">);</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the start and end dates of a shutdown, in &quot;Shutdowns&quot; (see </span><a href="shutdown.htm" class="hs0">Shutdowns</a><span class="ts6">).</span></p>
+                <p class="ps4"><span class="ts6">Hard dates are simple, but they make what-if scenarios slow to build: when a schedule moves, every dependent date must be changed by hand.</span></p>
+                <p class="ps11"><span class="ts9">4.2 Recommended: opportunities placed in a sequence of events</span></p>
+                <p class="ps4"><span class="ts6">The recommended way is to describe each future action as an opportunity (see </span><a href="opportunities.htm" class="hs0">Opportunities</a><span class="ts6">), with its duration, its profiles and its associated shutdowns, and to place the opportunities in a sequence of events for the rig or crew that performs them (see </span><a href="sequence.htm" class="hs0">Sequence of events</a><span class="ts6">). The dates then follow from the order of the sequence and from its start date.</span></p>
+                <p class="ps11"><span class="ts9">4.3 Example</span></p>
+                <p class="ps4"><span class="ts6">On an offshore field, six wells are to be drilled from two platforms, with rig moves and the shutdowns associated with them.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">With hard dates only: enter the start date of each new well's profile in &quot;New profiles and Conversions&quot;, and the start and end dates of each rig-move shutdown in &quot;Shutdowns&quot;. If the drilling schedule changes, every one of these dates must be edited by hand, which is slow and error-prone.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">With opportunities: create one opportunity per new well and one per rig move (with its shutdowns). Create a sequence of events for &quot;Rig 1&quot; (see </span><a href="add-sequence.htm" class="hs0">Add / Delete sequence of events</a><span class="ts6">) and place the six wells and the rig moves in it, in drilling order (see </span><a href="build-sequence.htm" class="hs0">Build sequence of events</a><span class="ts6">).</span></p>
+                <p class="ps7"><img width="1626" height="190" alt="" src="images/image(30).png" /></p>
+                <p class="ps4"><span class="ts6">If the rig then arrives late, only the start date of the sequence has to change: the wells, the rig moves and their shutdowns all move with it.</span></p>
+                <p class="ps4"><span class="ts6">A sequence of events can represent any team or resource that works through a list of jobs, for example:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">drilling of new wells by a rig;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">facilities maintenance by a maintenance crew;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">wellhead maintenance by a well-services crew;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">stimulation of several wells by a stimulation crew.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -130,7 +171,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

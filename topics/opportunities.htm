@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Opportunities</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,213 +63,348 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The table below shows some examples of Opportunities, which are created to apply changes during forecast:</span></p>
-                <p class="ps3"><span class="ts3">Most Opportunities will generate additional hydrocarbons production (drilling new well, stimulation, facilities upgrade). However, some opportunities will only implement shutdowns (ie: Maintenance) . Some opportunities like &quot;Rig Move&quot; are not really opportunity but needs to be implemented for accurate scheduling.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p>&nbsp;</p>
-                <div>
+                <p><span class="ts3">O</span><span class="ts3">pportunities</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">An opportunity is an activity that changes the forecast when it is executed, for example:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">drilling a well;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a work-over or a stimulation;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a facility upgrade or a maintenance campaign.</span></p>
+                <p class="ps4"><span class="ts6">Most opportunities add production. Some only bring a shutdown (maintenance). Others, such as a rig move, bring no oil but are needed for an accurate schedule.</span></p>
+                <div class="block0">
                   <table class="tbl3">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps6"><span class="ts14">Example of Opportunity</span></p>
+                        <p class="ps8"><span class="ts6">Example of opportunity</span></p>
                       </td>
-                      <td class="cell1">
-                        <p class="ps6"><span class="ts14">Impact on forecast</span></p>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Impact on forecast</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps6"><span class="ts15">Drilling new oil producer well</span></p>
+                        <p class="ps9"><span class="ts6">Drilling a new oil producer</span></p>
                       </td>
-                      <td class="cell1">
-                        <p class="ps6"><span class="ts15">Introduce a new production profile</span></p>
-                      </td>
-                    </tr>
-                    <tr class="row1">
                       <td class="cell0">
-                        <p class="ps6"><span class="ts15">Drilling new Water Injector well</span></p>
-                      </td>
-                      <td class="cell1">
-                        <p class="ps6"><span class="ts15">Introduce a new injection profile , </span></p>
-                        <p class="ps6"><span class="ts15">but can also introduce incremental production profile to nearby producers</span></p>
+                        <p class="ps9"><span class="ts6">New profile: a new production profile comes online.</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps6"><span class="ts15">Work-Over</span></p>
+                        <p class="ps9"><span class="ts6">Drilling a new water injector</span></p>
                       </td>
-                      <td class="cell1">
-                        <p class="ps6"><span class="ts15">Reinstall production of a well shut-in for integrity</span></p>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">New profile: a new injection profile, plus incremental profiles on the nearby producers it supports.</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps6"><span class="ts15">Stimulation</span></p>
+                        <p class="ps9"><span class="ts6">Work-over</span></p>
                       </td>
-                      <td class="cell1">
-                        <p class="ps6"><span class="ts15">Introduce a new incremental profile</span></p>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">New profile: restarts a well shut in for integrity (or replaces its profile).</span></p>
                       </td>
                     </tr>
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps6"><span class="ts15">Facilities upgrade</span></p>
+                        <p class="ps9"><span class="ts6">Stimulation</span></p>
                       </td>
-                      <td class="cell1">
-                        <p class="ps6"><span class="ts15">Modify a constraint at a specific node in the production Network</span></p>
-                      </td>
-                    </tr>
-                    <tr class="row2">
-                      <td class="cell2">
-                        <p class="ps3"><span class="ts3">Maintenance</span></p>
-                      </td>
-                      <td class="cell3">
-                        <p class="ps3"><span class="ts3">Shut a Node during forecast</span></p>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">New profile: an incremental profile on the well.</span></p>
                       </td>
                     </tr>
-                    <tr class="row2">
-                      <td class="cell2">
-                        <p class="ps3"><span class="ts3">Commissioning of new process facilities</span></p>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Facility upgrade</span></p>
                       </td>
-                      <td class="cell3">
-                        <p class="ps3"><span class="ts3">Introduce a new node in production network</span></p>
-                      </td>
-                    </tr>
-                    <tr class="row2">
-                      <td class="cell2">
-                        <p class="ps3"><span class="ts3">Lay down a new pipeline</span></p>
-                      </td>
-                      <td class="cell3">
-                        <p class="ps3"><span class="ts3">Introduce a new pipeline and therefore a new routine in production network</span></p>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Change constraint: a new limit at a node of the network.</span></p>
                       </td>
                     </tr>
-                    <tr class="row2">
-                      <td class="cell2">
-                        <p class="ps3"><span class="ts3">Rig Move</span></p>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Maintenance</span></p>
                       </td>
-                      <td class="cell3">
-                        <p class="ps3"><span class="ts3">Implemented for accurate scheduling, eventually introduce shutdown</span></p>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Shutdown: a node is shut during the work.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Converting a producer to an injector</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Conversion.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">New pipeline, new routing</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Rerouting: a node flows to another node from that date.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Rig move</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">None, or a short shutdown: needed only for the schedule.</span></p>
                       </td>
                     </tr>
                   </table>
                 </div>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts16">A shutdown, a change in process constraint or introduction of a new profile could be implemented by setting manually a Start Date. However, Precept philosophy is to have the Opportunities part of a sequence of events, The Start and End Date of opportunities are therefore relative, which allows to generate What-if scenarios very easily (see </span><a href="philosophy.htm" class="hs1">Precept philosopy</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p>&nbsp;</p>
-                <h3 class="hd1"><span class="ts8">Add new Opportunities: Example 1: Drilling New Oil Producer</span></h3>
-                <h3 class="hd1"><span class="ts3">In the example below, an Opportunity named &quot;A2-W4&quot; is created</span></h3>
-                <h3 class="hd1"><span class="ts3">The duration of the opportunity (drilling) is 45 days.</span></h3>
-                <p>&nbsp;</p>
-                <h3 class="hd1"><span class="ts3">The Start Date is set as &quot;From sequence&quot; which means there is not hard Start Date, it will be part of a sequence of events.</span></h3>
-                <h3 class="hd1"><span class="ts3">Color can be set for visualization purpose. This is the color used in the sequence of events.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">That Opportunity can be executed anytime, therefore, the section &quot;Earliest possible start date&quot; is left blank</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">They are 4 different kind of impacts on forecast that can be introduced with an Opportunity:</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- New profiles</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- Shutdowns</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- Change in constraints.</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- Conversions</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">In this example,the new profile A2-W4, previously introduced (see section </span><a href="addwell.htm" class="hs1">Add well to Asset Model</a><span class="ts3">) will be online once the opportunity is executed.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The cost of the opportunity (15 MM USD) will be used when generating forecast economics.</span></h3>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p><img width="962" height="702" alt="" src="images/image(53).png" /></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Add new Opportunities: Example 2: Drilling New Water Injector</span></h3>
-                <h3 class="hd1"><span class="ts3">In the example below, an Opportunity named &quot;A1-I3&quot; is created</span></h3>
-                <h3 class="hd1"><span class="ts3">The duration of the opportunity (drilling) is 45 days.</span></h3>
-                <p>&nbsp;</p>
-                <h3 class="hd1"><span class="ts3">The Start Date is set as &quot;From sequence&quot; which means there is not hard Start Date, it will be part of a sequence of events.</span></h3>
-                <h3 class="hd1"><span class="ts3">Color can be set for visualization purpose. This is the color used in the sequence of events.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">That Opportunity can be executed anytime, therefore, the section &quot;Earliest possible start date&quot; is left blank</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">They are 4 different kind of impacts on forecast that can be introduced with an Opportunity:</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- New profiles</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- Shutdowns</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- Change in constraints.</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- Conversions</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">In this example,the profile A1-I3, previously introduced (see section </span><a href="addwell.htm" class="hs1">Add well to Asset Model</a><span class="ts3">) will be online once the opportunity is executed.</span></p>
-                <p class="ps3"><span class="ts3">The opportunity will introduce an incremental profile to the well A2-W2. That incremental profile is named &quot;A2-W2 after A1-W3&quot; and can be visualized / modified in the Decline Curves section.</span></p>
-                <h3 class="hd1"><span class="ts3">The opportunity will also introduce an incremental profile to the well A1-W4. That incremental&nbsp; profile is named &quot;A1-W4 incr&quot; and can be visualized / modified in the Decline Curves section.</span></h3>
-                <h3 class="hd1"><span class="ts3">The opportunity will also introduce an incremental profile to the well A1-W4. That incremental&nbsp; profile is named &quot;A1-W4 incr&quot; and can be visualized / modified in the Decline Curves section.</span></h3>
-                <p>&nbsp;</p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The cost of the opportunity (15 MM USD) will be used when generating forecast economics.</span></h3>
-                <p><img width="994" height="813" alt="" src="images/image(44).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Add new Opportunities: Example 3: Compressor Upgrade</span></h3>
-                <h3 class="hd1"><span class="ts3">In the example below, an Opportunity named &quot;B compr upgrade&quot; is created.</span></h3>
-                <h3 class="hd1"><span class="ts3">The duration of the opportunity is 50 days.</span></h3>
-                <h3 class="hd1"><span class="ts3">The Start Date is set as &quot;From sequence&quot; which means there is no hard Start Date. The opportunity is&nbsp; part of a sequence of events.</span></h3>
-                <h3 class="hd1"><span class="ts3">Color can be set for visualization purpose. This is the color used in the sequence of events.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The &quot;B Compr upgrade&quot; opportunity needs to be executed after the opportunity &quot;B various maintenance&quot; ends. If the Opportunity &quot;B Compr upgrade&quot; is placed before &quot;B various maintenance&quot; in the sequence of events, it will appear as &quot;red&quot;.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The impact on Forecast is set to &quot;Change constraint&quot;</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The Opportunity is part of the Project named&nbsp; &quot;Phase 2&quot;. The name of project is used when calculating and grouping shortfalls by projects.</span></h3>
-                <p>&nbsp;</p>
-                <h3 class="hd1"><span class="ts3">The cost of the opportunity (20 MM USD) will be used when generating forecast economics.</span></h3>
-                <p>&nbsp;</p>
-                <h3 class="hd1"><span class="ts3">Once the opportunity is executed, the node B_compr will have a new Total Gas constraint of 15,000 mscf/d (SI unit are used in this example therefore Gas unit is mscf/d.)</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p><img width="913" height="747" alt="" src="images/image(47).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">There is a shutdown associated with that Opportunity. Therefore the &quot;impact on Forecast&quot; also needs to be set to &quot;shutdowns&quot; to introduce the shutdown below.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The node B will be closed during the 50 days of execution. </span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p><img width="975" height="158" alt="" src="images/image(48).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Add new Opportunities: Example 4: Maintenance</span></h3>
-                <h3 class="hd1"><span class="ts3">In the example below, an Opportunity named &quot;B various maintenance&quot; is created.</span></h3>
-                <h3 class="hd1"><span class="ts3">The duration of the opportunity is 60 days.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The Start Date is set as &quot;From sequence&quot; which means there is no hard Start Date. The opportunity is part of a sequence of events.</span></h3>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <h3 class="hd1"><span class="ts3">Color can be set for visualization purpose. This is the color used in the sequence of events.</span></h3>
-                <p>&nbsp;</p>
-                <h3 class="hd1"><span class="ts3">The &quot;B Compr upgrade&quot; opportunity can be executed anytime since &quot;Earliest possible start date&quot; inputs are left blank.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">There is a shutdown associated with that Opportunity. The node B will be closed during the 60 days of execution.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The Opportunity is part of the Project named &quot;Maintenance&quot;. The name of project is used when calculating and grouping shortfalls by projects.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The cost of the opportunity (2 MM USD) will be used when generating forecast economics.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p><img width="912" height="742" alt="" src="images/image(50).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Add new Opportunities: Example 5: Rig Move</span></h3>
-                <h3 class="hd1"><span class="ts3">In the example below, an Opportunity named &quot;Rig Up A&quot; is created. It is not really an opportunity since it wont bring oil but is needed for scheduling purposes.</span></h3>
-                <h3 class="hd1"><span class="ts3">The duration of the Rig Move is 3 days.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The Start Date is set as &quot;From sequence&quot; which means there is no hard Start Date. The Rig Move is part of a sequence of events.</span></h3>
-                <p>&nbsp;</p>
-                <h3 class="hd1"><span class="ts3">Color can be set for visualization purpose. This is the color used in the sequence of events.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">There is a shutdown associated with that Rig Move. The node A will be closed during the 3 days of execution.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The &quot;Rig Up A&quot; is part of the Project named &quot;Rig Move&quot;. The name of project is used when calculating and grouping shortfalls by projects.</span></h3>
-                <p>&nbsp;</p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p><img width="928" height="678" alt="" src="images/image(54).png" /></p>
+                <p class="ps4"><span class="ts6">A shutdown, a constraint change or a new profile could be given a fixed start date. The Precept philosophy, however, is to make opportunities part of a sequence of events: their start and end dates are relative, so what-if scenarios are easy to build (see </span><a href="philosophy.htm" class="hs0">Precept philosophy</a><span class="ts6">&nbsp;and </span><a href="sequence.htm" class="hs0">Sequence of events</a><span class="ts6">).</span></p>
+                <p class="ps7"><img width="700" height="260" alt="" src="images/fig_opportunity_workflow.png" /></p>
+                <p class="ps4"><span class="ts7">From opportunity to forecast. The sequence gives each opportunity its dates; the forecast applies its impacts at those dates.</span></p>
+                <p class="ps3"><span class="ts5">2. Opening the opportunities</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Select a scenario on the main window, then click &quot;Opportunities&quot; in the &quot;Expertise&quot; group of the main ribbon. The &quot;All Opportunities&quot; window lists the scenario's opportunities. Use &quot;Filter by project:&quot; to narrow the list.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;New&quot; opens an empty &quot;Add Opportunity&quot; window. &quot;Edit&quot; (or a double-click on the opportunity name) opens the selected opportunity.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Delete&quot; removes the selected opportunities (select full rows). Precept asks for confirmation; a deleted opportunity is also removed from the sequence.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">You can also double-click an opportunity in the main window's schedule to open it.</span></p>
+                <p class="ps3"><span class="ts5">3. The Add Opportunity window</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Field</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Meaning</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Opportunity:</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The name. Renaming an existing opportunity updates every row linked to it.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Duration (days):</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">How long the opportunity takes. In a sequence, the next item starts when this one ends.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Start Date:</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;From Sequence&quot; (no fixed date: the date comes from the opportunity's place in the sequence) or &quot;Manual&quot; (enter a &quot;Manual Start Date&quot;).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Color:</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The colour of the opportunity in the sequence (shown with &quot;From Sequence&quot; only).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">CAPEX: / OPEX:</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Read-only totals: the sum of the CAPEX and OPEX entered on the rows of the impact tables (section 4). They are used in the forecast economics (see </span><a href="economical-screener.htm" class="hs0">Economical screener</a><span class="ts6">).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Earliest possible start date</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Optional. &quot;after&quot; a date, and/or &quot;after&quot; another opportunity &quot;Starts&quot; or &quot;Ends&quot;. If the sequence places the opportunity earlier, it is shown in red in the schedule. Leave it blank if the opportunity can be done at any time; press Delete in the opportunity list to clear it.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Impact on Forecast:</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;New profile&quot;, &quot;Change constraint&quot;, &quot;Shutdown&quot;, &quot;Conversion&quot;, &quot;Rerouting&quot; or &quot;None&quot;. The table below the list shows the rows of the chosen impact; add rows with &quot;+&quot; and remove them with &quot;-&quot; (section 4).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Project:</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Each row of an impact table has a &quot;Project&quot; column, which is required. The opportunity takes the project of its first row. With &quot;None&quot;, pick the project in the &quot;Project:&quot; list. Shortfalls and gains are grouped by project.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Comment:</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Free text.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Duplicate Opportunity</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Creates copies of the opportunity (section 6).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Auto-schedule (Group:, Performed By:)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Greyed out: not used in the current version.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Click &quot;Save&quot; (or press Ctrl+S). The main window and the &quot;All Opportunities&quot; list refresh with the saved opportunity.</span></p>
+                <p class="ps3"><span class="ts5">4. Impacts on the forecast</span></p>
+                <p class="ps4"><span class="ts6">One opportunity can combine several impacts. Pick an impact in &quot;Impact on Forecast:&quot;, fill its rows, then pick the next impact and fill its rows; every table is saved. Each row times itself on the opportunity:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the &quot;… when&quot; / &quot;… after&quot; column names the opportunity;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Reference date&quot; is its &quot;start&quot; or &quot;end&quot;;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Number of days before&quot; shifts the date earlier.</span></p>
+                <p class="ps4"><span class="ts6">Every row also has &quot;Project&quot;, &quot;CAPEX&quot;, &quot;OPEX&quot;, &quot;OPEX unit&quot;, &quot;Group cost to Node&quot; and &quot;Comment&quot;.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Impact</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Main columns</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">New profile</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Type profile&quot; (is a new online profile, is positive incremental to, is negative incremental to, replace, restart under different project, Data acquisition), &quot;New profile name&quot;, &quot;Incremental to or replace&quot;, &quot;Online after&quot;. The profile itself is drawn in the Decline Curves window (see </span><a href="new-profiles.htm" class="hs0">New profile</a><span class="ts6">).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Change constraint</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Node&quot; (a node, &quot;All new Wells&quot; or &quot;Field&quot;), &quot;Constraint&quot;, &quot;Value&quot;, &quot;Start constraint when&quot;, &quot;End constraint when&quot;, recurrence (&quot;Apply every x days&quot;, &quot;Apply recurrent constraint until&quot;). See </span><a href="constraintsvstime.htm" class="hs0">Constraints changes vs time</a><span class="ts6">.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Shutdown</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Node SI&quot;, &quot;Start Shut-in when&quot; / &quot;Reference date&quot; / &quot;Number of days before&quot;, &quot;End Shut-in when&quot; / &quot;Reference date-&quot; / &quot;Number of days before-&quot;, &quot;Well has potential during SD&quot;, recurrence columns. See </span><a href="shutdown.htm" class="hs0">Shutdown</a><span class="ts6">.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Conversion</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Well&quot;, &quot;Conversion to&quot;, &quot;Conversion after&quot;, &quot;Production to or injection from&quot;, recurrence (&quot;conversion every x months&quot;, &quot;Apply recurrent conversion until&quot;). See </span><a href="conversions.htm" class="hs0">Well conversion</a><span class="ts6">.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Rerouting</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Node&quot;, &quot;Rerouting to&quot;, &quot;Rerouting after&quot;: the node flows to another node from that date.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">None</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">No table; only the schedule (duration) is used. Pick the project in &quot;Project:&quot;.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps3"><span class="ts5">5. Examples</span></p>
+                <p class="ps11"><span class="ts9">5.1 Drilling a new oil producer</span></p>
+                <p class="ps4"><span class="ts6">The opportunity &quot;A2-W4&quot; lasts 45 days (drilling). &quot;Start Date&quot; is &quot;From Sequence&quot;: there is no fixed date, it takes its place in the sequence of events. The colour is used in the sequence. &quot;Earliest possible start date&quot; is blank because the well can be drilled at any time.</span></p>
+                <p class="ps4"><span class="ts6">&quot;Impact on Forecast&quot; is &quot;New profile&quot;. The row brings the new profile A2-W4 online after the opportunity (the well was first added to the model, see </span><a href="addwell.htm" class="hs0">Add wells to Asset Model</a><span class="ts6">). Its CAPEX of 15 million (in the asset's currency) is used by the forecast economics.</span></p>
+                <p class="ps7"><img width="962" height="702" alt="" src="images/image(53).png" /></p>
+                <p class="ps11"><span class="ts9">5.2 Drilling a new water injector</span></p>
+                <p class="ps4"><span class="ts6">The opportunity &quot;A1-I3&quot; lasts 45 days, &quot;From Sequence&quot;, with no earliest start date. Its &quot;New profile&quot; table has three rows:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A1-I3 &quot;is a new online profile&quot;: the injector comes online, with a CAPEX of 15 million.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A2-W4 incr &quot;is positive incremental to&quot; A2-W4: the extra oil of A2-W4 thanks to the injection.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A2-W3 incr &quot;is positive incremental to&quot; A2-W3.</span></p>
+                <p class="ps4"><span class="ts6">The incremental profiles are viewed and edited in the Decline Curves window.</span></p>
+                <p class="ps7"><img width="994" height="813" alt="" src="images/image(44).png" /></p>
+                <p class="ps11"><span class="ts9">5.3 Compressor upgrade</span></p>
+                <p class="ps4"><span class="ts6">The opportunity &quot;B compr upgrade&quot; lasts 50 days, &quot;From Sequence&quot;. Its earliest possible start is after &quot;B various maintenance&quot; &quot;Ends&quot;: if the sequence places it before the end of that maintenance, it is shown in red.</span></p>
+                <p class="ps4"><span class="ts6">&quot;Impact on Forecast&quot; is &quot;Change constraint&quot;. When the opportunity ends, the node B_compr gets a new &quot;Total Gas&quot; constraint of 15,000, in the asset's gas-rate unit. The row belongs to the project &quot;Phase 2&quot; and carries a CAPEX of 20 million.</span></p>
+                <p class="ps7"><img width="913" height="747" alt="" src="images/image(47).png" /></p>
+                <p class="ps4"><span class="ts6">The node B is also shut during the 50 days of work. Switch &quot;Impact on Forecast&quot; to &quot;Shutdown&quot; and add the row: start shut-in at the &quot;start&quot; of &quot;B compr upgrade&quot;, end at its &quot;end&quot;.</span></p>
+                <p class="ps7"><img width="975" height="158" alt="" src="images/image(48).png" /></p>
+                <p class="ps11"><span class="ts9">5.4 Maintenance</span></p>
+                <p class="ps4"><span class="ts6">The opportunity &quot;B various maintenance&quot; lasts 60 days, &quot;From Sequence&quot;, and can be done at any time (no earliest start date). Its &quot;Shutdown&quot; row closes node B during the 60 days. It belongs to the project &quot;Maintenance&quot; and costs 2 million.</span></p>
+                <p class="ps7"><img width="912" height="742" alt="" src="images/image(50).png" /></p>
+                <p class="ps11"><span class="ts9">5.5 Rig move</span></p>
+                <p class="ps4"><span class="ts6">&quot;Rig Up A&quot; brings no oil but is needed for scheduling. It lasts 3 days, &quot;From Sequence&quot;. Its &quot;Shutdown&quot; row closes node A during the move. It belongs to the project &quot;Rig Move&quot;.</span></p>
+                <p class="ps7"><img width="928" height="678" alt="" src="images/image(54).png" /></p>
+                <p class="ps3"><span class="ts5">6. Duplicating an opportunity</span></p>
+                <p class="ps4"><span class="ts6">To create several similar opportunities (for example the same work-over on several wells):</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Open the opportunity to copy.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In &quot;Duplicate Opportunity&quot;, type in &quot;replace:&quot; the part of the name to change (for example the well name). The box turns green when the text is found in the opportunity name.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the &quot;Duplicate as&quot; table, add one row per copy with the replacement text (&quot;+&quot; / &quot;-&quot; add and remove rows).</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot;. Each copy gets the same duration and impacts. The text is replaced in the name, the comment, and the rows of its new-profile, shutdown, constraint and conversion tables.</span></p>
+                <p class="ps3"><span class="ts5">7. Uncertain duration</span></p>
+                <p class="ps4"><span class="ts6">For a probabilistic forecast, opportunity durations can be uncertain:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Open &quot;Probabilistic distributions&quot; and choose &quot;Opportunities duration&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Each opportunity is listed with its duration as &quot;Mode Duration (days)&quot;. Enter a &quot;Min Duration (days)&quot; and a &quot;Max Duration (days)&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot;.</span></p>
+                <p class="ps4"><span class="ts6">Each probabilistic run samples a duration between Min and Max (see </span><a href="probabilistic.htm" class="hs0">Probabilistic forecast</a><span class="ts6">). Opportunities have no chance-of-success input; risking of exploration prospects is done in the decision tree (section 10).</span></p>
+                <p class="ps3"><span class="ts5">8. Gain per opportunity</span></p>
+                <p class="ps4"><span class="ts6">&quot;Gain per opportunity&quot; measures what each opportunity adds to the forecast. Precept runs the scenario with all its opportunities (the baseline), then once for each opportunity with that opportunity removed. The difference with the baseline is the opportunity's gain.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Save the scenario.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Gain per opportunity&quot; in the &quot;Forecast&quot; group of the main ribbon. The &quot;Opportunity Gain Workflow&quot; panel opens.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In &quot;Calculate Opportunity gain for:&quot;, choose &quot;All Opportunities&quot; or one project.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In &quot;Calculate for Opportunities executed before:&quot;, keep the forecast end date or enter an earlier date.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Calculate&quot; and confirm. &quot;Stop&quot; on the progress bar ends the whole workflow.</span></p>
+                <p class="ps4"><span class="ts6">Only opportunities starting between the forecast start and that date are assessed. Opportunities whose name contains &quot;Rig&quot; and opportunities with &quot;None&quot; impact are skipped. The runs use a temporary copy of the scenario, so your scenario is not changed.</span></p>
+                <p class="ps4"><span class="ts6">To see the results, click &quot;Charts&quot; in the &quot;Forecast Results&quot; group of the main ribbon and set the mode to &quot;Opportunity Gain&quot;. Click &quot;Tornado&quot; to rank the opportunities by gain.</span></p>
+                <p class="ps7"><img width="700" height="350" alt="" src="images/fig_opportunity_gain.png" /></p>
+                <p class="ps4"><span class="ts7">The gain of one opportunity is the difference between the baseline forecast and the forecast without that opportunity.</span></p>
+                <p class="ps3"><span class="ts5">9. Opportunity Funnel (portfolio view)</span></p>
+                <p class="ps4"><span class="ts6">The &quot;Funnel&quot; button in the &quot;Forecast Results&quot; group of the main ribbon opens the &quot;Opportunity Funnel&quot;, when enabled on your installation. It is a Kanban board of the asset's opportunity portfolio across maturation phases. The funnel holds its own curated list of opportunities: they are added to it explicitly and are not taken from the schedule.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Phases: Identify, Assess, Select, Define, Execute and Operate by default. &quot;Manage phases&quot; edits the &quot;Rank&quot;, &quot;Phase&quot;, &quot;Gate&quot; and &quot;Color&quot; of each column.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Add opportunity&quot;: enter a name; the card starts in the first phase.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Drag a card to another column to change its phase.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Double-click a card, or right-click it and choose &quot;Open ID card&quot;, to open its &quot;Opportunity Data&quot; card.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Right-click a card and choose &quot;Customize card parameters…&quot; to pick what the cards show: Cum Oil, Cum Gas, Peak oil rate, Plateau rate, Number of wells, CAPEX, OPEX or First oil date.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Right-click a card and choose &quot;Delete from funnel&quot; to delete the opportunity's data and documents. This cannot be undone.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Charts on the right: &quot;Cum Oil (P50) by phase&quot;, &quot;Top opportunities by Cum Oil (P90-P10)&quot; and &quot;Portfolio creaming curve&quot;.</span></p>
+                <p class="ps4"><span class="ts6">The &quot;Opportunity Data&quot; card is the opportunity's reference sheet:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Current phase:&quot;;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a grid of &quot;Parameter&quot; with &quot;P90 (low)&quot;, &quot;P50&quot;, &quot;P10 (high)&quot; and &quot;Unit&quot; (volumes, production, wells, economics, schedule), to which you can add parameters;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a comment, &quot;Documents&quot;, and a map image and a forecast image.</span></p>
+                <p class="ps3"><span class="ts5">10. Screening exploration opportunities</span></p>
+                <p class="ps4"><span class="ts6">For exploration and appraisal prospects, the &quot;Field data&quot; window (&quot;Expertise&quot; group, when enabled) offers two screening tools:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Analogues dashboard&quot; opens &quot;Analogue Screening&quot;. It filters the analogue-field database (sliders for numeric properties, check lists for categories) and shows a distribution chart per property, a cross-plot, a map and the production of the highlighted analogues. The current field is marked as the reference. Buttons: &quot;Reset filters&quot;, &quot;Edit analogue data&quot;, &quot;Generate analogues table&quot;, &quot;Charts…&quot;. See also </span><a href="analogues.htm" class="hs0">Analogues</a><span class="ts6">.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Flow diagram&quot; opens &quot;Risked volumes - decision tree&quot; for the selected prospect (section 10.1).</span></p>
+                <p class="ps11"><span class="ts9">10.1 The decision tree</span></p>
+                <p class="ps4"><span class="ts6">The tree has a fixed shape: exploration well &rarr; success or dry &rarr; oil or gas &rarr; P10 / P50 / P90 cases. You enter:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the chance of geological success (&quot;% Success&quot;);</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the chance that a discovery is oil (&quot;% Oil&quot;);</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the split between the P10, P50 and P90 cases (%);</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">per case: the recoverable volume (&quot;Mbo&quot;), the number of wells (&quot;E&amp;A strategy&quot;) and the development (&quot;Dev.&quot;: Co-Dev, Stand-alone, Tie-back, TBC).</span></p>
+                <p class="ps4"><span class="ts6">Precept computes and updates as you type:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">each path's probability (&quot;Proba&quot; = success × oil × case split) and &quot;Mbo/well&quot;;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the &quot;Risked&quot; volume (the probability-weighted mean) and the share of developed and not-developed cases.</span></p>
+                <p class="ps4"><span class="ts6">The chance of success, the well counts and the volumes stay in step with the Field data window. Click &quot;Save&quot; to keep the inputs.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -281,7 +416,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

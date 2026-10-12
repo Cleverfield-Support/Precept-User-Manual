@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Security / Access policy</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,26 +63,79 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The security / Access policy can be set up by clicking on the &quot;security&quot; icon in Precept main User Interface.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Access to Asset</span></h3>
-                <p class="ps3"><span class="ts3">Access to an Asset (i.e User can see the Asset in the drop-down menu at Precept opening) is allowed when a User is added to the &quot;authorized User&quot;.</span></p>
-                <p class="ps3"><span class="ts3">Only &quot;Super User&quot; and the User who created the Asset can add new authorized User.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Security / Access Policies within an Asset</span></h3>
-                <p class="ps3"><span class="ts3">Within an Asset, additional security / Access policies can be set up to allow or not allow the option to:</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- create new scenario</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- edit a scenario created by other users</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- edit decline curves</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- view results</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">In the example below, the User 'jean-&quot; has full access and rights to create/edit scenarios within the asset&nbsp; 'Demo-Asset&quot;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The User &quot;ant&quot; can only visualize (and export to Excel) forecast results.</span></p>
-                <p><img width="862" height="214" alt="" src="images/image(93).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p><span class="ts3">S</span><span class="ts3">ecurity and access policy</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Three levels of control</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Licence: who can start Precept at all, and who is a Super User. This is set by Cleverfield (see </span><a href="installation.htm" class="hs0">Installation</a><span class="ts6">).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Asset access and permissions: which assets a user sees, and what they may do in them. This is set in the &quot;Security&quot; window (sections 2 to 4).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Scenario sharing and status: whether other users see a scenario, and whether it can still be edited. This is set in the Scenario Manager (section 5).</span></p>
+                <p class="ps4"><span class="ts6">A Super User can see every asset of the company, open the &quot;Security&quot; window, list the scenarios of other users in the Scenario Manager (&quot;View All scenarios&quot;), delete them, and change their sharing and status. The ribbon restrictions of section 4 do not apply to a Super User.</span></p>
+                <p class="ps3"><span class="ts5">2. Opening the Security window</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the asset in the &quot;Select Asset&quot; list of the main window.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Security&quot; on the main ribbon. The button is active for Super Users only.</span></p>
+                <p class="ps4"><span class="ts6">The window shows the &quot;Company:&quot; and &quot;Asset:&quot; at the top, and one row per user who has access to this asset.</span></p>
+                <p class="ps7"><img width="862" height="214" alt="" src="images/image(93).png" /></p>
+                <p class="ps3"><span class="ts5">3. Access to an asset</span></p>
+                <p class="ps4"><span class="ts6">A user who is not a Super User sees an asset in the &quot;Select Asset&quot; list only when they have a row in the &quot;Security&quot; window of that asset. When an asset is created, its creator is added automatically, with every permission set to &quot;Yes&quot;.</span></p>
+                <p class="ps4"><span class="ts6">To give a user access:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Add User&quot;. A new row appears, with the four permissions set to &quot;Yes&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the &quot;Full Name&quot; cell, pick the user from the list. Only users who hold a Precept licence for your company are listed.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Set each permission to &quot;Yes&quot; or &quot;No&quot; (section 4). Any other value is refused.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot;. The message &quot;Access for the Asset ... have been succesfully saved !&quot; confirms the change.</span></p>
+                <p class="ps4"><span class="ts6">To remove a user, select the full row (click the row header) and click &quot;Delete User&quot;, then &quot;Save&quot;. At least one user must keep access to the asset. The &quot;Company&quot;, &quot;Asset&quot; and &quot;Full Name&quot; columns are read-only. You can copy and paste permission cells with Ctrl+C and Ctrl+V. &quot;Add User&quot;, &quot;Delete User&quot; and &quot;Save&quot; are active for Super Users and for the user who created the asset.</span></p>
+                <p class="ps3"><span class="ts5">4. Permissions within an asset</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Column</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">When set to &quot;No&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Allow to edit others scenario</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">On a scenario created by someone else, the &quot;Forecast&quot; and &quot;GAP&quot; ribbon groups are disabled: the user can open the inputs and view the results but cannot run a forecast. The editing commands of the Network, Opportunities, Shutdowns and Settings windows are also disabled for this user.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Allow to create scenario</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The &quot;Manager&quot; ribbon group (&quot;Scenario Manager&quot;, &quot;Duplicate scenario&quot;) is disabled.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Allow to modify decline curves</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The &quot;Decline Curves&quot; button is disabled.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Allow to view results</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The &quot;Forecast Results&quot; ribbon group (charts, maps, export, dashboards, reports) is disabled.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Example: user &quot;Analyst B&quot; must only look at, and export to Excel, the forecasts of asset &quot;Field A&quot;. Give them &quot;Allow to view results&quot; = &quot;Yes&quot; and the three other permissions = &quot;No&quot;. Their colleague who builds the forecasts keeps all four permissions at &quot;Yes&quot;.</span></p>
+                <p class="ps3"><span class="ts5">5. Scenario sharing and locking</span></p>
+                <p class="ps4"><span class="ts6">Within an asset, each scenario is either private or shared, and either &quot;Working&quot; or &quot;Locked&quot;. Only the scenario's creator (or a Super User) can change this, from the Scenario Manager (see </span><a href="scenariomanagement.htm" class="hs0">Scenario Management</a><span class="ts6">):</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A scenario that is not shared appears only in its creator's &quot;Scenario:&quot; list. Super Users can also list it in the Scenario Manager by choosing &quot;View All scenarios&quot;, to delete it or change its sharing and status.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A shared scenario is visible to every user of the asset. Whether they can run it depends on their &quot;Allow to edit others scenario&quot; permission.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">When a scenario is &quot;Locked&quot;, Precept shows &quot;This scenario is locked and cannot be edited !&quot; when it is opened. The &quot;Expertise&quot;, &quot;Forecast&quot; and &quot;GAP&quot; groups are disabled for everyone, including its creator; only the results can be viewed and exported. Set the status back to &quot;Working&quot; to edit it again.</span></p>
+                <p class="ps3"><span class="ts5">6. Other tools in the Security window</span></p>
+                <p class="ps4"><span class="ts6">&quot;Execute Query&quot; opens a window that runs a database query typed by the user and reports the &quot;number of affected rows:&quot;. It changes data directly in the Precept database, without the checks of the normal windows: use it only when instructed by Cleverfield support.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -94,7 +147,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

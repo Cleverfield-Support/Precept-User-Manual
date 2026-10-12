@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Add wells to Asset Model</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,57 +63,131 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Well can be added or deleted by clicking on the (Add /Remove wells) icon in the </span><a href="networkmodelling.htm" class="hs1">Network modelling</a><span class="ts3">&nbsp;interface.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Add Well</span></h3>
-                <p class="ps3"><span class="ts3">Wells can be added using the interface below. Existing but also future wells need to be added to be part of the Asset model.</span></p>
-                <p class="ps3"><span class="ts3">The minimum required information are:</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Well Name</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Type of Well: Oil producer, Gas Producer, Water Injector or Gas injector. This is the type at start of forecast. The well can eventually be converted later in the forecast, see section </span><a href="conversions.htm" class="hs1">Well conversion</a></p>
-                <p class="ps3"><span class="ts3">&nbsp;- the Node the well flows to (for producers). For injectors, Users need to input the name of the Node where injection fluid comes from. </span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- the name of reservoir</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- the project it is part of. The project are used to group production by project when visualizing forecast results.</span></p>
-                <p><img width="235" height="318" alt="" src="images/image(37).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Once a well has been added to the Asset model, its decline curves needs to be defined using the DCA interface (see </span><a href="dca.htm" class="hs1">Decline curves: Production and Injection potentials</a><span class="ts3">&nbsp;)</span></p>
-                <p class="ps3"><span class="ts3">For future well, the starting date will be specified by creating an Opportunity (see </span><a href="opportunities.htm" class="hs1">Opportunities</a><span class="ts3">) and placed in the drilling sequence (see </span><a href="sequence.htm" class="hs1">Sequence of events</a><span class="ts3">&nbsp;)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Rename Well</span></h3>
-                <p class="ps3"><span class="ts3">A Well can be renamed using the interface below. Just select the name you want to rename and input the new name. In the example below, the well &quot;A1-W1&quot; is renamed to A1-W11&quot;</span></p>
-                <p><img width="232" height="169" alt="" src="images/image(39).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Summary Table</span></h3>
-                <p class="ps3"><span class="ts3">The &ldquo;Well&rdquo; interface gives an overview of all the existing and future wells in the Asset.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The table contains for each well:</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Rank: </span><span class="ts3">introduced for visualization purposes. In the Timeline in the main Precept interface, wells are ranked by &quot;Rank Ascending&quot; first, then alphabetically. This feature is useful to have wells ranked as per users preference.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Type of Well (Oil Producer, Gas Producer, Water Injector, Gas Injector)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Project (used to generate forecast aggregated by Project (Existing, Future Well Phase 1, Phase 2, etc..)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Reservoir&nbsp; </span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Node it is connected to</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- X and Y coordinates (optional): used for visualization on maps</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Producing interval length (optional) : to scale profiles (rates and Cum) when copy declines from one well to another</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Net Revenu Interest (NRI): to generate forecast split by shares (your company share and partners shares)</span></p>
-                <p><span class="ts12">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p><img width="788" height="618" alt="" src="images/image(40).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Remove Well</span></h3>
-                <h3 class="hd1"><span class="ts3">To remove a well, click on its name in the above table to highlight it, then click on &quot;Remove Well&quot;.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Duplicate</span></h3>
-                <h3 class="hd1"><span class="ts3">Tips: Use the Duplicate interface when you need to create several wells at the same time.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p><span class="ts3">A</span><span class="ts3">dd wells to the Asset Model</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; the well list of a scenario</span></p>
+                <p class="ps4"><span class="ts6">Every well that takes part in a forecast must be in the scenario's Asset Model: existing wells and future wells alike. For each well, the Asset Model stores its type, the node it is connected to, its reservoir and its project. The well list belongs to the scenario, so two scenarios can have different wells.</span></p>
+                <p class="ps4"><span class="ts6">A well connects to a node of the network, so build the nodes first (manifolds, platforms, injection sources; see </span><a href="network-editor.htm" class="hs0">Network editor</a><span class="ts6">).</span></p>
+                <p class="ps4"><span class="ts6">To open the well list:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the scenario on the main window.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Network&quot; on the main ribbon (see </span><a href="networkmodelling.htm" class="hs0">Network modelling</a><span class="ts6">).</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Add / Edit / Remove Wells&quot; on the Network ribbon. The &quot;Wells in Network&quot; window opens and the Network window closes (so that rank changes are picked up when you reopen it).</span></p>
+                <p class="ps4"><span class="ts6">The window has four parts: the &quot;Add Well&quot; panel, the &quot;Rename Well&quot; panel, the &quot;Duplicate Well&quot; list, and the table of all wells with its &quot;Remove Well&quot; button.</span></p>
+                <p class="ps3"><span class="ts5">2. Add a well</span></p>
+                <p class="ps4"><span class="ts6">Fill in the &quot;Add Well&quot; panel, then click &quot;Add Well&quot;. Precept confirms with &quot;Well added to Network.&quot;</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Field</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Meaning</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well Name</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Must be unique in the scenario. Precept refuses a name that already exists.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Type of Well</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Oil Producer, Gas Producer, Water Injector, Gas Injector, WAG (alternating water and gas injector), Exploration or Appraisal. This is the type at the start of the forecast. A well can change type later in the forecast (see </span><a href="conversions.htm" class="hs0">Well conversion</a><span class="ts6">).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Flows to / Fluid comes from</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">For a producer (&quot;Flows to:&quot;), the node its production goes to. For an injector (&quot;Fluid comes from:&quot;), the node its injection water or gas comes from. The list shows the network nodes (not the wells).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reservoir</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The reservoir the well produces from or injects into. It groups wells for reservoir results, voidage and Material Balance.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Project</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The project the well belongs to (for example &quot;Existing&quot;, &quot;Phase 2&quot;). Forecast results can be split by project, and a whole project can be included in or excluded from a run.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Coordinates (X, Y)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Optional. Wellhead position, used to show the well on maps.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Create Opportunity to drill the well</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Optional, for a future well. Tick it and enter the &quot;Drilling duration (days):&quot;. See section 3.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Well name, type, node, reservoir and project are all required. Precept tells you which one is missing.</span></p>
+                <p class="ps7"><img width="235" height="318" alt="" src="images/image(37).png" /></p>
+                <p class="ps4"><span class="ts7">The &quot;Add Well&quot; panel.</span></p>
+                <p class="ps11"><span class="ts9">2.1 Well types</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Oil Producer and Gas Producer &mdash; the well produces into the node in &quot;Flows to&quot;. Its oil, water, gas and gas-lift all go to that node.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Water Injector and Gas Injector &mdash; the well receives water or gas from the node in &quot;Fluid comes from&quot;.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">WAG &mdash; an injector that alternates water and gas injection. The node entered when you add the well becomes its gas source; set its water source in the &quot;Water Injection from&quot; column of the table. The alternation itself is defined with recurring conversions (see </span><a href="conversions.htm" class="hs0">Well conversion</a><span class="ts6">). In Decline Curves, a WAG well has two profiles to define: &quot;&lt;well&gt; (WI WAG)&quot; and &quot;&lt;well&gt; (GI WAG)&quot;.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Exploration and Appraisal &mdash; wells with no production. They are not connected to a node and are always forced closed in the forecast. They are used to place drilling activity in the sequence.</span></p>
+                <p class="ps3"><span class="ts5">3. Future wells &mdash; drilling opportunity and start date</span></p>
+                <p class="ps4"><span class="ts6">A future well is added like any other well, but it must not produce before it is drilled. There are two ways to set when it comes online:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Linked to the sequence of events (recommended). Tick &quot;Create Opportunity to drill the well&quot; and enter the &quot;Drilling duration (days):&quot;. Precept creates an opportunity with the same name as the well (&quot;Impact on Forecast&quot; = &quot;New profile&quot;), and a new profile row that brings the well online at the end of that opportunity. Then place the opportunity in the drilling sequence (see </span><a href="opportunities.htm" class="hs0">Opportunities</a><span class="ts6">&nbsp;and </span><a href="sequence.htm" class="hs0">Sequence of events</a><span class="ts6">). For an Exploration or Appraisal well, the new profile is of type &quot;Data acquisition&quot;: the drilling shows in the sequence, but there is no production profile.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">At a fixed date. Add a new profile with an &quot;Online Start_Date&quot; (see </span><a href="new-profiles.htm" class="hs0">New profiles</a><span class="ts6">).</span></p>
+                <p class="ps4"><span class="ts6">In both cases the well is shut in from the forecast start date until it comes online (comment &quot;Well not drilled yet&quot; in the timeline).</span></p>
+                <p class="ps3"><span class="ts5">4. After adding a well &mdash; potentials and inflow</span></p>
+                <p class="ps4"><span class="ts6">Adding a well to the Asset Model does not give it a production or injection potential. Depending on the forecast method of the scenario:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Decline curves &mdash; define the well's decline curve in &quot;Decline Curves&quot; (see </span><a href="dca.htm" class="hs0">Decline curves: Production and Injection potentials</a><span class="ts6">).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Material Balance or Simulation &mdash; set the well's inflow in &quot;Well Inflow control&quot; on the ribbon of the Material Balance window, and its lift curves in &quot;Well completion and VLP&quot;. New wells get a default inflow: &quot;PI&quot; = 1 for oil producers and water injectors, &quot;c and n&quot; (c = 0.0001, n = 1) for gas producers and gas injectors. Replace these defaults with real values (see </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">).</span></p>
+                <p class="ps4"><span class="ts6">In &quot;Well Inflow control&quot;, the &quot;Type Inflow&quot; of each well can be &quot;PI&quot; or &quot;Jones&quot; for oil producers and water injectors, and &quot;c and n&quot; or &quot;Jones&quot; for gas producers and gas injectors. Producers also have a gas-lift setting: &quot;Gas-lift control&quot; = &quot;Fixed&quot; uses the rate in &quot;Gas-lift&quot;; &quot;Optimized&quot; lets the optimiser choose a rate between &quot;Min Gas-lift&quot; and &quot;Max Gas-lift&quot;.</span></p>
+                <p class="ps3"><span class="ts5">5. The well table &mdash; edit wells</span></p>
+                <p class="ps4"><span class="ts6">The table lists all the wells of the scenario, sorted by &quot;Rank&quot; and then by name. Use the &quot;Project&quot;, &quot;Reservoir&quot; and &quot;Well Type&quot; filters above it to show fewer wells. Every cell you change is saved at once (&quot;updating...&quot; shows while Precept saves).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Rank &mdash; orders the wells in the timeline of the main window: wells are sorted by ascending rank, then alphabetically. Use it to group wells the way you want to see them.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Well &mdash; read-only. Use &quot;Rename Well&quot; to change a name (section 6).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Type Well &mdash; can be changed. Precept clears the routing columns that do not apply to the new type, and deletes the decline-curve profiles that belonged to the old type (for example the WAG profiles when a WAG well becomes a water injector).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Project, Reservoir &mdash; changing the project also updates the well's new-profile and drilling-opportunity rows.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Flows to, Water Injection from, Gas Injection from &mdash; the routing. Fill only the column that matches the well type; Precept warns you if the node does not exist or does not fit the type.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">X, Y &mdash; optional coordinates for maps. A change applies to the well in every scenario of the asset.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Producing interval &mdash; optional. In Decline Curves, it scales the rates of other wells plotted in the background of a well (witness or analogue wells) by the ratio of producing intervals.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">NRI (Net Revenue Interest) &mdash; optional. Used to split the forecast between your company's share and the partners' shares.</span></p>
+                <p class="ps4"><span class="ts6">You can paste one column at a time from Excel: click the first cell, then Ctrl+V. The Delete key clears the selected cells (except the well name and type).</span></p>
+                <p class="ps7"><img width="788" height="618" alt="" src="images/image(40).png" /></p>
+                <p class="ps4"><span class="ts7">The well table of the &quot;Wells in Network&quot; window.</span></p>
+                <p class="ps3"><span class="ts5">6. Rename a well</span></p>
+                <p class="ps4"><span class="ts6">In the &quot;Rename Well&quot; panel, pick the well in &quot;Current Well Name:&quot;, type the new name in &quot;Rename to:&quot; and click &quot;Rename Well&quot;. In the example below, well A1-W1 is renamed A1-W11.</span></p>
+                <p class="ps7"><img width="232" height="169" alt="" src="images/image(39).png" /></p>
+                <p class="ps4"><span class="ts6">The new name must not already exist. Precept renames the well everywhere in the scenario: network, constraints, potentials, new profiles, conversions, shutdowns, opportunities and sequence, PVT, transient data, patterns, OPEX and GHG inputs.</span></p>
+                <p class="ps3"><span class="ts5">7. Remove a well</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the whole row of the well in the table (click the row header on the left). Several rows can be selected.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Remove Well&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Confirm. The well is removed from the network and the sequence of the scenario, with its potentials and every opportunity, shutdown, conversion, constraint, PVT, transient, pattern, inflow and cost input linked to it. Past forecast results are kept.</span></p>
+                <p class="ps3"><span class="ts5">8. Duplicate a well &mdash; add several similar wells at once</span></p>
+                <p class="ps4"><span class="ts6">Use the &quot;Duplicate Well&quot; list when you need several wells with the same settings, for example a batch of infill wells.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Fill in the &quot;Add Well&quot; panel for the first well. The list title becomes &quot;Duplicate '&lt;well&gt;' as&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Add the names of the other wells in the list: click &quot;+&quot; for each row, or paste a column of names from Excel. &quot;-&quot; removes the selected row.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Add Well&quot;. Precept adds the first well, then a copy for each name in the list (names that already exist are skipped). If &quot;Create Opportunity to drill the well&quot; is ticked, each copy also gets its own drilling opportunity and new profile.</span></p>
+                <p class="ps4"><span class="ts6">The copies take the network routing, initial constraints and pattern factors of the first well. They do not get a decline curve: define it for each well (or copy it with &quot;Import / Duplicate profile&quot; in Decline Curves).</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -125,7 +199,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

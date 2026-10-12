@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>3D visualiser</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 570;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="platform.htm" class="hs1">Platform</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">3D visualiser</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="precept-ai.htm" title="Precept AI"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="petex-coupling.htm" title="Petex GAP / Prosper and ECLIPSE links"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">3</span><span class="ts3">D visualiser &mdash; reservoir grids, results and the network</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">The 3D visualiser displays a reservoir simulation grid in 3D. You can colour it by a static property or by a simulated result at each report step, slice it, filter it, and inspect any cell. A plan-view map and a cross-section are shown beside the 3D view. The wells of the model are drawn, and when the viewer is opened from a scenario, that scenario's production network can be drawn above the grid.</span></p>
+                <p class="ps4"><span class="ts6">The visualiser is for viewing only: it never changes anything in the Precept database.</span></p>
+                <p class="ps3"><span class="ts5">2. Opening it</span></p>
+                <p class="ps11"><span class="ts9">2.1 From a scenario &mdash; &quot;3D model visualization&quot;</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the scenario in the main window.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;3D model visualization&quot; in the &quot;3D Modelling&quot; group of the main ribbon. The group is shown when &quot;3D Simulation model&quot; is ticked in Settings, under &quot;Pre / Post Processing&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">The latest simulation run of the scenario is loaded automatically: the grid, its static properties and its results. If the scenario has not been simulated yet, Precept says &quot;No simulation grid (…EGRID) was found for this scenario&quot; &mdash; run the simulation first from the 3D model builder (see </span><a href="simulation.htm" class="hs0">Simulation</a><span class="ts6">).</span></p>
+                <p class="ps4"><span class="ts6">Opened this way, the viewer knows the scenario, so the &quot;Network&quot; option can draw its production network. Grids built with the 3D model builder are shown with north up.</span></p>
+                <p class="ps11"><span class="ts9">2.2 From a file &mdash; &quot;3D Model Visualiser&quot;</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the Field Monitoring window, click &quot;3D Model Visualiser&quot;. The viewer opens empty.</span></p>
+                <p class="ps14"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts10">Click &quot;Load model&quot; and choose a grid file: </span><span class="ts11">.EGRID</span><span class="ts10">, </span><span class="ts11">.GRDECL</span><span class="ts10">&nbsp;or </span><span class="ts11">.GRID</span><span class="ts10">.</span></p>
+                <p class="ps13"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts10">If static properties (</span><span class="ts11">.INIT</span><span class="ts10">) or dynamic results (</span><span class="ts11">.UNRST</span><span class="ts10">) with the same name sit next to the grid file, Precept asks &quot;Load them too ?&quot;. Answer Yes to colour the grid by them.</span></p>
+                <p class="ps4"><span class="ts6">A &quot;Loading 3D model&quot; progress window follows the load; click its &quot;Cancel&quot; button to stop. The viewer needs the Microsoft Edge WebView2 runtime, which is normally present on Windows. If it is missing, Precept reports &quot;WebView2 runtime missing or failed to start&quot;.</span></p>
+                <p class="ps3"><span class="ts5">3. The screen</span></p>
+                <p class="ps7"><img width="700" height="420" alt="" src="images/fig_visualiser_layout.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; Layout of the 3D visualiser window.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Top left: the model name, its size (NX x NY x NZ), the number of active cells, report steps and wells, and the last picked cell.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">3D view: the grid, with a compass and a colour bar. Type new values in the boxes above and below the colour bar to change the colour scale; &quot;Auto&quot; restores it and &quot;invert&quot; reverses the colours.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Right-hand side: &quot;Map (plan view) &mdash; top visible layer&quot; and &quot;Cross-section&quot;.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Bottom: the control panel (section 5).</span></p>
+                <p class="ps3"><span class="ts5">4. Navigating</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Where</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Mouse</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">3D view</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Left-drag: rotate. Right-drag: pan. Wheel: zoom. Right-click on a cell without moving the mouse: show the cell's I, J, K and property values.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Map (plan view)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Drag: draw the slice line used by the cross-section. Wheel: zoom. Shift-drag: pan. Double-click: reset the view. Right-click: cell value.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Cross-section</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Wheel: zoom. Ctrl+wheel: stretch the depth axis. Drag: pan. Double-click: reset. Right-click: cell value.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps3"><span class="ts5">5. The control panel</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Control</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">What it does</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Property list</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The property used to colour the grid. Static properties come from the grid or the .INIT file: porosity, permeabilities, net-to-gross, depth, initial water saturation and pore volume, when present. Dynamic results come from the .UNRST file: pressure, water saturation and gas saturation.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;&#x25BA; Play&quot; / &quot;Pause&quot; and &quot;Time step&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Step through the report steps of a dynamic result, automatically or with the slider.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Slice plane&quot;, &quot;Slice azimuth (&deg;)&quot;, &quot;Slice position&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Cut the grid with a vertical plane, set its direction and move it across the model.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Slice I / J / K&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Show a single row, column or layer of cells (&quot;Off&quot;, &quot;I&quot;, &quot;J&quot; or &quot;K&quot;, then the slider).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;I / J / K range&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Keep only a box of cells (min and max I, J and K). &quot;Reset&quot; restores the full grid.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Filter (current property)&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Keep only the cells whose value is between &quot;min&quot; and &quot;max&quot;. &quot;Clear&quot; removes the filter. &quot;Stats&quot; shows statistics and a histogram of the property, for all cells and for the filtered cells.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Vertical exaggeration&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Stretch the depth axis of the 3D view.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Wells&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Show or hide the wells.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Network&quot;, &quot;Equipment&quot;, &quot;Sea surface&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Show the scenario's production network above the grid, its process equipment (compressors, pumps, flares…) as separate nodes, and the sea surface.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Gridlines&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Draw the cell edges.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps11"><span class="ts9">5.1 Wells and cross-sections along a well</span></p>
+                <p class="ps4"><span class="ts6">Wells are read from the simulation results (.UNRST): each well is drawn through its completed cells, labelled with its name and coloured by type (producer, water injector or gas injector). In the &quot;Section :&quot; list above the cross-section, choose &quot;Straight (slice line)&quot; to follow the line drawn on the map, or &quot;Along &lt;well&gt;&quot; to follow a well's completions.</span></p>
+                <p class="ps3"><span class="ts5">6. Data needed</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">To see</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">You need</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The grid</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">A grid file: .EGRID (written by the simulator), .GRDECL or .GRID.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Static properties</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The .INIT file of the run, or properties stored in the .GRDECL file.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Results and wells</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The .UNRST (unified restart) file of the run. Without it, the grid shows no time steps and no wells.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The network overlay</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Opening the viewer from a scenario (&quot;3D model visualization&quot;), and map coordinates (X and Y) for at least two of its wells in the network model, so that the network can be positioned on the grid. Nodes without coordinates are not drawn. Node elevations (the Z column of the network's coordinates grid, in TVDSS) place platforms and risers above the seabed. See </span><a href="networkmodelling.htm" class="hs0">Network modelling</a><span class="ts6">.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Well trajectories entered in Precept are not used by the 3D visualiser: the wells come from the simulation model itself.</span></p>
+                <p class="ps3"><span class="ts5">7. Exporting images</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Export image&quot; on the ribbon. In the &quot;Export image&quot; window, tick what to save &mdash; &quot;3D view (with compass + colour bar)&quot;, &quot;Map (plan view)&quot;, &quot;Cross-section&quot; &mdash; and choose the resolution (1x, 2x or 4x), then click &quot;Save ...&quot;. One image is saved through a save dialog; several are written to a folder you choose. Images are saved as PNG files.</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

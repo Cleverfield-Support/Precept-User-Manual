@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>Network editor</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 410;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="networkmodelling.htm" class="hs1">Network modelling</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">Network editor</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="networkmodelling.htm" title="Network modelling"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="network-hydraulics.htm" title="Pipelines, pumps and network pressure solve"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">N</span><span class="ts3">etwork editor &mdash; drawing the network</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">The network is drawn directly on the diagram of the Network window (click &quot;Network&quot; in the &quot;Expertise&quot; group of the main ribbon). Nodes are icons, pipes are coloured arrows, and the colour of a pipe is the fluid it carries. What the network means for the forecast (constraints, splits, reporting nodes) is described in </span><a href="networkmodelling.htm" class="hs0">Network modelling</a><span class="ts6">.</span></p>
+                <p class="ps4"><span class="ts6">A network is drawn either with the engineering-style icons (manifold, platform, FPSO, compressor, pump, flare…) or with the older classic shapes (triangle, rounded square, ellipse…). Both are read the same way by Precept; an old network can be converted to the icons at any time (section 6).</span></p>
+                <p class="ps3"><span class="ts5">2. The palette &mdash; &quot;Draw Network&quot;</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Draw Network&quot; on the ribbon. The diagram goes full screen and a palette appears on it, to the left of the network:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A network that uses the icons, or a new (empty) network, gets the icon palette described below.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A network still drawn with the classic shapes gets the classic palette (picture below). Convert it to the icons to use the new palette.</span></p>
+                <p class="ps7"><img width="618" height="858" alt="" src="images/image(6).png" /></p>
+                <p class="ps4"><span class="ts7">The classic palette: one shape per node type, in each fluid colour, and the pipes and reporting lines.</span></p>
+                <p class="ps4"><span class="ts6">The palette is not part of the network: it is removed automatically when the network is saved. To remove it before, click its frame and press Delete.</span></p>
+                <p class="ps11"><span class="ts9">2.1 Fluid colours</span></p>
+                <p class="ps4"><span class="ts6">Most node icons come in several colours, one per fluid: grey (any fluid), green (oil), red (gas), light blue (water), orange (gas-lift), navy (water injection), dark red (gas injection), black (liquid, process only). The colour fills the whole body of the manifolds, platforms, process and tanks. Pipes use the same colours, plus purple for 3-phase.</span></p>
+                <p class="ps11"><span class="ts9">2.2 Icon families</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Palette row / icon</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Colours offered</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Node type created</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Manifold (with the &quot;Rotate&quot; button)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">grey, oil, gas, water, gas-lift, water injection, gas injection</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Manifold</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Subsea manifold</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">same as Manifold</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Manifold</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Platform</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">same as Manifold</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Platform</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Process</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">same as Manifold, plus black (liquid)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Process</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Tank; Export</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">oil, gas, water, gas-lift, water injection, gas injection</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Tank (an end point of the network)</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Disposal row: Disposal to sea; Disposal well</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">water (to sea); water injection, gas injection (disposal well)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Tank</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Source row: Source; Sea water; Underground water</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Source: oil, gas, water, gas-lift, water injection, gas injection. Sea water and Underground water: water.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Source (where a fluid enters the network, e.g. injection water)</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">FPSO</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">one</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Platform</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Plant</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">one</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Plant (onshore plant)</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Compressor, Pump, Choke, Cooler, Heater, Storage, Flare, Fuel</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">one each</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">the type of the same name</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reporting</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">one</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reporting node (no physical flow)</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reservoir</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">one</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">None: a drawing only, never a network node</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">The node type set by the icon can be changed afterwards in the &quot;Type Node&quot; column of &quot;View Initial Constraints&quot; (for example a Plant used as a Platform). The types Well, Source, Tank, Fuel and Flare are protected and cannot be changed there. When the network is saved, the type in the table wins over the icon.</span></p>
+                <p class="ps3"><span class="ts5">3. Adding nodes</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Draw Network&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Drag an icon of the right fluid colour from the palette onto the network. It grows to full size where you drop it.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Type the node's name on the icon (double-click the icon to edit it). Names must be unique in the network.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Connect it with pipes (section 4), then save.</span></p>
+                <p class="ps4"><span class="ts6">You can also copy an existing node with Ctrl+C / Ctrl+V and rename the copy. The name is written under the icon, or above it when a pipe arrives at the bottom of the icon and none at the top, so pipes never cross the name. Nodes snap to a fine grid so they line up easily.</span></p>
+                <p class="ps3"><span class="ts5">4. Pipes</span></p>
+                <p class="ps4"><span class="ts6">The bottom of the palette holds one sample per fluid: &quot;Liquid&quot;, &quot;Oil&quot;, &quot;Water&quot;, &quot;Gas&quot;, &quot;3-phase&quot;, &quot;Gas-lift&quot;, &quot;Water injection&quot; and &quot;Gas injection&quot;, as a solid &quot;… pipe&quot; (left column) and a dashed &quot;… reporting&quot; line (right column).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Copy the sample pipe of the fluid you need onto the network.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Drag its start onto a connection point of the upstream node and its end (the arrowhead) onto a connection point of the downstream node. The arrow gives the flow direction.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Save the network. A pipe left loose at one end is reported when you save.</span></p>
+                <p class="ps4"><span class="ts6">Points to know:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The colour is the fluid. Precept reads the fluid of a pipe from its colour only, so always take pipes from the palette and do not recolour them.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Each icon has four connection points: left, right, top and bottom. The left and right points are at the height of the drawing's pipe stubs; the bottom point is below the name.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Pipes are drawn with right angles (horizontal and vertical runs) and a large arrowhead, so the flow direction stays readable on a large network.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A purple 3-phase pipe carries oil, water, gas and gas-lift gas; a black liquid pipe carries oil and water.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Dashed reporting lines link a node to a reporting node: they sum fluids for reporting and carry no flow (see </span><a href="networkmodelling.htm" class="hs0">Network modelling</a><span class="ts6">).</span></p>
+                <p class="ps7"><img width="640" height="300" alt="" src="images/fig_icon_connection_points.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; The four connection points of a node icon, and where its name goes.</span></p>
+                <p class="ps3"><span class="ts5">5. Rotating manifolds</span></p>
+                <p class="ps4"><span class="ts6">A manifold can be drawn in three orientations: flow bottom to top (default), left to right, and top to bottom. Select one or more manifolds on the network, then click the blue &quot;Rotate&quot; button at the right of the Manifold row of the palette. Each click turns them to the next orientation; their pipes are re-attached to the points that now face the next node. If no manifold was selected, Precept says &quot;Select a manifold first, then click Rotate.&quot;</span></p>
+                <p class="ps3"><span class="ts5">6. Converting an old network to the icons</span></p>
+                <p class="ps4"><span class="ts6">When a network still uses the classic shapes, the ribbon shows a &quot;Network icons&quot; group with &quot;Convert to new icons&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Convert to new icons&quot;. Every node keeps its name, colour and pipes; the nodes are spread apart (the icons are larger) and the pipes are re-attached with right angles. Some names choose a more specific icon: a tank named with &quot;sea&quot;, &quot;overboard&quot; or &quot;discharge&quot; becomes &quot;Disposal to sea&quot;, one named &quot;export&quot; or &quot;sales&quot; becomes &quot;Export&quot;, a source named &quot;sea&quot; becomes &quot;Sea water&quot;. The node type never changes.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Precept reports how many nodes were converted: &quot;Save the network to keep the change, or close without saving to go back.&quot;</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Until you save, &quot;Back to classic shapes&quot; undoes the conversion.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Tidy the layout if needed, then click &quot;Save Network&quot;. Once saved, the network uses the icons and the &quot;Network icons&quot; group is no longer shown.</span></p>
+                <p class="ps3"><span class="ts5">7. Showing wells, reservoirs and constraints on the diagram</span></p>
+                <p class="ps4"><span class="ts6">Three checkboxes sit in the top-right corner of the diagram. What they draw is not part of the network: it is removed before the network is saved and drawn again afterwards.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Wells&quot; &mdash; each well is drawn under the node it flows to (producers) or is injected from (injectors), linked to it by a straight line in its fluid colour: green oil producer, red gas producer, navy water injector, dark red gas injector. A well whose fluids go to different nodes gets one link per fluid.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Reservoirs&quot; &mdash; one reservoir icon per reservoir, under its wells, linked to them by a thin dotted line. Ticking &quot;Reservoirs&quot; also ticks &quot;Wells&quot;; unticking &quot;Wells&quot; also unticks &quot;Reservoirs&quot;.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Constraints&quot; &mdash; the constraints of each node, as currently typed in &quot;View Initial Constraints&quot; (saved or not), written to the right of its icon with their units. Uptime is shown as a percentage, only when below 100 %.</span></p>
+                <p class="ps4"><span class="ts6">Wells, reservoir icons and constraint labels follow their node when you move it. You can drag a well to another place under its node; it keeps that place while the window is open.</span></p>
+                <p class="ps3"><span class="ts5">8. Re-routing a well, or changing its reservoir, on the diagram</span></p>
+                <p class="ps4"><span class="ts6">With &quot;Wells&quot; ticked, the links can be edited, and saving the network updates the well's routing in the asset model of the scenario:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Drag the end of the well's link that touches its node onto another node.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">To change a well's reservoir, tick &quot;Reservoirs&quot; and drag the end of its dotted link onto another reservoir icon.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save Network&quot;. The well now flows to (or is injected from) the new node, or belongs to the new reservoir.</span></p>
+                <p class="ps4"><span class="ts6">A link left loose, or dropped on another well, is ignored. Only the fluids of that link move: for a well with one link per fluid, re-route each link.</span></p>
+                <p class="ps3"><span class="ts5">9. Renaming and deleting</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Rename a node on the diagram (the &quot;Node&quot; column of the table is read-only), then save. Constraints are kept by node name: after a rename, check the node's constraints, and re-route the wells that flowed to the old name (with &quot;Add / Edit / Remove Wells&quot; or on the diagram, section 8).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Delete a node or a pipe: select it on the diagram and press Delete, then save.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Ctrl+S saves at any time. Closing the window with unsaved changes asks for confirmation.</span></p>
+                <p class="ps4"><span class="ts6">To give a pipe or a pump a lift curve for the network pressure solve, right-click it on the diagram: see </span><a href="network-hydraulics.htm" class="hs0">Pipelines, pumps and network pressure solve</a><span class="ts6">.</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

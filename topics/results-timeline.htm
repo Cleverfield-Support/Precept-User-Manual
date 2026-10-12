@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="forecast-results.htm" class="hs0">Forecast results</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="forecast-results.htm" class="hs1">Forecast results</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Forecast results: Timeline</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,23 +63,198 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The Timeline is a very powerful way to QC and analyze the results of the forecast.</span></p>
-                <p class="ps3"><span class="ts3">Simply move hover the mouse to get more details about the status of the nodes and wells at any timestep.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">For Nodes that belong to the surface Network, the timeline helps to highlight bottlenecks.</span></p>
-                <p class="ps3"><span class="ts3">Oil constrained nodes are highlighted in green. Water constrained nodes are highlighted in blue and Gas constrained nodes are highlighted in red.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The timeline can give instant results about well production (Oil, BSW and GOR) and well injection rates.</span></p>
-                <p class="ps3"><span class="ts3">The timeline highlights wells that needs to be closed (colored in black), or choked-back (colored in light-green) due to process constraints.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">QC and analyzes of a forecast should include:</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- understanding of bottlenecks in production network</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- make sure shutdown planning is accurate.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- make sure new profiles actually comes online at the right time</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- etc..</span></p>
-                <p>&nbsp;</p>
-                <p><img width="1586" height="827" alt="" src="images/image(67).png" /></p>
+                <p><span class="ts3">F</span><span class="ts3">orecast results: Timeline</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. What the timeline shows</span></p>
+                <p class="ps4"><span class="ts6">The timeline, in the main window, is the fastest way to QC a forecast. After a run, it shows for every node and every well, at every date, what the solver did: which nodes were the bottlenecks, which wells were shut in or choked back, when shutdowns, new wells and opportunities took effect.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The top part shows the sequences (rigs, maintenance, construction…) with their opportunities.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Below come the network nodes, then the wells, one row each.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Hover over a cell to read its status (for example the constrained stream of a node, or why a well is shut in).</span></p>
+                <p class="ps7"><img width="1586" height="827" alt="" src="images/image(67).png" /></p>
+                <p class="ps3"><span class="ts5">2. Colour code</span></p>
+                <p class="ps11"><span class="ts9">2.1 Nodes &mdash; bottlenecks</span></p>
+                <p class="ps4"><span class="ts6">A coloured node cell means that the node was at one of its capacities at that date, so it limited the forecast:</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Colour</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Node status</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Green</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Oil constrained</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Light blue</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Water constrained</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Red</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Gas constrained</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Orange</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Gas-lift constrained</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Purple</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Liquid constrained</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Navy</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Water injection constrained</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Dark red</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Gas injection constrained</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Brown (chocolate)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Pressure constrained</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Black</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Capacity of 0 (the node is closed, e.g. during a shutdown)</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps11"><span class="ts9">2.2 Wells</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Colour</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Well status</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Green / navy / dark red</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Producing / injecting water / injecting gas at full potential (shown when &quot;Show Prod / Inj&quot; is ticked; white otherwise).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Light green</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Producer choked back by a process constraint.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Blue / dark red</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Water injector / gas injector choked back by a process constraint (dark red is also used for a producer limited by a gas constraint).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Dark grey</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Shut in by a process constraint, or because there is not enough drawdown to flow.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Black</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Closed: shutdown or planned shutdown, dead well, or well shut in as not economical.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Light grey</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Abandoned, no potential or no more profile; exploration and appraisal wells (they never produce in the forecast).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Purple</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Incremental or replacement profile; well limited by its maximum drawdown or minimum flowing BHP; VLP message.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Red / pink</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Warnings: red for crossflow or a negative pressure, pink for a convergence problem. Check these wells.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Other colours</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Shutdown categories use the colour chosen for them in Settings. A conversion is shown in the colour of the new well type (green to oil producer, red to gas producer, navy to water injector, dark red to gas injector).</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps3"><span class="ts5">3. Timeline controls</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Show Timeline&quot; &mdash; shows or hides the timeline.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;View all timeline&quot; &mdash; zooms out to the whole forecast period.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Show Prod / Inj&quot; &mdash; colours the cells of wells that flow normally (green, navy, dark red), not only the exceptions.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Filter abandoned Wells&quot; &mdash; removes the abandoned wells from the list.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The filter above the node list (&quot;Contains&quot; and a text box) keeps only the rows whose name contains the text you type.</span></p>
+                <p class="ps3"><span class="ts5">4. QC checklist</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Find the bottlenecks of the network: which node is constrained, on which stream, and for how long.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Check that the shutdowns are where and when they should be.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Check that new wells and new profiles come online at the right dates, and that conversions happen.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Look for wells in black or dark grey that you expected to produce, and for warnings (red, pink).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">For the pressures and rates behind a status, open the network view (&quot;Show Network&quot;, see </span><a href="network-view.htm" class="hs0">Network view</a><span class="ts6">) or the charts (see </span><a href="results-charts.htm" class="hs0">Forecast results: Charts</a><span class="ts6">).</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -91,7 +266,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

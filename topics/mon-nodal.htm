@@ -1,0 +1,509 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>Nodal analysis and well models</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 530;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="monitoring.htm" class="hs1">Monitoring module</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">Nodal analysis and well models</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="mon-pta.htm" title="Build-up and pressure transient analysis"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="mon-rm-plots.htm" title="Reservoir management plots"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">N</span><span class="ts3">odal analysis and well models</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; what nodal analysis does in Precept</span></p>
+                <p class="ps4"><span class="ts6">Every producer can carry a well model: an inflow model (IPR: the rate the reservoir delivers for a given flowing bottom-hole pressure) and an outflow model (VLP: the bottom-hole pressure the tubing needs to lift a given rate to the wellhead pressure). Where the two curves cross is the well's operating point. Precept uses the well model to:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">match each well to its latest well test (reservoir pressure, PI or C and n, VLP tuning);</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">turn the measured tubing-head pressure (THP) into a bottom-hole pressure (BHP), test by test and over time;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">draw the VLP/IPR, Quicklook gradient, gas-lift and ESP charts on the right-hand side of the Producers window;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">generate the lift curves (VLP files) used by Material Balance and simulation forecasts.</span></p>
+                <p class="ps4"><span class="ts6">The well model is updated from the Monitoring module (the Producers window, see </span><a href="mon-producers.htm" class="hs0">Producers</a><span class="ts6">) or from the Material Balance window (see </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">).</span></p>
+                <p class="ps7"><img width="700" height="420" alt="" src="images/fig_ipr_vlp_operating_point.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; IPR and VLP curves of an oil producer. The operating point is where they cross; the last well tests are plotted against them.</span></p>
+                <p class="ps3"><span class="ts5">2. Prosper or Precept's native well model</span></p>
+                <p class="ps4"><span class="ts6">Precept can run the well model in one of two engines. Which one is used is decided when Precept is set up for your company, not per well:</span></p>
+                <p class="ps14"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts12">Petex Prosper (through OpenServer)</span><span class="ts10">&nbsp;&mdash; used when Precept is set up with a Prosper models folder. Precept looks for the well's Prosper file (</span><span class="ts11">&lt;Well&gt;.Out</span><span class="ts10">) in that folder and its sub-folders, and drives Prosper on your PC. Prosper must be installed and licensed. If the folder is the GAP model, the Prosper files are taken from the open GAP model, and Precept shows &quot;You need to open the GAP model !&quot; if GAP is not running.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts7">Precept's native well model</span><span class="ts6">&nbsp;&mdash; used when no Prosper folder is set. No Petex licence is needed: the completion, trajectory and PVT come from the Precept database and are edited in &quot;Well Completion and traj&quot; (section 5).</span></p>
+                <p class="ps4"><span class="ts6">The screens are the same, with these differences:</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Item</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Prosper (OpenServer)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Native well model</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Button in the Producers window</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Update Prosper model&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Update Well model&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Correlation&quot; list</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">12 Prosper correlations (section 6.4)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Beggs and Brill&quot;, &quot;Hagedorn Brown&quot;, &quot;Gray&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Match VLP&quot; (automatic F1/F2 match)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Available</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Not available &mdash; enter F1 and F2 by hand</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Solution node list (&quot;Reservoir&quot; / &quot;BHP&quot;)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Shown when the well has a downhole gauge</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Hidden (always at reservoir depth)</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Gas-lift valves, casing gradients</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Shown for gas-lift wells</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Not modelled (single injection point)</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Well Completion and traj&quot; button</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Hidden (edit the Prosper file)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Shown</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Tubing sensitivity (KPI)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Computed</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Not computed</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">PVT match multipliers</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Set in Prosper</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Set in &quot;Well Completion and traj&quot;, &quot;PVT&quot; tab</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Some captions keep the word &quot;Prosper&quot; in native mode (&quot;Save Prosper model&quot;, the &quot;Prosper&quot; column, &quot;Prosper Analytics&quot;). They then refer to the native well model.</span></p>
+                <p class="ps3"><span class="ts5">3. Opening the Well Model Update window</span></p>
+                <p class="ps4"><span class="ts6">The nodal-analysis window is titled &quot;Well Model Update&quot;. Open it in one of these ways:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">In the Producers window (Production Monitoring), select a well, then click &quot;Update Well model&quot; (or &quot;Update Prosper model&quot;) in the &quot;Raw Data&quot; group of the ribbon. The window opens on that well and runs the calculation straight away.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">In the Material Balance window, click &quot;Nodal Analysis&quot; on the ribbon.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">On installations where the &quot;GAP&quot; group is shown on the main ribbon, click &quot;Update Well model&quot; there.</span></p>
+                <p class="ps4"><span class="ts6">Only producers of the monitoring asset model are listed. Injectors are not modelled in this window (see </span><a href="mon-injectors.htm" class="hs0">Injectors</a><span class="ts6">).</span></p>
+                <p class="ps4"><span class="ts6">The window has:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">on the left, the well list (&quot;Select well&quot;), and a table with two value columns: &quot;Well Test&quot; (measured) and &quot;Prosper&quot; (calculated or input), plus &quot;Match (%)&quot;. Rows: &quot;Reservoir Pressure&quot;, &quot;PI&quot;, &quot;Liquid&quot;, &quot;Oil&quot;, &quot;Water&quot;, &quot;Gas&quot;, &quot;BSW&quot;, &quot;GOR&quot;, &quot;Gas-lift&quot;, &quot;Total Gas&quot;, &quot;THP&quot;, &quot;BHP&quot;, &quot;CHP&quot;. For gas wells &quot;BSW&quot; and &quot;GOR&quot; become &quot;WGR&quot; and &quot;CGR&quot;, and the PI box becomes C and n. ESP wells show &quot;Frequency&quot;, &quot;PDP&quot; and &quot;Pump wear&quot;; diluent wells show &quot;Diluent&quot;. Below the table: the correlation list with the F1 and F2 boxes, &quot;RECALCULATE&quot;, and &quot;Comment:&quot;;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the &quot;SYSTEM CALCULATIONS&quot; chart (VLP/IPR, section 6.1);</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the well-test table (&quot;In the table below, click on the Well Test you want to load for Prosper matching&quot;);</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the &quot;QUICKLOOK ANALYSIS&quot; chart (section 6.3);</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a production chart of the well's daily parameters and tests. Click &quot;Settings&quot; to choose the series (&quot;Parameters&quot;: Choke, CHP, THT, FP, BHP, Gas-lift, BHT, THP; &quot;Well Test&quot;: GOR, BSW, CHP, Water, Gas, Liquid, Oil).</span></p>
+                <p class="ps4"><span class="ts6">Double-click a chart to reset its zoom.</span></p>
+                <p class="ps3"><span class="ts5">4. Matching a well test</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the well in &quot;Select well&quot;. Precept loads the newest well test whose status is &quot;Valid&quot;, copies its THP, BSW and GOR (WGR and CGR for gas), gas-lift rate (or ESP frequency) into the &quot;Prosper&quot; column, and runs the system calculation.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">To match another test, click it in the well-test table. A test that is not valid is refused (&quot;The Well Test you have selected is not a valid Test. Please select another one !&quot;).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Compare the &quot;Well Test&quot; and &quot;Prosper&quot; columns. &quot;Match (%)&quot; is 100 × calculated ÷ measured, for Liquid, Gas, BHP, PDP and CHP.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Tune the inflow: edit &quot;Reservoir Pressure&quot; and &quot;PI&quot; (oil wells) or C and n (gas wells) in the &quot;Prosper&quot; column.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Tune the outflow (VLP): pick the correlation and edit F1 and F2. With Prosper, &quot;Match VLP&quot; does it for you from the measured gauge BHP (&quot;VLP matched !&quot;); it needs a downhole-gauge BHP on the test. With the native model, type F1 and F2.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">6.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;RECALCULATE&quot; after each change, until the calculated rates and BHP match the test.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">7.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Type a &quot;Comment:&quot; and click &quot;Save Prosper model&quot;. Precept shows &quot;Prosper model updated !&quot;.</span></p>
+                <p class="ps11"><span class="ts9">4.1 What is saved</span></p>
+                <p class="ps4"><span class="ts6">Each save writes one well-model record: reservoir pressure, PI (oil) or inflow C and n (gas), correlation, F1, F2, API, solution GOR, salinity, gas gravity, reservoir temperature, the PVT match multipliers, your user name, your comment, and the date of the matched test (&quot;Updated using Well Test&quot;). Saving again on the same test replaces that record; saving on another test adds a new one, so the history of matches is kept. With Prosper, the Prosper file is saved too. Precept always uses the record with the latest &quot;Updated using Well Test&quot; date.</span></p>
+                <p class="ps11"><span class="ts9">4.2 Inflow models</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Oil wells: productivity index (PI), a straight line q = PI × (Pres &minus; Pwf). The native solver bends it with Vogel below the bubble point. With Prosper, the PI box is used only when the Prosper model's inflow method is PI entry; otherwise it shows 0 and the Prosper inflow model is used.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Gas wells: back-pressure equation q = C × (Pres² &minus; Pwf²)^n, with C and n.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">In forecasts, the inflow of each well is set in the Material Balance &quot;Well Inflow&quot; data, which also offers the Jones inflow (A·q² + B·q = &Delta;P) &mdash; see </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">.</span></p>
+                <p class="ps11"><span class="ts9">4.3 VLP tuning &mdash; F1 and F2</span></p>
+                <p class="ps4"><span class="ts6">F1 multiplies the gravity (hydrostatic) part of the pressure loss and F2 the friction part. 1 means untuned. Typical matched values are close to 1: values far from 1 usually point to a wrong test, a wrong completion or wrong PVT. The &quot;VLP Correlation&quot; chart of &quot;Prosper Analytics&quot; (section 9) shows F1 and F2 for every well against a 0.9&ndash;1.1 box.</span></p>
+                <p class="ps11"><span class="ts9">4.4 PVT match multipliers</span></p>
+                <p class="ps4"><span class="ts6">With the native model, the PVT is matched in &quot;Well Completion and traj&quot;, &quot;PVT&quot; tab, under &quot;PVT match tuning (1 = untuned)&quot;: &quot;GOR / Pb ×&quot;, &quot;Bo ×&quot; and &quot;Oil viscosity ×&quot;. They are saved with the well model when you click &quot;Save Prosper model&quot;. With Prosper, match the PVT in Prosper.</span></p>
+                <p class="ps11"><span class="ts9">4.5 Wells with no data</span></p>
+                <p class="ps4"><span class="ts6">For a well with no test and no allocated production (a future well), Precept fills default inputs, shows &quot;No allocated production or well test for this well. … click Recalculate.&quot;, and lets you type the inputs. If an input is missing, it lists what to enter (&quot;To run the nodal analysis, enter: …&quot;). If there are no tests, monthly allocated production is used as pseudo-tests.</span></p>
+                <p class="ps3"><span class="ts5">5. Well Completion and traj (native well model)</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Well Completion and traj&quot; in the &quot;Model Update&quot; group (native installations only; select a well first). The window &quot;Well geometry &mdash; &lt;well&gt;&quot; has a &quot;Save&quot; button and these tabs:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Completion&quot;: the &quot;Equipment&quot; table (&quot;Type&quot;, &quot;Measured depth&quot;, &quot;Tubing ID&quot;, &quot;Roughness&quot;). Types: &quot;X-mas tree&quot; (first row, fixed), &quot;Tubing&quot; (several rows make a tapered string), &quot;GLV&quot; (gas-lift wells: the injection depth), &quot;Pressure gauge&quot;, &quot;ESP&quot; (ESP wells). The &quot;Well Geometry&quot; table holds the trajectory (&quot;MDRT&quot;, &quot;TVDRT&quot;, optional &quot;Azimuth&quot;) with &quot;Rotary table elevation&quot;; the &quot;Well profile&quot; chart updates as you type. At least one Tubing row with an ID is needed. The deepest depth is the reservoir datum.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;PVT&quot;: &quot;Oil gravity&quot;, &quot;Gas gravity&quot;, &quot;Solution GOR (Rs)&quot;, &quot;Reservoir temperature&quot;, &quot;Water salinity&quot;, the &quot;PVT match tuning (1 = untuned)&quot; multipliers, and a read-only &quot;PVT properties vs pressure&quot; table.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;ESP&quot; (ESP wells only): &quot;Pump model&quot; from the catalogue, &quot;Number of stages&quot;, &quot;Wear factor&quot; (1 = new), with the &quot;Pump head vs rate&quot; chart. &quot;Edit pump catalogue…&quot; opens the &quot;ESP pump catalogue&quot; window, where pump head and power curves can be pasted in the Prosper ESP database layout and saved with &quot;Save catalogue&quot;. The running frequency is taken from each well test.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;VLP&quot; (all wells except ESP wells): generates the ECLIPSE lift-curve file used by forecasts &mdash; see </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">, section 5.</span></p>
+                <p class="ps4"><span class="ts6">The same window opens from &quot;Well completion and VLP&quot; in the Material Balance window.</span></p>
+                <p class="ps4"><span class="ts6">Note: the &quot;Correlation&quot;, &quot;F1 (tuning)&quot; and &quot;F2 (tuning)&quot; of the &quot;VLP&quot; tab are read from the saved well model. To change them for good, change them in &quot;Well Model Update&quot; and click &quot;Save Prosper model&quot;.</span></p>
+                <p class="ps4"><span class="ts6">Gas lift: Precept models one injection point, at the depth of the &quot;GLV&quot; row. Without a &quot;GLV&quot; row, gas-lift rates have no effect on the well model.</span></p>
+                <p class="ps3"><span class="ts5">6. The calculations</span></p>
+                <p class="ps11"><span class="ts9">6.1 System calculation and the VLP/IPR chart</span></p>
+                <p class="ps4"><span class="ts6">The system calculation finds the operating point at the test THP (and gas-lift rate or ESP frequency): Liquid, Oil, Water, Gas, Total Gas and BHP fill the &quot;Prosper&quot; column. The &quot;SYSTEM CALCULATIONS&quot; chart shows:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;VLP&quot; (blue) and &quot;IPR&quot; (red) &mdash; X axis &quot;Liquid rate&quot; (oil) or &quot;Gas rate&quot; (gas), Y axis &quot;Pressure&quot;, in the asset's units;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Last Test&quot; (red), &quot;Old Tests&quot; (grey: the tests inside the time window of the production chart &mdash; zoom the production chart to change them) and &quot;Loaded Test&quot; (the test you are matching).</span></p>
+                <p class="ps4"><span class="ts6">With Prosper and a downhole gauge, the solution node list chooses where the curves are drawn: &quot;BHP&quot; (at the gauge) or &quot;Reservoir&quot; (at reservoir depth). At reservoir depth, measured test BHPs are shifted by the calculated pressure difference between gauge and reservoir depth. If the curves do not cross, Precept shows &quot;No Intersection points !&quot;.</span></p>
+                <p class="ps11"><span class="ts9">6.2 BHP from THP</span></p>
+                <p class="ps4"><span class="ts6">For the loaded test, the system calculation also computes the BHP at the gauge depth from the measured THP, so you can compare it with the measured BHP. Click &quot;BHP vs Time&quot; to do it for the valid tests over time (first, last and every Nth test, about 50 points): the result is drawn as &quot;BHP_Prosper&quot; on the production chart (oil producers). &quot;Calculate KPIs&quot; (section 7) stores BHP from THP for the valid tests of the last two years.</span></p>
+                <p class="ps11"><span class="ts9">6.3 Quicklook gradients</span></p>
+                <p class="ps4"><span class="ts6">The &quot;QUICKLOOK ANALYSIS&quot; chart is a pressure-versus-depth plot (X &quot;Pressure&quot;, Y &quot;Depth TVDRT&quot;, depth downwards): the calculated &quot;Tubing Gradient&quot;, the measured points &quot;THP measured&quot;, &quot;BHP measured&quot; and, for ESP wells, &quot;PDP measured&quot;, and depth lines for the gas-lift injection point and diluent injection. A good match puts the measured points on the gradient. For gas-lift wells modelled in Prosper, it also draws &quot;Actual Casing Gradient&quot; and &quot;Theoritical Casing Gradient&quot; and the gas-lift valves GLV1&ndash;GLV3 coloured by status (grey no data, red closed, orange partly open, green open).</span></p>
+                <p class="ps11"><span class="ts9">6.4 VLP correlations</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Engine</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Correlations offered</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Native well model</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Beggs and Brill&quot; (default, with the Payne hold-up correction), &quot;Hagedorn Brown&quot;, &quot;Gray&quot; (gas and condensate wells)</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Prosper</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Petroleum Experts&quot;, &quot;Petroleum Experts 2&quot; to &quot;Petroleum Experts 5&quot;, &quot;Duns and Ros Modified&quot;, &quot;Hagedorn Brown&quot;, &quot;Fancher Brown&quot;, &quot;Mukerjee Brill&quot;, &quot;Beggs and Brill&quot;, &quot;Orkiszewski&quot;, &quot;Duns and Ros Original&quot;</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">The native model marches down from the THP in steps of at most 250 ft, with tapered tubing, lift gas added above the injection depth and the ESP stages. Temperature varies linearly from the wellhead (test THT) to the reservoir temperature. PVT is black oil (Standing, Vasquez-Beggs, Beggs-Robinson, Dranchuk-Abou-Kassem, Lee, Sutton) with your match multipliers.</span></p>
+                <p class="ps11"><span class="ts9">6.5 ESP wells</span></p>
+                <p class="ps4"><span class="ts6">For ESP wells the frequency comes from the well test. Pump head is scaled to that frequency with the affinity laws (rate &prop; f, head &prop; f², power &prop; f³), multiplied by the number of stages and the wear factor. &quot;PDP&quot; (pump discharge pressure) is matched like the BHP, and &quot;Pump wear&quot; is saved with the model.</span></p>
+                <p class="ps3"><span class="ts5">7. Calculate KPIs</span></p>
+                <p class="ps4"><span class="ts6">In &quot;Well Model Update&quot;, group &quot;Model Update&quot;:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Calculate KPIs&quot; &mdash; runs all the well-model calculations for the selected well and stores the results (&quot;KPI has been succesfully calculated !&quot;);</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Calculate KPIs for all wells&quot; &mdash; does it for every producer.</span></p>
+                <p class="ps4"><span class="ts6">A progress window shows each step: &quot;Perform BHP from THP calculations&quot;, &quot;Perform Gradient calculations&quot;, &quot;Perform System calculations&quot;, &quot;Perform VLP/IPR calculations&quot;, &quot;QuickLook calculations&quot;, &quot;Perform Gas-lift PC calculations&quot;, &quot;ESP Performance calculations&quot;, &quot;Perform tubing sensitivities calculations&quot;. Only tests with status &quot;Valid&quot; are used; if a well has no tests, allocated production is used instead.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Result</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Tests used</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Where you see it</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">BHP from THP (calculated vs measured gauge BHP, and flowing BHP at reservoir depth; PDP for ESP wells)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Valid tests of the last 2 years</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Producers window, &quot;Actual BHP vs Prosper BHP&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">System calculation (model rates at each test THP vs measured rates)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Valid tests of the last 2 years</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Producers window, &quot;System calculation&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">VLP/IPR curves</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Latest valid test</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Producers window, &quot;VLP / IPR (last 1000 days)&quot;; Monitoring Plots &quot;VLP&quot;, &quot;Productivity Index&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Gradient and Quicklook</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Latest valid test</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Producers window, &quot;Quicklook&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Gas-lift performance curve (oil vs gas-lift)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Latest valid test</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Producers window, &quot;Gas-Lift Performance curve&quot;; &quot;Gas-lift Optimizer&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">ESP performance and ESP performance curve (40&ndash;60 Hz)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Latest valid test</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Producers window, &quot;ESP Performance&quot;, &quot;ESP Performance curve&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Tubing sensitivity (oil rate with 4.5&quot;, 5.5&quot; and 7&quot; tubing; Prosper only)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Latest valid test</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Monitoring Plots, &quot;Tubing sensitivity&quot;</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">&quot;Calculate KPIs&quot; also builds the THP performance curve (oil rate vs THP) shown in the &quot;THP Performance curve &quot; panel; the THP range of this curve is configured per asset, so the panel is available on some installations only.</span></p>
+                <p class="ps4"><span class="ts6">Run &quot;Calculate KPIs&quot; after each well-model update and after new well tests, so that the Producers charts reflect the latest match.</span></p>
+                <p class="ps3"><span class="ts5">8. How the results appear in the Producers window</span></p>
+                <p class="ps4"><span class="ts6">The right-hand side of the Producers window holds three chart slots. Click &quot;&gt;&quot; on a slot to cycle through the available charts; gas-lift charts appear only for gas-lift wells, ESP charts only for ESP wells. The default charts depend on your installation.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Chart</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">What it shows</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Production&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Allocated production and shortfalls (&quot;Oil Production&quot;, &quot;Oil Shortfalls&quot;); &quot;Oil&quot; / &quot;Gas&quot; selector</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Actual BHP vs Prosper BHP&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Measured &quot;THP&quot; and &quot;BHP&quot; over time, with the calculated &quot;BHP Prosper&quot; (ESP wells: &quot;PDP&quot; and &quot;PDP Prosper&quot;). A gap between measured and calculated BHP means the well model needs re-matching, or the gauge drifts</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;VLP / IPR (last 1000 days)&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;VLP&quot; and &quot;IPR&quot; from the last KPI run, with the last three valid tests (&quot;Last Test&quot;, &quot;n-1&quot;, &quot;n-2&quot;) and &quot;Old Tests&quot; (valid tests of the last 1000 days), at reservoir depth. Solution node selector &quot;Reservoir&quot; / &quot;BHP&quot;. Tests moving away from the IPR show a change in reservoir pressure or productivity</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;System calculation&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Measured &quot;THP&quot;, &quot;BHP&quot; and &quot;Liquid&quot; (or &quot;Gas&quot;) over time with the model rate &quot;Liquid Prosper&quot; (or &quot;Gas Prosper&quot;)</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Gas-Lift Performance curve&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Oil (or gas) rate vs gas-lift rate from the last KPI run, with &quot;Last Test&quot;, &quot;Old Tests&quot; and a vertical &quot;Actual&quot; line at the current gas-lift rate</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Quicklook&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The gradient chart of section 6.3</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;THP Performance curve &quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Oil (or gas) rate vs THP, with the last tests (installations where it is configured)</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;ESP Performance&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Pump &quot;Head&quot; and &quot;Head (including Pump Wear Factor)&quot; vs operating rate, &quot;Efficiency&quot;, &quot;Downtrust&quot; / &quot;Uptrust&quot; limits, with test points</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;ESP Performance curve&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Oil rate and flowing BHP vs frequency</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Virtual Meter&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Rates estimated by the well model vs allocation (installations with real-time monitoring)</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">See </span><a href="mon-producers.htm" class="hs0">Producers</a><span class="ts6">&nbsp;for the rest of the window.</span></p>
+                <p class="ps7"><img width="700" height="420" alt="" src="images/fig_gaslift_performance_curve.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 2 &mdash; Gas-lift performance curve: oil rate rises with gas-lift, then flattens. Past the economic optimum, each extra unit of lift gas brings little oil (low marginal slope).</span></p>
+                <p class="ps3"><span class="ts5">9. Field-wide views of the well models</span></p>
+                <p class="ps4"><span class="ts6">In &quot;Well Model Update&quot;, group &quot;Prosper Analytics&quot;:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Dashboard&quot; opens &quot;Prosper Analytics&quot;: the latest well model of every oil producer, with &quot;Location&quot; and &quot;Reservoir&quot; filters and bar charts &quot;Reservoir Pressure&quot;, &quot;Productivity Index&quot;, &quot;API&quot;, &quot;Solution GOR&quot; and &quot;Salinity&quot;, the &quot;VLP Correlation&quot; chart (F1 vs F2, with a 0.9&ndash;1.1 box) and &quot;Last Prosper model Update&quot; (date of each well's last match). Click a row to highlight that well; press Esc to clear.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Prosper model updates history&quot; opens &quot;Prosper model history&quot;: every saved match of the well, newest first, and a chart of reservoir pressure, PI (or inflow C for gas wells), daily BHP and test rates over time.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Maps&quot; opens the map window with well-model parameters (see </span><a href="mon-rm-plots.htm" class="hs0">Reservoir management plots</a><span class="ts6">).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Well Profile&quot; opens Monitoring Plots on the well's profile (completion and trajectory).</span></p>
+                <p class="ps4"><span class="ts6">The &quot;Raw Data&quot; group opens the raw tables: &quot;Production parameters&quot; and &quot;Well Tests&quot;.</span></p>
+                <p class="ps3"><span class="ts5">10. Gas-lift Optimizer</span></p>
+                <p class="ps4"><span class="ts6">In the Producers window, click &quot;Gas-lift Optimizer&quot; in the &quot;Reservoir Monitoring&quot; group (not shown on every installation). The &quot;Gas-lift Optimizer&quot; window plots the stored gas-lift performance curves of the selected gas-lift wells:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Pick a location, then one or more wells.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Choose &quot;vs Gas-lift&quot; or &quot;vs Total Gas&quot; for the X axis.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Read the table: &quot;Well&quot;, &quot;Current GL&quot;, &quot;Delta Oil with 1 MMscf/d less&quot;, &quot;Delta Oil with 1 MMscf/d more&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Move lift gas from the wells that lose least oil with less gas to the wells that gain most oil with more gas, until the marginal gains are similar. In &quot;vs Total Gas&quot; mode, a dashed slope line shows each well's local marginal ratio.</span></p>
+                <p class="ps4"><span class="ts6">This window compares marginal slopes; it does not allocate the gas for you. The full field optimiser (&quot;Optimizer&quot; in Field Monitoring, button &quot;Gas-lift PC&quot;) shows each well's point &quot;Before Optimisation&quot; and &quot;After Optimisation&quot; on the same curves.</span></p>
+                <p class="ps3"><span class="ts5">11. Checking the operating point before a forecast</span></p>
+                <p class="ps4"><span class="ts6">For Material Balance forecasts, use &quot;VLP/IPR check at start forecast&quot; in the Material Balance window to check that each producer can flow on day one with its forecast inflow and VLP file &mdash; see </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">, section 5.3.</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

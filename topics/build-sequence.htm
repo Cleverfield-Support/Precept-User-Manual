@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="sequence.htm" class="hs0">Sequence of events</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="sequence.htm" class="hs1">Sequence of events</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Build sequence of events</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,22 +63,32 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Once created, Opportunities are by default placed in the &quot;Pool&quot; of opportunity. By default the pool of opportunity is not visible.</span></p>
-                <p class="ps3"><span class="ts3">To make it visible, check the 'Show Pool of opportunity&quot; option on the top right of Precept Main User Interface.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p>&nbsp;</p>
-                <h3 class="hd1"><span class="ts8">Move a single Opportunity called &quot;Opportunity A&quot; from one sequence to a new location before an opportunity called &quot;Opportunity B&quot;</span></h3>
-                <p class="ps3"><span class="ts3">1. Left Click on the &quot;Opportunity A&quot;. &quot;Opportunity A&quot; will then be highlighted in blue.</span></p>
-                <p class="ps3"><span class="ts3">2. Now Right-click. (Right-Click acts like &quot;cut&quot;, </span><span class="ts3">&quot;Opportunity A&quot; </span><span class="ts3">will disappear)</span></p>
-                <p class="ps3"><span class="ts3">3. Left-click on &quot;Opportunity B&quot; to highlight where you want to place &quot;Opportunity A&quot;. </span><span class="ts3">&nbsp;&quot;Opportunity B&quot; will be highlighted in blue. </span></p>
-                <h3 class="hd1"><span class="ts3">4. Now Double-click (Double-click acts like &quot;Paste&quot;). &quot;Opportunity A&quot; will now be located before &quot;Opportunity B&quot;.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Move several Opportunities from one sequence to a new location before an opportunity called &quot;Opportunity B&quot;</span></h3>
-                <h3 class="hd1"><span class="ts3">1. Select all the opportunities you want to move. The opportunities will then be highlighted in blue.</span></h3>
-                <h3 class="hd1"><span class="ts3">2. Now Right-click. (Right-Click acts like &quot;cut&quot;, the selected opportunities will disappear)</span></h3>
-                <h3 class="hd1"><span class="ts3">3. Left-click on &quot;Opportunity B&quot; to highlight where you want to place the Opportunities.&nbsp; &quot;Opportunity B&quot; will be highlighted in blue. </span></h3>
-                <h3 class="hd1"><span class="ts3">4. Now Double-click (Double-click acts like &quot;Paste&quot;). The opportunities will now be located before &quot;Opportunity B&quot;.</span></h3>
+                <p><span class="ts3">B</span><span class="ts3">uild sequence of events</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">Opportunities are scheduled by placing them in a string (see </span><a href="sequence.htm" class="hs0">Sequence of events</a><span class="ts6">). The order is built directly on the timeline of the main window, with the mouse:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Right-click acts like &quot;Cut&quot;: the selected opportunities are removed from where they are.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Double-click acts like &quot;Paste&quot;: the cut opportunities are inserted before the opportunity you double-click.</span></p>
+                <p class="ps4"><span class="ts6">When nothing has been cut, a double-click on an opportunity opens it for editing, and a double-click on the name of a string opens the &quot;Sequence&quot; window (see </span><a href="add-sequence.htm" class="hs0">Add / Delete sequence of events</a><span class="ts6">).</span></p>
+                <p class="ps3"><span class="ts5">2. The Pool of opportunities</span></p>
+                <p class="ps4"><span class="ts6">A new opportunity is placed in the &quot;Pool&quot; of opportunities. Opportunities in the Pool are not executed in the forecast. The Pool is hidden by default: tick &quot;Show Pool of Opportunities&quot; at the top of the main window to show it.</span></p>
+                <p class="ps4"><span class="ts6">Right-click the name cell (first column) of the Pool to hide it again. Right-clicking the name cell of a string hides that string from the timeline.</span></p>
+                <p class="ps3"><span class="ts5">3. Move one opportunity</span></p>
+                <p class="ps4"><span class="ts6">Example: move &quot;Opportunity A&quot; so that it is executed just before &quot;Opportunity B&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Left-click &quot;Opportunity A&quot;. It is highlighted in blue.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Right-click. &quot;Opportunity A&quot; disappears (it is cut).</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Double-click &quot;Opportunity B&quot; (in the same string or in another one). &quot;Opportunity A&quot; is inserted just before &quot;Opportunity B&quot;, and the dates of the string are recalculated.</span></p>
+                <p class="ps4"><span class="ts6">To add the opportunity at the start or at the end of a string, double-click the empty cell at the start or at the end of that string.</span></p>
+                <p class="ps3"><span class="ts5">4. Move several opportunities</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select all the opportunities to move (they are highlighted in blue).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Right-click. The selected opportunities disappear.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Double-click the opportunity before which they must be inserted. They are all inserted before it. Check the resulting order on the timeline.</span></p>
+                <p class="ps3"><span class="ts5">5. Take an opportunity out of the schedule</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the opportunity in its string and right-click it.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Double-click anywhere in the Pool. The opportunity is added at the end of the Pool and is no longer executed.</span></p>
+                <p class="ps4"><span class="ts6">To schedule an opportunity from the Pool, select it in the Pool, right-click, then double-click the place where it goes in a string.</span></p>
+                <p class="ps3"><span class="ts5">6. Change a duration</span></p>
+                <p class="ps4"><span class="ts6">Use &quot;Sequence&quot; &gt; &quot;View sequence / Modify Opportunity duration&quot; to type a new &quot;Duration&quot; or &quot;End_Date&quot;, or &quot;Sequence&quot; &gt; &quot;Adjust Opportunity duration&quot; to change it on the timeline. Every opportunity after it in the same string moves accordingly.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -90,7 +100,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

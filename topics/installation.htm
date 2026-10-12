@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,11 +43,11 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="idh-topic20.htm" class="hs0">Precept Architecture</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="idh-topic20.htm" class="hs1">Precept Architecture</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Installation</span></h1>
                       </td>
                       <td class="cell1">
-                        <p class="ps1"><a href="idh-topic20.htm" title="Precept Architecture"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="architecture.htm" title="architecture"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                        <p class="ps1"><a href="idh-topic20.htm" title="Precept Architecture"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="architecture.htm" title="Architecture"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
                       </td>
                     </tr>
                   </table>
@@ -63,30 +63,48 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Precept is installed using Microsoft ClickOnce technology.ClickOnce is a deployment technology that enables to create self-updating Windows-based applications that can be installed and run with minimal user interaction. </span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">More information on ClickOnce Technology can be found in Microsoft website: </span></p>
-                <p class="ps3"><a href="https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022" class="hs1">https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022</a></p>
-                <p class="ps3"><span class="ts7">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Usually, Precept is installed using the following link, unless a different installation procedure were required by your company</span></p>
-                <p class="ps3"><a href="https://precept.blob.core.windows.net/install/publish.htm" class="hs1">https://precept.blob.core.windows.net/install/publish.htm</a></p>
-                <p class="ps3"><span class="ts7">&nbsp;</span></p>
-                <p class="ps3"><span class="ts7">&nbsp;</span></p>
-                <p class="ps3"><span class="ts7">&nbsp;</span></p>
-                <p><img width="1218" height="440" alt="" src="images/image(1).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Installation will start after clicking on the Install button.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Microsoft ClickOnce allows rapid bug fixes since after a bug correction, Precept will automatically update itself during the next launch.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Precept can be launched from the desktop by clicking on its shortcut icon.</span></p>
-                <p class="ps3"><span class="ts3">Users are then required to enter their Windows ID (same as used to login in their corporate account) and password (provided by Cleverfield)</span></p>
-                <p><img width="571" height="349" alt="" src="images/image(2).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Precept uses a per-named license system, as opposed to concurrent licenses, meaning a license has to be purchased for every users.</span></p>
+                <p><span class="ts3">I</span><span class="ts3">nstalling and updating Precept</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. How Precept is delivered</span></p>
+                <p class="ps4"><span class="ts6">Precept is installed with Microsoft ClickOnce, a deployment technology for self-updating Windows applications that install and run with minimal user interaction. Precept is published by Cleverfield SAS and the installation is digitally signed. Each company has its own installation link, which Cleverfield provides during the set-up of your licence; your IT department may also deploy Precept with its own procedure.</span></p>
+                <p class="ps4"><span class="ts6">More information on ClickOnce: </span><a href="https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022" class="hs0">ClickOnce security and deployment (Microsoft)</a><span class="ts6">.</span></p>
+                <p class="ps3"><span class="ts5">2. Prerequisites</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A Windows PC. Precept runs on Microsoft .NET Framework 4.7.2; if it is missing, the installation page offers to install it first (this step may need administrator rights).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Microsoft Edge WebView2 Runtime, used by the map, network and 3D views. It is normally already present on Windows 10 and 11.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A Precept licence for your Windows user name (see section 5).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Network access from the PC to the Precept database (TCP port 1433) and to the installation and update site (HTTPS). See </span><a href="architecture.htm" class="hs0">Architecture</a><span class="ts6">.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Optional, only for the features that use them: Petex IPM (GAP, Prosper) with OpenServer installed on the same PC for the GAP / Prosper coupling (</span><a href="petex-coupling.htm" class="hs0">Petex GAP / Prosper coupling</a><span class="ts6">), and Windows Subsystem for Linux with OPM Flow for reservoir simulation (</span><a href="sim-coupling.htm" class="hs0">Simulation coupling</a><span class="ts6">). Excel files are read and written by Precept itself; Microsoft Excel is only needed to open them.</span></p>
+                <p class="ps3"><span class="ts5">3. Installing Precept</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Open the installation link provided by Cleverfield for your company. The page shows the name (Precept), the version, the publisher and the required prerequisites.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Install&quot;. If the prerequisites are already installed, you can click &quot;launch&quot; instead.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Confirm the Windows security prompt: check that the publisher is Cleverfield SAS, then click &quot;Install&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Precept starts at the end of the installation. A &quot;Precept&quot; shortcut is created on the desktop and in the Start menu; use it to launch Precept afterwards.</span></p>
+                <p class="ps7"><img width="1218" height="440" alt="" src="images/image(1).png" /></p>
+                <p class="ps4"><span class="ts7">The installation page (the version number and prerequisite shown are from an older release).</span></p>
+                <p class="ps3"><span class="ts5">4. Start-up and log-in</span></p>
+                <p class="ps4"><span class="ts6">Precept identifies you by your Windows user name: no separate account is created. At start-up the box &quot;Checking Connection status and licenses&quot; shows three indicators, green when the check passes and red when it fails:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Licenses&quot;: a valid licence exists for your Windows user name.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Connection to Precept server&quot;: the Precept database of your company can be reached.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Connection to Production database&quot;: the production allocation database can be reached (when your installation is connected to one).</span></p>
+                <p class="ps4"><span class="ts6">If a password has been set up for your licence, a log-in panel appears: &quot;Username:&quot; is already filled with your Windows ID; type the &quot;Password:&quot; provided by Cleverfield and click &quot;Login&quot;.</span></p>
+                <p class="ps7"><img width="571" height="349" alt="" src="images/image(2).png" /></p>
+                <p class="ps4"><span class="ts6">Messages you may see at start-up:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;The license for user ... cannot be found&quot;: no licence exists for your Windows user name. Contact Cleverfield (contact@cleverfield.fr).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;License for the user ... has expired.&quot;: the licence must be renewed.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;You cannot connect to Precept since you are not accessing it through your company environment.&quot;: the licence is tied to your company's Windows domain; log on to the company network (or VPN) and try again.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;No licenses available.&quot;: with concurrent licences, all licences are in use. The list of connected users is displayed.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Precept cannot connect to its database !&quot; or &quot;Precept cannot connect to Production Allocation Database !&quot;: the ribbon then shows only the &quot;Connection Checker&quot; button, which helps your IT department find the cause (firewall, VPN, port 1433).</span></p>
+                <p class="ps3"><span class="ts5">5. Licences</span></p>
+                <p class="ps4"><span class="ts6">A licence is attached to a Windows user name and to a company, and has an expiry date. Two licence types exist:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Named licence: one licence per user.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Concurrent licence: a number of users can work at the same time. The &quot;Current Users&quot; button on the main ribbon shows who is connected.</span></p>
+                <p class="ps4"><span class="ts6">Super User status is also defined in the licence. Access to each asset is then managed inside Precept (see </span><a href="security.htm" class="hs0">Security / Access policy</a><span class="ts6">).</span></p>
+                <p class="ps3"><span class="ts5">6. Automatic updates</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Each time Precept is launched from its shortcut, it checks the installation site for a newer version before starting. When one exists, an update window appears; accept it and the new version is downloaded and started. Fixes therefore reach all users at their next launch.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The first time a new version connects to your company's Precept database, it upgrades the database structure automatically. No action is needed, and existing scenarios are kept.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">To see the version installed, click &quot;About Precept&quot; on the main ribbon. Click &quot;What's new?&quot; in that window to read the release notes.</span></p>
+                <p class="ps3"><span class="ts5">7. Uninstalling</span></p>
+                <p class="ps4"><span class="ts6">Uninstall Precept from Windows &quot;Settings&quot; &gt; &quot;Apps&quot;, like any other application. Your scenarios are not affected: they are stored in the Precept database, not on the PC.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -98,7 +116,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

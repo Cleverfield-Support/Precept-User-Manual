@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="addwell.htm" class="hs0">Add wells to Asset Model</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="addwell.htm" class="hs1">Add wells to Asset Model</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Analogues</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,33 +63,107 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Data for analogue wells can be imported into Precept database and used as guidelines when generating DCA Curves for an asset.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">To import analogue wells data, click on &quot;Import Analogues data&quot; from Precept Decline Curves modules.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Users can then import:</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">&nbsp;Analogue Wells Meta data:</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;- Asset name</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- well name</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- reservoir</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Type (Oil Producer, Gas Producer, Water Injector , Gas Injector)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Unit for allocated production (SI or metric)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- Coordinates</span></p>
-                <p><img width="578" height="566" alt="" src="images/image(136).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts8">&nbsp;Analogue Wells Production allocation data: </span><span class="ts3">(copy-paste from Excel)</span></p>
-                <p><img width="581" height="568" alt="" src="images/image(137).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Analogue Wells trajectories (Optional)</span></h3>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Users can then visualize historical production/injection and create DCA for analogue wells by selecting &quot;Analogues&quot; in the Decline Curves modules of Precept.</span></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
-                <p><img width="998" height="495" alt="" src="images/image(138).png" /></p>
+                <p><span class="ts3">A</span><span class="ts3">nalogues</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; analogue wells and analogue fields</span></p>
+                <p class="ps4"><span class="ts6">Analogues are data from other fields that guide your own forecast. Precept handles them at two levels:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Analogue wells &mdash; the production history of wells in other fields. You view them and fit decline curves on them in Decline Curves, plot them behind your own wells, or turn an analogue field into a Precept model (sections 2 and 3).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Analogue fields &mdash; one row of reference properties per field (country, field type, STOOIP, recovery factor, permeability, Kh/u...). You screen them in the &quot;Analogue Screening&quot; dashboard to find the fields most similar to yours (sections 4 and 5).</span></p>
+                <p class="ps4"><span class="ts6">Analogue data are shared by all assets of the database.</span></p>
+                <p class="ps3"><span class="ts5">2. Import analogue well data</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Decline Curves&quot; on the main ribbon.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Import Analogues Data&quot; in the &quot;Analogues&quot; group of the Decline Curves ribbon. The &quot;Import Data&quot; window opens.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Choose the data in the list at the top (table below). For production, first choose &quot;Import Allocated data as Rate&quot; or &quot;Import Allocated data as Cum&quot; in the second list.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Paste the data from Excel (Ctrl+V), then click &quot;Save&quot;.</span></p>
+                <p class="ps4"><span class="ts6">The &quot;Analogues&quot; group can be turned off for some assets. If you do not see it, contact Cleverfield.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Choice</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Columns</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Import Analogue Wells meta data</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Asset (the analogue field), Well, Reservoir, Type Well (Oil Producer, Gas Producer, Water Injector, Gas Injector), Unit (&quot;Oilfield&quot; or &quot;Metric&quot;: the units of that asset's production data), X, Y, Producing interval.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Import Analogue Wells Production (Rate)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Country, Asset, Well, Date, Uptime, Oil, Water, Gas, Gas-lift. The Country groups the analogue assets in Decline Curves.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Import Analogue Wells Production (Cum)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Asset, Well, Date, Uptime, Cum Oil, Cum Water, Cum Gas, Cum Gas-lift.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Import Analogue Wells trajectories (optional)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Asset, Well, MD, X, Y, TVDSS.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Import Analogue Fields meta data</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Field-level reference data (shown after you change the Rate / Cum list). The Analogue Screening editor (section 5) is the easier way to maintain these data.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps7"><img width="578" height="566" alt="" src="images/image(136).png" /></p>
+                <p class="ps4"><span class="ts7">Analogue wells meta data.</span></p>
+                <p class="ps7"><img width="581" height="568" alt="" src="images/image(137).png" /></p>
+                <p class="ps4"><span class="ts7">Analogue wells production, pasted from Excel.</span></p>
+                <p class="ps4"><span class="ts6">To remove analogue wells, click &quot;Delete analogue wells&quot; in the &quot;Analogues&quot; group, pick the analogue asset in the list, select the rows of the wells and click &quot;Delete from database&quot;. Their meta data, production and trajectories are deleted.</span></p>
+                <p class="ps3"><span class="ts5">3. Use analogue wells in Decline Curves</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">View and fit an analogue well &mdash; in the project list of Decline Curves, choose &quot;Analogues - &lt;Country&gt;&quot;. The list below it becomes &quot;Asset&quot;: pick the analogue asset, then the well. Its history is plotted and you can fit a decline curve on it like on any other well.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Compare with your wells &mdash; in the witness project list (&quot;Select Witness Project&quot;, under the well list), choose &quot;Analogues - &lt;Country&gt;&quot; to plot analogue wells behind the well you are working on. If both wells have a producing interval, the analogue rates are scaled by the ratio of the producing intervals.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Start a model from an analogue field &mdash; with an analogue asset selected, click &quot;Convert to Precept model&quot;. Precept creates a new asset with that name (project &quot;Base&quot; and scenario &quot;Mid case&quot; by default), with the analogue wells and their production history as allocated data. Precept warns you if the forecast start date does not follow the last analogue production date.</span></p>
+                <p class="ps7"><img width="998" height="495" alt="" src="images/image(138).png" /></p>
+                <p class="ps4"><span class="ts7">An analogue well in Decline Curves.</span></p>
+                <p class="ps3"><span class="ts5">4. Analogue Screening &mdash; find the closest analogue fields</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Field data&quot; on the main ribbon, then &quot;Analogues dashboard&quot; on the ribbon of the &quot;Fields data&quot; window. The &quot;Analogue Screening&quot; window opens. It shows every analogue field, and your own field (the asset selected in &quot;Fields data&quot;, with its P90 / P50 / P10 values) in blue for comparison.</span></p>
+                <p class="ps7"><img width="760" height="440" alt="" src="images/fig_analogue_screening_layout.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; Layout of the Analogue Screening window.</span></p>
+                <p class="ps11"><span class="ts9">4.1 Filters</span></p>
+                <p class="ps4"><span class="ts6">The left panel, under &quot;Filters&quot;, has one filter per property of the analogue data:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Text properties (for example Country, field type) &mdash; a list of values, &quot;Country&quot; first. Selected values are kept. Click a value to keep only it; Ctrl+click to add or remove values; Shift+click for a range.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Numeric properties &mdash; a slider with a minimum and a maximum handle. A field is hidden only when it has a value outside the range; a field with no value for that property is kept.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Reset filters&quot; (top right) clears every filter and every highlight.</span></p>
+                <p class="ps4"><span class="ts6">Every chart, the map and the count (&quot;n fields shown (of N)&quot;) update as you filter. Above the filters, &quot;Matching analogues&quot; shows one tile per field that passes the filters.</span></p>
+                <p class="ps11"><span class="ts9">4.2 Charts and map</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Cross-plot (top left) &mdash; any two properties against each other: choose them in the &quot;X&quot; and &quot;Y&quot; lists. By default Kh/u against oil recovery factor, with Kh/u on a log scale.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Bar charts &mdash; one per property, one bar per field, sorted by value. Analogue fields are grey, your field's P90 / P50 / P10 are blue. &quot;Charts…&quot; opens &quot;Choose analogue charts&quot;: tick the properties you want a chart for. The choice is saved and reused.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Map (top right) &mdash; the fields at their X / Y position (longitude / latitude): oil fields green, gas fields red, others grey, your field blue.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Production chart (bottom right) &mdash; the oil production of the highlighted fields, either &quot;Field total production vs date&quot; or &quot;Oil rate per well vs production time&quot; (months since each well's first production, so the wells can be compared). It uses the analogue well production imported in section 2, matched on the asset name.</span></p>
+                <p class="ps4"><span class="ts6">Click a bar, a point, a tile or a map bubble to highlight that field everywhere (maroon). Ctrl+click adds or removes fields; Esc clears the highlight. Right-click a chart for the usual formatting options; double right-click copies it to the clipboard.</span></p>
+                <p class="ps11"><span class="ts9">4.3 Analogues table</span></p>
+                <p class="ps4"><span class="ts6">&quot;Generate analogues table&quot; opens the &quot;Analogues table&quot; window: one row per standard property (STOOIP, EUR, recovery factor, area, pressure, porosity, permeability, API, GOR, Kh/u, well spacing...), one column per field that passes the filters, then your field's P90, P50 and P10.</span></p>
+                <p class="ps3"><span class="ts5">5. Import and edit the analogue field reference data</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Edit analogue data&quot; in the Analogue Screening window. The &quot;Analogue data&quot; window shows one row per field and one column per parameter. Every change is saved at once; the dashboard refreshes when you close the window.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Add field&quot; / &quot;Delete field&quot; &mdash; add or delete a field (a row). &quot;Field&quot; is the key: two fields cannot have the same name.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Paste (Excel)&quot; (or Ctrl+V) &mdash; paste rows copied from Excel. Fields that already exist are updated; new ones are added. Precept reports how many were added and updated.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Add parameter&quot; &mdash; add a column: &quot;Parameter name:&quot;, &quot;Type:&quot; (&quot;Number&quot; or &quot;Text&quot;) and an optional &quot;Unit (optional):&quot;. The parameter is also added to the field data of your assets. A Number parameter gets a slider and a chart; a Text parameter gets a list filter.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Rename parameter&quot; / &quot;Delete parameter&quot; &mdash; click a cell in the parameter's column first. Deleting a parameter removes it from every field, in the analogue data and in the field data, and cannot be undone. Standard parameters cannot be renamed or deleted.</span></p>
+                <p class="ps4"><span class="ts6">Include a unit in the parameter name where it helps (for example &quot;Area (km²)&quot;): the dashboard shows names exactly as stored. Your own field's values come from the &quot;Fields data&quot; window; parameters are matched by name, even when the two spell them slightly differently (for example STOOIP and STOIP).</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -101,7 +175,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

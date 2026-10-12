@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="addwell.htm" class="hs0">Add wells to Asset Model</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="addwell.htm" class="hs1">Add wells to Asset Model</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Well conversion</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,23 +63,135 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">Well conversion can be handled by clicking on the &quot;New wells / conversion&quot; icon in Precept Main interface.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">Hard date can be specified for the conversion, or the conversion can be linked to an event.</span></h3>
-                <p><img width="1594" height="127" alt="" src="images/image(41).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Modelling WAG Well</span></h3>
-                <h3 class="hd1"><span class="ts3">In the example above, D-WAG1 is a WAG well (alternate Water-Gas Injection).</span></h3>
-                <p class="ps3"><span class="ts3">At the start of the forecast, the well type was set as Water Injector in the Asset Model (see </span><a href="addwell.htm" class="hs1">Add wells to Asset Model</a><span class="ts3">)</span></p>
-                <h3 class="hd1"><span class="ts3">The well is converted (first conversion) from Water Injector to Gas Injector on 01/07/2023 and then every 12 months. To apply recurrent conversion, make sure the column &quot;conversion every x months&quot; is filled.</span></h3>
-                <h3 class="hd1"><span class="ts3">Then well is converted from Gas Injector to Water Injector on 01/01/2024 and then every 12 months.</span></h3>
-                <h3 class="hd1"><span class="ts3">D-WAG1 is therefore a gas injector for 6 months, then an water Injector for 6 months, then Gas injector for 6 months, etc..</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">Different WAG schedule (for example 18 months Water Injection, 6 months Gas Injection) can be applied using the same strategy.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Conversion from Oil Producer to Water Injector</span></h3>
-                <h3 class="hd1"><span class="ts3">In the example above, the well K-W2, will be converted to Water Injector 30 days after the Opportunity 'K-W3' is executed (note the minus sign in the column &quot;Number of days before&quot;). In that case, the conversion date is not &quot;hard', but linked to the sequence of events, allowing fast generation of what-if scenario when the sequences of events is modified.</span></h3>
+                <p><span class="ts3">W</span><span class="ts3">ell conversion</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; changing a well's type during the forecast</span></p>
+                <p class="ps4"><span class="ts6">The type a well has in the Asset Model is its type at the start of the forecast (see </span><a href="addwell.htm" class="hs0">Add wells to Asset Model</a><span class="ts6">). A conversion changes that type at a given date, for example an oil producer converted to a water injector, or an injector that alternates water and gas (WAG). The conversion date can be:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a hard date (&quot;Conversion date&quot;), optionally repeated every few months;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">linked to an opportunity of the sequence of events (&quot;Conversion after&quot;), so it moves when the sequence changes &mdash; fast what-if scenarios without editing dates.</span></p>
+                <p class="ps3"><span class="ts5">2. Enter a conversion</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the scenario, then click &quot;New profiles and Conversions&quot; on the main ribbon.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Choose &quot;Conversions&quot; in the list at the top of the window.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Add&quot; on the ribbon and fill in the new row (table below).</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot;. Rows with no well are dropped.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Column</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Meaning</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Project</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The project of the conversion. If the project is excluded from the forecast in the settings, the conversion is ignored.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The well to convert, picked from the wells of the Asset Model.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Conversion to</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The new type: Oil Producer, Gas Producer, Water Injector or Gas Injector.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Production to or injection from</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Always fill it in. After the conversion, the node the well produces into (producer) or receives its injection fluid from (injector).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Conversion after</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Event-based date: the opportunity the conversion is linked to.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reference date</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;start&quot; or &quot;end&quot; of that opportunity. Required when &quot;Conversion after&quot; is filled: Precept will not save without it.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Number of days before</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Optional offset. Positive = that many days before the reference date; negative = after (-30 = 30 days after).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Conversion date</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Hard date of the conversion (instead of &quot;Conversion after&quot;).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">conversion every x months</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Optional, hard dates only. Repeats the same conversion every x months after the &quot;Conversion date&quot;.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Apply recurrent conversion until</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Optional end of the repetition. Blank = until the end of the forecast.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">CAPEX, OPEX, OPEX unit, Group cost to Node, Comment, Linked to Opportunity</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Optional costs and comment; the opportunity the row was created from, if any.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Use either &quot;Conversion after&quot; (with &quot;Reference date&quot; and &quot;Number of days before&quot;) or &quot;Conversion date&quot;. The cells that do not apply are greyed out. A recurring conversion needs a hard &quot;Conversion date&quot;: the recurrence columns are greyed out for an event-based conversion.</span></p>
+                <p class="ps7"><img width="1594" height="127" alt="" src="images/image(41).png" /></p>
+                <p class="ps4"><span class="ts7">The Conversions table: a WAG well with two recurring hard-date conversions (D-WAG1), and an event-based conversion (K-W2).</span></p>
+                <p class="ps3"><span class="ts5">3. Potential after the conversion</span></p>
+                <p class="ps4"><span class="ts6">A converted well needs a potential for its new type. In Decline Curves, each conversion adds a profile to define, named after the well and the new type: &quot;&lt;well&gt; (conversion to OP)&quot;, &quot;(conversion to GP)&quot;, &quot;(conversion to WI)&quot; or &quot;(conversion to GI)&quot;. A conversion back to the well's original type uses the well's own profile. These profiles also appear in the Transient table (see </span><a href="transient.htm" class="hs0">Transient</a><span class="ts6">).</span></p>
+                <p class="ps3"><span class="ts5">4. Example &mdash; conversion of an oil producer to a water injector</span></p>
+                <p class="ps4"><span class="ts6">In the table above, well K-W2 is converted to a water injector 30 days after the end of opportunity K-W3: &quot;Conversion after&quot; = K-W3, &quot;Reference date&quot; = end, &quot;Number of days before&quot; = -30 (note the minus sign). If K-W3 moves in the sequence of events, the conversion moves with it.</span></p>
+                <p class="ps3"><span class="ts5">5. Modelling a WAG well</span></p>
+                <p class="ps4"><span class="ts6">A WAG (water-alternating-gas) well switches between water and gas injection on a schedule. Model it with two recurring conversions:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the Asset Model, give the well the type &quot;WAG&quot; (or &quot;Water Injector&quot;), and set both its water and gas injection sources.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Add a first conversion to &quot;Gas Injector&quot; with a &quot;Conversion date&quot; and &quot;conversion every x months&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Add a second conversion to &quot;Water Injector&quot;, offset by the length of the gas period, with the same &quot;conversion every x months&quot;.</span></p>
+                <p class="ps4"><span class="ts6">In the example, D-WAG1 is converted to a gas injector on 01/07/2023 and every 12 months after that, and back to a water injector on 01/01/2024 and every 12 months after that. It therefore injects gas for 6 months, then water for 6 months, and so on. A different cycle (for example 18 months of water and 6 months of gas) uses the same two rows with other dates and periods.</span></p>
+                <p class="ps7"><img width="700" height="260" alt="" src="images/fig_wag_schedule.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; Two recurring conversions make a 6-month gas / 6-month water WAG cycle.</span></p>
+                <p class="ps4"><span class="ts6">For a well of type &quot;WAG&quot;, Precept reads the conversions to find out whether the well injects water or gas at the forecast start. If it finds none, it shows &quot;Precept is unable to determine the status of WAG well ...&quot;: add the conversion dates. A WAG well has two profiles in Decline Curves, &quot;&lt;well&gt; (WI WAG)&quot; and &quot;&lt;well&gt; (GI WAG)&quot;: one for each injection phase.</span></p>
+                <p class="ps3"><span class="ts5">6. Conversions created from opportunities</span></p>
+                <p class="ps4"><span class="ts6">An opportunity with &quot;Impact on Forecast&quot; = &quot;Conversion&quot; carries its own conversion rows, which appear here with the opportunity name in &quot;Linked to Opportunity&quot; (see </span><a href="opportunities.htm" class="hs0">Opportunities</a><span class="ts6">).</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -91,7 +203,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

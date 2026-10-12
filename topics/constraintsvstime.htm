@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,11 +43,11 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Constraints changes vs time</span></h1>
                       </td>
                       <td class="cell1">
-                        <p class="ps1"><a href="shutdown.htm" title="Shutdowns"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="economical-screener.htm" title="Economical screener"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                        <p class="ps1"><a href="shutdown.htm" title="Shutdown"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="economical-screener.htm" title="Economical screener"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
                       </td>
                     </tr>
                   </table>
@@ -63,39 +63,258 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Initial process constraint can be set by opening the &quot;Network&quot; modeling (see section </span><a href="shutdown.htm" class="hs1">Shutdown</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Process constraints can be changed later in the forecast by two methods:</span></p>
-                <p class="ps3"><span class="ts3">- executing an Opportunity ( see section </span><a href="opportunities.htm" class="hs1">Opportunities</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">- &quot;manually&quot; change the value of a constraint at a specific date.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">To manually change at a constraint a given time, Users need to click on the &quot;Constraints vs Time&quot; icon in Precept main interface.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p><img width="1660" height="347" alt="" src="images/image(52).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">In the above example, the following changes in constraints will be applied when generating forecast: </span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">1. The max Water Injection rate of the well A1-I1 is set at 1000 bwpd between 28/10/2023 and 12/11/2023</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">2. The maximum Total Gas (Produced + Gas-lift) rate through &quot;B_Compr&quot; is set at 10000 mscf/d on 01/05/2023. That changes is applied every 12 months, meaning that Total Gas constraint will be set at 10,000 on 01/05/2024 , 01/05/2025, 01/05/2026, etc...</span></p>
-                <h3 class="hd1"><span class="ts3">The maximum Total Gas rate through &quot;B_Compr&quot; is set at 12000 mscf/d on 01/11/2023. That changes is applied every 12 months, meaning that Total Gas constraint will be set at 12000 on 01/11/2024 , 01/11/2025, 01/11/2026, etc...</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">This method is used to introduce recurrent / seasonal capacity changes and will lead to the forecast shown below.</span></h3>
-                <p><img width="474" height="319" alt="" src="images/image(35).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">3. The well K-W3 uptime is set at 70%, from its first day of production, and for 7 seven days. Uptime to be back at 100% after.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Override solver</span></h3>
-                <h3 class="hd1"><span class="ts3">From this interface, Users can also use the option to &quot;Override solver&quot; for a well. This will force the well to not be shut-in or bean-back by Precept solver for process constraints.</span></h3>
-                <h3 class="hd1"><span class="ts3">This can be used to make sure a well is kept online even if Precept solver would like to shut-it to optimize hydrocarbons production.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">Input can be QC using the timeline where any changes in contraints can be visualized.</span></h3>
+                <p><span class="ts3">C</span><span class="ts3">onstraints changes vs time</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">The initial process constraints (maximum rates, uptime, pressures...) are entered on the network nodes, see </span><a href="networkmodelling.htm" class="hs0">Network modelling</a><span class="ts6">. They can then change during the forecast in two ways:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">by executing an opportunity that changes a constraint (for example a debottlenecking project), see </span><a href="opportunities.htm" class="hs0">Opportunities</a><span class="ts6">;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">by entering the change directly in the &quot;Constraints&quot; table, at a fixed date or at a date relative to an opportunity.</span></p>
+                <p class="ps4"><span class="ts6">Use the &quot;Constraints&quot; table for seasonal or recurrent capacity changes, temporary limits, uptime assumptions for a well, a manifold or the whole field, and to keep a well online whatever the optimiser decides (&quot;Override solver&quot;).</span></p>
+                <p class="ps3"><span class="ts5">2. Open the table</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the scenario on the main window.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Constraints vs time&quot; in the &quot;Expertise&quot; group of the main ribbon.</span></p>
+                <p class="ps4"><span class="ts6">The window title is &quot;Constraints&quot;. It works like the &quot;Shutdowns&quot; table: &quot;Save&quot;, &quot;Add&quot;, &quot;Delete selected rows&quot;, &quot;Delete All rows&quot;, &quot;Help&quot;, &quot;Filter by project:&quot; and &quot;Filter Node:&quot; (see </span><a href="shutdown.htm" class="hs0">Shutdowns</a><span class="ts6">).</span></p>
+                <p class="ps7"><img width="1660" height="347" alt="" src="images/image(52).png" /></p>
+                <p class="ps4"><span class="ts7">Example of constraint changes: a temporary injection limit, a seasonal gas capacity repeated every 12 months, and a reduced uptime for a new well.</span></p>
+                <p class="ps3"><span class="ts5">3. Columns</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Column</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Meaning</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Project&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The project of the change. Changes of a project set to &quot;No&quot; in &quot;Settings&quot; &gt; &quot;To be included in Forecast&quot; are ignored.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Node&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The node or well. Also &quot;All new Wells&quot; (applies to every new well) and &quot;Field&quot; (to change the field uptime over time).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Constraint&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The type of constraint, see section 4.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Value&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The new value, in the unit of the constraint (rates and pressures in the asset's units; uptime as a fraction).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Constraint Start_Date&quot; / &quot;Constraint End_Date&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Fixed dates of the change. With no end date and no end opportunity, the change is permanent (until the end of the forecast).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Start constraint when Opportunity&quot;, &quot;Reference date&quot;, &quot;Number of days before&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Relative start date, exactly as for shutdowns: &quot;start&quot; or &quot;end&quot; of an opportunity, minus a number of days (negative = after).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;End constraint when Opportunity&quot;, &quot;Reference date &quot;, &quot;Number of days before &quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Relative end date.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Apply every x days&quot; / &quot;Apply every x months&quot; / &quot;Apply recurrent constraint until&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Repeats the change (seasonal capacity, recurrent uptime).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;CAPEX&quot;, &quot;OPEX&quot;, &quot;OPEX unit&quot;, &quot;Group cost to Node&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Costs of the change, see </span><a href="economical-screener.htm" class="hs0">Economical screener</a><span class="ts6">.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Comment&quot;, &quot;Linked to Opportunity&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Free text; opportunity that created the row.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps3"><span class="ts5">4. Constraint types</span></p>
+                <p class="ps11"><span class="ts9">4.1 Always available</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Constraint</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Effect</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Oil&quot;, &quot;Water&quot;, &quot;Gas&quot;, &quot;Gas-lift&quot;, &quot;Total Gas&quot;, &quot;Liquid&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Maximum rate through the node. &quot;Total Gas&quot; is produced gas plus gas-lift.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Water Injection&quot;, &quot;Gas Injection&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Maximum injection rate through the node or injector.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Uptime&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Uptime fraction of the well, manifold or field (0 to 1). A value above 1 on a well is treated as an incremental gain (the extra production is booked to the project).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Oil storage&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Oil storage limit of a storage node.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Override solver&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Enter 1 to stop the optimiser from shutting in or choking back the well (see section 6).</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps11"><span class="ts9">4.2 With &quot;Decline curves&quot; (Settings)</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Constraint</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Effect</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Fixed Liquid rate&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Forces the well to produce this liquid rate (its potential is scaled to it). The gain is booked to the project.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Add Reserves to remaining&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Adds a fraction of the well's remaining reserves (for example 0.2 = +20 %) from that date.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Fixed Gas-lift rate&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Forces the gas-lift rate of the well.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps11"><span class="ts9">4.3 With &quot;Material Balance&quot; or &quot;Simulation&quot; (Settings)</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Constraint</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Effect</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Min Pressure&quot;, &quot;Max Pressure&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Pressure limit at a node, in the asset's pressure unit (gauge).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;THP&quot; (well only)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Tubing head pressure of the well.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Min FBHP&quot;, &quot;Max Drawdown&quot;, &quot;Max IBHP&quot;, &quot;PI&quot; (well only)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Minimum flowing bottom-hole pressure, maximum drawdown, maximum injection bottom-hole pressure, productivity index.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Other entries appear only when &quot;Pre/Post processor for GAP&quot; or &quot;3D Simulation model&quot; is ticked in </span><a href="settings.htm" class="hs0">Settings</a><span class="ts6">&nbsp;(for example &quot;VLP&quot;, &quot;Fixed dP&quot;, &quot;THP target&quot;, &quot;BHP target&quot;).</span></p>
+                <p class="ps3"><span class="ts5">5. Example</span></p>
+                <p class="ps4"><span class="ts6">The table above (an asset in oilfield units) makes these changes when the forecast runs:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">The maximum &quot;Water Injection&quot; rate of injector A1-I1 is set to 1000 bwpd between 28/10/2023 and 12/11/2023.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">The maximum &quot;Total Gas&quot; rate through node B_compr is set to 10000 mscf/d on 01/05/2023 and to 12000 mscf/d on 01/11/2023. Both rows have &quot;Apply every x months&quot; = 12, so the capacity changes again every May and November: this is how seasonal capacity is modelled.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">The uptime of well K-W3 is set to 0.7 from the end of its drilling (&quot;Start constraint when Opportunity&quot; = K-W3, &quot;Reference date&quot; = end) for 7 days (&quot;End constraint when Opportunity&quot; = K-W3, &quot;Reference date &quot; = end, &quot;Number of days before &quot; = -7). The uptime goes back to its normal value afterwards.</span></p>
+                <p class="ps4"><span class="ts6">Example 2 gives the seasonal forecast below:</span></p>
+                <p class="ps7"><img width="474" height="319" alt="" src="images/image(35).png" /></p>
+                <p class="ps3"><span class="ts5">6. Override solver</span></p>
+                <p class="ps4"><span class="ts6">At every time step the optimiser may shut in or choke back wells to honour the process constraints, according to the objective function (see </span><a href="settings.htm" class="hs0">Settings</a><span class="ts6">). A row with &quot;Constraint&quot; = &quot;Override solver&quot; and &quot;Value&quot; = 1 forces the well to stay open at its full uptime, even if the optimiser would close it to optimise the hydrocarbon production. It only applies while the well is open and has no rate constraint of its own. No losses are booked for an override.</span></p>
+                <p class="ps3"><span class="ts5">7. Uptime</span></p>
+                <p class="ps4"><span class="ts6">The uptime of a well at each time step is: Field uptime × Manifold uptime × Well uptime. The field uptime is set in </span><a href="settings.htm" class="hs0">Settings</a><span class="ts6">&nbsp;(&quot;Field uptime (fraction) :&quot;) and can be changed over time with &quot;Node&quot; = &quot;Field&quot; in this table. Manifold and well uptimes are set in this table. A manifold is the node directly downstream of a producer, or directly upstream of an injector.</span></p>
+                <p class="ps4"><span class="ts6">The production of a well is its potential × its choke opening, and the choke opening can never exceed the well's total uptime. After the optimiser has solved the network, the choke opening can be lower than the uptime (the well is constrained), or 0 if a node downstream is closed.</span></p>
+                <p class="ps3"><span class="ts5">8. When the changes are applied</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Rate, pressure and other process constraints are applied only if &quot;Surface Constraints&quot; is ticked in </span><a href="settings.htm" class="hs0">Settings</a><span class="ts6">.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Uptime&quot; rows are applied only if &quot;Uptime&quot; is ticked.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Override solver&quot;, &quot;Fixed Liquid rate&quot; and &quot;Fixed Gas-lift rate&quot; rows are always applied.</span></p>
+                <p class="ps4"><span class="ts6">Check the input on the timeline of the main window, where every change of constraint is shown.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -107,7 +326,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

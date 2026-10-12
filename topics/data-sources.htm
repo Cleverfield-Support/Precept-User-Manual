@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>Data sources and asset configuration</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 600;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="platform.htm" class="hs1">Platform</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">Data sources and asset configuration</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="action-tracker.htm" title="Action Tracker"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="tutorial.htm" title="Tutorial"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">W</span><span class="ts3">here Precept's data comes from</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">Precept works with four kinds of data:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The asset's measured data: allocated production and injection, well tests, daily operating data of producers and injectors, and reservoir pressures. It is read from your company's production allocation database, or loaded into Precept when direct access is not possible.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">High-frequency data from a process historian (time-stamped tag values), where your administrator has connected one.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Data you load yourself, by pasting or from Excel: well trajectories, reservoir pressures, well tests, pattern and analogue data, profiles and scenarios.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Precept's own database, on the Precept server: assets, projects and scenarios with all their inputs, forecast results, the asset model of the wells, well models, actions and settings.</span></p>
+                <p class="ps7"><img width="700" height="400" alt="" src="images/fig_data_sources.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; Data sources feeding Precept.</span></p>
+                <p class="ps3"><span class="ts5">2. What is configured by your administrator</span></p>
+                <p class="ps4"><span class="ts6">Each asset has a configuration, set up by your administrator (with Cleverfield) when the asset is created. Users do not see or edit it. It defines, among other things:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">where the asset's production allocation, well tests and daily data are read from, and whether allocated data is stored as cumulative volumes or as rates;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the connection to a process historian, if any;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the location of the asset's Prosper well models, if Prosper is used (see </span><a href="petex-coupling.htm" class="hs0">Petex GAP / Prosper and ECLIPSE links</a><span class="ts6">);</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the asset's units, for assets where they are fixed;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the action categories of the </span><a href="action-tracker.htm" class="hs0">Action Tracker</a><span class="ts6">.</span></p>
+                <p class="ps4"><span class="ts6">Connections are secured and managed by your administrator; Precept never asks users for database credentials.</span></p>
+                <p class="ps4"><span class="ts6">Which assets you can open, and whether you can edit, is set in </span><a href="security.htm" class="hs0">Security / Access policy</a><span class="ts6">.</span></p>
+                <p class="ps11"><span class="ts9">2.1 Checking the connections</span></p>
+                <p class="ps4"><span class="ts6">When Precept starts, the &quot;Checking Connection status and licenses&quot; panel of the main window shows the &quot;Connection to Production database&quot;, the &quot;Connection to Precept server&quot; and the &quot;Licenses&quot;. If Precept cannot connect, most of the ribbon is hidden and the &quot;Connection Checker&quot; button is shown instead. It is a tool for your administrator; report the message you see to them. See also </span><a href="installation.htm" class="hs0">Installation</a><span class="ts6">.</span></p>
+                <p class="ps3"><span class="ts5">3. What Precept reads, and how to load it</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Data</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Used for</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Source / how to load it</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Allocated production and injection, per well and per field</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Production history in decline curves, monitoring, results (&quot;historical&quot;), material-balance history match</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The production allocation database configured for the asset. Where the data is hosted by Precept: &quot;Import Asset data&quot; &rarr; &quot;Import Allocated Wells Production (Cum)&quot; or, for assets stored as rates, &quot;Import Allocated Wells Production (Rate)&quot;, &quot;Import Allocated Wells Water Injection (Rate)&quot; and &quot;Import Allocated Wells Gas Injection (Rate)&quot;. Assets stored as cumulative volumes also have &quot;Import Allocated Field Production (Cum)&quot; and the field water and gas injection equivalents.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Daily operating data of producers and injectors</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Monitoring, well model update</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The allocation database, or &quot;Import Producers parameters&quot;, &quot;Import Water Injectors parameters&quot;, &quot;Import Gas Injectors parameters&quot;.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well tests</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well model update, monitoring</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The asset's well-test source. When the asset keeps its tests in Precept, &quot;Import Well Tests&quot; is offered. It replaces all the asset's tests with the pasted set; liquid, BSW and GOR are calculated from the rates when left blank, and wells unknown to the asset are flagged before saving.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reservoir pressures</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Monitoring, material-balance history match (</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><a href="material-balance.htm" class="hs0">Material Balance</a></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Import Reservoir Pressures&quot;: one row per well and date, with &quot;Reservoir Pressure at gauge depth&quot; and/or &quot;Reservoir Pressure at Datum&quot;, in the asset's pressure unit (gauge). A point with the same well and date replaces the existing one; all other points are kept. Points can also be added one by one in Production monitoring.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well trajectories (measured depth, TVD, X, Y)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well geometry and VLPs, maps, Precept AI charts</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Import Wells trajectories&quot; (it replaces all the asset's trajectories), or per well in Set Well Geometry.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">High-frequency tag data</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Monitoring trends</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The process historian connected by your administrator.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Asset model of the wells</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Monitoring, well model update, Precept AI</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The &quot;Asset Model&quot; window (section 4).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Patterns and analogues</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Patterns and analogue screening</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Import Patterns …&quot; and &quot;Import Analogue …&quot; options of &quot;Import Asset data&quot; (see </span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><a href="patterns.htm" class="hs0">Patterns</a></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&nbsp;and </span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><a href="analogues.htm" class="hs0">Analogues</a></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">).</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps3"><span class="ts5">4. The &quot;Asset Model&quot; window</span></p>
+                <p class="ps4"><span class="ts6">In the Field Monitoring window, click &quot;Asset Model&quot;. The &quot;Asset Model Monitoring&quot; window lists the wells of the asset, one row per well. The columns include the well type, reservoir, location, artificial lift, producing interval and status (&quot;Available&quot; or &quot;Abandoned&quot;). Edit a cell and the change is saved straight away. The asset and well names are read-only.</span></p>
+                <p class="ps4"><span class="ts6">This list is the monitoring view of the asset. The wells used in a forecast scenario are defined in the scenario's network (see </span><a href="addwell.htm" class="hs0">Add wells to Asset Model</a><span class="ts6">).</span></p>
+                <p class="ps3"><span class="ts5">5. Loading your own data &mdash; &quot;Import Asset data&quot;</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In the Field Monitoring window, click &quot;Import Asset data&quot;. The &quot;Import Data&quot; window opens.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Choose what to import in the list. The grid shows the expected columns. For well tests and reservoir pressures, &quot;Asset&quot; comes first: leave it blank for the open asset (a row for another asset is refused).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Paste the rows into the grid (Ctrl+V), or type the sheet name in &quot;Excel sheet&quot; and click &quot;Load from Excel&quot; to pick the workbook.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Check the rows, then click &quot;Save&quot;. &quot;Clear table&quot; empties the grid.</span></p>
+                <p class="ps4"><span class="ts6">Pay attention to what each import replaces (see the table in section 3). Some imports replace all the asset's rows of that kind. &quot;Import any data&quot; is an advanced option where the destination table name is typed in &quot;Table name&quot;; use it only as instructed by your administrator.</span></p>
+                <p class="ps3"><span class="ts5">6. Units</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Precept supports oilfield and metric units. The unit system of a scenario is the &quot;Unit&quot; setting (&quot;Oilfield&quot; or &quot;Metric&quot;) in </span><a href="settings.htm" class="hs0">Settings</a><span class="ts6">. For some assets, the units are fixed by the asset configuration.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The chosen units are used for display, input and import: rates, pressures, lengths and ratios are entered in the asset's units, as shown next to each field.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">All pressures are gauge pressures, whether displayed, entered, imported or stored.</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

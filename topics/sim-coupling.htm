@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>Network - reservoir simulator coupling</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 460;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="simulation.htm" class="hs1">Reservoir simulation</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">Network - reservoir simulator coupling</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="experimental-design.htm" title="Experimental design"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="forecast-calculations.htm" title="Forecast calculations"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">N</span><span class="ts3">etwork &harr; reservoir simulator coupling</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; what the coupling does</span></p>
+                <p class="ps4"><span class="ts6">In a coupled forecast the reservoir is a 3D simulation model run by OPM Flow, instead of a material-balance tank. Precept still does everything it does in a Material Balance forecast &mdash; well lift curves (VLP), the gathering network, the facility constraints and the optimiser &mdash; but at every forecast time step it asks the simulator how the reservoir answers to the wells' operating conditions, and uses that answer as each well's inflow.</span></p>
+                <p class="ps4"><span class="ts6">The two models are solved together, time step by time step, until they agree on every well's rate. The result is a forecast that honours both the surface network (back-pressures, capacities, choking, shut-ins) and the 3D reservoir physics (pressure depletion around each well, water and gas breakthrough, injection support).</span></p>
+                <p class="ps4"><span class="ts6">The simulation model is the deck built for the scenario in the 3D model builder (see </span><a href="sim-deck-builder.htm" class="hs0">Simulation deck builder</a><span class="ts6">). For the overall picture, see </span><a href="simulation.htm" class="hs0">Reservoir simulation</a><span class="ts6">.</span></p>
+                <p class="ps3"><span class="ts5">2. Turning it on</span></p>
+                <p class="ps4"><span class="ts6">Open </span><a href="settings.htm" class="hs0">Settings</a><span class="ts6">&nbsp;and, in the &quot;Potentials&quot; box, set &quot;Decline&quot; to &quot;Simulation&quot;. The setting is saved per scenario. A &quot;Simulation&quot; scenario uses the same well and network models as a &quot;Material Balance&quot; scenario (see </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">) &mdash; the simulator replaces only the tank.</span></p>
+                <p class="ps4"><span class="ts6">Then run the forecast as usual with &quot;Deterministic&quot; on the main ribbon.</span></p>
+                <p class="ps3"><span class="ts5">3. Requirements</span></p>
+                <p class="ps4"><span class="ts6">Precept checks these when the forecast starts. A &quot;Simulation&quot; scenario never falls back to material balance: if one of them is not met, a message explains why and the forecast is stopped (&quot;The forecast was stopped.&quot;).</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Requirement</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Message if it is not met</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">A deterministic forecast (&quot;Deterministic&quot;). Probabilistic and other calculation modes are not supported yet.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;A Simulation scenario runs as a deterministic forecast only for now (...)&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The Precept optimiser (not GAP).</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;A Simulation scenario runs with the Precept optimiser only.&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Oilfield units: the asset's pressure unit must be psig. Metric assets are not supported yet.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;The simulator coupling supports oilfield units (psig) only for now.&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">A Simulation folder for the scenario, set in the 3D model builder (&quot;Run settings&quot;).</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;No Simulation folder is set for this scenario. Set it in the 3D model builder (Run settings) and generate the deck.&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The scenario's .DATA deck, built in the 3D model builder (conceptual model): grid, PVT, relative permeabilities, initial conditions and the wells placed on the grid. Its SCHEDULE must use DATES (the builder always does) and contain the wells (WELSPECS).</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;No simulation deck found: ... Generate it in the 3D model builder first.&quot; or &quot;The simulation deck can't be used for the coupling: ...&quot;</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">OPM Flow installed in WSL on this PC. The coupling always runs flow through WSL, even when &quot;Run settings&quot; is set to a custom command.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;The simulator failed on &lt;date&gt; (pass n): ...&quot;</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">The wells are matched by name: a well of the Precept network is coupled only if the deck has a well of the same name. Network wells that are not in the deck keep Precept's own (material-balance) inflow.</span></p>
+                <p class="ps3"><span class="ts5">4. Before the first time step &mdash; the deck is regenerated</span></p>
+                <p class="ps4"><span class="ts6">When the forecast starts, Precept first regenerates the scenario's deck from the 3D model builder inputs, exactly as &quot;Generate .DATA&quot; does: the wells are placed again on the current grid (COMPDAT) and the SCHEDULE is rebuilt from the scenario's current drilling sequence, shutdowns and constraints. A progress window &quot;Generating .DATA&quot; shows the stages. This way a shutdown or a drilling-date change made since the deck was last generated is taken into account.</span></p>
+                <p class="ps4"><span class="ts7">Hand edits made to the .DATA (&quot;Edit .DATA&quot;) are overwritten at this point, as with &quot;Generate .DATA&quot;.</span><span class="ts6">&nbsp;If the deck cannot be regenerated, the message &quot;Could not regenerate the simulation deck (SCHEDULE) before the coupled run: ... The forecast was not started.&quot; appears.</span></p>
+                <p class="ps3"><span class="ts5">5. What happens at each time step</span></p>
+                <p class="ps7"><img width="760" height="560" alt="" src="images/fig_sim_coupling_loop.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; The coupling loop for one forecast time step. Precept and the simulator pass controls and inflow back and forth until their rates agree; the accepted step becomes the restart point of the next one.</span></p>
+                <p class="ps4"><span class="ts6">For each forecast time step:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Network solve. Precept computes the wells' potentials, solves the network pressures and runs the optimiser, exactly as in a Material Balance forecast (including the network pressure / allocation loop, see </span><a href="network-hydraulics.htm" class="hs0">Network hydraulics</a><span class="ts6">). The result is a choke opening and a rate for every well.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Controls to the simulator. Each coupled well receives one control: a producer the optimiser leaves fully open runs on a bottom-hole pressure &mdash; Precept's own BHP, from its VLP at the solved manifold pressure; a producer choked back runs on its allocated oil rate (with the manifold pressure as THP limit); a well the optimiser closes is shut. Injectors run on their allocated water or gas injection rate, or are shut. The deck's own limits for the well (BHP limit, VFP table, artificial lift) are kept. Only controls that change are written.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Simulator run. OPM Flow runs this time step only, restarting from the end of the previous accepted step. The deck's own events at that date (new wells, shut-ins, control changes) are applied first.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Inflow back to Precept. For each well Precept reads the simulator's answer: the average rates over the step, the bottom-hole pressure and the pressure of the cells around the well. From them it derives the well's productivity index (liquid rate ÷ drawdown), its injectivity (water injectors) or its c factor with n = 1 (gas injectors), and its water cut and GOR. These replace the well's inflow and reservoir pressure in Precept.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Convergence check. Precept compares, well by well, its allocated rate (liquid for producers, injection for injectors) with the simulator's. The mismatch is the largest difference, in % of Precept's rate (a floor of 50 per day stops nearly-shut wells from dominating). If it is within the &quot;Rate tolerance (%)&quot;, the step is accepted.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">6.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Otherwise Precept re-solves the same time step with the new inflow (potentials, network, optimiser) and runs the simulator again &mdash; a new pass &mdash; until the rates agree or &quot;Max passes per timestep&quot; is reached. If a pass changes nothing (same mismatch as the previous one), more passes cannot help and the loop stops early.</span></p>
+                <p class="ps4"><span class="ts6">When a step is accepted:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The forecast results stored for that step are the simulator's rates. Manifold, reservoir and field totals are built from the same numbers, so the database and the simulation agree.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The reported reservoir pressure of each well is the simulator's pressure around the well at the start of the step; the field pressure is the simulator's field average pressure. Before the first simulator step, the initial pressure is shown.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">On the first step only, the model's initial oil and gas in place (STOIIP, OGIP) are saved as the scenario's hydrocarbon in place for its deterministic case.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A step that has not converged after the maximum number of passes is accepted on its last pass and counted as &quot;not converged&quot;.</span></p>
+                <p class="ps11"><span class="ts9">5.1 Pressure limits taken from the deck</span></p>
+                <p class="ps4"><span class="ts6">The simulator honours each well's BHP limit written in the deck (minimum BHP for a producer, maximum BHP for an injector). For the duration of the run, a producer with no minimum pressure constraint of its own in Precept (or an injector with no maximum pressure constraint) gets the deck's limit, converted to gauge. Without this, Precept could allocate rates the simulator cannot deliver and the passes would never agree. Your own constraints always win, and the values are restored at the end of the run. Each limit applied is listed in the log (&quot;Limit from deck: ...&quot;).</span></p>
+                <p class="ps3"><span class="ts5">6. Iteration settings</span></p>
+                <p class="ps4"><span class="ts6">Open the 3D model builder (&quot;3D model builder&quot; in the &quot;3D Modelling&quot; group of the main ribbon) and click &quot;Run settings&quot;. Under &quot;Coupled forecast (Settings &gt; Decline = Simulation):&quot;:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Max passes per timestep:&quot; &mdash; the most simulator runs per time step (default 5, at least 1).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Rate tolerance (%):&quot; &mdash; the step is converged when Precept's and the simulator's rates agree within this percentage (default 2, at least 0.1).</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Save&quot;. Both are stored per scenario, with the Simulation folder.</span></p>
+                <p class="ps3"><span class="ts5">7. Following the run &mdash; the &quot;Coupled run&quot; window</span></p>
+                <p class="ps4"><span class="ts6">When the coupling starts, a window &quot;Coupled run - &lt;scenario&gt;&quot; opens next to the forecast progress bar:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The status line shows the date, the step (&quot;step i of n&quot;) and the pass being run.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The log lists the deck, the settings and the coupled wells, then one line per pass with its run time and mismatch &mdash; and, when the mismatch is above the tolerance, the worst well with Precept's rate, the simulator's rate and the simulator's BHP. OPM Flow's own output is streamed in between.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">At the end the status reads &quot;Finished - N simulator runs, M steps not converged (log: COUPLING_LOG.txt)&quot;.</span></p>
+                <p class="ps4"><span class="ts6">&quot;Close&quot; closes the window only; it does not stop the forecast. To stop the run, click &quot;Stop&quot; on the forecast progress bar: the simulator is stopped too, and nothing is saved. A single simulator run that lasts more than 30 minutes is stopped and stops the forecast.</span></p>
+                <p class="ps3"><span class="ts5">8. Outputs</span></p>
+                <p class="ps4"><span class="ts6">At the end of a complete run Precept replays the whole coupled forecast in a single simulation (status &quot;Replaying the coupled run in one simulation (full results + 3D) ...&quot;): one deck with every accepted control, without restarts. This gives full, continuous results and the 3D output.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Output</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Content</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Forecast results</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The scenario's forecast, in the usual Precept results (Timeline, Charts...), with the simulator's rates and pressures.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps15"><span class="ts11">&lt;scenario&gt;_COUPLED.DATA</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The coupled run as one deck, in the Simulation folder, with its simulator outputs (.RSM, .PRT, .EGRID, .UNRST...). &quot;3D model visualization&quot; opens the most recent results, so after a coupled run it shows this one. The scenario name is made file-safe (characters other than letters, digits, - and _ become _).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Profiles saved</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The replay's well profiles are saved into the decline curves (potentials) of the scenario's deterministic case &mdash; the case chosen in Settings, &quot;Deterministic&quot; box (&quot;Run Sigma Low case&quot;, &quot;Run Sigma Mid case&quot; or &quot;Run Sigma High case&quot;; Mid by default). A progress window &quot;Saving simulation as Decline curves (&lt;case&gt; case)&quot; is shown.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Hydrocarbon in place</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The model's initial STOIIP and OGIP, for the same case (Low = 1P, Mid = 2P, High = 3P).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps15"><span class="ts11">COUPLING_LOG.txt</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The coupling log (the lines of the &quot;Coupled run&quot; window without the simulator output), in the Simulation folder, with the total number of simulator runs, their total time and the number of steps not converged.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps12"><span class="ts10">The intermediate runs (files named </span><span class="ts11">CPL_&lt;step&gt;_&lt;pass&gt;</span><span class="ts10">) are deleted as the forecast goes; only the restart point of the next step is kept. If the replay or the saving of the profiles fails, the forecast results are still complete and a warning says so (&quot;The forecast results are complete, but ...&quot;), pointing to the run report (.PRT).</span></p>
+                <p class="ps3"><span class="ts5">9. Convergence reports</span></p>
+                <p class="ps4"><span class="ts6">A coupled forecast iterates on two loops, and each has its own report:</span></p>
+                <p class="ps14"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts10">The simulator coupling (this page) &mdash; reported in the &quot;Coupled run&quot; window and in </span><span class="ts11">COUPLING_LOG.txt</span><span class="ts10">: each pass's mismatch, the worst well, and the count of steps not converged.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The network pressure solve &mdash; the loop that settles the manifold pressures and the optimiser's allocation inside every pass. At the end of the forecast a window &quot;Network pressure solve - convergence report - &lt;scenario&gt;&quot; opens, but only if a time step did not converge or needed 10 passes or more (the cap is 15 passes per step). It lists every time step with its passes, status (&quot;Converged&quot;, &quot;NOT converged - slow&quot;, &quot;NOT converged - oscillating&quot;), relaxation and pressure changes. &quot;Save as...&quot; saves it as a text file; &quot;Close&quot; closes it. The non-converged steps and a summary line are also added to the warnings shown at the end of the run. See </span><a href="network-hydraulics.htm" class="hs0">Network hydraulics</a><span class="ts6">.</span></p>
+                <p class="ps3"><span class="ts5">10. Tips and troubleshooting</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;no change between passes, stopped&quot; in the log usually means the simulator honours a limit that Precept does not know about (for example a BHP limit, or a well that cannot deliver its allocation). Look at the worst well named on the line above.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Many steps not converged: raise &quot;Max passes per timestep&quot;, or loosen &quot;Rate tolerance (%)&quot; slightly. Each extra pass is one more simulator run, so the run time grows with them.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">A simulator failure stops the forecast with the date and pass, and points to the run report (.PRT) of the failing pass in the Simulation folder.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Before a long coupled run, generate the deck and run it once with &quot;Run Deterministic&quot; in the 3D model builder, to check that the model initialises and runs on its own.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Gas lift stays Precept's: it is applied in Precept's well models, not simulated.</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

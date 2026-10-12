@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>Producers dashboard</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 500;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="monitoring.htm" class="hs1">Monitoring module</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">Producers dashboard</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="mon-asset.htm" title="Asset dashboard"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="mon-injectors.htm" title="Injectors dashboard and CRM"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">P</span><span class="ts3">roducers dashboard (Production Monitoring)</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Opening the Producers dashboard</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Producers&quot; in the &quot;Monitoring&quot; group of the main ribbon, in the &quot;Monitoring&quot; group of the Decline Curves window, or on the ribbon of the </span><a href="mon-asset.htm" class="hs0">Asset dashboard</a><span class="ts6">. The window &quot;Production Monitoring &lt;asset&gt;&quot; opens maximised on the first well of the list. A progress bar runs while a well loads.</span></p>
+                <p class="ps3"><span class="ts5">2. Layout</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Left &mdash; the &quot;Location&quot; list, the &quot;Reservoir&quot; list, the well list and the well status list.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Top &mdash; the &quot;Production Parameters&quot; box, the &quot;Last Well Test&quot; box and the well status card.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Centre &mdash; the main chart (about two thirds of the width), with the buttons &quot;Settings&quot;, &quot;chart library&quot;, &quot;2 years&quot;, &quot;5 years&quot; and &quot;All time&quot; above it.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Right &mdash; three smaller charts, each with a &quot;&gt;&quot; button to cycle to the next available chart (section 7).</span></p>
+                <p class="ps3"><span class="ts5">3. Selecting a well</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Click a location and / or a reservoir (or &quot;All&quot;) to filter the well list. The list contains the oil and gas producers of the monitoring asset model.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Click a well, or move through the list with the Up / Down arrow keys, to load it.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The status list shows the well's status: &quot;Available&quot; (green), &quot;Broken Well&quot; (red) or &quot;Abandoned&quot; (dark grey). Changing it saves the new status in the asset model immediately; the status is used by the shortfall calculations and by the Asset dashboard.</span></p>
+                <p class="ps3"><span class="ts5">4. Time window</span></p>
+                <p class="ps4"><span class="ts6">The charts end on the asset's latest allocated date. They open on the last 2 years (5 years for a gas asset; the whole history if the latest data are more than a year old). Use &quot;2 years&quot;, &quot;5 years&quot; or &quot;All time&quot; to change the window. When a forecast or simulation is plotted, the time axis is extended to its last date.</span></p>
+                <p class="ps4"><span class="ts6">For assets with real-time monitoring, the &quot;Window&quot; box of the Settings panel adds a &quot;High Frequency&quot; mode next to &quot;Daily&quot;: choose the &quot;Sampling:&quot; (from 12 hrs down to 01 sec, default 05 min) and the &quot;Number days:&quot; (default 7). Precept refuses requests of more than 200,000 points; increase the sampling interval or shorten the window.</span></p>
+                <p class="ps3"><span class="ts5">5. The main chart and the Settings panel</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Settings&quot; to open the panel over the chart; move the mouse back onto the chart to close it. Tick what you want to see:</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Box</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Ticks</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Drawn as</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Parameters&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;THP&quot;, &quot;THT&quot;, &quot;FP&quot;, &quot;BHP&quot;, &quot;BHT&quot;, &quot;Gas-lift&quot;, &quot;CHP&quot;, &quot;Choke&quot;; for ESP wells also &quot;PDP&quot;, &quot;Frequency&quot;, &quot;Motor current&quot;.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Lines (daily well parameters). Temperatures, frequency and motor current on the right axis. Gas-lift only for gas-lifted wells.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Well Test&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Well Tests&quot;, then &quot;Oil&quot;, &quot;Water&quot;, &quot;Gas&quot;, &quot;Liquid&quot;, &quot;BSW&quot;, &quot;GOR&quot;.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Points (&quot;Oil Test&quot;, …). Hidden when the well has no tests.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Allocated&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Allocated Production&quot;, then &quot;Oil&quot;, &quot;Water&quot;, &quot;Gas&quot;, &quot;Liquid&quot;, &quot;BSW&quot;, &quot;GOR&quot;.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Areas (&quot;Oil Allocated&quot;, …); dots when the well has no tests.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Forecast&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">A scenario list (opens on the most recently modified scenario), &quot;Forecast&quot;, then &quot;Oil&quot;, &quot;Water&quot;, &quot;Gas&quot;, &quot;Liquid&quot;, &quot;BSW&quot;, &quot;GOR&quot;.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Lines (&quot;Oil Forecast&quot;, …) &mdash; the well's deterministic forecast in that scenario.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Simulation&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Reservoir Simulation&quot;, then &quot;Oil&quot;, &quot;Water&quot;, &quot;Gas&quot;, &quot;Liquid&quot;, &quot;BSW&quot;, &quot;GOR&quot;, &quot;BHP&quot;.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Lines (&quot;Oil sim&quot;, …) &mdash; reservoir-simulation results for the well.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Other ticks</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Reservoir pressure&quot;, &quot;Comments&quot;.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reservoir pressure at datum as points; comments as vertical labels (click a label to open the comment).</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Your ticks in the Parameters, Well Test, Allocated, Forecast and Comments boxes are saved for your user and restored the next time you open the dashboard.</span></p>
+                <p class="ps4"><span class="ts6">Also in the Settings panel:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Zoom on:&quot; &mdash; &quot;Primary Y axis&quot; or &quot;Secondary Y axis&quot; chooses which vertical axis a drag-zoom acts on.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Plot nearby Well&quot; &mdash; choose up to two other wells (&quot;Well:&quot;) and one parameter for each, to overlay them on the chart. For a producer: THP, THT, FP, BHP, BHT, Gas-lift, CHP or Choke; for an injector: THP, BHP and its injection rate.</span></p>
+                <p class="ps4"><span class="ts6">&quot;chart library&quot; offers ready-made sets of ticks: &quot;Default&quot; (your saved ticks), &quot;Allocated vs Well Tests&quot;, &quot;Forecast vs Well Tests&quot; and &quot;History Match QC&quot;.</span></p>
+                <p class="ps4"><span class="ts6">Left axis: pressures, rates, GOR and choke, in the asset's units; right axis: temperatures and BSW. Before the first daily parameter, older values are filled from the well tests.</span></p>
+                <p class="ps4"><span class="ts6">Chart gestures (zoom, &quot;&#x27F2; Unzoom&quot;, Format chart, Series style, copy to clipboard) are described in </span><a href="monitoring.htm" class="hs0">Monitoring module</a><span class="ts6">, section 4. On this dashboard, double-click or Esc also unzooms, and a right-click on an empty part of the main chart resets the zoom. A click on a point of the main chart fills the &quot;Production Parameters&quot; box with that day's values.</span></p>
+                <p class="ps3"><span class="ts5">6. Information boxes</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Production Parameters&quot; &mdash; the latest values (&quot;Date&quot;, &quot;THP&quot;, &quot;THT&quot;, &quot;FP&quot;, &quot;BHP&quot;, &quot;BHT&quot;, &quot;Gas-lift&quot;, &quot;CHP&quot;, &quot;Choke&quot;, and &quot;Frequency&quot; / &quot;PDP&quot; for ESP wells). Missing values are left blank.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Last Well Test&quot; &mdash; &quot;Date&quot;, &quot;Oil&quot;, &quot;Water&quot;, &quot;Gas&quot;, &quot;Liquid&quot;, &quot;BSW&quot;, &quot;GOR&quot;, &quot;Choke&quot; of the latest test. Hidden when the well has no tests.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Well status card &mdash; shown when the well has open actions or recent EBS events: a blue &quot;Ongoing action&quot; pill (click it to open the Action Tracker for the well, or click an action to open it) and chips for the EBS events of the last 24 hours, &quot;Surveillance&quot; in red and &quot;Optimization&quot; in green.</span></p>
+                <p class="ps3"><span class="ts5">7. Right-hand charts</span></p>
+                <p class="ps4"><span class="ts6">The three right-hand panels show diagnostic charts. Click &quot;&gt;&quot; on a panel to replace it with the next chart that applies to the well (gas-lift charts only for gas-lifted wells, ESP charts only for ESP wells).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Production&quot; &mdash; the current year's daily allocated &quot;Oil Production&quot; or &quot;Gas Production&quot; (list Oil / Gas) with the &quot;Oil Shortfalls&quot; / &quot;Gas Shortfalls&quot; stacked in grey; the tooltip gives the downtime reason. Shortfalls are calculated as on the Asset dashboard (see </span><a href="mon-asset.htm" class="hs0">Asset dashboard</a><span class="ts6">, section 9).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Well-model charts &mdash; &quot;Actual BHP vs Prosper BHP&quot;, &quot;VLP / IPR (last 1000 days)&quot;, &quot;System calculation&quot;, &quot;Quicklook&quot;, &quot;Gas-Lift Performance curve&quot;, &quot;THP Performance curve&quot;, &quot;ESP Performance&quot;, &quot;ESP Performance curve&quot;. They compare the measured data and well tests with the well model. See </span><a href="mon-nodal.htm" class="hs0">Nodal analysis and well models</a><span class="ts6">.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Virtual Meter&quot; (real-time assets) &mdash; the rates estimated by the well model from the measured pressures (&quot;System&quot;, &quot;VLP&quot;, &quot;IPR&quot;) against the &quot;Allocated&quot; rate; list Liquid / Oil / Gas.</span></p>
+                <p class="ps3"><span class="ts5">8. Ribbon buttons</span></p>
+                <p class="ps11"><span class="ts9">8.1 &quot;Raw Data&quot; group</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Production Parameters&quot;, &quot;Well Test&quot;, &quot;Allocated Production&quot;, &quot;Forecast&quot;, &quot;Shortfalls&quot;, &quot;BHP Prosper&quot;, &quot;Reservoir Pressure&quot; &mdash; open the corresponding data of the well as a table. &quot;Well Test&quot; appears only if the well has tests; &quot;Reservoir Pressure&quot; only while the &quot;Reservoir pressure&quot; tick is on.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;All Comments&quot; &mdash; the comments of the well.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Real-time assets only: &quot;Tags&quot; (historian tag of each well parameter), &quot;Inhibit EBS actions&quot; (switch individual EBS rules off for a well) and &quot;Alarms Threshold&quot; (minimum, maximum and maximum amplitude per parameter, used by the EBS threshold alarms).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Update Well model&quot; (&quot;Update Prosper model&quot; when the asset uses Prosper models) &mdash; opens the Well Model Update window for the current well. See </span><a href="mon-nodal.htm" class="hs0">Nodal analysis and well models</a><span class="ts6">.</span></p>
+                <p class="ps11"><span class="ts9">8.2 &quot;Reservoir Monitoring&quot; group</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Pattern performance&quot;, &quot;Pattern performance 2&quot;, &quot;Plots&quot;, &quot;Maps&quot; &mdash; reservoir management plots and maps; see </span><a href="mon-rm-plots.htm" class="hs0">Reservoir management plots</a><span class="ts6">.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Build-up Analyzer&quot;, &quot;View All Build-ups&quot; &mdash; see </span><a href="mon-pta.htm" class="hs0">Build-up and pressure transient analysis</a><span class="ts6">.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Gas-lift Optimizer&quot; &mdash; section 9.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;3D Model Visualiser&quot; &mdash; see </span><a href="visualiser-3d.htm" class="hs0">3D Model Visualiser</a><span class="ts6">.</span></p>
+                <p class="ps11"><span class="ts9">8.3 Targets and documents</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Set targets&quot; and &quot;Producer target history&quot; &mdash; section 10. This group appears once the asset has at least one producer target.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Map&quot; &mdash; the map centred on the well (when a maps folder is configured).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Completion drawing&quot; &mdash; opens the well's completion drawing file (when a completion-drawings folder is configured).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Logs&quot; &mdash; opens the well's log file.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Well Profile&quot; &mdash; opens Monitoring Plots on the well profile (see </span><a href="mon-rm-plots.htm" class="hs0">Reservoir management plots</a><span class="ts6">).</span></p>
+                <p class="ps3"><span class="ts5">9. Gas-lift Optimizer</span></p>
+                <p class="ps4"><span class="ts6">&quot;Gas-lift Optimizer&quot; opens a chart of the gas-lift performance curves (oil rate against gas-lift rate) of the gas-lifted wells, with each well's current operating point. It helps you see by eye which wells would gain most oil from more gas-lift and which could give gas-lift back. It does not change anything in the field or in Precept.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click one or more locations (or &quot;All&quot;) in the location list; the well list fills with the gas-lifted producers.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the wells to show. Each well's curve is drawn in green, its current point (&quot;Current GL&quot;) in grey, labelled with the well name.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Read the table: &quot;Current GL&quot;, &quot;Delta Oil with 1 MMscf/d less&quot; and &quot;Delta Oil with 1 MMscf/d more&quot; &mdash; the oil lost or gained by moving 1 MMscf/d of gas-lift away from, or to, that well.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Optionally switch the list from &quot;vs Gas-lift&quot; to &quot;vs Total Gas&quot; (gas-lift + formation gas on the X axis); a dashed tangent (&quot;&lt;well&gt; slope&quot;) then shows the local slope of each curve.</span></p>
+                <p class="ps4"><span class="ts6">The optimum allocation of a limited gas-lift volume is reached when the extra oil per extra unit of gas-lift is the same for every well: move gas-lift from the wells with the smallest &quot;more&quot; / &quot;less&quot; deltas to those with the largest. The current gas-lift comes from the latest hourly data (or the latest daily parameters); the curves come from the well models (see </span><a href="mon-nodal.htm" class="hs0">Nodal analysis and well models</a><span class="ts6">). Wells without a curve show 0. For a field-wide optimisation under facility limits, use the Optimizer of the </span><a href="mon-asset.htm" class="hs0">Asset dashboard</a><span class="ts6">.</span></p>
+                <p class="ps7"><img width="700" height="380" alt="" src="images/fig_gl_optimizer.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; Reading the Gas-lift Optimizer: the oil gained with 1 MMscf/d more gas-lift (or lost with 1 MMscf/d less) is read on each well's curve at its current point.</span></p>
+                <p class="ps3"><span class="ts5">10. Targets</span></p>
+                <p class="ps4"><span class="ts6">Targets are the operating set-points agreed for a well. They are drawn on the Asset dashboard's &quot;Actual vs Target&quot; chart and checked hourly by the EBS (±10 %) on real-time assets.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the well, then click &quot;Set targets&quot;. The window &quot;Set Producer targets&quot; opens with the well name at the top.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">In &quot;Well Parameters&quot;, enter the &quot;THP :&quot;, &quot;BHP :&quot; and &quot;Gas-lift:&quot; targets you need (all optional), in the same units as the well's daily data. Add a &quot;Comment:&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Submit&quot;. Each submission is stored as a new dated entry, so the target history is kept; the latest entry is the active target.</span></p>
+                <p class="ps4"><span class="ts6">&quot;Producer target history&quot; lists all the targets of the well. Injector targets are set from the </span><a href="mon-injectors.htm" class="hs0">Injectors dashboard</a><span class="ts6">.</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

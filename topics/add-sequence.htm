@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="sequence.htm" class="hs0">Sequence of events</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="sequence.htm" class="hs1">Sequence of events</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Add / Delete sequence of events</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,28 +63,44 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">Sequence of events can be added/deleted by clicking on the &quot;Sequence&quot;, then &quot;Add / modify&quot; icon from Precept Main User Interface.</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">A sequence of events can be:</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- drilling of new wells</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- facilities maintenances performed by a maintenance crew</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- Well head maintenances performed by a Well Services crew</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- Stimulation of several wells performed by Stimulation crew</span></h3>
-                <h3 class="hd1"><span class="ts3">&nbsp;- etc..</span></h3>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">In the example below, 5 sequence of events have been introduced</span></h3>
-                <h3 class="hd1"><span class="ts3">- 3 rigs are going to drill new wells</span></h3>
-                <h3 class="hd1"><span class="ts3">- A maintenance team will be mobilized on 01/05/2023</span></h3>
-                <h3 class="hd1"><span class="ts3">- A construction team will be mobilized on 01/04/2023</span></h3>
-                <p><img width="510" height="416" alt="" src="images/image(55).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Opportunity can then be added to the sequence of events (see </span><a href="build-sequence.htm" class="hs1">Build sequence of events</a><span class="ts3">) </span><span class="ts3">to generate the schedule below.</span></p>
-                <p><img width="1459" height="245" alt="" src="images/image(56).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">&quot;Permute&quot; option allows User to modify the layout of the sequence of events (for example, Rig first, then Maintenance, then Construction) for visualization purposes.</span></h3>
+                <p><span class="ts3">A</span><span class="ts3">dd / Delete sequence of events</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">A sequence of events (a &quot;string&quot;) is a resource that executes opportunities one after the other (see </span><a href="sequence.htm" class="hs0">Sequence of events</a><span class="ts6">). Typical strings are:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a drilling rig drilling new wells;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a maintenance crew performing facility maintenance;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a Well Services crew performing wellhead maintenance;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a stimulation crew stimulating several wells;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">a construction team commissioning new facilities.</span></p>
+                <p class="ps4"><span class="ts6">A scenario can hold up to 12 strings.</span></p>
+                <p class="ps3"><span class="ts5">2. Open the &quot;Sequence&quot; window</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the scenario on the main window.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Sequence&quot; in the &quot;Expertise&quot; group of the main ribbon, then &quot;Add / Remove string. Modify string start date&quot;.</span></p>
+                <p class="ps4"><span class="ts6">You can also double-click the name of a string (first column) on the timeline of the main window.</span></p>
+                <p class="ps4"><span class="ts6">The window lists one row per string with three columns: &quot;String Name&quot;, &quot;Performed By&quot; and &quot;Start_Date&quot;.</span></p>
+                <p class="ps7"><img width="510" height="416" alt="" src="images/image(55).png" /></p>
+                <p class="ps4"><span class="ts7">Example: five strings (three rigs, a maintenance team and a construction team), each with its own start date.</span></p>
+                <p class="ps3"><span class="ts5">3. Add, modify or delete a string</span></p>
+                <p class="ps11"><span class="ts9">3.1 Add a string</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Type the name in &quot;String Name&quot; on the empty last row (for example &quot;Rig 4&quot;).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Enter the resource in &quot;Performed By&quot; (for example &quot;Rig&quot;) and the date of the first opportunity in &quot;Start_Date&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot; (or press Ctrl+S). Precept confirms &quot;New sequences saved !&quot; and closes the window.</span></p>
+                <p class="ps4"><span class="ts6">The new string appears on the timeline, empty. Fill it with opportunities from the Pool (see </span><a href="build-sequence.htm" class="hs0">Build sequence of events</a><span class="ts6">) or from Excel (see </span><a href="sequence-from-excel.htm" class="hs0">Build sequence from Excel</a><span class="ts6">).</span></p>
+                <p class="ps11"><span class="ts9">3.2 Change a start date or a name</span></p>
+                <p class="ps4"><span class="ts6">Edit &quot;Start_Date&quot;, &quot;String Name&quot; or &quot;Performed By&quot; in the grid, then click &quot;Save&quot;. Changing &quot;Start_Date&quot; moves every opportunity of the string by the same amount, so all the linked events (new wells online, shutdowns and constraints with relative dates) move with it.</span></p>
+                <p class="ps11"><span class="ts9">3.3 Delete a string</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click a cell of the string to delete.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Delete String&quot; and confirm.</span></p>
+                <p class="ps4"><span class="ts6">The string is deleted at once, its opportunities go back to the Pool, and the strings below it move up one position.</span></p>
+                <p class="ps11"><span class="ts9">3.4 Change the display order (&quot;Permute&quot;)</span></p>
+                <p class="ps4"><span class="ts6">&quot;Permute&quot; swaps the position of two strings on the timeline, for example to show the rigs first, then maintenance, then construction. It does not change any date.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Permute&quot;. The &quot;Permute sequences&quot; window opens (the &quot;Sequence&quot; window closes).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the first string in &quot;Permute:&quot; and the second in &quot;With :&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Permute&quot;. Precept confirms &quot;New sequences saved !&quot;.</span></p>
+                <p class="ps3"><span class="ts5">4. Result on the timeline</span></p>
+                <p class="ps4"><span class="ts6">Once opportunities are added to the strings, the timeline of the main window shows the resulting schedule.</span></p>
+                <p class="ps7"><img width="1459" height="245" alt="" src="images/image(56).png" /></p>
+                <p class="ps4"><span class="ts7">Schedule generated by the strings: each opportunity starts when the previous one in the same string ends.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -96,7 +112,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

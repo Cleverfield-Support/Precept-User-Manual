@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Sequence of events</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,7 +63,72 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p>&nbsp;</p>
+                <p><span class="ts3">S</span><span class="ts3">equence of events</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">A sequence of events (also called a &quot;string&quot;) is an ordered list of </span><a href="opportunities.htm" class="hs0">opportunities</a><span class="ts6">&nbsp;carried out one after the other by the same resource: a drilling rig, a well-services crew, a maintenance team, a stimulation crew, a construction team, and so on.</span></p>
+                <p class="ps4"><span class="ts6">Each string has a name (for example &quot;Rig 1&quot;), a &quot;Performed By&quot; resource and a start date. Precept places the first opportunity of the string on its start date; every following opportunity starts when the previous one ends (start date + duration of the opportunity). Moving an opportunity inside a string, or changing a duration, therefore shifts every opportunity that comes after it.</span></p>
+                <p class="ps4"><span class="ts6">The dates calculated this way drive everything that is linked to the opportunities: new wells coming online, conversions, reroutings, changes of constraints, and shutdowns defined with relative dates (see </span><a href="shutdown.htm" class="hs0">Shutdowns</a><span class="ts6">&nbsp;and </span><a href="constraintsvstime.htm" class="hs0">Constraints changes vs time</a><span class="ts6">). This is what makes what-if scheduling fast: change the order or a start date, and the whole forecast follows.</span></p>
+                <p class="ps4"><span class="ts6">Opportunities that are not placed in any string stay in the &quot;Pool&quot; of opportunities. An opportunity in the Pool is not executed in the forecast.</span></p>
+                <p class="ps7"><img width="700" height="300" alt="" src="images/fig_sequence_strings.png" /></p>
+                <p class="ps4"><span class="ts7">Strings (rows) of opportunities executed one after the other, and the Pool of opportunities that are not scheduled.</span></p>
+                <p class="ps3"><span class="ts5">2. Where to find it</span></p>
+                <p class="ps4"><span class="ts6">Click &quot;Sequence&quot; in the &quot;Expertise&quot; group of the main ribbon. The menu offers four commands:</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Command</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">What it does</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Add / Remove string. Modify string start date&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Opens the &quot;Sequence&quot; window, where strings are created, deleted, renamed, re-dated and permuted. See </span><a href="add-sequence.htm" class="hs0">Add / Delete sequence of events</a><span class="ts6">.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;View sequence / Modify Opportunity duration&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Opens the &quot;Sequences&quot; window. Select a string in the drop-down to see its opportunities with their start date, end date and duration. You can change the &quot;Duration&quot; (days) or the &quot;End_Date&quot; of any opportunity; the change is written to the opportunity at once and the following dates are recalculated. &quot;Start_Date&quot; and &quot;Item&quot; are read-only (rename an opportunity in &quot;Opportunities&quot;; change the string start date in the &quot;Sequence&quot; window).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Adjust Opportunity duration&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Lets you change the duration of an opportunity directly on the timeline of the main window.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Import schedule from Excel&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Replaces the order of a string with a list pasted from Excel. See </span><a href="sequence-from-excel.htm" class="hs0">Build sequence from Excel</a><span class="ts6">.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">To move opportunities between strings, or between the Pool and a string, work directly on the timeline of the main window. See </span><a href="build-sequence.htm" class="hs0">Build sequence of events</a><span class="ts6">.</span></p>
+                <p class="ps3"><span class="ts5">3. Typical workflow</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Create the opportunities (see </span><a href="opportunities.htm" class="hs0">Opportunities</a><span class="ts6">). They go to the Pool.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Create the strings, with their &quot;Performed By&quot; resource and start date (&quot;Sequence&quot; &gt; &quot;Add / Remove string. Modify string start date&quot;).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Move the opportunities from the Pool into the strings, in the order you want (see </span><a href="build-sequence.htm" class="hs0">Build sequence of events</a><span class="ts6">), or paste the order from Excel.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Check the durations (&quot;Sequence&quot; &gt; &quot;View sequence / Modify Opportunity duration&quot;).</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Run the forecast. Use &quot;Gain per opportunity&quot; on the &quot;Forecast&quot; ribbon group to see the value of each opportunity.</span></p>
+                <p class="ps3"><span class="ts5">4. In this section</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><a href="add-sequence.htm" class="hs0">Add / Delete sequence of events</a><span class="ts6">: create, delete, rename and permute strings, and set their start date.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><a href="build-sequence.htm" class="hs0">Build sequence of events</a><span class="ts6">: move opportunities between the Pool and the strings on the timeline.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><a href="sequence-from-excel.htm" class="hs0">Build sequence from Excel</a><span class="ts6">: paste the order of a string from Excel.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -75,7 +140,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

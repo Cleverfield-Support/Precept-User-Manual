@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="dca.htm" class="hs0">Decline curves: Production and Injection potentials</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="dca.htm" class="hs1">Decline curves: Production and Injection potentials</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Duplicate / import profile</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,12 +63,138 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">From the &quot;Decline Curves module, click on &quot;Import / Duplicate profile&quot; to import profiles from third-party software, or duplicate profile between wells or between sceanarios.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts8">Duplicate profiles for the same well, from one scenario to another scenario</span></h3>
-                <p class="ps3"><span class="ts3">The inputs belows can duplicate profile for a well from one scenario to another scenario</span></p>
-                <p class="ps3"><span class="ts8">&nbsp;</span></p>
+                <p><span class="ts3">D</span><span class="ts3">uplicate / import profiles</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">The &quot;Import / duplicate profiles&quot; window writes well potentials (decline profiles) into a scenario without drawing them by hand. Use it to:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">copy profiles from one scenario to another, keeping the same well names;</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">copy one well's profile to other wells (for example, new wells of the same reservoir);</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">import profiles from a reservoir-simulator summary file (ECLIPSE RSM);</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">import profiles pasted from Excel.</span></p>
+                <p class="ps4"><span class="ts6">Open it from the Decline Curves window: click &quot;Import / Duplicate profile&quot; on its ribbon (see </span><a href="dca.htm" class="hs0">Decline curves</a><span class="ts6">). The imported profiles appear in the Decline Curves window like any other decline and can be edited there.</span></p>
+                <p class="ps7"><img width="700" height="300" alt="" src="images/fig_duplicate_profile_methods.png" /></p>
+                <p class="ps4"><span class="ts7">The two ways of copying profiles: same wells to another scenario, or one well to several other wells.</span></p>
+                <p class="ps3"><span class="ts5">2. Choosing the source</span></p>
+                <p class="ps4"><span class="ts6">Pick the source in the first list. The rest of the window adapts to it.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Source</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">What is copied</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">from Decline Curves</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Saved decline curves of a scenario: Low, Mid, High or All cases.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">from Eclipse RSM file</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well rates from an ECLIPSE RSM summary file. A file dialog opens as soon as you pick this source.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Import from Excel</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">A table pasted with Ctrl+V into the grid of the window (section 5).</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps3"><span class="ts5">3. Copying profiles between scenarios or wells (from Decline Curves)</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select &quot;from Decline Curves&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Source side: choose the project (&quot;Select Project to export Decline curves from&quot;), the scenario, the well type (&quot;Select Well type&quot;) and the &quot;Forecast case&quot; (Low, Mid, High or All).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Target side: choose the project (&quot;Select Project to export Decline curves to&quot;), the target scenario and the target &quot;Forecast case&quot;. The target project list also offers &quot;Analogues - &lt;country&gt;&quot; entries, to copy a profile to analogue wells.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Choose the duplication method (section 3.1).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Optionally choose &quot;Scale for producing interval&quot; instead of &quot;Do not scale for producing interval&quot;. Rates are then scaled by the ratio of the target well's producing interval to the source well's.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">6.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;-&gt; Send to -&gt;&quot;. A progress bar shows each well, then Precept confirms that the decline curves were generated.</span></p>
+                <p class="ps11"><span class="ts9">3.1 Duplication methods</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Copy one or several profiles from one scenario to another (keeping same name)&quot;: select one or more wells in the source well list. Each well's profile is written to the well of the same name in the target scenario.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Duplicate one well profile to other wells&quot;: select one source well, then one or more target wells. With &quot;from Decline Curves&quot;, the &quot;Reservoir:&quot; and &quot;Project:&quot; lists filter the target wells.</span></p>
+                <p class="ps4"><span class="ts6">The copied profile replaces the target well's existing profile for the chosen case. To duplicate inside one scenario, choose the same scenario on both sides.</span></p>
+                <p class="ps3"><span class="ts5">4. Importing from an ECLIPSE RSM file</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select &quot;from Eclipse RSM file&quot; and pick the file.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Choose the well type, the target project, scenario and &quot;Forecast case&quot;, and the duplication method.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Choose how timesteps are imported (section 6). Optionally enter a &quot;Start Date&quot; under &quot;Import from:&quot;: only the timesteps from that date on are imported.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;-&gt; Send to -&gt;&quot;.</span></p>
+                <p class="ps3"><span class="ts5">5. Importing from Excel</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select &quot;Import from Excel&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Choose the target project, scenario and &quot;Forecast case&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Choose the well type (or &quot;Any&quot;). Under &quot;Import as :&quot;, choose &quot;Multi-segment vs Time&quot; (default) or &quot;Multi-segment vs Cum&quot;. The grid shows the expected columns (table below).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Copy the rows in Excel (same column order as the grid) and press Ctrl+V in the grid. A header row starting with &quot;Well&quot; is ignored.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Choose how timesteps are imported (section 6), then click &quot;-&gt; Send to -&gt;&quot;.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Well type</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Columns (after &quot;Well&quot;, then &quot;Date&quot; for vs Time or the cumulative for vs Cum)</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Oil Producer</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">[Cum Oil], Liquid, BSW, GOR, Gas-lift</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Gas Producer</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">[Cum Gas], Gas, WGR, CGR, Gas-lift</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Water Injector</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">[Cum Water Injection], Water Injection</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Gas Injector</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">[Cum Gas Injection], Gas Injection</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Any</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">[Cum Oil], Liquid, BSW, GOR, Gas-lift, Water Injection, Gas Injection</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">The column in brackets is present only with &quot;Multi-segment vs Cum&quot;; &quot;Date&quot; is present only with &quot;Multi-segment vs Time&quot;. Values are in the asset's units, shown in the column headers. Several wells can be pasted at once; the &quot;Well&quot; column tells the rows apart. Each name must be a well of the target scenario, a new profile of that scenario, or a type curve; other names are skipped.</span></p>
+                <p class="ps3"><span class="ts5">6. Timestep options</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Import all timesteps&quot;: every row or timestep becomes a point of the profile.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Let Precept manage timestep&quot;: Precept keeps only the points that matter: the first and last points, the openings and closures, and the points where the rate or a ratio has changed by more than about 10 to 15 % since the last kept point. This gives a lighter profile with the same shape.</span></p>
+                <p class="ps3"><span class="ts5">7. Messages</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Please select the scenario you want to copy data to !&quot;: no target scenario selected.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Please select the forecast case you want to copy data to (low / Mid / High) !&quot;: no target case selected.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Please select at least one well to duplicate profile from.&quot;: no source well (or no target well) selected.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;There is no data to copy !&quot;: the Excel grid is empty.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -80,7 +206,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>Experimental design</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 450;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="simulation.htm" class="hs1">Reservoir simulation</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">Experimental design</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="sim-deck-builder.htm" title="Simulation deck builder"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="sim-coupling.htm" title="Network - reservoir simulator coupling"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">E</span><span class="ts3">xperimental design and probabilistic simulation studies</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; what experimental design is, and when to use it</span></p>
+                <p class="ps4"><span class="ts6">A reservoir model always rests on uncertain inputs: porosity, permeability, contacts, initial pressure, fault transmissibility, and so on. Experimental design answers two questions with as few simulation runs as possible:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Which uncertain parameters actually matter? Usually only a few out of many drive the result.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">How much do they move the result &mdash; for example the cumulative oil at the end of the forecast, or the quality of the history match?</span></p>
+                <p class="ps4"><span class="ts6">Instead of sampling the parameters at random, experimental design varies them in a planned way, at fixed levels (Low / Mid / High), so that each parameter's effect can be read directly from a small number of runs. This matters when one simulation run takes hours on a cluster. It is used both for history matching (which parameters drive the mismatch, and which combinations match best) and for forecasting (which uncertainties drive the forecast, and their range).</span></p>
+                <p class="ps4"><span class="ts6">The studies are part of the 3D model builder (see </span><a href="sim-deck-builder.htm" class="hs0">Simulation deck builder</a><span class="ts6">). Choose one in the &quot;Study&quot; list, under &quot;Model&quot;, at the top left:</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Study</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">What it does</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Typical use</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Deterministic</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">One case, no uncertain parameter.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Base case, routine forecast.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Probabilistic</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">N realizations sampled at random from each parameter's distribution (Monte Carlo).</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">P90 / P50 / P10 forecasts when runs are cheap (section 7).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Experimental design</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">One run per design point, the parameters at their Low / Mid / High levels.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Screening, tornado charts, history matching, response surfaces when runs are expensive.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Both kinds of model work: with a &quot;Conceptual model&quot; Precept builds every run's deck; with an &quot;Existing model&quot; (for example from Petrel) Precept writes copies of your own deck with the run's values in place, for you to run on your cluster.</span></p>
+                <p class="ps3"><span class="ts5">2. Defining the uncertain parameters</span></p>
+                <p class="ps4"><span class="ts6">In a Deterministic study there are no uncertain parameters: choose &quot;Probabilistic&quot; or &quot;Experimental design&quot; first.</span></p>
+                <p class="ps11"><span class="ts9">2.1 Conceptual model</span></p>
+                <p class="ps4"><span class="ts6">Right-click one of these fields and choose &quot;Make uncertain / edit…&quot;: in GRID, &quot;Porosity&quot;, &quot;Permeability kh (mD)&quot; and &quot;kv/kh ratio&quot;; in SOLUTION, the initial pressure and the GOC and OWC contacts. An uncertain field gets a light blue background.</span></p>
+                <p class="ps11"><span class="ts9">2.2 Existing model</span></p>
+                <p class="ps12"><span class="ts10">The right pane shows your own deck (.DATA). You can edit it directly (Ctrl+S saves; the original is kept once as </span><span class="ts11">&lt;deck&gt;.DATA.bak</span><span class="ts10">).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Right-click a value of a keyword record &mdash; for example the initial pressure or a contact in EQUIL, a fault multiplier in MULTFLT &mdash; and choose &quot;Make uncertain: &lt;name&gt; (&lt;value&gt;)...&quot;. Precept remembers the value by what it is, not by its line: the keyword, which occurrence of it, which record (by its name when the record starts with one, such as a fault or a well) and the parameter column (the ECLIPSE item number). Adding lines elsewhere, or typing over the value itself, does not lose it. A repeated value such as 27260*20 can be made uncertain too.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Right-click an array property line &mdash; PORO, PERMX, PERMY, PERMZ, NTG, MULTX, MULTY, MULTZ, MULTX-, MULTY-, MULTZ-, MULTPV &mdash; or the INCLUDE line of the file holding it, and choose &quot;Make uncertain: &lt;PROP&gt; multiplier...&quot; (default levels 0.8 / 1.0 / 1.2). Each run applies it with a MULTIPLY keyword at the end of the GRID section. A multiplier on PERMX does not carry over to PERMY if your deck copies one into the other: make each one uncertain separately if needed.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Values inside an included file: double-click the INCLUDE line to open the file, then right-click the value. The file must be included directly by the deck, not from another included file.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">An uncertain value already defined shows &quot;Edit uncertainty: &lt;name&gt;...&quot;. Elsewhere in the deck the menu offers &quot;Include a file here...&quot; (for example VFP tables).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Uncertain values are shown in bold Precept blue in the deck.</span></p>
+                <p class="ps11"><span class="ts9">2.3 Low, Mid and High</span></p>
+                <p class="ps4"><span class="ts6">In an experimental design the dialog is &quot;Levels - &lt;name&gt;&quot;, with three levels (proposed by default at Mid ±30 %):</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Low&quot; &mdash; the low end of the range you want to test.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Mid (base)&quot; &mdash; the base case.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;High&quot; &mdash; the high end of the range.</span></p>
+                <p class="ps4"><span class="ts6">Low &lt; Mid &lt; High is required. &quot;Save&quot; keeps the levels, &quot;Not uncertain&quot; removes the parameter, &quot;Cancel&quot; closes. No distribution is needed &mdash; except for the Latin hypercube design (section 3), which spreads its runs over each parameter's distribution: Normal, unless it was set to Triangular in the Probabilistic study (where the dialog is &quot;Uncertainty - &lt;name&gt;&quot;, with &quot;Low (min)&quot;, &quot;Mid (mode)&quot;, &quot;High (max)&quot; and &quot;Distribution&quot;).</span></p>
+                <p class="ps11"><span class="ts9">2.4 The UNCERTAINTIES section</span></p>
+                <p class="ps4"><span class="ts6">&quot;UNCERTAINTIES&quot; (in the section list, outside the Deterministic study) shows &quot;Uncertainties (n)&quot;: every uncertain parameter with a small chart of its levels (&quot;Low x Mid y High z&quot;). Click a chart to edit that parameter, or to make it &quot;Not uncertain&quot;. The deck pane widens to half the window here, so you can pick values while you look at the charts.</span></p>
+                <p class="ps3"><span class="ts5">3. Choosing the design</span></p>
+                <p class="ps4"><span class="ts6">Choose the &quot;Design&quot; at the top of the UNCERTAINTIES section. Next to it Precept shows how many runs it will write for your k uncertain parameters (&quot;n runs = n .DATA files&quot;), and a note describes the design.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Design</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Runs</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">What it gives</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">One at a time (tornado)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">1 + 2k</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">A base run (all at Mid), then each parameter alone at Low and at High. Each parameter's own effect, exactly.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Plackett-Burman</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The smallest of 4, 8, 12, 16, 20, 24, 32, 64, 128 (else 256) above k, + 1 centre run</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Two-level screening with the fewest runs. Main effects only.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Full factorial - 2 levels</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">2^k + 1 centre run</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Every Low / High combination: main effects and all interactions.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Full factorial - 3 levels</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">3^k</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Every Low / Mid / High combination: curvature and interactions. Grows very fast.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Box-Behnken</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">2k(k&minus;1) + 1</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Three levels, parameters varied in pairs, never all at their extremes. Fits a quadratic response surface. Needs 3 parameters or more.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Central composite (face-centred)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">2^k + 2k + 1</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Two-level factorial, plus each parameter alone at Low / High, plus a centre run. Quadratic response surface, with every point inside the Low&ndash;High range.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Latin hypercube</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Chosen in the &quot;Runs&quot; box (default 5 per parameter, 10 at least)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Runs spread evenly over each parameter's distribution: a space-filling design for proxy models. The levels are shown as percentiles (e.g. P37). The sampling is reproducible.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps7"><img width="760" height="300" alt="" src="images/fig_ed_designs.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; Where the runs sit for two uncertain parameters (coded Low = &minus;1, Mid = 0, High = +1) in four designs.</span></p>
+                <p class="ps4"><span class="ts6">Designs needing more than 1,000 runs are refused (&quot;too many runs (more than 1000)&quot;). With many parameters, start with Plackett-Burman or One at a time to find the few that matter, then run a Box-Behnken, Central composite or Latin hypercube on those.</span></p>
+                <p class="ps3"><span class="ts5">4. Writing the runs</span></p>
+                <p class="ps4"><span class="ts6">Click the study's button at the bottom of the deck builder: &quot;Experimental design&quot; (conceptual model) or &quot;Generate experimental design DATA files&quot; (existing model). Precept confirms the design and the number of runs (&quot;Write the n .DATA files?&quot;), then writes them. Precept writes the runs; it does not run them &mdash; run them with OPM Flow or on your cluster, like any deck.</span></p>
+                <p class="ps11"><span class="ts9">4.1 Conceptual model</span></p>
+                <p class="ps12"><span class="ts10">The runs are written to </span><span class="ts11">&lt;Simulation folder&gt;\ed\run_001</span><span class="ts10">&nbsp;… </span><span class="ts11">run_nnn</span><span class="ts10">, one deck each (with its own grid file for an isoclines grid), and </span><span class="ts11">ed\design.csv</span><span class="ts10">&nbsp;lists each run's values and levels. The previous design's run folders are deleted first. Values are kept within physical bounds.</span></p>
+                <p class="ps11"><span class="ts9">4.2 Existing model</span></p>
+                <p class="ps4"><span class="ts6">Your deck should already contain the forecast: generate it first in the Deterministic study with &quot;Generate SCHEDULE and save DATA file&quot; (Precept warns and asks before writing the runs if it does not). The runs go to the &quot;Design folder&quot; shown in the EXISTING MODEL section (&quot;Browse...&quot; to change it; by default the deck's folder). Your deck's include files are copied into it with the same relative paths.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">File</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Content</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps15"><span class="ts11">&lt;deck&gt;_ED001.DATA … &lt;deck&gt;_EDnnn.DATA</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">One deck per run: your deck with the run's values in place and the multipliers as a MULTIPLY block. Its header lists the run's values and levels.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps15"><span class="ts11">&lt;file&gt;_ED001.&lt;ext&gt; …</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">When an uncertain value sits in an included file: one copy of that file per run. The run's deck includes its own copy. Your original files are never modified.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps15"><span class="ts11">&lt;deck&gt;_ED_samples.csv</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The design: each run's parameter values and levels.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Writing a new design deletes the previous design's run decks and include copies first (result files are kept). Before writing, Precept checks that every uncertain value can still be found in the deck and lists any that cannot.</span></p>
+                <p class="ps3"><span class="ts5">5. Analysing the results &mdash; the DESIGN RESULTS section</span></p>
+                <p class="ps11"><span class="ts9">5.1 Loading the results</span></p>
+                <p class="ps12"><span class="ts10">Put the runs' result files back next to the design's decks (or in sub-folders), open &quot;DESIGN RESULTS&quot; (in the section list, Experimental design study) and click &quot;Load results&quot;. Precept searches the design folder and its sub-folders &mdash; the Design folder for an existing model, </span><span class="ts11">&lt;Simulation folder&gt;\ed</span><span class="ts10">&nbsp;for a conceptual model &mdash; and matches each run to its summary:</span></p>
+                <p class="ps14"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts10">Existing model: </span><span class="ts11">&lt;deck&gt;_ED003.SMSPEC</span><span class="ts10">&nbsp;with its .UNSMRY (or the non-unified .S0001, .S0002 … files), written by ECLIPSE, OPM Flow or Intersect; otherwise </span><span class="ts11">&lt;deck&gt;_ED003.RSM</span><span class="ts10">.</span></p>
+                <p class="ps13"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts10">Conceptual model: the .SMSPEC or .RSM found in each </span><span class="ts11">run_nnn</span><span class="ts10">&nbsp;folder.</span></p>
+                <p class="ps4"><span class="ts6">The status line shows how many runs were loaded, which ones have no result yet, and the best history match (&quot;best history match: run X (Y %)&quot;). The section hides the deck pane so the charts use the full width.</span></p>
+                <p class="ps11"><span class="ts9">5.2 Profiles</span></p>
+                <p class="ps4"><span class="ts6">The charts show every run over time, the measured history as dots, and a dashed line at the forecast start.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Tick &quot;Field&quot; and / or wells: each gets its own chart.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Tick one or more quantities: &quot;Oil rate&quot;, &quot;Water rate&quot;, &quot;Gas rate&quot;, &quot;Liquid rate&quot;, &quot;Cum oil&quot;, &quot;Cum water&quot;, &quot;Cum gas&quot;, &quot;Field pressure&quot; (Field only), &quot;BHP&quot;, &quot;THP&quot; (wells only), &quot;Water cut&quot;, &quot;GOR&quot;, &quot;Water injection rate&quot;, &quot;Gas injection rate&quot;. Pressures, water cut and GOR go on a second axis.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Click a run in the table to draw it in bold. Drag on a chart to zoom (&quot;Reset zoom&quot; to undo).</span></p>
+                <p class="ps4"><span class="ts6">The history comes from the asset's own production data (allocated production for rates, daily well parameters for BHP / THP). Well history is found by well name, so the simulation model must use the same well names as Precept.</span></p>
+                <p class="ps11"><span class="ts9">5.3 Runs table</span></p>
+                <p class="ps4"><span class="ts6">One row per run: &quot;Run&quot;, &quot;Status&quot; (&quot;loaded&quot;, &quot;no result found&quot;, &quot;empty summary&quot;...), the history-match errors &quot;HM total %&quot;, &quot;HM oil %&quot;, &quot;HM water %&quot;, &quot;HM gas %&quot;, &quot;HM BHP %&quot;, each parameter's value and level, and the result chosen for the tornado. A run without results is grey. Click a column header to sort: sorting on &quot;HM total %&quot; puts the best-matched runs first.</span></p>
+                <p class="ps11"><span class="ts9">5.4 Tornado</span></p>
+                <p class="ps4"><span class="ts6">The tornado shows how much each parameter moves the chosen result from its Low (orange, &quot;parameter at Low&quot;) to its High (blue, &quot;parameter at High&quot;), around the base. The most influential parameter is at the top.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Results available: &quot;History-match error (%)&quot;, or &quot;&lt;quantity&gt; at the end&quot; for any field quantity (default &quot;Cum oil at the end&quot;).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">How it is computed: one parameter at a time, the others at Mid, read from the response surface (section 5.6). The base is the surface with every parameter at Mid. A One-at-a-time design gives exactly its runs.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">When no surface can be fitted (fewer than 3 runs loaded, or a run without a value for the chosen result), each bar is the average result of the runs with the parameter at that level (its main effect), and the base is the average of all runs.</span></p>
+                <p class="ps7"><img width="700" height="360" alt="" src="images/fig_ed_tornado.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 2 &mdash; Reading a tornado: each bar spans the result with the parameter at Low (orange) and at High (blue), the others at Mid. The longest bar matters most.</span></p>
+                <p class="ps4"><span class="ts6">A tornado of the history-match error shows which parameters to tune in the history match. A tornado of cumulative oil at the end shows which uncertainties drive the forecast.</span></p>
+                <p class="ps11"><span class="ts9">5.5 History-match error</span></p>
+                <p class="ps4"><span class="ts6">For each run, over the history period (up to the scenario's forecast start), Precept compares the simulation with the measured data: each well's oil, water and gas rates with its allocated production, and its bottom-hole pressure with its measured BHP (days without a gauge reading are ignored). If no well has measured data for a rate, the field total is used.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Simulated values are read at each measurement date, interpolating linearly between the run's time steps.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Per quantity, pooled over all wells: HM error (%) = 100 × RMS(simulated &minus; measured) ÷ mean |measured|.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;HM total %&quot;: the average of the oil, water, gas and BHP errors that could be computed. The lower, the better.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Points are not compared at a run's very first instant, nor while the model's well has no BHP; a quantity needs at least 3 compared points. A deck that starts on the forecast start has no history period, so its HM columns stay empty.</span></p>
+                <p class="ps11"><span class="ts9">5.6 Response surface (proxy)</span></p>
+                <p class="ps4"><span class="ts6">The &quot;Response surface (proxy)&quot; panel, next to the runs table, fits the runs' results as a function of the parameters, so you can explore values that were never simulated.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Sliders: one per parameter, from the lowest to the highest value among the loaded runs, Mid in the middle.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Show the expected curve on the profiles&quot; draws the expected profile at the slider settings as a thick line, for every quantity shown. Moving a slider ticks it.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Expected &lt;result&gt;: &lt;value&gt;&quot;: the tornado's result predicted at the slider settings, with the type of surface, the number of runs and its Q2.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Reset to Mid&quot; puts the sliders back at Mid.</span></p>
+                <p class="ps4"><span class="ts6">How it works: each parameter is coded Low = &minus;1, Mid = 0, High = +1. At every time step a surface is fitted to the runs by least squares &mdash; &quot;quadratic&quot; (with cross terms) when there are enough runs, else &quot;linear + squares&quot;, else &quot;linear&quot;. The expected curve is a weighted combination of the simulated profiles, so it keeps the shapes the simulator produced. Q2 measures the fit of the tornado's result by leaving each run out in turn and predicting it from the others: 1 is perfect; a low Q2 means the surface should not be trusted and more runs (or another design) are needed. &quot;Q2 n/a&quot; means there are as many terms as runs.</span></p>
+                <p class="ps3"><span class="ts5">6. Typical workflows</span></p>
+                <p class="ps11"><span class="ts9">History matching</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Make the candidate parameters uncertain, with wide Low / High ranges.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Run a Plackett-Burman or One at a time design and load the results.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Look at the tornado of the history-match error: keep the few parameters that matter, fix the others at Mid.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Run a Box-Behnken, Central composite or Latin hypercube on the parameters you kept, sort the runs by &quot;HM total %&quot; and check the best ones on the profiles, especially the well BHPs.</span></p>
+                <p class="ps11"><span class="ts9">Forecast uncertainty</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Run a design on the main uncertainties.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Look at the tornado of &quot;Cum oil at the end&quot; to rank them.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Use the spread of the runs' profiles as the range of outcomes.</span></p>
+                <p class="ps3"><span class="ts5">7. The Probabilistic study</span></p>
+                <p class="ps4"><span class="ts6">With &quot;Probabilistic&quot;, each uncertain parameter has Low (min), Mid (mode) and High (max) and a distribution: &quot;Normal&quot; (centred on Mid, truncated to Low&ndash;High, with Low and High at about P1 and P99) or &quot;Triangular&quot;.</span></p>
+                <p class="ps14"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts10">Conceptual model &mdash; &quot;Run probabilistic&quot; asks the &quot;Number of realizations (each runs flow once):&quot; (default 30, at least 3, at most 500), then runs them one after another with OPM Flow in </span><span class="ts11">&lt;Simulation folder&gt;\mc\real_nnn</span><span class="ts10">. The progress window has a Cancel button. The realizations are ranked by their final cumulative oil: P90 is saved as the Low case, P50 as the Mid case (and the forecast), P10 as the High case, with their oil and gas in place as 1P / 2P / 3P. The dashboard &quot;Probabilistic forecast - N realizations&quot; shows the rates, cumulatives, S-curves, water cut, GOR, pressure and injection, and a P90 / P50 / P10 summary of STOIIP, cumulative oil, recovery factor, OGIP and cumulative gas. &quot;Prob dashboard&quot; reopens it.</span></p>
+                <p class="ps13"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts10">Existing model &mdash; &quot;Generate probabilistic DATA files&quot; asks the &quot;Number of realizations (one .DATA file each):&quot; and writes </span><span class="ts11">&lt;deck&gt;_MC001.DATA</span><span class="ts10">&nbsp;… and </span><span class="ts11">&lt;deck&gt;_MC_samples.csv</span><span class="ts10">&nbsp;in the &quot;Probabilistic folder&quot;, to run on your cluster.</span></p>
+                <p class="ps3"><span class="ts5">8. Notes and limits</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Units: simulated rates and pressures are compared in the simulator's units, which must match the asset's units in Precept. Water cut is converted to % and GOR to Precept's GOR unit.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Not yet available: P90 / P50 / P10 derived from the response surface, and weighting the history-match quantities differently.</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>Build-up and pressure transient analysis</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 520;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="monitoring.htm" class="hs1">Monitoring module</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <h1 class="hd0"><span class="ts1">Build-up and pressure transient analysis</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="mon-injectors.htm" title="Injectors dashboard and CRM"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="mon-nodal.htm" title="Nodal analysis and well models"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">B</span><span class="ts3">uild-up and pressure transient analysis (PTA)</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview</span></p>
+                <p class="ps4"><span class="ts6">Every time a producer with a downhole gauge is shut in, its BHP builds up towards the reservoir pressure. The </span><a href="mon-producers.htm" class="hs0">Producers dashboard</a><span class="ts6">&nbsp;turns these unplanned build-ups into information, in two steps:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the Build-up Analyzer extrapolates the build-up to estimate the reservoir pressure at datum, and can save it;</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the PTA window shows the diagnostic plots of the build-up (log-log pressure and derivative, superposition plot), and can save the analysis so that all build-ups of a well can be compared later.</span></p>
+                <p class="ps4"><span class="ts6">Both are in the &quot;Reservoir Monitoring&quot; group of the Producers dashboard ribbon: &quot;Build-up Analyzer&quot; and &quot;View All Build-ups&quot;.</span></p>
+                <p class="ps3"><span class="ts5">2. Build-up Analyzer &mdash; reservoir pressure from a build-up</span></p>
+                <p class="ps11"><span class="ts9">2.1 Before you start</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The well needs a datum depth in the asset model, otherwise Precept shows &quot;Datum needs to be defined !&quot;.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The depth of the downhole gauge should be in the well's completion data, so that the gauge pressure can be corrected to datum. Without it, Precept warns you and applies no hydrostatic correction.</span></p>
+                <p class="ps11"><span class="ts9">2.2 Steps</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the well, then click &quot;Build-up Analyzer&quot;. The &quot;Pressure Database&quot; panel appears and the main chart shows the &quot;Production period&quot; and &quot;Build-up&quot; bands.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">On the main chart, drag across the build-up, starting at the shut-in. On real-time assets, Precept reloads the high-frequency BHP for that window; otherwise it uses the daily BHP.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Precept fits the shut-in pressures with P(SI) = a + b × ln(&Delta;t), &Delta;t in hours since shut-in (label &quot;P (SI) = a + b log (dt)&quot;), and draws the &quot;BU extrapolation&quot; line. Adjust &quot;a&quot; and &quot;b&quot; with the sliders if needed.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Read the results: &quot;BHP 90 days:&quot; (the extrapolated gauge pressure after 90 days of shut-in), &quot;Hydrostatic between BHP and Datum:&quot; and &quot;Datum Reservoir pressure at 90 days:&quot; (BHP at 90 days + hydrostatic correction). The datum pressure is plotted as a &quot;Reservoir pressure&quot; point.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">The PTA window opens with the selected build-up (section 3). Close it to come back to the dashboard.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">6.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save Reservoir pressure&quot; to store the datum and gauge pressures, dated at the start of the build-up. Saved pressures appear with the &quot;Reservoir pressure&quot; tick on the well charts and are used by the </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">&nbsp;history match.</span></p>
+                <p class="ps4"><span class="ts6">If the pressures do not follow a clean build-up, Precept shows &quot;Precept cannot extrapolate the pressure. Fall-off is not clean enough !&quot;. Select a cleaner window, or a longer shut-in.</span></p>
+                <p class="ps4"><span class="ts6">The 90-day extrapolation is a practical estimate of the average drainage pressure, not a full PTA interpretation. It is reliable when the build-up has reached radial flow (straight line on the semi-log plot) and the well is not strongly bounded.</span></p>
+                <p class="ps3"><span class="ts5">3. The PTA window</span></p>
+                <p class="ps4"><span class="ts6">The window &quot;PTA&quot; opens after a build-up selection in the Build-up Analyzer. If the selected period contains a build-up that was already saved, the saved analysis is replayed and the title becomes &quot;PTA - &lt;well&gt; (saved analysis &lt;date&gt;)&quot;.</span></p>
+                <p class="ps11"><span class="ts9">3.1 Data and build-up detection</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Pressure &mdash; the BHP selected in the Producers dashboard (high-frequency when available, otherwise daily).</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Rates &mdash; the daily allocated oil rate and uptime before the shut-in.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Build-up detection &mdash; Precept finds the shut-in from the pressure shape: the start is the lowest BHP after which the next three points keep rising; the end is the highest BHP after which the next three points keep falling (or the end of the data). Single-point gauge dropouts are ignored.</span></p>
+                <p class="ps11"><span class="ts9">3.2 Calculations</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&Delta;t &mdash; hours since shut-in; &Delta;p = BHP &minus; Pwf, where Pwf is the BHP at shut-in.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Producing time tp &mdash; the sum of the daily producing hours (24 × uptime) before the shut-in; q_last &mdash; the last positive daily oil rate before the shut-in.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Superposition function &mdash; the multi-rate (generalised Horner) time function built from the daily rate history: &Sigma; (q_j &minus; q_j&minus;1)/q_last × log((tp &minus; t_j&minus;1) + &Delta;t) &minus; log(&Delta;t). For a constant rate it reduces to the Horner time log((tp + &Delta;t)/&Delta;t).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Derivative &mdash; the slope of &Delta;p against the superposition function, computed with neighbours at least 0.1 log-cycle apart to limit noise.</span></p>
+                <p class="ps11"><span class="ts9">3.3 Charts</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Log-log diagnostic&quot; &mdash; &quot;Build-up&quot; (&Delta;p) and &quot;Derivative&quot; against &quot;Elapsed time (hours)&quot;, both axes logarithmic.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Superposition (Horner)&quot; &mdash; BHP (&quot;Pressure&quot;) against the &quot;Superposition function&quot;. The X axis starts at 0: extending the straight part of the curve to 0 gives the extrapolated pressure p* by eye.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Production history&quot; &mdash; BHP and oil rate (right axis) around the build-up, with the analysed period shaded and labelled &quot;Build-up analysed&quot;.</span></p>
+                <p class="ps7"><img width="700" height="420" alt="" src="images/fig_pta_loglog.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; Reading the log-log diagnostic: a unit slope at early time (wellbore storage), a hump, then a flat derivative during radial flow; a rising derivative at late time points to a boundary, a falling one to pressure support.</span></p>
+                <p class="ps4"><span class="ts6">The PTA window is a visual diagnostic. It does not ask for fluid and rock properties and does not calculate permeability-thickness or skin. Use it to check that a build-up reached radial flow before trusting its extrapolated pressure, to spot boundaries or support, and to compare build-ups over time.</span></p>
+                <p class="ps11"><span class="ts9">3.4 Adjusting the build-up window</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Type the &quot;BU start&quot; and &quot;BU end&quot; dates and times, or click &quot;Pick BU on chart&quot; and then click the start and the end on the &quot;Production history&quot; chart (the button text guides you; click it again to cancel). Picks snap to the nearest pressure point; the picked window shows as a blue strip.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Click &quot;Recalculate PTA&quot;. Precept checks the window: the end must be after the start, at least 3 pressure points are needed, and the window must not include a drawdown (&quot;Drawdown is included in the BU analysis. Adjust the BU start/end dates to cover only the build-up.&quot;).</span></p>
+                <p class="ps11"><span class="ts9">3.5 Ribbon buttons</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Save&quot; &mdash; saves the analysis (&Delta;t, superposition function, &Delta;p, derivative, shut-in date, q_last, Pwf). A previous analysis of the same build-up (within 2 days) is replaced.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Production parameters&quot; &mdash; the pressure and rate data plotted, as a table.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;PTA&quot; &mdash; the calculated PTA table.</span></p>
+                <p class="ps4"><span class="ts6">The chart gestures are those of the </span><a href="monitoring.htm" class="hs0">Monitoring module</a><span class="ts6">&nbsp;(section 4); the &quot;Format chart&quot; dialog is available on the superposition chart.</span></p>
+                <p class="ps3"><span class="ts5">4. View All Build-ups &mdash; comparing build-ups over time</span></p>
+                <p class="ps4"><span class="ts6">Select a well and click &quot;View All Build-ups&quot;. If the well has no saved analysis, Precept shows &quot;No saved build-up analyses found for &lt;well&gt; .&quot;. Otherwise the window &quot;PTA &mdash; All build-ups (&lt;well&gt;)&quot; opens, read-only:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;Log-log diagnostic &mdash; all build-ups (rate-normalised)&quot; &mdash; &Delta;p/q and derivative/q of every saved build-up, one colour per build-up (the derivative in a lighter shade), labelled with the build-up date. Dividing by the rate before shut-in makes build-ups at different rates comparable.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">History chart &mdash; the BHP over the whole period, with one coloured strip per analysed build-up.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Click a point of a build-up on the log-log chart to highlight its strip on the history chart; click an empty area to reset.</span></p>
+                <p class="ps4"><span class="ts6">How to read it: if the radial-flow level of the normalised derivative rises from one build-up to the next, the well's flow capacity is decreasing; if the curves shift upward at early time, the near-wellbore damage (skin) is increasing. Both are candidates for a stimulation or a well-model update.</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

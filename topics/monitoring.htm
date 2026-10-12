@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>Monitoring module</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.9.1 (Build 24.1211)" />
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<style type="text/css" media="screen">
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+</style>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
+<script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
+<script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
+<script type="text/javascript">
+	var topicContext = 480;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body class="page0">
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: &lt;Root level&gt;</span></p>
+                        <h1 class="hd0"><span class="ts1">Monitoring module</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><a href="export-to-excel.htm" title="Export to Excel"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20bluetriangles32.png" /></a><span class="ts0">&nbsp;</span><a href="mon-asset.htm" title="Asset dashboard"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell3">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <p><span class="ts3">M</span><span class="ts3">onitoring module (production surveillance)</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; what the Monitoring module does</span></p>
+                <p class="ps4"><span class="ts6">Precept has two modules. The Forecast module builds scenarios and predicts future production. The Monitoring module looks at what the field and each well are doing </span><span class="ts7">now</span><span class="ts6">, and compares it with what they should be doing. It answers day-to-day surveillance questions:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">How much did the field produce and inject yesterday, this week, this month and this year?</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Which wells are down, which are partly down, and how much production was lost (the shortfalls)?</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Which wells produce more or less than the forecast of a chosen scenario?</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Are the wells running at their targets (THP, BHP, gas-lift, injection rate)?</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Do the well tests, the pressures and the well models still agree with each other?</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Which injectors support which producers, and what does a build-up say about reservoir pressure?</span></p>
+                <p class="ps4"><span class="ts6">The Monitoring module reads the asset's measured data. It does not change a forecast scenario, except where a dashboard explicitly saves something (a well status, a target, a reservoir pressure, a build-up analysis).</span></p>
+                <p class="ps3"><span class="ts5">2. Where to find it</span></p>
+                <p class="ps4"><span class="ts6">The Monitoring module is enabled per asset (licence). When it is enabled, the main ribbon shows a group named &quot;Monitoring&quot; with three buttons:</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Button</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Opens</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Use it to</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Asset&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The &quot;Field Monitoring &lt;asset&gt;&quot; window (Asset dashboard).</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">See the whole field on one screen: production and injection KPIs, shortfalls, efficiency, a well-by-well timeline, over / under-performing wells, targets. Entry point to the field-wide tools (CRM, Optimizer, Last Well Tests, Precept AI, Action Tracker).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Producers&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The &quot;Production Monitoring &lt;asset&gt;&quot; window (Producers dashboard).</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Look at one oil or gas producer in detail: daily parameters, allocated rates, well tests, forecast, well-model charts, build-ups, gas-lift, targets.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Injectors&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The &quot;Injection Monitoring &lt;asset&gt;&quot; window (Injectors dashboard).</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Look at one water injector, gas injector or WAG well in detail: injection rate, THP, BHP, Hall plot, injection targets.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">The &quot;Producers&quot; and &quot;Injectors&quot; dashboards can also be opened from:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the &quot;Monitoring&quot; group of the Decline Curves window (when Monitoring is enabled for the asset);</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">the ribbon of the Asset dashboard. The &quot;Injectors&quot; button there appears only when the asset has allocated water injection.</span></p>
+                <p class="ps4"><span class="ts6">Each click opens a new window, maximised. You can keep several dashboards open side by side (for example the Asset dashboard and two Producers windows).</span></p>
+                <p class="ps7"><img width="700" height="430" alt="" src="images/fig_monitoring_navigation.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; How the Monitoring windows connect. The three ribbon buttons open the three dashboards; each dashboard opens its own tools.</span></p>
+                <p class="ps3"><span class="ts5">3. Data used by the Monitoring module</span></p>
+                <p class="ps4"><span class="ts6">The dashboards read the measured data stored for the asset. Most of it is loaded with &quot;Import Asset data&quot; on the Asset dashboard ribbon, or comes from the site's production-allocation system when Precept is connected to it (see </span><a href="data-sources.htm" class="hs0">Data sources and asset configuration</a><span class="ts6">).</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Data</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">What it contains</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Used for</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Daily production allocation</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Per well and per day: oil, gas, water, water injection, gas injection, plus uptime (fraction of the day the well produced) and a downtime reason.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Field KPIs, production charts, shortfalls, efficiency, over / under performance, CRM, PTA rates.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Daily well parameters</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Producers: THP, THT, FP (flowline pressure), BHP, BHT, gas-lift rate, CHP (casing pressure), choke, and for ESP wells PDP (pump discharge pressure), drive frequency and motor current. Injectors: THP, BHP, injection rate, choke, FP.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Main charts of the Producers and Injectors dashboards, Actual vs Target, build-ups, CRM (producer BHP).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well tests</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Test date, oil, water, gas, liquid, BSW, GOR, choke, gas-lift, pressures.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Test points on the charts, &quot;Last Well Test&quot; box, Last Well Tests window, well-model calibration, optimizers.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reservoir pressures</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Reservoir pressure at datum per well and date (surveys, or values saved from the Build-up Analyzer).</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Reservoir pressure&quot; points on the well charts; Material Balance history matching.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Forecast scenario</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The deterministic forecast of a scenario chosen in the dashboard (by default the most recently modified one).</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Over / Under Performing Wells, forecast lines on the well charts.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Targets</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Operating set-points per well (THP, BHP, gas-lift, injection rate), with their history.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Actual vs Target chart, target lines, exception-based surveillance.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Asset model (monitoring)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The list of wells with their type, status, reservoir, location, rank, X / Y coordinates and optional potential overrides. Open it with &quot;Asset Model&quot; on the Asset dashboard.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well lists and filters of every dashboard, the CRM map.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">High-frequency (historian) data</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Minute-level well parameters from the site process historian. Only for assets with real-time monitoring enabled.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;High Frequency&quot; view of the well charts, hourly timeline, build-ups, exception-based surveillance (section 5).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Well-model results</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">VLP / IPR, BHP from THP, performance curves and other KPIs calculated from the well models.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Right-hand charts of the Producers dashboard, optimizers. See </span><a href="mon-nodal.htm" class="hs0">Nodal analysis and well models</a><span class="ts6">.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Units follow the asset's unit system (oilfield or metric). All pressures are gauge.</span></p>
+                <p class="ps4"><span class="ts6">The dashboards' time axis ends on the asset's latest allocated date, not on today's date. A field whose data stopped some time ago therefore still opens on its last data.</span></p>
+                <p class="ps3"><span class="ts5">4. Working with the charts</span></p>
+                <p class="ps4"><span class="ts6">All Monitoring charts share the same mouse gestures:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Zoom &mdash; drag a rectangle with the left mouse button. A &quot;&#x27F2; Unzoom&quot; button appears at the top right of a zoomed chart; click it to return to the full view. Double-clicking the chart, or pressing Esc on the well charts, also unzooms.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Tooltips &mdash; hover over a point to read the well or series, the date and the value.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Format a chart &mdash; right-click an axis, the axis labels, an axis title or the chart title. The &quot;Format chart&quot; dialog opens: &quot;Chart title&quot;, &quot;Y scale&quot; (&quot;Linear&quot; / &quot;Logarithmic&quot;), Min / Max / Interval of the X, Y and Y2 axes, font size (&quot;-&quot;, &quot;+&quot;, or &quot;Custom&quot; for each title and the legend), &quot;Dark mode&quot;, &quot;Show legend&quot;, &quot;Show Y axis title&quot;. Only the fields you change are applied; the Maximum must be greater than the Minimum.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Restyle a series &mdash; right-click a point or a line. The &quot;Series style&quot; popup offers &quot;Point&quot;, &quot;Line&quot;, &quot;Dotted Line&quot;, &quot;Line + Dot&quot;, &quot;StepLine&quot;, &quot;StepLine + Dot&quot;, &quot;Bar&quot; or &quot;Area&quot;, a colour, &quot;-&quot; / &quot;+&quot; for line width or marker size, and &quot;2nd Y axis&quot; to move the series to the right-hand axis.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Right-click the legend to hide it. Double-click the Y axis to switch between linear and logarithmic scale.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Copy a chart &mdash; double right-click anywhere on a chart. The chart image is copied to the clipboard, ready to paste into a report, a slide or an e-mail.</span></p>
+                <p class="ps4"><span class="ts6">Formatting changes last while the window is open; they are not saved. A few small charts (for example the Asset dashboard's &quot;Field production&quot; and &quot;Actual vs Target&quot; charts) do not offer the Format chart dialog.</span></p>
+                <p class="ps3"><span class="ts5">5. Real-time monitoring and exception-based surveillance (EBS)</span></p>
+                <p class="ps4"><span class="ts6">For assets with real-time monitoring enabled, Precept runs an unattended workflow on a server, every hour. Users do not start it; they see its results in the dashboards:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Hourly data &mdash; for every producer and each completed hour, the hourly average of each parameter (THP, THT, FP, BHP, BHT, gas-lift, CHP, choke, PDP, drive frequency, motor current, injection rates), its amplitude within the hour (max &minus; min) and its trend (&quot;Increasing&quot;, &quot;Decreasing&quot; or &quot;Stable&quot;, from a straight-line fit over the hour). Hourly data are kept for 30 days.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Exception-based surveillance (EBS) &mdash; each hour, rules flag the wells that need attention, as &quot;Surveillance&quot; alarms or &quot;Optimization&quot; opportunities (table below). EBS entries are kept for 15 days.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Daily well-model KPIs &mdash; every evening, the well models are recalculated for the wells flagged for KPI calculation that have a recent well test (all flagged wells once a week). This refreshes the VLP / IPR, BHP from THP and performance curves used by the dashboards and optimizers, and a virtual meter (model-estimated rates from the measured pressures).</span></p>
+                <p class="ps4"><span class="ts6">Main EBS rules:</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">EBS message</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Raised when</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Sudden &lt;parameter&gt; change&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The hourly average moved by more than 20 % compared with 6 hours earlier, and the well was not shut in meanwhile.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;&lt;parameter&gt; below min threshold&quot; / &quot;above max threshold&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The hourly average is outside the well's alarm thresholds (set with &quot;Alarms Threshold&quot; on the Producers dashboard).</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;&lt;parameter&gt; below target&quot; / &quot;above target&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Gas-lift, THP or BHP (producers), or injection rate (injectors), more than 10 % away from the well's latest target.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Liquid loading&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">BHP increasing for 2 consecutive hours, with BHP fluctuating within the hour.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Start slugging&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">BHP (or THP) amplitude is now large, while it was small 6 hours earlier.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Gas-lift injected but well is closed&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">A gas-lifted well is shut in but still receives gas-lift.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Recently Shut-in&quot; / &quot;Restart&quot;</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">The well changed between open and shut-in during the last 24 hours.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">&quot;Increase Gas-lift&quot; / &quot;Decrease Gas-lift&quot; / &quot;Gas-lift valve change-out to allow more GL injection&quot; (Optimization)</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">From the well's gas-lift performance curve: more gas-lift would add significant oil (increase, or a valve change-out when the casing pressure is already close to the gas-lift supply pressure), or extra gas-lift adds almost nothing (decrease).</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps4"><span class="ts6">Individual rules can be switched off per well with &quot;Inhibit EBS actions&quot; on the Producers dashboard. EBS results appear in the Asset dashboard (EBS tree map, hourly timeline) and in the well status card of the Producers and Injectors dashboards.</span></p>
+                <p class="ps3"><span class="ts5">6. Topics in this section</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><a href="mon-asset.htm" class="hs0">Asset dashboard</a><span class="ts6">&nbsp;&mdash; field KPIs, shortfalls, efficiency, timeline, over / under performers, Last Well Tests, Optimizer.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><a href="mon-producers.htm" class="hs0">Producers dashboard</a><span class="ts6">&nbsp;&mdash; one producer in detail, Gas-lift Optimizer, targets.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><a href="mon-injectors.htm" class="hs0">Injectors dashboard and CRM</a><span class="ts6">&nbsp;&mdash; one injector in detail, and the interwell connectivity analysis.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><a href="mon-pta.htm" class="hs0">Build-up and pressure transient analysis</a><span class="ts6">&nbsp;&mdash; Build-up Analyzer and PTA.</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><a href="mon-nodal.htm" class="hs0">Nodal analysis and well models</a><span class="ts6">&nbsp;&mdash; well model update, VLP / IPR, performance curves, KPIs.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><a href="mon-rm-plots.htm" class="hs0">Reservoir management plots</a><span class="ts6">&nbsp;&mdash; Monitoring Plots (PI, II, Hall, voidage, well profile), pattern performance, maps.</span></p>
+                <p class="ps4"><span class="ts6">Related: </span><a href="precept-ai.htm" class="hs0">Precept AI</a><span class="ts6">&nbsp;(the &quot;Precept AI&quot; and &quot;My Custom charts&quot; buttons of the Asset dashboard), </span><a href="visualiser-3d.htm" class="hs0">3D Model Visualiser</a><span class="ts6">, </span><a href="patterns.htm" class="hs0">Patterns</a><span class="ts6">&nbsp;and </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">&nbsp;(history matching uses the monitored data).</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell2">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell4">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell5">
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="addwell.htm" class="hs0">Add wells to Asset Model</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="addwell.htm" class="hs1">Add wells to Asset Model</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">Transient</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,32 +63,96 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The option to take into account transient production can be activated by clicking on the &quot;Settings&quot; icon in Precept Main User Interface and check the &quot;Capture transient production&quot; option.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">When this option is activated, Precept will adjust the production and injection potentials of wells after a shutdown occurs, allowing:</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- temporary increase of production potential from producer wells (due to transient production)-</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;- </span><span class="ts3">temporary decrease of </span><span class="ts3">injection </span><span class="ts3">potential </span><span class="ts3">for injectors wells (due to bean-up) to reach again full injection potentials</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Required inputs need to be entered by clicking the &quot;Transient&quot; icon in the DCA module (see </span><a href="dca.htm" class="hs1">Decline curves: Production and Injection potentials</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p><img width="826" height="265" alt="" src="images/image(85).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">The data entered above for the well A1-I1 would generate the forecast below in case of shutdowns</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p><img width="1110" height="682" alt="" src="images/image(86).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <h3 class="hd1"><span class="ts3">The data entered above for the well A1-WI would generate the forecast below in case of shutdowns.</span></h3>
-                <p><img width="994" height="594" alt="" src="images/image(87).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p><span class="ts3">T</span><span class="ts3">ransient production after a shut-in</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; what the transient option does</span></p>
+                <p class="ps4"><span class="ts6">After a long shut-in, wells do not restart exactly at their potential:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">producers often produce above their potential for a while (pressure built up around the well during the shut-in);</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">injectors often inject below their potential for a while, until they are beaned back up to full rate.</span></p>
+                <p class="ps4"><span class="ts6">When the transient option is on, Precept multiplies a well's potential by a transient factor after each long enough shut-in, then brings the factor back to 1 in a straight line over the transient duration.</span></p>
+                <p class="ps3"><span class="ts5">2. Switch it on</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Select the scenario, then click &quot;Settings&quot; on the main ribbon (see </span><a href="settings.htm" class="hs0">Settings</a><span class="ts6">).</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Tick &quot;Capture transient production&quot; and save the settings.</span></p>
+                <p class="ps4"><span class="ts6">The option is used when Precept's own optimiser solves the network; it is not applied when the network is solved by GAP.</span></p>
+                <p class="ps3"><span class="ts5">3. Enter the transient data</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Decline Curves&quot; on the main ribbon and select the scenario (see </span><a href="dca.htm" class="hs0">Decline curves: Production and Injection potentials</a><span class="ts6">).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Transient&quot; in the &quot;Import Data&quot; group of the Decline Curves ribbon. The &quot;Import Data&quot; window opens on &quot;Import Transient data&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">The table lists every well of the scenario, plus the profiles created by conversions. Wells with no data yet show default values. Edit the values or paste them from Excel.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot;. Save replaces the whole transient table of the scenario.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Column</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Meaning</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Default</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Minimum number of SI days for Transient</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Shorter shut-ins have no transient: the well restarts at its potential.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">10</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Transient factor</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Multiplier on the potential on the day the well reopens. Above 1 for an uplift (producers), below 1 for a reduced rate (injectors).</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">1.2 producers, 0.8 injectors</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">ratio Transient duration / SI period</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Transient duration as a fraction of the shut-in length.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">0.35</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Maximum Transient duration in days</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Upper limit of the transient duration.</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">60</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps7"><img width="826" height="265" alt="" src="images/image(85).png" /></p>
+                <p class="ps4"><span class="ts7">The transient data table (this screenshot shows an older version of the window, where the columns were called &quot;flush&quot;).</span></p>
+                <p class="ps3"><span class="ts5">4. How the transient is calculated</span></p>
+                <p class="ps4"><span class="ts6">When a well reopens after a continuous shut-in of N days:</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">If N is less than &quot;Minimum number of SI days for Transient&quot;, nothing changes.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Otherwise, the transient duration is D = N × &quot;ratio Transient duration / SI period&quot;, limited to &quot;Maximum Transient duration in days&quot;.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">On the day the well reopens, its potential is multiplied by the &quot;Transient factor&quot;. The multiplier then returns to 1 in a straight line over D days: multiplier = factor &minus; (factor &minus; 1) × (days since reopening / D).</span></p>
+                <p class="ps4"><span class="ts6">The multiplier applies to the oil, water and gas potential of producers and to the water and gas injection potential of injectors; the gas-lift rate is not changed. A transient only follows a shut-in of a well that was producing or injecting before it: a new well coming online for the first time has none.</span></p>
+                <p class="ps7"><img width="700" height="320" alt="" src="images/fig_transient_factor.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; The transient multiplier after a reopening: it starts at the transient factor and returns linearly to 1 over the transient duration.</span></p>
+                <p class="ps3"><span class="ts5">5. Examples</span></p>
+                <p class="ps4"><span class="ts6">Injector A1-I1 (factor 0.8, ratio 0.3, minimum 10 days): after a 60-day shutdown, injection restarts at 80% of the potential and returns to full potential over 0.3 × 60 = 18 days. After a later shutdown of less than 10 days, injection restarts at full potential.</span></p>
+                <p class="ps7"><img width="1110" height="682" alt="" src="images/image(86).png" /></p>
+                <p class="ps4"><span class="ts6">Producer A1-W1 (factor 1.2, ratio 0.3): after a 50-day shutdown, production restarts at 120% of the potential and returns to the potential over 0.3 × 50 = 15 days.</span></p>
+                <p class="ps7"><img width="994" height="594" alt="" src="images/image(87).png" /></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -100,7 +164,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?80c55e05"></script>
+<script type="text/javascript" src="../js/settings.js?e7f9db30"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -43,7 +43,7 @@ body {
                   <table class="align-c tbl2">
                     <tr class="row0">
                       <td class="cell0">
-                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs0">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="addwell.htm" class="hs0">Add wells to Asset Model</a><span class="ts0">&nbsp;&gt; </span></p>
+                        <p class="ps0"><span class="ts0">Navigation: </span><a href="modellingoilandgasassets.htm" class="hs1">Modelling Oil and Gas Assets</a><span class="ts0">&nbsp;&gt; </span><a href="addwell.htm" class="hs1">Add wells to Asset Model</a><span class="ts0">&nbsp;&gt; </span></p>
                         <h1 class="hd0"><span class="ts1">PVT</span></h1>
                       </td>
                       <td class="cell1">
@@ -63,24 +63,98 @@ body {
               </td>
               <td class="cell3">
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">PVT can be entered by clicking on PVT icon in the Decline Curves Analysis (see </span><a href="dca.htm" class="hs1">Decline curves: Production and Injection potentials</a><span class="ts3">) </span><span class="ts3">module.</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">PVT are used in Precept to calculate production and injection at reservoir conditions for voidage calculations.</span></p>
-                <p class="ps3"><span class="ts3">API data are used for API tracking</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">.</span></p>
-                <p><img width="738" height="104" alt="" src="images/image(58).png" /></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">For a producer: Production Rate (rb) = Oil (std) * Bo&nbsp; +&nbsp; Water (std) * bw&nbsp; + Free gas (std) * Bg&nbsp; ,&nbsp; with Free gas = Produced Gas - Rs * Oil</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">For injector: Injection Rate (rb) = Water Injection (</span><span class="ts3">std</span><span class="ts3">) * Bwi + Gas Injection (</span><span class="ts3">std) * Bgi</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">Production Rate and Injection Rate at reservoir conditions are then used to calculate voidage.</span></p>
-                <p class="ps3"><span class="ts3">Voidage calculations require patterns to be defined. (see </span><a href="patterns.htm" class="hs1">Patterns</a><span class="ts3">)</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
-                <p class="ps3"><span class="ts3">&nbsp;</span></p>
+                <p><span class="ts3">P</span><span class="ts3">VT for voidage and API tracking</span></p>
+                <p><span class="ts4">&nbsp;</span></p>
+                <p class="ps3"><span class="ts5">1. Overview &mdash; two different PVTs in Precept</span></p>
+                <p class="ps4"><span class="ts6">Precept uses PVT data in two places. Do not confuse them:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Well PVT (this page) &mdash; one row of constant values per well: API, Bo, Bg, Bw, Rs, Bwi, Bgi. It is entered from Decline Curves. It converts production and injection to reservoir conditions for voidage, and gives the oil API for API tracking.</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Material Balance PVT &mdash; pressure-dependent black-oil tables (Bo, Bg, Rs, viscosities versus pressure) per reservoir, on the &quot;PVT&quot; tab of the Material Balance window. It drives the tank balance, the inflow and the lift curves when a scenario forecasts with Material Balance or Simulation (see </span><a href="material-balance.htm" class="hs0">Material Balance</a><span class="ts6">).</span></p>
+                <p class="ps3"><span class="ts5">2. Enter the well PVT</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Decline Curves&quot; on the main ribbon and select the scenario (see </span><a href="dca.htm" class="hs0">Decline curves: Production and Injection potentials</a><span class="ts6">).</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;PVT&quot; in the &quot;Import Data&quot; group of the Decline Curves ribbon. The &quot;Import Data&quot; window opens on &quot;Import PVT data&quot;.</span></p>
+                <p class="ps5"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">The table lists every well of the scenario, and every node of type Source, with the values saved before. Wells with no data yet show default values (API 30, Bo 1.15, Bg 1.25, Bw 1.05, Rs 260, Bwi 1.05, Bgi 1.25). Edit the values or paste them from Excel.</span></p>
+                <p class="ps6"><span style="font-family: 'Segoe UI'; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 20px"></span><span class="ts6">Click &quot;Save&quot;. Save replaces the whole PVT table of the scenario.</span></p>
+                <p class="ps4"><span class="ts6">If Bg and Bgi differ on the first row, Precept warns you: injected gas is usually the produced gas, so the two values are normally the same. &quot;Copy pattern property to all scenario in Project&quot; copies this PVT (with the pattern data) to the other scenarios of the project.</span></p>
+                <p class="ps7"><img width="738" height="104" alt="" src="images/image(58).png" /></p>
+                <p class="ps4"><span class="ts7">The well PVT table.</span></p>
+                <div class="block0">
+                  <table class="tbl3">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Column</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps8"><span class="ts6">Meaning (oilfield units)</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">API</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Oil gravity, &deg;API. Used for API tracking only.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Bo</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Oil formation volume factor, rb/stb.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Bg</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Gas formation volume factor of the produced free gas, rb/Mscf.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Bw</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Produced water formation volume factor, rb/stb.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Rs</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Solution gas-oil ratio, scf/stb. Used to split the produced gas into dissolved and free gas.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Bwi</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Injected water formation volume factor, rb/stb.</span></p>
+                      </td>
+                    </tr>
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Bgi</span></p>
+                      </td>
+                      <td class="cell0">
+                        <p class="ps9"><span class="ts6">Injected gas formation volume factor, rb/Mscf.</span></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="ps3"><span class="ts5">3. Voidage at reservoir conditions</span></p>
+                <p class="ps4"><span class="ts6">With the PVT, Precept converts each well's surface rates to reservoir barrels:</span></p>
+                <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Producer: Production (rb) = Oil × Bo + Water × Bw + Free gas × Bg, with Free gas = Produced gas &minus; Rs × Oil (taken as zero when negative).</span></p>
+                <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">Injector: Injection (rb) = Water injection × Bwi + Gas injection × Bgi.</span></p>
+                <p class="ps4"><span class="ts6">Voidage = Production (rb) &minus; Injection (rb), summed over a pattern with the pattern allocation factors, over a reservoir, or over the field. Historical voidage needs PVT for every well of a pattern; voidage per pattern needs the patterns to be defined (see </span><a href="patterns.htm" class="hs0">Patterns</a><span class="ts6">). In the forecast, voidage is calculated when &quot;Voidage&quot; is ticked in the settings of the scenario.</span></p>
+                <p class="ps4"><span class="ts6">If the scenario forecasts with Material Balance, the reservoirs modelled with Material Balance use the Material Balance PVT at the current reservoir pressure instead of the well PVT, for both production and injection. If a scenario has no well PVT at all, the forecast uses the default values above and reports &quot;No PVT data&quot;.</span></p>
+                <p class="ps3"><span class="ts5">4. API tracking</span></p>
+                <p class="ps4"><span class="ts6">At every forecast time step, Precept follows the oil of each producer, and of each Source node, through the network. The API of each node is the average of the API of the oil arriving at it, weighted by oil rate. When a node splits its oil between several outlets, each outlet gets its share of the oil with the same API. The result is reported as the parameter &quot;API&quot; in the forecast results, for example to check the quality of an export blend.</span></p>
+                <p class="ps7"><img width="700" height="300" alt="" src="images/fig_api_tracking.png" /></p>
+                <p class="ps4"><span class="ts7">Figure 1 &mdash; API tracking: the API of a node is the oil-rate-weighted average of the API of the oil flowing into it.</span></p>
                 <p class="ps2"><span class="ts2">&nbsp;</span></p>
               </td>
               <td class="cell2">
@@ -92,7 +166,7 @@ body {
                 <p>&nbsp;</p>
               </td>
               <td class="cell5">
-                <p class="ps4"><span class="ts6">Copyright &copy; 2023 - Cleverfield</span></p>
+                <p class="ps10"><span class="ts8">Copyright &copy; 2023 - Cleverfield</span></p>
               </td>
               <td class="cell0">
                 <p>&nbsp;</p>

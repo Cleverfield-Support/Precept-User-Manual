@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 </style>
-<script type="text/javascript" src="../js/settings.js?19537326"></script>
+<script type="text/javascript" src="../js/settings.js?2cf0ba0a"></script>
 <script type="text/javascript" src="../js/core.min.js?b628a3f8"></script>
 <script type="text/javascript" src="../js/topic.min.js?b628a3f8"></script>
 <script type="text/javascript">
@@ -223,7 +223,7 @@ body {
                 <p class="ps12"><span class="ts10">The intermediate runs (files named </span><span class="ts11">CPL_&lt;step&gt;_&lt;pass&gt;</span><span class="ts10">) are deleted as the forecast goes; only the restart point of the next step is kept. If the replay or the saving of the profiles fails, the forecast results are still complete and a warning says so (&quot;The forecast results are complete, but ...&quot;), pointing to the run report (.PRT).</span></p>
                 <p class="ps3"><span class="ts5">9. Convergence reports</span></p>
                 <p class="ps4"><span class="ts6">A coupled forecast iterates on two loops, and each has its own report:</span></p>
-                <p class="ps14"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts10">The simulator coupling (this page) &mdash; reported in the &quot;Coupled run&quot; window and in </span><span class="ts11">COUPLING_LOG.txt</span><span class="ts10">: each pass's mismatch, the worst well, and the count of steps not converged.</span></p>
+                <p class="ps13"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts10">The simulator coupling (this page) &mdash; reported in the &quot;Coupled run&quot; window and in </span><span class="ts11">COUPLING_LOG.txt</span><span class="ts10">: each pass's mismatch, the worst well, and the count of steps not converged.</span></p>
                 <p class="ps6"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">The network pressure solve &mdash; the loop that settles the manifold pressures and the optimiser's allocation inside every pass. At the end of the forecast a window &quot;Network pressure solve - convergence report - &lt;scenario&gt;&quot; opens, but only if a time step did not converge or needed 10 passes or more (the cap is 15 passes per step). It lists every time step with its passes, status (&quot;Converged&quot;, &quot;NOT converged - slow&quot;, &quot;NOT converged - oscillating&quot;), relaxation and pressure changes. &quot;Save as...&quot; saves it as a text file; &quot;Close&quot; closes it. The non-converged steps and a summary line are also added to the warnings shown at the end of the run. See </span><a href="network-hydraulics.htm" class="hs0">Network hydraulics</a><span class="ts6">.</span></p>
                 <p class="ps3"><span class="ts5">10. Tips and troubleshooting</span></p>
                 <p class="ps5"><span style="font-size: 14pt; line-height: 0; vertical-align: middle; color: Black">&bull;</span><span style="display: inline-block; width: 24px"></span><span class="ts6">&quot;no change between passes, stopped&quot; in the log usually means the simulator honours a limit that Precept does not know about (for example a BHP limit, or a well that cannot deliver its allocation). Look at the worst well named on the line above.</span></p>
